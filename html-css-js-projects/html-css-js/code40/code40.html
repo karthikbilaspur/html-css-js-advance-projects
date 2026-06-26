@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 40: Text to Speech | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code40.css">
+  <script src="code40.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 40: Text to Speech</h1>
+    <p class="subtitle">Convert text to natural speech</p>
+  </header>
+
+  <div class="tts-container">
+    <div class="text-section">
+      <label for="textInput">Enter text to speak</label>
+      <textarea id="textInput" rows="6" placeholder="Type or paste text here...">Hello! Welcome to the Text to Speech generator. You can adjust the voice, speed, and pitch below.</textarea>
+      <div class="char-count">
+        <span id="charCount">0</span> characters
+        <button id="clearBtn" class="clear-btn">Clear</button>
+      </div>
+    </div>
+
+    <div class="controls-section">
+      <div class="control-group">
+        <label for="voiceSelect">Voice</label>
+        <select id="voiceSelect">
+          <option>Loading voices...</option>
+        </select>
+      </div>
+
+      <div class="sliders">
+        <div class="slider-group">
+          <label>Rate: <span id="rateValue">1.0</span></label>
+          <input type="range" id="rateSlider" min="0.5" max="2" step="0.1" value="1">
+          <div class="slider-labels">
+            <span>Slow</span>
+            <span>Fast</span>
+          </div>
+        </div>
+
+        <div class="slider-group">
+          <label>Pitch: <span id="pitchValue">1.0</span></label>
+          <input type="range" id="pitchSlider" min="0" max="2" step="0.1" value="1">
+          <div class="slider-labels">
+            <span>Low</span>
+            <span>High</span>
+          </div>
+        </div>
+
+        <div class="slider-group">
+          <label>Volume: <span id="volumeValue">100%</span></label>
+          <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+          <div class="slider-labels">
+            <span>Quiet</span>
+            <span>Loud</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="playback-controls">
+      <button id="speakBtn" class="primary-btn">
+        <span class="icon">▶</span> Speak
+      </button>
+      <button id="pauseBtn" class="secondary-btn" disabled>
+        <span class="icon">⏸</span> Pause
+      </button>
+      <button id="resumeBtn" class="secondary-btn" disabled>
+        <span class="icon">▶</span> Resume
+      </button>
+      <button id="stopBtn" class="secondary-btn" disabled>
+        <span class="icon">⏹</span> Stop
+      </button>
+    </div>
+
+    <div class="status-bar">
+      <div id="statusText">Ready</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="presets-section">
+      <h3>Quick Presets</h3>
+      <div class="preset-buttons">
+        <button class="preset-btn" data-text="Hello, how are you today?">Greeting</button>
+        <button class="preset-btn" data-text="The quick brown fox jumps over the lazy dog.">Pangram</button>
+        <button class="preset-btn" data-text="In 2026, artificial intelligence continues to advance rapidly.">News</button>
+        <button class="preset-btn" data-text="To be, or not to be, that is the question.">Shakespeare</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

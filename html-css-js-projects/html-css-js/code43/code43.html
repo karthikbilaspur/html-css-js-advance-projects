@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List v2 - Code43</title>
+  <link rel="stylesheet" href="code43.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2>Lists</h2>
+      <div id="listsContainer"></div>
+      <button id="addListBtn" class="add-list-btn">+ New List</button>
+    </aside>
+
+    <main class="main">
+      <div class="header">
+        <h1 id="currentListName">My Tasks</h1>
+        <div class="header-actions">
+          <input type="search" id="searchInput" placeholder="Search tasks...">
+          <button id="themeToggle">🌙</button>
+        </div>
+      </div>
+
+      <div class="quick-add">
+        <input type="text" id="todoInput" placeholder="Add task... Press Enter">
+        <select id="priorityInput">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <input type="date" id="dateInput">
+        <input type="text" id="tagsInput" placeholder="tags: work, urgent">
+      </div>
+
+      <div class="toolbar">
+        <div class="filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="today">Today</button>
+          <button class="chip" data-filter="upcoming">Upcoming</button>
+          <button class="chip" data-filter="completed">Done</button>
+        </div>
+        <select id="sortBy">
+          <option value="created">Date Created</option>
+          <option value="due">Due Date</option>
+          <option value="priority">Priority</option>
+          <option value="alpha">A-Z</option>
+        </select>
+      </div>
+
+      <div id="todoList" class="todo-list"></div>
+
+      <div class="stats">
+        <span id="statsText">0 tasks</span>
+        <div class="actions">
+          <button id="exportBtn">Export JSON</button>
+          <button id="importBtn">Import</button>
+          <input type="file" id="importFile" accept=".json" hidden>
+          <button id="clearDone">Clear Done</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="code43.js"></script>
+</body>
+</html>

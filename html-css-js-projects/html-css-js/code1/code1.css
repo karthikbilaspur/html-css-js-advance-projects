@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  max-width: 700px;
+  width: 100%;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+  color: #2563eb;
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+/* Demo Box Styling */
+.demo-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 24px;
+  border-radius: 10px;
+  margin: 24px 0;
+}
+
+#status {
+  font-weight: 600;
+  color: #dc2626;
+  margin-bottom: 20px;
+}
+
+/* Button Styling - Updated for consistency */
+#alertBtn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#alertBtn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Footer Navigation - Updated to match the pagination structure */
+.page-footer-nav {
+  margin-top: 50px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 20px;
+}
+
+.page-footer-nav p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.page-footer-nav a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.page-footer-nav a:hover {
+  background: #f1f5f9;
+  text-decoration: underline;
+}

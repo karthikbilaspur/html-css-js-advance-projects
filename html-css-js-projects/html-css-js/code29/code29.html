@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 29: Palindrome Checker Pro | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code29.css">
+  <script src="code29.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 29: Palindrome Checker Pro</h1>
+    <p class="subtitle">Reads the same backward as forward</p>
+  </header>
+
+  <div class="palindrome-container">
+    <div class="input-section">
+      <label for="textInput">Enter text to check</label>
+      <textarea id="textInput" placeholder="e.g. A man a plan a canal Panama" rows="3"></textarea>
+      <div class="options">
+        <label class="checkbox-label">
+          <input type="checkbox" id="ignoreCase" checked>
+          <span>Ignore case</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="ignorePunct" checked>
+          <span>Ignore punctuation & spaces</span>
+        </label>
+      </div>
+      <div class="button-row">
+        <button id="checkBtn">Check</button>
+        <button id="exampleBtn" class="secondary-btn">Examples</button>
+        <button id="clearBtn" class="secondary-btn">Clear</button>
+      </div>
+    </div>
+
+    <div class="result" id="resultBox">
+      <div class="result-icon" id="resultIcon"></div>
+      <h3 id="resultTitle"></h3>
+      <div class="comparison" id="comparison"></div>
+      <p class="result-detail" id="resultDetail"></p>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number" id="totalChecked">0</span>
+        <span class="stat-label">Checked</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" id="palindromeCount">0</span>
+        <span class="stat-label">Palindromes</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" id="accuracy">0%</span>
+        <span class="stat-label">Hit Rate</span>
+      </div>
+    </div>
+
+    <div class="history-section">
+      <h3>Recent Checks</h3>
+      <div id="historyList"></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 75: th - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 75: &lt;th&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;th&gt;</code> element defines a header cell in a table. Use for row or column labels. Must be inside <code>&lt;tr&gt;</code>.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic column headers</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <tr>
+                        <th>Language</th>
+                        <th>Year</th>
+                        <th>Creator</th>
+                    </tr>
+                    <tr>
+                        <td>HTML</td>
+                        <td>1993</td>
+                        <td>Tim Berners-Lee</td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td>1996</td>
+                        <td>Håkon Wium Lie</td>
+                    </tr>
+                </table>
+
+                <h3>th with scope="col"</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                    <tr>
+                        <td>Monitor</td>
+                        <td>12</td>
+                        <td>₹8,000</td>
+                    </tr>
+                </table>
+                <small>scope="col" tells screen readers this header applies to column</small>
+
+                <h3>th with scope="row"</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <tr>
+                        <th></th>
+                        <th scope="col">Q1</th>
+                        <th scope="col">Q2</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Revenue</th>
+                        <td>₹1.2L</td>
+                        <td>₹1.5L</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Profit</th>
+                        <td>₹30K</td>
+                        <td>₹45K</td>
+                    </tr>
+                </table>
+
+                <h3>th with colspan</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <tr>
+                        <th colspan="3">2025 Report</th>
+                    </tr>
+                    <tr>
+                        <th>Month</th>
+                        <th>Users</th>
+                        <th>Growth</th>
+                    </tr>
+                    <tr>
+                        <td>Jan</td>
+                        <td>1,200</td>
+                        <td>+5%</td>
+                    </tr>
+                </table>
+
+                <h3>th with abbr attribute</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <tr>
+                        <th abbr="Temp">Temperature (°C)</th>
+                        <th abbr="Hum">Humidity (%)</th>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>65</td>
+                    </tr>
+                </table>
+                <small>abbr gives shorter name for screen readers</small>
+
+                <h3>th with id for headers</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <tr>
+                        <th id="city">City</th>
+                        <th id="pop">Population</th>
+                    </tr>
+                    <tr>
+                        <td headers="city">Mumbai</td>
+                        <td headers="pop">20M</td>
+                    </tr>
+                </table>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>th purpose:</strong> Use <code>&lt;th&gt;</code> for headers, not data. Browsers render it bold and centered by default. Screen readers announce "header" before content.</p>
+                <p><strong>scope attribute:</strong> <code>scope="col"</code> for column headers. <code>scope="row"</code> for row headers. Critical for accessibility — tells users what each cell relates to.</p>
+                <p><strong>abbr attribute:</strong> Provides abbreviated header name. Screen readers may use it instead of full text: <code>&lt;th abbr="Temp"&gt;Temperature&lt;/th&gt;</code>.</p>
+                <p><strong>id + headers:</strong> For complex tables, give <code>&lt;th id="name"&gt;</code> then reference in cells: <code>&lt;td headers="name"&gt;</code>. Explicitly links data to headers.</p>
+                <p><strong>th vs td:</strong> Never use <code>&lt;td&gt;</code> for headers. Use <code>&lt;th&gt;</code> even if you don't want bold — style with CSS. Semantics matter.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code74.html">← Prev: Code 74: td tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code76.html">Next: Code 76: caption tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 75 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Dashboard - 097</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>BUDGET DASHBOARD <span class="project-num">097</span></h1>
+      <div class="month-selector">
+        <button id="prevMonthBtn">◀</button>
+        <h2 id="currentMonth">June 2026</h2>
+        <button id="nextMonthBtn">▶</button>
+      </div>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card income">
+        <div class="stat-label">Total Income</div>
+        <div class="stat-value" id="totalIncome">₹0</div>
+      </div>
+      <div class="stat-card expense">
+        <div class="stat-label">Total Expenses</div>
+        <div class="stat-value" id="totalExpenses">₹0</div>
+      </div>
+      <div class="stat-card balance">
+        <div class="stat-label">Balance</div>
+        <div class="stat-value" id="balance">₹0</div>
+      </div>
+      <div class="stat-card savings">
+        <div class="stat-label">Savings Rate</div>
+        <div class="stat-value" id="savingsRate">0%</div>
+      </div>
+    </div>
+
+    <div class="main-layout">
+      <div class="left-panel">
+        <div class="form-card">
+          <h3>Add Transaction</h3>
+          <div class="input-group">
+            <select id="typeSelect">
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+            <input type="number" id="amountInput" placeholder="Amount" step="0.01">
+            <select id="categorySelect">
+              <option value="salary">Salary</option>
+              <option value="food">Food</option>
+              <option value="rent">Rent</option>
+              <option value="transport">Transport</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="utilities">Utilities</option>
+              <option value="other">Other</option>
+            </select>
+            <input type="text" id="descInput" placeholder="Description">
+            <input type="date" id="dateInput">
+            <button id="addTransactionBtn">+ Add</button>
+          </div>
+        </div>
+
+        <div class="transactions-card">
+          <h3>Recent Transactions</h3>
+          <div id="transactionsList" class="transactions-list"></div>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="chart-card">
+          <h3>Expense Breakdown</h3>
+          <canvas id="pieChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Monthly Trend</h3>
+          <canvas id="lineChart"></canvas>
+        </div>
+
+        <div class="insights-card">
+          <h3>💡 Insights</h3>
+          <div id="insights" class="insights"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

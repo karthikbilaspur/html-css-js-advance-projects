@@ -1,0 +1,234 @@
+/* Base docs styles */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header h1 {
+  margin: 0.5rem 0 2rem 0;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Demo area */
+.demo-area {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  background: #fff;
+  position: relative;
+  min-height: 400px;
+}
+
+/* Main navigation */
+.main-nav {
+  background: #1a1a1a;
+  border-radius: 8px 8px 0 0;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 1.2rem 1rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.nav-link:hover,
+.mega-dropdown:hover.mega-trigger {
+  background: #252525;
+  color: #4dabf7;
+}
+
+.arrow {
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+}
+
+.mega-dropdown:hover.arrow {
+  transform: rotate(180deg);
+}
+
+/* Mega dropdown container */
+.mega-dropdown {
+  position: static;
+}
+
+/* Mega menu - hidden by default */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 3px solid #4dabf7;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 100;
+}
+
+/* Show on hover or focus */
+.mega-dropdown:hover.mega-menu,
+.mega-dropdown:focus-within.mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition-delay: 0.1s;
+}
+
+/* Grid layout for columns */
+.mega-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.mega-grid-2col {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 600px;
+}
+
+/* Column styling */
+.mega-heading {
+  color: #1a1a1a;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+}
+
+.mega-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mega-links li {
+  margin-bottom: 0.75rem;
+}
+
+.mega-links a {
+  color: #495057;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  display: block;
+}
+
+.mega-links a:hover {
+  color: #4dabf7;
+  padding-left: 0.25rem;
+}
+
+/* Featured card column */
+.mega-featured {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: -0.5rem;
+}
+
+.featured-img {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.featured-title {
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+}
+
+.featured-desc {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+}
+
+.featured-btn {
+  display: inline-block;
+  background: #4dabf7;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.featured-btn:hover {
+  background: #339af0;
+}
+
+/* Page content below nav */
+.page-content {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #666;
+}
+
+/* Mobile: hide mega menu, show message */
+@media (max-width: 768px) {
+ .mega-menu {
+    display: none;
+  }
+  
+ .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+ .demo-area::after {
+    content: "Mega menus are hidden on mobile. Use hamburger menu instead.";
+    display: block;
+    padding: 2rem;
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
+  }
+}

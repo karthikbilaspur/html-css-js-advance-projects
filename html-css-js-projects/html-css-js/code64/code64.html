@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match 64</title>
+    <link rel="stylesheet" href="code64.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Memory Match</h1>
+            <p>Flip cards to find all matching pairs</p>
+        </header>
+
+        <div class="game-header">
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">Time</span>
+                    <span class="value" id="timer">00:00</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Moves</span>
+                    <span class="value" id="moves">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Best</span>
+                    <span class="value" id="best-score">--</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <select id="difficulty">
+                    <option value="easy">Easy 4x3</option>
+                    <option value="medium" selected>Medium 4x4</option>
+                    <option value="hard">Hard 6x4</option>
+                </select>
+                <select id="theme">
+                    <option value="emoji">Emoji</option>
+                    <option value="animals">Animals</option>
+                    <option value="food">Food</option>
+                    <option value="shapes">Shapes</option>
+                </select>
+                <button id="restart-btn">New Game</button>
+            </div>
+        </div>
+
+        <div id="game-board" class="game-board"></div>
+
+        <div id="win-modal" class="modal">
+            <div class="modal-content">
+                <h2>🎉 You Won!</h2>
+                <div class="win-stats">
+                    <p>Time: <span id="win-time"></span></p>
+                    <p>Moves: <span id="win-moves"></span></p>
+                    <p id="new-record" class="hidden">🏆 New Best Score!</p>
+                </div>
+                <button id="play-again">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="code64.js"></script>
+</body>
+</html>

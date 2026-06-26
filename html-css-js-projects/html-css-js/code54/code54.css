@@ -1,0 +1,221 @@
+/* Styles for Code 54 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin: 40px 0 32px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.search-bar {
+    display: flex;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto 24px;
+}
+
+#search-input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+#search-input:focus {
+    border-color: #1a1a1a;
+}
+
+#search-btn {
+    padding: 14px 28px;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background: #000;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: #1a1a1a;
+}
+
+.filter-btn.active {
+    background: #1a1a1a;
+    color: white;
+    border-color: #1a1a1a;
+}
+
+#status {
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Masonry Layout */
+.masonry {
+    column-count: 4;
+    column-gap: 20px;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #e0e0e0;
+}
+
+.masonry-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.05);
+}
+
+.masonry-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.masonry-item:hover .masonry-overlay {
+    opacity: 1;
+}
+
+.masonry-overlay p {
+    font-size: 0.85rem;
+}
+
+.loader {
+    text-align: center;
+    padding: 40px;
+    font-size: 1rem;
+    color: #666;
+    display: none;
+}
+
+.loader.active {
+    display: block;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.lightbox-info {
+    margin-top: 16px;
+    text-align: center;
+    color: white;
+}
+
+.lightbox-info a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 1200px) {
+    .masonry { column-count: 3; }
+}
+@media (max-width: 768px) {
+    .masonry { column-count: 2; }
+    h1 { font-size: 2.2rem; }
+}
+@media (max-width: 480px) {
+    .masonry { column-count: 1; }
+}

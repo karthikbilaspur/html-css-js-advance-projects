@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 67 - Static Calendar Grid</title>
+  <link rel="stylesheet" href="code67.css">
+</head>
+<body>
+  <main class="container">
+    <div class="calendar">
+      <header class="calendar-header">
+        <button class="nav-btn" aria-label="Previous month">&lsaquo;</button>
+        <h1 class="month-title">June 2026</h1>
+        <button class="nav-btn" aria-label="Next month">&rsaquo;</button>
+      </header>
+
+      <div class="calendar-grid">
+        <!-- Day headers -->
+        <div class="day-header">Sun</div>
+        <div class="day-header">Mon</div>
+        <div class="day-header">Tue</div>
+        <div class="day-header">Wed</div>
+        <div class="day-header">Thu</div>
+        <div class="day-header">Fri</div>
+        <div class="day-header">Sat</div>
+
+        <!-- Week 1 -->
+        <div class="day other-month">31</div>
+        <div class="day">1</div>
+        <div class="day">2</div>
+        <div class="day">3</div>
+        <div class="day">4</div>
+        <div class="day">5</div>
+        <div class="day">6</div>
+
+        <!-- Week 2 -->
+        <div class="day">7</div>
+        <div class="day">8</div>
+        <div class="day">9</div>
+        <div class="day">10</div>
+        <div class="day">11</div>
+        <div class="day">12</div>
+        <div class="day">13</div>
+
+        <!-- Week 3 -->
+        <div class="day">14</div>
+        <div class="day">15</div>
+        <div class="day">16</div>
+        <div class="day today">
+          <span class="day-number">17</span>
+          <div class="event-dot"></div>
+        </div>
+        <div class="day has-event">
+          <span class="day-number">18</span>
+          <div class="event">Code 67 Due</div>
+        </div>
+        <div class="day">19</div>
+        <div class="day">20</div>
+
+        <!-- Week 4 -->
+        <div class="day">21</div>
+        <div class="day has-event">
+          <span class="day-number">22</span>
+          <div class="event">Team Sync</div>
+        </div>
+        <div class="day">23</div>
+        <div class="day">24</div>
+        <div class="day">25</div>
+        <div class="day">26</div>
+        <div class="day">27</div>
+
+        <!-- Week 5 -->
+        <div class="day">28</div>
+        <div class="day">29</div>
+        <div class="day">30</div>
+        <div class="day other-month">1</div>
+        <div class="day other-month">2</div>
+        <div class="day other-month">3</div>
+        <div class="day other-month">4</div>
+      </div>
+    </div>
+
+    <nav class="pagination-nav">
+      <hr>
+      <p>
+        <a href="../code66/code66.html">← Prev: Code 66</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code68/code68.html">Next: Code 68 →</a>
+      </p>
+    </nav>
+
+    <footer class="page-footer">
+      <hr>
+      <p><small>Code 67 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
+  </main>
+</body>
+</html>

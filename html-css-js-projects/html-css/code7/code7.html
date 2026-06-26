@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 7: Book Card - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code7.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 7: Book Card</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This project creates a book card with cover image, title, author, and CSS-only star rating.</p>
+      <p>It uses <code>::before</code> with <code>content: "★★★★★"</code> for stars, <code>background-clip: text</code> for gradient stars, and hover effects with <code>transform</code>.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="books-container">
+        <article class="book-card">
+          <img 
+            src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop" 
+            alt="Atomic Habits Book Cover" 
+            class="book-cover"
+          >
+          <div class="book-info">
+            <h3>Atomic Habits</h3>
+            <p class="author">by James Clear</p>
+            <div class="rating" data-rating="5">
+              <span class="stars"></span>
+              <span class="rating-text">5.0</span>
+            </div>
+            <p class="price">₹499</p>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <img 
+            src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=450&fit=crop" 
+            alt="The Alchemist Book Cover" 
+            class="book-cover"
+          >
+          <div class="book-info">
+            <h3>The Alchemist</h3>
+            <p class="author">by Paulo Coelho</p>
+            <div class="rating" data-rating="4">
+              <span class="stars"></span>
+              <span class="rating-text">4.2</span>
+            </div>
+            <p class="price">₹299</p>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <img 
+            src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300&h=450&fit=crop" 
+            alt="Wings of Fire Book Cover" 
+            class="book-cover"
+          >
+          <div class="book-info">
+            <h3>Wings of Fire</h3>
+            <p class="author">by Dr. A.P.J. Abdul Kalam</p>
+            <div class="rating" data-rating="5">
+              <span class="stars"></span>
+              <span class="rating-text">4.8</span>
+            </div>
+            <p class="price">₹350</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;article class="book-card"&gt;
+  &lt;img src="cover.jpg" alt="Book Cover" class="book-cover"&gt;
+  &lt;h3&gt;Atomic Habits&lt;/h3&gt;
+  &lt;p class="author"&gt;by James Clear&lt;/p&gt;
+  &lt;div class="rating" data-rating="5"&gt;
+    &lt;span class="stars"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Use <code>data-rating="5"</code> attribute to set star rating from 1-5</li>
+        <li><code>::before</code> with <code>content: "★★★★★"</code> creates the stars</li>
+        <li><code>background: linear-gradient</code> + <code>background-clip: text</code> colors filled stars</li>
+        <li><code>aspect-ratio: 2/3</code> keeps book covers proportional</li>
+        <li><code>transform: translateY(-5px)</code> on <code>:hover</code> adds lift effect</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code5/code6.html">← Prev: Code 5: Business Card</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code8/code8.html">Next: Code 7 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 7 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

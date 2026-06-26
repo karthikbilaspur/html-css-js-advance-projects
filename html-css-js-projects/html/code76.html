@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 76: thead - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 76: &lt;thead&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;thead&gt;</code> element groups header content in a table. It must appear before <code>&lt;tbody&gt;</code> and contains header rows.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic thead with th</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Amit</td>
+                            <td>88</td>
+                        </tr>
+                        <tr>
+                            <td>102</td>
+                            <td>Neha</td>
+                            <td>94</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>thead with multiple rows</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Employee</th>
+                            <th colspan="2">Q1</th>
+                            <th colspan="2">Q2</th>
+                        </tr>
+                        <tr>
+                            <th>Sales</th>
+                            <th>Target</th>
+                            <th>Sales</th>
+                            <th>Target</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Raj</td>
+                            <td>50k</td>
+                            <td>45k</td>
+                            <td>60k</td>
+                            <td>55k</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>thead for printing</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Book</td><td>1</td><td>₹200</td></tr>
+                        <tr><td>Pen</td><td>3</td><td>₹30</td></tr>
+                        <tr><td>Book</td><td>1</td><td>₹200</td></tr>
+                        <tr><td>Pen</td><td>3</td><td>₹30</td></tr>
+                        <tr><td>Book</td><td>1</td><td>₹200</td></tr>
+                        <tr><td>Pen</td><td>3</td><td>₹30</td></tr>
+                    </tbody>
+                </table>
+                <small>Browsers repeat thead on each printed page</small>
+
+                <h3>thead with scope</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Month</th>
+                            <th scope="col">Revenue</th>
+                            <th scope="col">Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jan</td>
+                            <td>₹1.2L</td>
+                            <td>+5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>thead rules:</strong> Must be direct child of <code>&lt;table&gt;</code>. Only one <code>&lt;thead&gt;</code> per table. Comes before <code>&lt;tbody&gt;</code> and <code>&lt;tfoot&gt;</code>.</p>
+                <p><strong>Key purpose:</strong> Groups header rows. Browsers repeat <code>&lt;thead&gt;</code> at top of each page when printing long tables.</p>
+                <p><strong>Content:</strong> Contains <code>&lt;tr&gt;</code> elements. Those <code>&lt;tr&gt;</code> should contain <code>&lt;th&gt;</code>, not <code>&lt;td&gt;</code>, for headers.</p>
+                <p><strong>Accessibility:</strong> Using <code>&lt;thead&gt;</code> with <code>&lt;th scope="col"&gt;</code> helps screen readers identify column headers vs data.</p>
+                <p><strong>Optional but recommended:</strong> Table works without <code>&lt;thead&gt;</code>, but adding it improves semantics, printing, and accessibility.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code75.html">← Prev: Code 75: th tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code77.html">Next: Code 77: tbody tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 76 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

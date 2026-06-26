@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 23: Loan EMI Calculator | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code23.css">
+  <script src="code23.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 23: Loan EMI Calculator</h1>
+  </header>
+
+  <div class="emi-container">
+    <div class="input-section">
+      <div class="input-group">
+        <div class="label-row">
+          <label for="loanAmount">Loan Amount</label>
+          <span class="value-display">₹ <span id="loanAmountValue">500000</span></span>
+        </div>
+        <input type="range" id="loanAmount" min="50000" max="5000000" step="10000" value="500000">
+        <div class="range-labels">
+          <span>₹50K</span>
+          <span>₹50L</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="label-row">
+          <label for="interestRate">Interest Rate (p.a.)</label>
+          <span class="value-display"><span id="interestRateValue">8.5</span> %</span>
+        </div>
+        <input type="range" id="interestRate" min="5" max="20" step="0.1" value="8.5">
+        <div class="range-labels">
+          <span>5%</span>
+          <span>20%</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="label-row">
+          <label for="loanTenure">Loan Tenure</label>
+          <span class="value-display"><span id="loanTenureValue">5</span> Years</span>
+        </div>
+        <input type="range" id="loanTenure" min="1" max="30" step="1" value="5">
+        <div class="range-labels">
+          <span>1 Yr</span>
+          <span>30 Yrs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-section">
+      <div class="result-card main">
+        <p>Monthly EMI</p>
+        <h2>₹ <span id="emiAmount">0</span></h2>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-card">
+          <p>Total Interest</p>
+          <h3>₹ <span id="totalInterest">0</span></h3>
+        </div>
+        <div class="result-card">
+          <p>Total Amount</p>
+          <h3>₹ <span id="totalAmount">0</span></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

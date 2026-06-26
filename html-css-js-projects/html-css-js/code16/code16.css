@@ -1,0 +1,85 @@
+/* Styles for Code 16 */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 30px;
+  background: #2c3e50;
+  color: white;
+}
+
+header h1 {
+  margin-bottom: 40px;
+}
+
+.coin-container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.coin {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 30px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+}
+
+.coin.flip {
+  transform: rotateY(1800deg);
+}
+
+.side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  backface-visibility: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.heads {
+  background: linear-gradient(45deg, #f1c40f, #f39c12);
+  color: #2c3e50;
+}
+
+.tails {
+  background: linear-gradient(45deg, #bdc3c7, #95a5a6);
+  color: #2c3e50;
+  transform: rotateY(180deg);
+}
+
+p {
+  font-size: 22px;
+  margin: 25px 0;
+}
+
+#result {
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+#flipBtn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#flipBtn:hover {
+  background: #c0392b;
+}
+
+#flipBtn:disabled {
+  background: #7f8c8d;
+  cursor: not-allowed;
+}

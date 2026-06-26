@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 25: Tabs Component - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code25.css">
+</head>
+<body>
+  <header>
+    <p><a href="index.html">← Back to All Codes</a></p>
+    <h1>Code 25: Tabs with Radio + :checked</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This tabs component uses hidden radio buttons and <code>:checked</code> to switch content panels. The <code>label</code> acts as the tab button.</p>
+      <p>Only one tab can be active at a time because all radios share the same <code>name</code>. Fully keyboard accessible — use Tab + Arrow keys or Space.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <div class="tabs">
+          <!-- Radio inputs control which tab is active -->
+          <input type="radio" id="tab1" name="tabs" checked>
+          <input type="radio" id="tab2" name="tabs">
+          <input type="radio" id="tab3" name="tabs">
+          <input type="radio" id="tab4" name="tabs">
+
+          <!-- Tab buttons -->
+          <div class="tab-labels">
+            <label for="tab1" class="tab-label">HTML</label>
+            <label for="tab2" class="tab-label">CSS</label>
+            <label for="tab3" class="tab-label">JavaScript</label>
+            <label for="tab4" class="tab-label">React</label>
+          </div>
+
+          <!-- Tab content panels -->
+          <div class="tab-content">
+            <div class="tab-panel" id="panel1">
+              <h3>HTML Basics</h3>
+              <p>HTML is the structure of every web page. It uses tags like <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;h1&gt;</code> to define content.</p>
+              <p>Semantic HTML like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;main&gt;</code> helps accessibility and SEO.</p>
+            </div>
+
+            <div class="tab-panel" id="panel2">
+              <h3>CSS Styling</h3>
+              <p>CSS controls layout, colors, fonts, and animations. Selectors like <code>.class</code> and <code>#id</code> target elements.</p>
+              <p>Modern CSS has Flexbox, Grid, and custom properties for powerful layouts without frameworks.</p>
+            </div>
+
+            <div class="tab-panel" id="panel3">
+              <h3>JavaScript Logic</h3>
+              <p>JS makes pages interactive. It handles clicks, form validation, API calls, and DOM manipulation.</p>
+              <p>ES6+ added arrow functions, destructuring, and modules. This runs in every browser.</p>
+            </div>
+
+            <div class="tab-panel" id="panel4">
+              <h3>React Framework</h3>
+              <p>React is a JS library for building UIs with components. It uses a virtual DOM for fast updates.</p>
+              <p>JSX lets you write HTML-like syntax in JavaScript. Hooks like <code>useState</code> manage component state.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p><small>↑ Click tabs or use Tab + Space/Enter to switch</small></p>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;input type="radio" id="tab1" name="tabs" checked&gt;
+&lt;input type="radio" id="tab2" name="tabs"&gt;
+
+&lt;label for="tab1"&gt;Tab 1&lt;/label&gt;
+&lt;label for="tab2"&gt;Tab 2&lt;/label&gt;
+
+&lt;div class="tab-panel"&gt;Content 1&lt;/div&gt;
+&lt;div class="tab-panel"&gt;Content 2&lt;/div&gt;</code></pre>
+      <pre><code>/* Show panel when its radio is checked */
+#tab1:checked ~ .tab-content #panel1,
+#tab2:checked ~ .tab-content #panel2 {
+  display: block;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>All radios must have the same <code>name</code> attribute to form a group</li>
+        <li>Hide radios with <code>display: none</code> or <code>position: absolute; opacity: 0</code></li>
+        <li>Use <code>label for="id"</code> to make labels clickable</li>
+        <li>Hide all <code>.tab-panel</code> by default, show only with <code>#tab1:checked ~ .tab-content #panel1</code></li>
+        <li>Style the active label with <code>#tab1:checked ~ .tab-labels label[for="tab1"]</code></li>
+        <li>Order matters: radios must come before content in HTML for <code>~</code> selector to work</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="code24.html">← Prev: Code 24: Accordion</a> |
+        <a href="index.html">Home</a> |
+        <a href="code26.html">Next: Code 26: Modal →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 25 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

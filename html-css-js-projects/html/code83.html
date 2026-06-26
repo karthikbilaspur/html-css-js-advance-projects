@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 83: summary - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 83: &lt;summary&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;summary&gt;</code> element defines a visible heading for a <code>&lt;details&gt;</code> element. Clicking it toggles the details content.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic summary in details</h3>
+                <details>
+                    <summary>Click to expand</summary>
+                    <p>This content is hidden until you click the summary above.</p>
+                </details>
+
+                <h3>summary with text formatting</h3>
+                <details>
+                    <summary><strong>Important:</strong> Read before installing</summary>
+                    <p>Backup your data. Installation will overwrite existing files.</p>
+                </details>
+
+                <h3>summary with heading inside</h3>
+                <details>
+                    <summary><h4>Version 2.0 Changelog</h4></summary>
+                    <ul>
+                        <li>Fixed login bug</li>
+                        <li>Added dark mode</li>
+                        <li>Improved performance</li>
+                    </ul>
+                </details>
+                <small>Headings in summary are valid and help structure</small>
+
+                <h3>summary with image</h3>
+                <details>
+                    <summary>
+                        <img src="arrow.png" alt="arrow" width="16">
+                        Show product photos
+                    </summary>
+                    <p><img src="product1.jpg" alt="Product front" width="100"></p>
+                    <p><img src="product2.jpg" alt="Product back" width="100"></p>
+                </details>
+
+                <h3>Multiple details each with summary</h3>
+                <details>
+                    <summary>FAQ: How to reset password?</summary>
+                    <p>Go to login page and click "Forgot Password". Check your email for reset link.</p>
+                </details>
+                <details>
+                    <summary>FAQ: Where are my files stored?</summary>
+                    <p>Files are stored in <code>/Documents/AppData</code> on your local machine.</p>
+                </details>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>summary rules:</strong> Must be first child of <code>&lt;details&gt;</code>. Only one <code>&lt;summary&gt;</code> per <code>&lt;details&gt;</code>. If missing, browser shows "Details".</p>
+                <p><strong>Clickable area:</strong> The entire <code>&lt;summary&gt;</code> content is clickable. Browsers add a triangle/arrow marker by default.</p>
+                <p><strong>Content allowed:</strong> Can contain phrasing content, headings, images, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>. Avoid interactive elements like buttons or links — clicking them toggles instead.</p>
+                <p><strong>Accessibility:</strong> <code>&lt;summary&gt;</code> is the accessible name for the disclosure widget. Screen readers announce it as a button.</p>
+                <p><strong>details required:</strong> <code>&lt;summary&gt;</code> only works inside <code>&lt;details&gt;</code>. Using it alone does nothing.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code82.html">← Prev: Code 82: details tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code84.html">Next: Code 84: dialog tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 83 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

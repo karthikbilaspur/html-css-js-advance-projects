@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 49: Brand Partners Strip - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code49.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 49: Brand Partners Strip</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This creates a seamless, infinite scrolling strip of brand logos. It uses CSS <code>@keyframes</code> to animate the horizontal position of a container containing duplicated sets of logos.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="logo-strip">
+        <div class="logo-slide">
+          <span>Brand A</span> <span>Brand B</span> <span>Brand C</span> <span>Brand D</span> 
+          <span>Brand A</span> <span>Brand B</span> <span>Brand C</span> <span>Brand D</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Use <code>white-space: nowrap</code> on the container to prevent items from wrapping to a new line.</li>
+        <li>The <code>@keyframes</code> animation moves the <code>margin-left</code> or <code>transform: translateX</code> from 0 to -50%.</li>
+        <li>Ensure the total width of the logos is accounted for so the animation reset is invisible to the user.</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code48/code48.html">← Prev: Code 48: Newsletter</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code50/code50.html">Next: Code 50 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 49 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

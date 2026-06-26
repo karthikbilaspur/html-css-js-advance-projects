@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>099 - Focus OS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>099</h1>
+    <div class="score">Focus Score: <span id="score">0</span></div>
+  </header>
+
+  <nav>
+    <button data-view="plan" class="active">Plan</button>
+    <button data-view="focus">Focus</button>
+    <button data-view="review">Review</button>
+  </nav>
+
+  <main>
+    <!-- PLAN VIEW -->
+    <section id="plan" class="view active">
+      <div class="card">
+        <h2>Today's Timeblocks</h2>
+        <div id="timeline"></div>
+        <form id="block-form">
+          <input type="text" id="task" placeholder="What are you working on?" required>
+          <select id="type"><option>Deep</option><option>Shallow</option><option>Admin</option></select>
+          <input type="number" id="mins" placeholder="Minutes" value="50" min="15" step="5">
+          <button>Add Block</button>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Blocked Sites</h3>
+        <div id="blocked-list"></div>
+        <form id="block-site-form">
+          <input type="text" id="site" placeholder="instagram.com">
+          <button>+</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOCUS VIEW -->
+    <section id="focus" class="view">
+      <div class="card timer-card">
+        <div id="current-task">No active block</div>
+        <div class="timer" id="timer">25:00</div>
+        <div class="timer-controls">
+          <button id="start-btn">Start</button>
+          <button id="pause-btn" disabled>Pause</button>
+          <button id="distract-btn" class="danger">Distracted</button>
+        </div>
+        <div id="distractions"></div>
+      </div>
+    </section>
+
+    <!-- REVIEW VIEW -->
+    <section id="review" class="view">
+      <div class="card">
+        <h2>Daily Shutdown</h2>
+        <form id="shutdown-form">
+          <label>Rate today: <input type="range" id="rating" min="1" max="10" value="5"></label>
+          <textarea id="tomorrow" placeholder="Top 3 for tomorrow..."></textarea>
+          <textarea id="dump" placeholder="Brain dump..."></textarea>
+          <button>Complete Shutdown</button>
+        </form>
+      </div>
+      <div class="card">
+        <h3>This Week</h3>
+        <div id="week-heatmap"></div>
+        <div id="week-stats"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

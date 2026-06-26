@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>043-feedback-ui-design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="feedback-card" id="feedbackCard">
+            <div class="card-header">
+                <h2>Share Your Feedback</h2>
+                <p>How was your experience with us?</p>
+            </div>
+
+            <div class="emoji-rating" id="emojiRating">
+                <div class="emoji-option" data-rating="1" data-label="Terrible">
+                    <span class="emoji">😡</span>
+                    <span class="label">Terrible</span>
+                </div>
+                <div class="emoji-option" data-rating="2" data-label="Bad">
+                    <span class="emoji">😞</span>
+                    <span class="label">Bad</span>
+                </div>
+                <div class="emoji-option" data-rating="3" data-label="Okay">
+                    <span class="emoji">😐</span>
+                    <span class="label">Okay</span>
+                </div>
+                <div class="emoji-option" data-rating="4" data-label="Good">
+                    <span class="emoji">😊</span>
+                    <span class="label">Good</span>
+                </div>
+                <div class="emoji-option" data-rating="5" data-label="Amazing">
+                    <span class="emoji">🤩</span>
+                    <span class="label">Amazing</span>
+                </div>
+            </div>
+
+            <div class="star-rating" id="starRating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+
+            <div class="categories">
+                <p class="section-title">What did you like?</p>
+                <div class="tags">
+                    <button class="tag" data-tag="service">Service</button>
+                    <button class="tag" data-tag="quality">Quality</button>
+                    <button class="tag" data-tag="speed">Speed</button>
+                    <button class="tag" data-tag="price">Price</button>
+                    <button class="tag" data-tag="support">Support</button>
+                    <button class="tag" data-tag="ui">UI/UX</button>
+                </div>
+            </div>
+
+            <div class="feedback-text">
+                <label for="comment">Tell us more (optional)</label>
+                <textarea id="comment" placeholder="What can we improve?" rows="4"></textarea>
+                <div class="char-count"><span id="charCount">0</span>/500</div>
+            </div>
+
+            <button class="submit-btn" id="submitBtn" disabled>
+                <span class="btn-text">Submit Feedback</span>
+                <span class="btn-loader"></span>
+            </button>
+        </div>
+
+        <div class="success-card" id="successCard">
+            <div class="success-icon">✓</div>
+            <h2>Thank You!</h2>
+            <p>Your feedback helps us improve</p>
+            <div class="submitted-rating" id="submittedRating"></div>
+            <button class="btn-secondary" id="resetBtn">Send Another</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing App 81</title>
+    <link rel="stylesheet" href="code81.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Drawing Canvas</h1>
+        </header>
+
+        <div class="toolbar">
+            <div class="tool-group">
+                <label>Color</label>
+                <input type="color" id="color-picker" value="#e94560">
+                <div class="color-presets">
+                    <button class="preset" data-color="#000000" style="background: #000000"></button>
+                    <button class="preset" data-color="#e94560" style="background: #e94560"></button>
+                    <button class="preset" data-color="#667eea" style="background: #667eea"></button>
+                    <button class="preset" data-color="#f093fb" style="background: #f093fb"></button>
+                    <button class="preset" data-color="#4facfe" style="background: #4facfe"></button>
+                    <button class="preset" data-color="#43e97b" style="background: #43e97b"></button>
+                    <button class="preset" data-color="#f9ca24" style="background: #f9ca24"></button>
+                    <button class="preset" data-color="#ffffff" style="background: #ffffff; border: 1px solid #ccc"></button>
+                </div>
+            </div>
+
+            <div class="tool-group">
+                <label>Brush Size: <span id="size-display">5</span>px</label>
+                <input type="range" id="brush-size" min="1" max="50" value="5">
+            </div>
+
+            <div class="tool-group">
+                <button id="brush-tool" class="tool-btn active" title="Brush">
+                    <i class="fas fa-paint-brush"></i>
+                </button>
+                <button id="eraser-tool" class="tool-btn" title="Eraser">
+                    <i class="fas fa-eraser"></i>
+                </button>
+                <button id="line-tool" class="tool-btn" title="Line">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button id="rect-tool" class="tool-btn" title="Rectangle">
+                    <i class="far fa-square"></i>
+                </button>
+                <button id="circle-tool" class="tool-btn" title="Circle">
+                    <i class="far fa-circle"></i>
+                </button>
+            </div>
+
+            <div class="tool-group">
+                <button id="undo-btn" title="Undo (Ctrl+Z)">
+                    <i class="fas fa-undo"></i>
+                </button>
+                <button id="redo-btn" title="Redo (Ctrl+Y)">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button id="clear-btn" title="Clear Canvas">
+                    <i class="fas fa-trash"></i>
+                </button>
+                <button id="save-btn" title="Save as PNG">
+                    <i class="fas fa-download"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="canvas"></canvas>
+            <canvas id="preview-canvas"></canvas>
+        </div>
+
+        <div class="status-bar">
+            <span id="coords">X: 0, Y: 0</span>
+            <span id="canvas-size">800 × 600</span>
+        </div>
+    </div>
+
+    <script src="code81.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 6: Product Card - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code6.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 6: Product Card</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This project builds a product card with image, title, price, and "Add to Cart" button using only HTML + CSS.</p>
+      <p>It demonstrates <code>object-fit: cover</code> for images, <code>position: absolute</code> for badges, and <code>transition</code> + <code>transform</code> for hover effects.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="products-grid">
+        <article class="product-card">
+          <div class="product-image">
+            <img 
+              src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop" 
+              alt="Smart Watch"
+            >
+            <span class="badge">Sale</span>
+          </div>
+          <div class="product-info">
+            <h3>Smart Watch Pro</h3>
+            <div class="price">
+              <span class="price-new">₹3,999</span>
+              <span class="price-old">₹5,999</span>
+            </div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img 
+              src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" 
+              alt="Wireless Headphones"
+            >
+            <span class="badge badge-new">New</span>
+          </div>
+          <div class="product-info">
+            <h3>Wireless Headphones</h3>
+            <div class="price">
+              <span class="price-new">₹2,499</span>
+            </div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img 
+              src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=400&h=400&fit=crop" 
+              alt="Bluetooth Speaker"
+            >
+          </div>
+          <div class="product-info">
+            <h3>Bluetooth Speaker</h3>
+            <div class="price">
+              <span class="price-new">₹1,799</span>
+              <span class="price-old">₹2,299</span>
+            </div>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;article class="product-card"&gt;
+  &lt;div class="product-image"&gt;
+    &lt;img src="watch.jpg" alt="Smart Watch"&gt;
+    &lt;span class="badge"&gt;Sale&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="product-info"&gt;
+    &lt;h3&gt;Smart Watch Pro&lt;/h3&gt;
+    &lt;div class="price"&gt;
+      &lt;span class="price-new"&gt;₹3,999&lt;/span&gt;
+      &lt;span class="price-old"&gt;₹5,999&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;button class="btn-cart"&gt;Add to Cart&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Wrap image in a div with <code>overflow: hidden</code> to contain zoom effect</li>
+        <li>Use <code>object-fit: cover</code> so images fill the space without stretching</li>
+        <li><code>position: absolute</code> on badges to place them over images</li>
+        <li><code>transform: scale()</code> on <code>:hover</code> for image zoom</li>
+        <li>Use <code>text-decoration: line-through</code> for old price</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code5/code5.html">← Prev: Code 5: Business Card</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code7/code7.html">Next: Code 7 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 6 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

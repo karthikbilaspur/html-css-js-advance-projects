@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>64 Item Modal Slider Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <h1>Modal Slider Menu Demo</h1>
+        <button id="openModal">Open Menu - 64 Items</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Menu Items</h2>
+                <span class="close">&times;</span>
+            </div>
+
+            <div class="slider-container">
+                <button class="nav-btn prev">&#10094;</button>
+                <div class="slider" id="slider"></div>
+                <button class="nav-btn next">&#10095;</button>
+            </div>
+
+            <div class="modal-footer">
+                <span id="counter">1 / 64</span>
+                <div class="dots" id="dots"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

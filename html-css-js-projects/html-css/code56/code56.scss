@@ -1,0 +1,204 @@
+// Variables
+$brand-color: #7c3aed;
+$text-primary: #0f172a;
+$text-secondary: #64748b;
+$border-color: #e2e8f0;
+$bg-sidebar: #f8fafc;
+$max-width: 1280px;
+$sidebar-width: 260px;
+
+// Base + Smooth Scroll
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem; // offset for sticky header if you add one
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  color: $text-primary;
+  margin: 0;
+}
+
+.page-header {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid $border-color;
+  
+  .back-link {
+    color: $brand-color;
+    text-decoration: none;
+    font-size: 0.9rem;
+    &:hover { text-decoration: underline; }
+  }
+  
+  h1 {
+    margin: 0.5rem 0 0;
+    font-size: 2rem;
+  }
+}
+
+// Main Layout: Sidebar + Content
+.layout-wrapper {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: $sidebar-width 1fr;
+    align-items: start;
+  }
+}
+
+// Sticky Table of Contents Sidebar
+.toc-sidebar {
+  @media (min-width: 1024px) {
+    position: sticky;
+    top: 2rem; // sticks 2rem from top of viewport
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+}
+
+.toc-nav {
+  background: $bg-sidebar;
+  border: 1px solid $border-color;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.toc-title {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $text-secondary;
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  li {
+    margin-bottom: 0.5rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.toc-sublist {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding-left: 1rem;
+  border-left: 2px solid $border-color;
+}
+
+.toc-link {
+  display: block;
+  color: $text-secondary;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+  border-left: 2px solid transparent;
+  padding-left: 0.75rem;
+  margin-left: -0.75rem;
+  transition: all 0.15s ease;
+  
+  &:hover {
+    color: $brand-color;
+    border-left-color: $brand-color;
+  }
+  
+  // Active state - you can add with JS: .active
+  &.active {
+    color: $brand-color;
+    font-weight: 600;
+    border-left-color: $brand-color;
+  }
+}
+
+// Main Content Area
+.content-area {
+  min-width: 0; // prevents grid blowout
+}
+
+.article-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $border-color;
+  
+  h2 {
+    margin: 0 0 0.75rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .article-lead {
+    margin: 0;
+    font-size: 1.2rem;
+    color: $text-secondary;
+  }
+}
+
+.content-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 2rem; // ensures anchors don't hide under sticky elements
+  
+  h3 {
+    margin: 0 0 1rem;
+    font-size: 1.75rem;
+    color: $text-primary;
+  }
+  
+  h4 {
+    margin: 2rem 0 0.75rem;
+    font-size: 1.25rem;
+    color: $text-primary;
+  }
+  
+  p {
+    margin: 0 0 1.25rem;
+    font-size: 1.05rem;
+  }
+  
+  code {
+    font-family: 'Courier New', monospace;
+    background: $bg-sidebar;
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    color: $brand-color;
+    border: 1px solid $border-color;
+  }
+}
+
+.pagination-nav {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+  text-align: center;
+  
+  hr {
+    border: none;
+    border-top: 1px solid $border-color;
+    margin: 3rem 0 1rem;
+  }
+  
+  p {
+    margin: 0;
+    
+    a {
+      color: $brand-color;
+      text-decoration: none;
+      &:hover { text-decoration: underline; }
+    }
+  }
+}

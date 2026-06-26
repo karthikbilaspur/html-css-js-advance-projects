@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game 66</title>
+    <link rel="stylesheet" href="code66.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Snake Game</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">Score</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">High Score</span>
+                    <span id="high-score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-wrapper">
+            <canvas id="game-canvas" width="400" height="400"></canvas>
+            
+            <div id="start-screen" class="overlay">
+                <h2>Snake Game</h2>
+                <p>Use arrow keys to move</p>
+                <button id="start-btn">Start Game</button>
+            </div>
+
+            <div id="game-over-screen" class="overlay hidden">
+                <h2>Game Over</h2>
+                <p>Final Score: <span id="final-score">0</span></p>
+                <button id="restart-btn">Play Again</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <p>🎮 Arrow Keys or WASD to move</p>
+            <p>Press Space to pause</p>
+        </div>
+    </div>
+
+    <script src="code66.js"></script>
+</body>
+</html>

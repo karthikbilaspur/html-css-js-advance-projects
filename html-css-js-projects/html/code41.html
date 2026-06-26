@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 41: audio - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 41: &lt;audio&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;audio&gt;</code> element embeds sound content in documents. Use <code>&lt;source&gt;</code> for multiple formats.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic audio with controls</h3>
+                <audio src="podcast.mp3" controls>
+                    Your browser does not support the audio element.
+                </audio>
+
+                <h3>Multiple formats with source</h3>
+                <audio controls preload="metadata">
+                    <source src="song.ogg" type="audio/ogg">
+                    <source src="song.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+
+                <h3>Autoplay muted + loop</h3>
+                <audio src="ambient.mp3" autoplay muted loop controls></audio>
+
+                <h3>With caption track</h3>
+                <audio src="interview.mp3" controls>
+                    <source src="interview.mp3" type="audio/mpeg">
+                    <track kind="captions" src="interview.vtt" srclang="en" label="English">
+                    Your browser does not support the audio element.
+                </audio>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>Key attributes:</strong> <code>controls</code> shows play/pause UI. <code>autoplay</code> starts immediately — most browsers block it unless <code>muted</code> is also set. <code>loop</code> repeats. <code>preload="none|metadata|auto"</code> controls loading. <code>src</code> or nested <code>&lt;source&gt;</code> elements set the file.</p>
+                <p><strong>Fallback text:</strong> Content inside <code>&lt;audio&gt;</code> shows if the browser doesn't support it. Always include multiple <code>&lt;source&gt;</code> formats for browser compatibility: MP3 + OGG or AAC.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code40.html">← Prev: Code 40: figcaption tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code42.html">Next: Code 42: source tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 41 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

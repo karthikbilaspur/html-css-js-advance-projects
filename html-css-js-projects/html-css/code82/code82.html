@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 82 - Tooltip</title>
+    <link rel="stylesheet" href="code82.css">
+</head>
+<body>
+  <main>
+    <h1 class="page-title">CSS Tooltips</h1>
+    
+    <section class="tooltip-section">
+      <h2>Hover Over Elements</h2>
+      <p class="description">Tooltips appear using <code>::after</code> and <code>:hover</code></p>
+      
+      <div class="tooltip-group">
+        <button class="tooltip-btn" data-tooltip="Click to save your changes">
+          Save
+        </button>
+
+        <button class="tooltip-btn" data-tooltip="Delete this item permanently">
+          Delete
+        </button>
+
+        <button class="tooltip-btn" data-tooltip="Share with your team">
+          Share
+        </button>
+      </div>
+
+      <div class="tooltip-group">
+        <span class="tooltip-icon" data-tooltip="More information available">ℹ️</span>
+        <span class="tooltip-icon" data-tooltip="Warning: This action cannot be undone">⚠️</span>
+        <span class="tooltip-icon" data-tooltip="Success! Operation completed">✅</span>
+      </div>
+
+      <div class="tooltip-group">
+        <a href="#" class="tooltip-link" data-tooltip="Visit our documentation">Docs</a>
+        <a href="#" class="tooltip-link" data-tooltip="Contact support team">Help</a>
+        <a href="#" class="tooltip-link" data-tooltip="View your profile">Account</a>
+      </div>
+    </section>
+
+    <section class="tooltip-section">
+      <h2>Tooltip Positions</h2>
+      <div class="tooltip-group">
+        <button class="tooltip-btn tooltip-top" data-tooltip="Tooltip on top">
+          Top
+        </button>
+        <button class="tooltip-btn tooltip-bottom" data-tooltip="Tooltip on bottom">
+          Bottom
+        </button>
+        <button class="tooltip-btn tooltip-left" data-tooltip="Tooltip on left">
+          Left
+        </button>
+        <button class="tooltip-btn tooltip-right" data-tooltip="Tooltip on right">
+          Right
+        </button>
+      </div>
+    </section>
+    
+    <nav>
+      <hr>
+      <p>
+        <a href="../code81/code81.html">← Prev: Code 81</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code83/code83.html">Next: Code 83 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 82 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

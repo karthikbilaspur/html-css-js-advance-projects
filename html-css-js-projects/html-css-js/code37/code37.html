@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 37: Border Radius Generator | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code37.css">
+  <script src="code37.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 37: Border Radius Generator</h1>
+    <p class="subtitle">Create custom rounded corners</p>
+  </header>
+
+  <div class="generator-container">
+    <div class="preview-section">
+      <div class="preview-wrapper">
+        <div class="preview-box" id="previewBox">
+          <div class="box-content">Preview</div>
+          <!-- 8 corner handles -->
+          <div class="handle tl-h" data-corner="tl" data-axis="h"></div>
+          <div class="handle tl-v" data-corner="tl" data-axis="v"></div>
+          <div class="handle tr-h" data-corner="tr" data-axis="h"></div>
+          <div class="handle tr-v" data-corner="tr" data-axis="v"></div>
+          <div class="handle br-h" data-corner="br" data-axis="h"></div>
+          <div class="handle br-v" data-corner="br" data-axis="v"></div>
+          <div class="handle bl-h" data-corner="bl" data-axis="h"></div>
+          <div class="handle bl-v" data-corner="bl" data-axis="v"></div>
+        </div>
+      </div>
+
+      <div class="css-output">
+        <label>CSS Code</label>
+        <div class="code-box">
+          <code id="cssCode">border-radius: 20px;</code>
+          <button id="copyBtn" class="copy-btn">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="mode-toggle">
+        <button class="mode-btn active" data-mode="all">All Corners</button>
+        <button class="mode-btn" data-mode="individual">Individual</button>
+      </div>
+
+      <div class="all-corners" id="allCorners">
+        <div class="control-group">
+          <label>Radius: <span id="allValue">20px</span></label>
+          <input type="range" id="allSlider" min="0" max="100" value="20">
+        </div>
+      </div>
+
+      <div class="individual-corners" id="individualCorners" style="display: none;">
+        <div class="corner-group">
+          <h4>Top Left</h4>
+          <label>Horizontal: <span id="tlhValue">20px</span></label>
+          <input type="range" id="tlh" min="0" max="100" value="20">
+          <label>Vertical: <span id="tlvValue">20px</span></label>
+          <input type="range" id="tlv" min="0" max="100" value="20">
+        </div>
+
+        <div class="corner-group">
+          <h4>Top Right</h4>
+          <label>Horizontal: <span id="trhValue">20px</span></label>
+          <input type="range" id="trh" min="0" max="100" value="20">
+          <label>Vertical: <span id="trvValue">20px</span></label>
+          <input type="range" id="trv" min="0" max="100" value="20">
+        </div>
+
+        <div class="corner-group">
+          <h4>Bottom Right</h4>
+          <label>Horizontal: <span id="brhValue">20px</span></label>
+          <input type="range" id="brh" min="0" max="100" value="20">
+          <label>Vertical: <span id="brvValue">20px</span></label>
+          <input type="range" id="brv" min="0" max="100" value="20">
+        </div>
+
+        <div class="corner-group">
+          <h4>Bottom Left</h4>
+          <label>Horizontal: <span id="blhValue">20px</span></label>
+          <input type="range" id="blh" min="0" max="100" value="20">
+          <label>Vertical: <span id="blvValue">20px</span></label>
+          <input type="range" id="blv" min="0" max="100" value="20">
+        </div>
+      </div>
+
+      <div class="shape-controls">
+        <label>Preview Shape</label>
+        <div class="shape-buttons">
+          <button class="shape-btn active" data-shape="square">Square</button>
+          <button class="shape-btn" data-shape="circle">Circle</button>
+          <button class="shape-btn" data-shape="rect">Rectangle</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="presets-section">
+      <h3>Presets</h3>
+      <div class="preset-grid" id="presetGrid"></div>
+    </div>
+  </div>
+</body>
+</html>

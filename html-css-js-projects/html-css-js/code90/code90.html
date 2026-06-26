@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code90 Form Builder</title>
+    <link rel="stylesheet" href="code90.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>Code90 Form Builder</h1>
+            <div class="header-actions">
+                <button id="preview-btn" class="btn-primary">Preview Form</button>
+                <button id="export-json">Export JSON Schema</button>
+                <button id="export-html">Export HTML</button>
+                <button id="clear-btn" class="btn-danger">Clear All</button>
+            </div>
+        </header>
+
+        <div class="main">
+            <aside class="sidebar">
+                <h3>Form Fields</h3>
+                <p class="hint">Drag to canvas</p>
+
+                <div class="field-palette">
+                    <div class="field-item" draggable="true" data-type="text">
+                        <span class="icon">📝</span>
+                        <span>Text Input</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-type="email">
+                        <span class="icon">📧</span>
+                        <span>Email</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-type="number">
+                        <span class="icon">🔢</span>
+                        <span>Number</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-type="textarea">
+                        <span class="icon">📄</span>
+                        <span>Textarea</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-type="select">
+                        <span class="icon">📋</span>
+                        <span>Dropdown</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-type="radio">
+                        <span class="icon">🔘</span>
+                        <span>Radio Group</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-type="checkbox">
+                        <span class="icon">☑️</span>
+                        <span>Checkbox</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-type="date">
+                        <span class="icon">📅</span>
+                        <span>Date</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-type="file">
+                        <span class="icon">📎</span>
+                        <span>File Upload</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-type="section">
+                        <span class="icon">➖</span>
+                        <span>Section Header</span>
+                    </div>
+                </div>
+
+                <div class="form-settings">
+                    <h3>Form Settings</h3>
+                    <label>
+                        Form Title
+                        <input type="text" id="form-title" value="My Form" placeholder="Form title">
+                    </label>
+                    <label>
+                        Description
+                        <textarea id="form-desc" placeholder="Form description" rows="2"></textarea>
+                    </label>
+                </div>
+            </aside>
+
+            <div class="canvas-wrapper">
+                <div class="canvas-header">
+                    <h2 id="canvas-title">My Form</h2>
+                    <p id="canvas-desc"></p>
+                </div>
+                <div id="form-canvas" class="form-canvas">
+                    <div class="empty-state">
+                        <div class="empty-icon">🎨</div>
+                        <p>Drag fields here to build your form</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="properties-panel" id="properties-panel">
+                <h3>Field Properties</h3>
+                <div id="properties-content">
+                    <p class="hint">Select a field to edit</p>
+                </div>
+            </aside>
+        </div>
+
+        <div id="preview-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Form Preview</h2>
+                    <button class="close-btn" id="close-preview">✕</button>
+                </div>
+                <div id="preview-body" class="modal-body"></div>
+            </div>
+        </div>
+
+        <div id="export-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="export-title">Export</h2>
+                    <button class="close-btn" id="close-export">✕</button>
+                </div>
+                <div class="modal-body">
+                    <pre id="export-content"></pre>
+                    <button id="copy-export" class="btn-primary">Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="code90.js"></script>
+</body>
+</html>

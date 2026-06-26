@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Asteroids 079</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="hud">
+      <div class="hud-item">Score: <span id="score">0</span></div>
+      <div class="hud-item">Lives: <span id="lives">3</span></div>
+      <div class="hud-item">Level: <span id="level">1</span></div>
+    </div>
+
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas"></canvas>
+
+      <div class="overlay" id="menuScreen">
+        <h2>ASTEROIDS</h2>
+        <button id="startBtn">Start Game</button>
+        <div class="controls-info">
+          <p>↑ Thrust | ← → Rotate | Space Shoot</p>
+          <p>Mobile: Touch buttons below</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="gameOverScreen">
+        <h2>Game Over</h2>
+        <p>Final Score: <span id="finalScore">0</span></p>
+        <p>Best: <span id="bestScore">0</span></p>
+        <button id="restartBtn">Play Again</button>
+        <button id="menuBtn">Main Menu</button>
+      </div>
+
+      <div class="overlay" id="levelScreen">
+        <h2>Level <span id="levelNum">2</span></h2>
+        <p>Get Ready!</p>
+      </div>
+    </div>
+
+    <div class="mobile-controls" id="mobileControls">
+      <div class="left-controls">
+        <button class="control-btn" id="leftBtn">⟲</button>
+        <button class="control-btn" id="rightBtn">⟳</button>
+      </div>
+      <div class="right-controls">
+        <button class="control-btn thrust-btn" id="thrustBtn">▲</button>
+        <button class="control-btn fire-btn" id="fireBtn">●</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

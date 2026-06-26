@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 31: Rock Paper Scissors Pro | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code31.css">
+  <script src="code31.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 31: Rock Paper Scissors Pro</h1>
+  </header>
+
+  <div class="game-container">
+    <div class="mode-selector">
+      <button class="mode-btn active" data-mode="∞">∞ Endless</button>
+      <button class="mode-btn" data-mode="3">Best of 3</button>
+      <button class="mode-btn" data-mode="5">Best of 5</button>
+    </div>
+
+    <div class="score-board">
+      <div class="score-item player">
+        <div class="score-label">You</div>
+        <div class="score-value" id="playerScore">0</div>
+        <div class="streak" id="playerStreak"></div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="score-item computer">
+        <div class="score-label">Computer</div>
+        <div class="score-value" id="computerScore">0</div>
+        <div class="streak" id="computerStreak"></div>
+      </div>
+    </div>
+
+    <div class="battle-area">
+      <div class="choice-display player-choice" id="playerChoice">
+        <div class="choice-icon">❓</div>
+        <p>You</p>
+      </div>
+      <div class="result-text" id="resultText">Choose your move!</div>
+      <div class="choice-display computer-choice" id="computerChoice">
+        <div class="choice-icon">❓</div>
+        <p>CPU</p>
+      </div>
+    </div>
+
+    <div class="choices">
+      <button class="choice-btn" data-choice="rock">
+        <span class="emoji">🪨</span>
+        <span class="label">Rock</span>
+        <kbd>R</kbd>
+      </button>
+      <button class="choice-btn" data-choice="paper">
+        <span class="emoji">📄</span>
+        <span class="label">Paper</span>
+        <kbd>P</kbd>
+      </button>
+      <button class="choice-btn" data-choice="scissors">
+        <span class="emoji">✂️</span>
+        <span class="label">Scissors</span>
+        <kbd>S</kbd>
+      </button>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat">Games: <span id="totalGames">0</span></div>
+      <div class="stat">Win Rate: <span id="winRate">0%</span></div>
+      <div class="stat">Best Streak: <span id="bestStreak">0</span></div>
+    </div>
+
+    <div class="history-section">
+      <div class="history-header">
+        <h3>Round History</h3>
+        <button id="resetBtn" class="reset-btn">Reset Game</button>
+      </div>
+      <div id="historyList"></div>
+    </div>
+  </div>
+</body>
+</html>

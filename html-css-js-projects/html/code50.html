@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 50: svg - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 50: &lt;svg&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;svg&gt;</code> element defines scalable vector graphics. SVG images stay crisp at any size and can be styled or scripted inline.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic shapes</h3>
+                <svg width="200" height="100" viewBox="0 0 200 100">
+                    <rect x="10" y="10" width="80" height="80" fill="blue" />
+                    <circle cx="150" cy="50" r="40" fill="red" />
+                </svg>
+
+                <h3>Icon with text</h3>
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-labelledby="home-title">
+                    <title id="home-title">Home icon</title>
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor" />
+                </svg>
+
+                <h3>Line and polyline</h3>
+                <svg width="300" height="100" viewBox="0 0 300 100">
+                    <line x1="0" y1="50" x2="300" y2="50" stroke="black" stroke-width="2" />
+                    <polyline points="0,80 50,20 100,80 150,20 200,80 250,20 300,80" fill="none" stroke="green" stroke-width="3" />
+                </svg>
+
+                <h3>Text in SVG</h3>
+                <svg width="200" height="60" viewBox="0 0 200 60">
+                    <text x="10" y="40" font-family="Arial" font-size="30" fill="black">SVG Text</text>
+                </svg>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>svg rules:</strong> <code>&lt;svg&gt;</code> is an XML-based vector format. Unlike <code>&lt;canvas&gt;</code>, SVG shapes are DOM elements and remain accessible to CSS/JS.</p>
+                <p><strong>Key attributes:</strong> <code>width</code> and <code>height</code> set display size. <code>viewBox="0 0 100 100"</code> sets the internal coordinate system. This lets SVG scale without distortion.</p>
+                <p><strong>Common elements:</strong> <code>&lt;rect&gt;</code>, <code>&lt;circle&gt;</code>, <code>&lt;path&gt;</code>, <code>&lt;line&gt;</code>, <code>&lt;polyline&gt;</code>, <code>&lt;text&gt;</code>. Use <code>fill</code>, <code>stroke</code>, <code>stroke-width</code> for styling.</p>
+                <p><strong>Accessibility:</strong> Add <code>&lt;title&gt;</code> and <code>aria-labelledby</code> for screen readers. Use <code>role="img"</code> if SVG is standalone. Inline SVG beats <code>&lt;img src="icon.svg"&gt;</code> for styling control.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code49.html">← Prev: Code 49: canvas tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code51.html">Next: Code 51: math tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 50 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

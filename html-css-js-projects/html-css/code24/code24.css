@@ -1,0 +1,138 @@
+/* Base docs styles */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header h1 {
+  margin: 0.5rem 0 2rem 0;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.demo-area {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0 2rem 0;
+  background: #fafafa;
+}
+
+/* Base breadcrumb styles */
+.breadcrumb {
+  font-size: 0.95rem;
+}
+
+.breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb a {
+  color: #4dabf7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: #1c7ed6;
+  text-decoration: underline;
+}
+
+.breadcrumb li[aria-current="page"] {
+  color: #666;
+  font-weight: 500;
+}
+
+/* Style 1: Slash separator */
+.breadcrumb-slash li:not(:last-child)::after {
+  content: "/";
+  margin: 0 0.75rem;
+  color: #ccc;
+  font-weight: 300;
+}
+
+/* Style 2: Arrow separator */
+.breadcrumb-arrow li:not(:last-child)::after {
+  content: "›";
+  margin: 0 0.75rem;
+  color: #999;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* Style 3: Pills style */
+.breadcrumb-pills {
+  background: #f1f3f5;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.breadcrumb-pills li:not(:last-child)::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid #adb5bd;
+  border-right: 2px solid #adb5bd;
+  transform: rotate(45deg);
+  margin: 0 0.75rem;
+}
+
+.breadcrumb-pills a {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.breadcrumb-pills a:hover {
+  background: #e9ecef;
+  text-decoration: none;
+}
+
+.breadcrumb-pills li[aria-current="page"] {
+  background: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Mobile: truncate middle items */
+@media (max-width: 600px) {
+ .breadcrumb li:not(:first-child):not(:last-child):not(:nth-last-child(2)) {
+    display: none;
+  }
+  
+ .breadcrumb li:nth-last-child(2)::before {
+    content: "...";
+    margin: 0 0.5rem;
+    color: #999;
+  }
+}

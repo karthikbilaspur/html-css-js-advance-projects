@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 99 - Lumina Ring Docs</title>
+  <link rel="stylesheet" href="code99.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo">Lumina Docs</div>
+    <div class="search">
+      <input type="search" placeholder="Search docs...">
+    </div>
+  </header>
+
+  <div class="docs-container">
+    <aside class="sidebar">
+      <nav>
+        <div class="nav-section">
+          <h3>Getting Started</h3>
+          <ul>
+            <li><a href="#intro" class="active">Introduction</a></li>
+            <li><a href="#quickstart">Quick Start</a></li>
+            <li><a href="#installation">Installation</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h3>API Reference</h3>
+          <ul>
+            <li><a href="#auth">Authentication</a></li>
+            <li><a href="#users">Users API</a></li>
+            <li><a href="#data">Health Data API</a></li>
+            <li><a href="#webhooks">Webhooks</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h3>Guides</h3>
+          <ul>
+            <li><a href="#sleep">Sleep Analysis</a></li>
+            <li><a href="#hrv">HRV Monitoring</a></li>
+            <li><a href="#errors">Error Handling</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#changelog">Changelog</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <article id="intro">
+        <h1>Introduction</h1>
+        <p class="lead">Welcome to the Lumina Ring API documentation. Use our REST API to access health data, manage users, and build integrations with the Lumina ecosystem.</p>
+        
+        <div class="callout info">
+          <strong>Base URL:</strong> <code>https://api.lumina.dev/v1</code>
+        </div>
+
+        <h2 id="quickstart">Quick Start</h2>
+        <p>Get your API key from the <a href="#">developer dashboard</a> and make your first request:</p>
+        
+        <pre><code>curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.lumina.dev/v1/user/profile</code></pre>
+
+        <h2 id="installation">Installation</h2>
+        <p>Install our official SDKs for faster development:</p>
+        
+        <h4>Node.js</h4>
+        <pre><code>npm install @lumina/sdk</code></pre>
+
+        <h4>Python</h4>
+        <pre><code>pip install lumina-ring</code></pre>
+      </article>
+
+      <article id="auth">
+        <h1>Authentication</h1>
+        <p>All API requests must include your API key in the Authorization header.</p>
+        
+        <pre><code>Authorization: Bearer lm_sk_1234567890abcdef</code></pre>
+
+        <div class="callout warning">
+          <strong>Keep your API keys secure.</strong> Do not expose them in client-side code or public repositories.
+        </div>
+
+        <h3>Rate Limits</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Plan</th>
+              <th>Requests/min</th>
+              <th>Requests/day</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Free</td>
+              <td>60</td>
+              <td>1,000</td>
+            </tr>
+            <tr>
+              <td>Pro</td>
+              <td>600</td>
+              <td>100,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article id="data">
+        <h1>Health Data API</h1>
+        <p>Retrieve sleep, activity, and heart rate data for authenticated users.</p>
+
+        <h3>GET /data/sleep</h3>
+        <p>Returns sleep data for a date range.</p>
+        
+        <h4>Query Parameters</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>start_date</code></td>
+              <td>string</td>
+              <td>ISO 8601 date: YYYY-MM-DD</td>
+            </tr>
+            <tr>
+              <td><code>end_date</code></td>
+              <td>string</td>
+              <td>ISO 8601 date: YYYY-MM-DD</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example Response</h4>
+        <pre><code>{
+  "data": [
+    {
+      "date": "2026-06-17",
+      "duration": 28800,
+      "deep_sleep": 7200,
+      "rem_sleep": 5400,
+      "score": 85
+    }
+  ]
+}</code></pre>
+      </article>
+
+      <article id="errors">
+        <h1>Error Handling</h1>
+        <p>The API uses standard HTTP status codes to indicate success or failure.</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>200</code></td>
+              <td>Success</td>
+            </tr>
+            <tr>
+              <td><code>401</code></td>
+              <td>Unauthorized - Invalid API key</td>
+            </tr>
+            <tr>
+              <td><code>429</code></td>
+              <td>Too Many Requests - Rate limit exceeded</td>
+            </tr>
+            <tr>
+              <td><code>500</code></td>
+              <td>Internal Server Error</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <nav class="page-footer-nav">
+        <hr>
+        <p>
+          <a href="../code98/code98.html">← Prev: Code 98</a> |
+          <a href="../index.html">Home</a> |
+          <a href="../code100/code100.html">Next: Code 100 →</a>
+        </p>
+      </nav>
+    </main>
+  </div>
+
+  <footer class="docs-footer">
+    <p>&copy; 2026 Lumina Labs. <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+  </footer>
+</body>
+</html>

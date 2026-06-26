@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 81: col - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 81: &lt;col&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;col&gt;</code> element defines column properties in a table. Must be inside <code>&lt;colgroup&gt;</code>. Used to apply attributes to entire columns.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic col with span</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <colgroup>
+                        <col span="2">
+                        <col>
+                    </colgroup>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                    </tr>
+                    <tr>
+                        <td>Rohan</td>
+                        <td>25</td>
+                        <td>Mumbai</td>
+                    </tr>
+                    <tr>
+                        <td>Simran</td>
+                        <td>22</td>
+                        <td>Pune</td>
+                    </tr>
+                </table>
+                <small>First col applies to 2 columns, second col to 1 column</small>
+
+                <h3>col with style hint</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <tr>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Monitor</td>
+                        <td>5</td>
+                        <td>₹8000</td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td>10</td>
+                        <td>₹500</td>
+                    </tr>
+                </table>
+                <small>col can carry style for whole column, though CSS classes preferred</small>
+
+                <h3>col with width attribute</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <colgroup>
+                        <col width="200">
+                        <col width="100">
+                        <col width="150">
+                    </colgroup>
+                    <tr>
+                        <th>Description</th>
+                        <th>Code</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>Very long product description text here</td>
+                        <td>A101</td>
+                        <td>In Stock</td>
+                    </tr>
+                </table>
+                <small>width is obsolete in HTML5, use CSS instead</small>
+
+                <h3>Multiple col elements</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <tr>
+                        <th>Q1</th>
+                        <th>Q2</th>
+                        <th>Q3</th>
+                        <th>Q4</th>
+                    </tr>
+                    <tr>
+                        <td>10k</td>
+                        <td>15k</td>
+                        <td>12k</td>
+                        <td>18k</td>
+                    </tr>
+                </table>
+                <small>Each col represents one table column in order</small>
+
+                <h3>col with class for CSS</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <colgroup>
+                        <col class="item-col">
+                        <col class="num-col">
+                    </colgroup>
+                    <tr>
+                        <th>Item</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td>Rent</td>
+                        <td>₹12000</td>
+                    </tr>
+                    <tr>
+                        <td>Food</td>
+                        <td>₹4000</td>
+                    </tr>
+                </table>
+                <small>Modern way: use class on col for styling columns</small>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>col rules:</strong> <code>&lt;col&gt;</code> is empty — no closing tag. Must be inside <code>&lt;colgroup&gt;</code>. Defines properties for columns left to right.</p>
+                <p><strong>span attribute:</strong> <code>&lt;col span="3"&gt;</code> makes that col element apply to 3 columns. Default span is 1.</p>
+                <p><strong>Limited styling:</strong> Only few CSS properties work on <code>&lt;col&gt;</code>: background, border, width, visibility. Text styles don't apply.</p>
+                <p><strong>Modern approach:</strong> HTML5 made <code>width</code>, <code>align</code>, <code>bgcolor</code> obsolete. Use CSS with <code>&lt;col class="name"&gt;</code> instead.</p>
+                <p><strong>colgroup required:</strong> <code>&lt;col&gt;</code> cannot be direct child of <code>&lt;table&gt;</code>. Always wrap in <code>&lt;colgroup&gt;</code> even if you have one column.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code80.html">← Prev: Code 80: colgroup tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code82.html">Next: Code 82: form tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 81 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Platformer 080</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Platformer</h1>
+    <div class="stats">
+      <div class="stat">Coins: <span id="coins">0</span></div>
+      <div class="stat">Lives: <span id="lives">3</span></div>
+      <div class="stat">Time: <span id="time">300</span></div>
+    </div>
+
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas"></canvas>
+
+      <div class="overlay" id="menuScreen">
+        <h2>Platformer</h2>
+        <p>Collect coins, avoid enemies</p>
+        <button id="startBtn">Start Game</button>
+        <div class="controls-info">
+          <p>A D / ← → Move | W / ↑ / Space Jump</p>
+          <p>Mobile: Touch buttons</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="gameOverScreen">
+        <h2 id="gameOverText">Game Over</h2>
+        <p>Coins: <span id="finalCoins">0</span></p>
+        <button id="restartBtn">Play Again</button>
+        <button id="menuBtn">Main Menu</button>
+      </div>
+
+      <div class="overlay" id="winScreen">
+        <h2>You Win!</h2>
+        <p>Coins: <span id="winCoins">0</span></p>
+        <p>Time Bonus: <span id="timeBonus">0</span></p>
+        <button id="playAgainBtn">Play Again</button>
+      </div>
+    </div>
+
+    <div class="mobile-controls" id="mobileControls">
+      <div class="dpad">
+        <button class="control-btn" id="leftBtn">◀</button>
+        <button class="control-btn" id="rightBtn">▶</button>
+      </div>
+      <button class="control-btn jump-btn" id="jumpBtn">▲</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

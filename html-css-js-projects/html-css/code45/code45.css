@@ -1,0 +1,30 @@
+/* Define the integer property for animation */
+@property --num {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+
+/* Base Style */
+body { font-family: sans-serif; line-height: 1.6; max-width: 900px; margin: auto; padding: 20px; }
+
+.stats { display: flex; gap: 50px; justify-content: center; padding: 50px; }
+
+.stat-item {
+  font-size: 2rem;
+  font-weight: bold;
+  animation: count 3s linear forwards;
+  counter-reset: num var(--num);
+}
+
+.stat-item span::before {
+  content: counter(num);
+}
+
+@keyframes count {
+  from { --num: 0; }
+  to { --num: var(--end); }
+}
+
+/* --- Footer --- */
+footer { margin-top: 2rem; }

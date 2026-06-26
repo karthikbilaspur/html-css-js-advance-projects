@@ -1,0 +1,5 @@
+/* Styles for Code 14 */
+body { font-family: 'Segoe UI', Tahoma, sans-serif; padding: 20px; }
+.counter-container { margin-top: 20px; width: 400px; }
+textarea { width: 100%; height: 150px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+p { font-size: 1.2rem; font-weight: bold; margin-top: 10px; }

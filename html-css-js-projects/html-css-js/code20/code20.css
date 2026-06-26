@@ -1,0 +1,124 @@
+/* Styles for Code 20 */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+header h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.age-container {
+  max-width: 450px;
+  margin: 0 auto;
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background: #667eea;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #5568d3;
+}
+
+.result {
+  margin-top: 30px;
+  text-align: center;
+  display: none;
+}
+
+.result.show {
+  display: block;
+}
+
+.result h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.age-display {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.age-item {
+  background: #f8f9fa;
+  padding: 20px 15px;
+  border-radius: 10px;
+  flex: 1;
+  border: 2px solid #e9ecef;
+}
+
+.age-item span {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 5px;
+}
+
+.age-item p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.total-days {
+  color: #555;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+#totalDays {
+  font-weight: bold;
+  color: #764ba2;
+}

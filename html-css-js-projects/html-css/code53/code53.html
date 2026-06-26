@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 53: Magazine Layout | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code53.scss">
+</head>
+<body>
+
+  <header class="page-header">
+    <p><a href="../index.html" class="back-link">← Back to All Codes</a></p>
+    <h1>Code 53: Magazine Layout</h1>
+  </header>
+
+  <main class="page-wrapper">
+    <article class="magazine-content">
+      <h2>The Art of Typography</h2>
+      <p class="lead">Magazine layouts rely heavily on negative space and visual flow. By utilizing the CSS <code>columns</code> property, we can force text to flow naturally between columns, much like a printed publication.</p>
+      
+      <p>This approach is excellent for long-form content where readability is a priority. Unlike traditional sidebar layouts, this design keeps the reader's eye moving down the page in a continuous rhythm. The text automatically balances across columns based on available space.</p>
+      
+      <p>You can adjust the <code>column-gap</code> to control the white space between columns and the <code>column-rule</code> to add a subtle separator line if desired. For headlines, use <code>column-span: all</code> to break out of the column flow.</p>
+      
+      <p>Modern browsers handle multi-column layouts well, automatically calculating optimal line lengths. Combine this with <code>hyphens</code> and <code>text-align: justify</code> for a true print aesthetic. Remember to test widows and orphans to avoid awkward single lines at column breaks.</p>
+    </article>
+  </main>
+
+  <nav class="pagination-nav">
+    <hr>
+    <p>
+      <a href="../code52/code52.html">← Prev: Code 52</a> | 
+      <a href="../index.html">Home</a> | 
+      <a href="../code54/code54.html">Next: Code 54 →</a>
+    </p>
+  </nav>
+
+  <footer class="page-footer">
+    <hr>
+    <p><small>Code 53 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

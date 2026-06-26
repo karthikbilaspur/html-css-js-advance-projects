@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>2048 - 085</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="header">
+      <h1>2048</h1>
+      <div class="scores">
+        <div class="score-box">
+          <div class="label">SCORE</div>
+          <div class="value" id="score">0</div>
+        </div>
+        <div class="score-box">
+          <div class="label">BEST</div>
+          <div class="value" id="best">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="newGameBtn">New Game</button>
+      <button id="undoBtn">↶ Undo</button>
+    </div>
+
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas"></canvas>
+
+      <div class="overlay" id="gameOverScreen">
+        <h2 id="gameOverText">Game Over!</h2>
+        <p>Score: <span id="finalScore">0</span></p>
+        <button id="tryAgainBtn">Try Again</button>
+      </div>
+
+      <div class="overlay" id="winScreen">
+        <h2>You Win!</h2>
+        <p>You reached 2048!</p>
+        <button id="keepPlayingBtn">Keep Playing</button>
+        <button id="newGameWinBtn">New Game</button>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <p><strong>How to play:</strong> Use arrow keys or swipe to move tiles. Tiles with the same number merge!</p>
+    </div>
+
+    <div class="mobile-controls" id="mobileControls">
+      <button class="control-btn" id="upBtn">▲</button>
+      <div class="h-controls">
+        <button class="control-btn" id="leftBtn">◀</button>
+        <button class="control-btn" id="rightBtn">▶</button>
+      </div>
+      <button class="control-btn" id="downBtn">▼</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

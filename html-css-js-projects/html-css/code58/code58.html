@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 58: Drop Cap Paragraph | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code58.sScss">
+</head>
+<body>
+
+  <header class="page-header">
+    <p><a href="../index.html" class="back-link">← Back to All Codes</a></p>
+    <h1>Code 58: Drop Cap Paragraph</h1>
+  </header>
+
+  <main class="page-wrapper">
+    <article class="article-container">
+      <header class="article-header">
+        <h2>The Evolution of Web Typography</h2>
+        <div class="article-meta">
+          <time datetime="2026-06-15">June 15, 2026</time> · 
+          <span>4 min read</span>
+        </div>
+      </header>
+      
+      <div class="article-content">
+        <!-- Drop cap paragraph - first paragraph gets the treatment -->
+        <p class="has-dropcap">
+          Typography on the web has undergone a renaissance in the last decade. What was once limited to a handful of web-safe fonts has exploded into a universe of variable fonts, fluid sizing, and expressive layouts that rival print design.
+        </p>
+        
+        <p>The journey began with @font-face support, which freed us from Arial and Times New Roman. Suddenly brands could use their actual typefaces online. But that freedom came with performance costs — large font files and FOUT made early web fonts a compromise.</p>
+        
+        <p>Today we have font-display, variable fonts, and system font stacks that give us the best of both worlds: personality and performance. Drop caps like the one above are now trivial with CSS, no images required.</p>
+        
+        <p>Modern CSS gives us <code>::first-letter</code> and <code>::first-line</code> pseudo-elements to target specific parts of text. Combined with modern layout techniques, we can recreate classic print styles while keeping everything accessible and semantic.</p>
+
+        <!-- Second example with different style -->
+        <h3>Alternative Style</h3>
+        <p class="has-dropcap dropcap--boxed">
+          Elegant drop caps don't have to be traditional. By combining background colors, borders, and modern CSS, you can create contemporary variants that fit any design system while maintaining that editorial feel.
+        </p>
+      </div>
+
+    </article>
+  </main>
+
+  <nav class="pagination-nav">
+    <hr>
+    <p>
+      <a href="../code57/code57.html">← Prev: Code 57</a> | 
+      <a href="../index.html">Home</a> | 
+      <a href="../code59/code59.html">Next: Code 59 →</a>
+    </p>
+  </nav>
+
+  <footer class="page-footer">
+    <hr>
+    <p><small>Code 58 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

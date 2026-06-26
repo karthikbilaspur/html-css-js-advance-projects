@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 35: Gradient Generator | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code35.css">
+  <script src="code35.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 35: Gradient Generator</h1>
+    <p class="subtitle">Create beautiful CSS gradients</p>
+  </header>
+
+  <div class="gradient-container">
+    <div class="preview-section">
+      <div class="gradient-preview" id="gradientPreview"></div>
+      <div class="css-output">
+        <label>CSS Code</label>
+        <div class="code-box">
+          <code id="cssCode">background: linear-gradient(90deg, #667eea, #764ba2);</code>
+          <button id="copyBtn" class="copy-btn">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="color-pickers">
+        <div class="color-group">
+          <label>Color 1</label>
+          <div class="color-input-row">
+            <input type="color" id="color1" value="#667eea">
+            <input type="text" id="hex1" value="#667eea">
+          </div>
+        </div>
+        <div class="swap-btn" id="swapBtn">⇄</div>
+        <div class="color-group">
+          <label>Color 2</label>
+          <div class="color-input-row">
+            <input type="color" id="color2" value="#764ba2">
+            <input type="text" id="hex2" value="#764ba2">
+          </div>
+        </div>
+      </div>
+
+      <div class="direction-control">
+        <label>Direction: <span id="angleValue">90°</span></label>
+        <input type="range" id="angleSlider" min="0" max="360" value="90">
+        <div class="direction-presets">
+          <button class="dir-btn" data-angle="0">↑ Top</button>
+          <button class="dir-btn" data-angle="90">→ Right</button>
+          <button class="dir-btn" data-angle="180">↓ Bottom</button>
+          <button class="dir-btn" data-angle="270">← Left</button>
+          <button class="dir-btn" data-angle="45">↗ TR</button>
+          <button class="dir-btn" data-angle="135">↘ BR</button>
+          <button class="dir-btn" data-angle="225">↙ BL</button>
+          <button class="dir-btn" data-angle="315">↖ TL</button>
+        </div>
+      </div>
+
+      <div class="gradient-type">
+        <label>Type</label>
+        <div class="type-buttons">
+          <button class="type-btn active" data-type="linear">Linear</button>
+          <button class="type-btn" data-type="radial">Radial</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="presets-section">
+      <h3>Presets</h3>
+      <div class="preset-grid" id="presetGrid"></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>045-media-queries</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MediaQuery Demo</div>
+            <nav class="nav-desktop">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <nav class="nav-mobile" id="mobileNav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="device-indicator" id="indicator">
+            <span class="device-icon">💻</span>
+            <span class="device-name">Desktop</span>
+            <span class="device-size" id="deviceSize">1200px+</span>
+        </div>
+
+        <main>
+            <section class="hero">
+                <h1>Responsive Design</h1>
+                <p>Resize your browser to see media queries in action</p>
+            </section>
+
+            <section class="grid-demo">
+                <h2>Responsive Grid</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">📱</div>
+                        <h3>Mobile First</h3>
+                        <p>Starts with base styles for small screens, then scales up.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">💻</div>
+                        <h3>Tablet</h3>
+                        <p>768px+ shows 2 columns and expanded navigation.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🖥️</div>
+                        <h3>Desktop</h3>
+                        <p>1024px+ shows 3 columns and full layout.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📺</div>
+                        <h3>Large Screen</h3>
+                        <p>1440px+ maximizes content width and spacing.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="breakpoints">
+                <h2>Current Breakpoints</h2>
+                <div class="breakpoint-list">
+                    <div class="breakpoint-item" data-size="mobile">
+                        <span class="bp-label">Mobile</span>
+                        <span class="bp-range">< 768px</span>
+                    </div>
+                    <div class="breakpoint-item" data-size="tablet">
+                        <span class="bp-label">Tablet</span>
+                        <span class="bp-range">768px - 1023px</span>
+                    </div>
+                    <div class="breakpoint-item" data-size="desktop">
+                        <span class="bp-label">Desktop</span>
+                        <span class="bp-range">1024px - 1439px</span>
+                    </div>
+                    <div class="breakpoint-item" data-size="large">
+                        <span class="bp-label">Large</span>
+                        <span class="bp-range">1440px+</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="image-demo">
+                <h2>Responsive Images</h2>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200"
+                         alt="Responsive"
+                         srcset="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400 400w,
+                                 https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800 800w,
+                                 https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200 1200w"
+                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <p class="img-caption">Image scales and loads optimal size based on viewport</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Resize your browser or open DevTools to test breakpoints</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

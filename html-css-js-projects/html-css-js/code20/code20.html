@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 20: Age Calculator | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code20.css">
+  <script src="code20.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 20: Age Calculator</h1>
+  </header>
+
+  <div class="age-container">
+    <div class="input-group">
+      <label for="birthdate">Enter your date of birth</label>
+      <input type="date" id="birthdate" max="2026-06-19" required>
+    </div>
+
+    <button id="calcBtn">Calculate Age</button>
+
+    <div class="result" id="resultBox">
+      <h3>Your Age is</h3>
+      <div class="age-display">
+        <div class="age-item">
+          <span id="years">0</span>
+          <p>Years</p>
+        </div>
+        <div class="age-item">
+          <span id="months">0</span>
+          <p>Months</p>
+        </div>
+        <div class="age-item">
+          <span id="days">0</span>
+          <p>Days</p>
+        </div>
+      </div>
+      <p class="total-days">Total: <span id="totalDays">0</span> days</p>
+    </div>
+  </div>
+</body>
+</html>

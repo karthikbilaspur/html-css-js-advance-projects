@@ -1,0 +1,10 @@
+/* Styles for Code 10 */
+.faq-container { width: 400px; margin: 50px auto; }
+.faq-item { border-bottom: 1px solid #ddd; margin-bottom: 10px; }
+.faq-question { width: 100%; text-align: left; padding: 15px; cursor: pointer; background: #f4f4f4; border: none; font-weight: bold; }
+
+/* Hidden by default */
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 15px; background: #fff; }
+
+/* Added via JS */
+.faq-item.active .faq-answer { max-height: 100px; padding: 15px; }

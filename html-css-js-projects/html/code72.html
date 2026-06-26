@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 72: table - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 72: &lt;table&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;table&gt;</code> element represents tabular data — data arranged in rows and columns. Use only for actual data, not layout.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic table</h3>
+                <table border="1" cellpadding="5" cellspacing="0">
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                    </tr>
+                    <tr>
+                        <td>Ravi</td>
+                        <td>28</td>
+                        <td>Bangalore</td>
+                    </tr>
+                    <tr>
+                        <td>Priya</td>
+                        <td>24</td>
+                        <td>Delhi</td>
+                    </tr>
+                </table>
+
+                <h3>Table with thead, tbody, tfoot</h3>
+                <table border="1" cellpadding="5" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mouse</td>
+                            <td>2</td>
+                            <td>₹500</td>
+                        </tr>
+                        <tr>
+                            <td>Keyboard</td>
+                            <td>1</td>
+                            <td>₹1200</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Total</td>
+                            <td>₹2200</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <h3>Table with caption</h3>
+                <table border="1" cellpadding="5" cellspacing="0">
+                    <caption>Monthly Sales 2025</caption>
+                    <tr>
+                        <th>Month</th>
+                        <th>Revenue</th>
+                    </tr>
+                    <tr>
+                        <td>January</td>
+                        <td>₹45,000</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>₹52,000</td>
+                    </tr>
+                </table>
+
+                <h3>Table with colspan and rowspan</h3>
+                <table border="1" cellpadding="5" cellspacing="0">
+                    <tr>
+                        <th>Team</th>
+                        <th colspan="2">Q1 Results</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Dev</td>
+                        <td>Jan</td>
+                        <td>85%</td>
+                    </tr>
+                    <tr>
+                        <td>Feb</td>
+                        <td>90%</td>
+                    </tr>
+                </table>
+
+                <h3>Table with scope attribute</h3>
+                <table border="1" cellpadding="5" cellspacing="0">
+                    <tr>
+                        <th></th>
+                        <th scope="col">HTML</th>
+                        <th scope="col">CSS</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Arjun</th>
+                        <td>95</td>
+                        <td>88</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Meera</th>
+                        <td>90</td>
+                        <td>94</td>
+                    </tr>
+                </table>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>table structure:</strong> Use <code>&lt;tr&gt;</code> for rows. <code>&lt;th&gt;</code> for headers, <code>&lt;td&gt;</code> for data cells. Wrap headers in <code>&lt;thead&gt;</code>, data in <code>&lt;tbody&gt;</code>, totals in <code>&lt;tfoot&gt;</code>.</p>
+                <p><strong>Key elements:</strong> <code>&lt;caption&gt;</code> gives table a title. <code>colspan</code> makes cell span columns. <code>rowspan</code> makes cell span rows.</p>
+                <p><strong>Accessibility:</strong> Use <code>&lt;th scope="col"&gt;</code> for column headers, <code>scope="row"</code> for row headers. Screen readers use this to associate cells with headers.</p>
+                <p><strong>Don't use for layout:</strong> Tables are for data only. For page layout use CSS Grid or Flexbox. Layout tables hurt accessibility and mobile.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code71.html">← Prev: Code 71: meter tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code73.html">Next: Code 73: thead tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 72 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

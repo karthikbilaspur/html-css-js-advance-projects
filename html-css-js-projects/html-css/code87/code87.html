@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 87 - Dark Mode Toggle</title>
+    <link rel="stylesheet" href="code87.css">
+</head>
+<body>
+  <input type="radio" id="theme-light" name="color-theme" class="theme-input">
+  <input type="radio" id="theme-dark" name="color-theme" class="theme-input">
+  <input type="radio" id="theme-system" name="color-theme" class="theme-input" checked>
+  <input type="radio" id="accent-purple" name="accent-color" class="accent-input" checked>
+  <input type="radio" id="accent-blue" name="accent-color" class="accent-input">
+  <input type="radio" id="accent-green" name="accent-color" class="accent-input">
+  <input type="radio" id="accent-orange" name="accent-color" class="accent-input">
+  
+  <main>
+    <header>
+      <h1 class="page-title">Dark Mode Toggle</h1>
+      <div class="controls">
+        <div class="theme-selector">
+          <label for="theme-light" class="theme-btn" title="Light mode">☀️</label>
+          <label for="theme-dark" class="theme-btn" title="Dark mode">🌙</label>
+          <label for="theme-system" class="theme-btn" title="System preference">💻</label>
+        </div>
+        <div class="accent-selector">
+          <label for="accent-purple" class="accent-btn purple" title="Purple"></label>
+          <label for="accent-blue" class="accent-btn blue" title="Blue"></label>
+          <label for="accent-green" class="accent-btn green" title="Green"></label>
+          <label for="accent-orange" class="accent-btn orange" title="Orange"></label>
+        </div>
+      </div>
+    </header>
+    
+    <section class="card-section">
+      <h2>Welcome to Advanced Dark Mode</h2>
+      <p>Uses CSS-only features: <code>:has()</code>, <code>prefers-color-scheme</code>, <code>prefers-reduced-motion</code>, and <code>@media print</code>. No JavaScript.</p>
+      
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>System Sync</h3>
+          <p>Auto-matches your OS theme preference</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>4 Accents</h3>
+          <p>Pick purple, blue, green, or orange</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">♿</div>
+          <h3>Accessible</h3>
+          <p>Respects reduced motion settings</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🖨️</div>
+          <h3>Print Ready</h3>
+          <p>Always prints in light mode</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card-section">
+      <h2>Sample Content</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <button class="action-btn">Primary Button</button>
+      <button class="action-btn secondary">Secondary Button</button>
+    </section>
+    
+    <nav>
+      <hr>
+      <p>
+        <a href="../code86/code86.html">← Prev: Code 86</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code88/code88.html">Next: Code 88 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 87 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 95: style - HTML 100 Codes</title>
+    
+    <meta name="description" content="Learn the HTML style tag for internal CSS. When to use internal vs external stylesheets, scope, and performance tips. Code 95 of HTML 100 Codes Vault.">
+    <meta name="author" content="HTML 100 Codes Vault">
+    
+    <!-- Internal CSS with style tag -->
+    <style>
+        /* Base styles for demo only - vault uses table layout */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #222;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        pre {
+            background: #263238;
+            color: #aed581;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        
+        .note-box {
+            background: #e8f0fe;
+            border-left: 4px solid #1a73e8;
+            padding: 12px 16px;
+            margin: 16px 0;
+        }
+        
+        .warning {
+            background: #fce8e6;
+            border-left-color: #d93025;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 12px 0;
+        }
+        
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background: #f5f5f5;
+        }
+        
+        /* Media query inside style tag */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+    
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 95: &lt;style&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;style&gt;</code> element contains internal CSS for the document. It goes in <code>&lt;head&gt;</code> and applies styles to the current page only.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>1. Basic internal stylesheet</h3>
+                <pre><code>&lt;head&gt;
+  &lt;style&gt;
+    body { font-family: Arial; }
+    h1 { color: blue; }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+                <small>CSS rules inside <code>&lt;style&gt;</code> apply to the whole page</small>
+
+                <h3>2. Scoped to media type</h3>
+                <pre><code>&lt;style media="print"&gt;
+  nav, footer { display: none; }
+  body { color: black; }
+&lt;/style&gt;</code></pre>
+                <small>Styles only apply when printing. Hide nav/footer on paper</small>
+
+                <h3>3. Multiple style blocks</h3>
+                <pre><code>&lt;style&gt;
+  /* Critical above-the-fold CSS */
+  .hero { height: 100vh; }
+&lt;/style&gt;
+
+&lt;link rel="stylesheet" href="main.css"&gt;
+
+&lt;style&gt;
+  /* Page-specific overrides */
+  .hero { background: url(special.jpg); }
+&lt;/style&gt;</code></pre>
+                <small>You can mix internal <code>&lt;style&gt;</code> with external <code>&lt;link&gt;</code></small>
+
+                <h3>4. CSS with nonce for CSP</h3>
+                <pre><code>&lt;style nonce="r4nd0m"&gt;
+  .secure { display: block; }
+&lt;/style&gt;</code></pre>
+                <small>Used with Content-Security-Policy to allow only approved inline styles</small>
+
+                <div class="note-box">
+                  <strong>Live example:</strong> This entire page is styled by the <code>&lt;style&gt;</code> tag in <code>&lt;head&gt;</code>. Check the source.
+                </div>
+
+                <div class="note-box warning">
+                  <strong>Warning:</strong> Internal CSS can't be cached across pages like external .css files.
+                </div>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>style purpose:</strong> <code>&lt;style&gt;</code> lets you write CSS directly in HTML. Good for single-page sites, email templates, or critical CSS.</p>
+                <p><strong>Location:</strong> Always goes in <code>&lt;head&gt;</code>. Browsers allow it in <code>&lt;body&gt;</code> but it’s invalid HTML and hurts performance.</p>
+                <p><strong>Internal vs External vs Inline:</strong></p>
+                <table>
+                  <tr>
+                    <th>Type</th>
+                    <th>Syntax</th>
+                    <th>Use case</th>
+                  </tr>
+                  <tr>
+                    <td>External</td>
+                    <td><code>&lt;link rel="stylesheet"&gt;</code></td>
+                    <td>Multi-page sites, cacheable</td>
+                  </tr>
+                  <tr>
+                    <td>Internal</td>
+                    <td><code>&lt;style&gt;...&lt;/style&gt;</code></td>
+                    <td>Single page, critical CSS</td>
+                  </tr>
+                  <tr>
+                    <td>Inline</td>
+                    <td><code>style="color:red"</code></td>
+                    <td>Quick overrides, avoid normally</td>
+                  </tr>
+                </table>
+
+                <p><strong>Performance:</strong> Internal CSS loads with HTML - no extra request. But it blocks rendering and isn't cached. External CSS is cached after first load.</p>
+                <p><strong>Critical CSS pattern:</strong> Put above-the-fold styles in <code>&lt;style&gt;</code> for fast first paint, then load rest with <code>&lt;link&gt;</code>.</p>
+                <p><strong>No scoped attribute:</strong> HTML5 removed <code>scoped</code>. All <code>&lt;style&gt;</code> rules apply globally to the document.</p>
+                <p><strong>CSP issues:</strong> Content-Security-Policy often blocks inline <code>&lt;style&gt;</code>. Use nonce or hash, or prefer external files.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code94.html">← Prev: Code 94: link Tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code96.html">Next: Code 96: script Tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 95 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <title>Guess the Rating - Interactive Product Reviews| KarthikCodingSolutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>KarthikCodingSolutions</h1>
+      <p>Project 061: Guess the Rating - Interactive Product Reviews</p>
+    </header>
+
+    <div class="progress-container">
+      <div class="progress" id="progress"></div>
+      <div class="circle active">1</div>
+      <div class="circle">2</div>
+      <div class="circle">3</div>
+      <div class="circle">4</div>
+    </div>
+
+     <body class="text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+        <!-- Header -->
+        <header class="text-center mb-8 sm:mb-12">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3">
+                <span class="gradient-text">Guess the Rating</span>
+            </h1>
+            <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
+                Read real testimonials and test your intuition. Can you predict how other customers rated these products?
+            </p>
+            <div class="flex items-center justify-center gap-4 mt-6">
+                <div class="glass rounded-full px-5 py-2">
+                    <span class="text-sm text-gray-400">Round</span>
+                    <span class="ml-2 font-bold text-lg" id="roundCounter">1/10</span>
+                </div>
+                <div class="glass rounded-full px-5 py-2">
+                    <span class="text-sm text-gray-400">Score</span>
+                    <span class="ml-2 font-bold text-lg" id="scoreCounter">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <div id="gameArea" class="grid lg:grid-cols-2 gap-6 lg:gap-8 mb-8">
+            <!-- Product Card 3D -->
+            <div class="card-3d" id="productCard3D">
+                <div class="glass-strong rounded-3xl p-6 sm:p-8 card-glow h-full">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-6 relative bg-gradient-to-br from-indigo-500/20 to-purple-500/20">
+                        <img id="productImage" src="" alt="Product" class="w-full h-full object-cover transition-transform duration-300" style="transform: translateZ(40px);">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    </div>
+                    <h2 id="productName" class="text-2xl sm:text-3xl font-bold mb-2" style="transform: translateZ(30px);"></h2>
+                    <p id="productDesc" class="text-gray-400 text-sm sm:text-base" style="transform: translateZ(20px);"></p>
+                </div>
+            </div>
+
+            <!-- Testimonials & Quiz -->
+            <div class="flex flex-col gap-6">
+                <!-- Testimonials -->
+                <div class="glass-strong rounded-3xl p-6 sm:p-8">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-indigo-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"></path>
+                            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"></path>
+                        </svg>
+                        Customer Reviews
+                    </h3>
+                    <div id="testimonialsContainer" class="space-y-4"></div>
+                </div>
+
+                <!-- Quiz Section -->
+                <div id="quizSection" class="glass-strong rounded-3xl p-6 sm:p-8">
+                    <div id="questionPhase">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-6 text-center">Guess how many stars this product got?</h3>
+                        <div class="flex justify-center gap-2 sm:gap-4 mb-6" id="starSelector">
+                            <button class="star-btn text-3xl sm:text-5xl text-gray-600" data-rating="1">★</button>
+                            <button class="star-btn text-3xl sm:text-5xl text-gray-600" data-rating="2">★</button>
+                            <button class="star-btn text-3xl sm:text-5xl text-gray-600" data-rating="3">★</button>
+                            <button class="star-btn text-3xl sm:text-5xl text-gray-600" data-rating="4">★</button>
+                            <button class="star-btn text-3xl sm:text-5xl text-gray-600" data-rating="5">★</button>
+                        </div>
+                        <button id="submitGuess" disabled class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 disabled:from-gray-700 disabled:to-gray-700 disabled:cursor-not-allowed text-white font-semibold py-3 sm:py-4 rounded-xl transition-all duration-300 disabled:opacity-50">
+                            Submit Your Guess
+                        </button>
+                    </div>
+
+                    <div id="resultPhase" class="hidden">
+                        <div id="resultMessage" class="text-center mb-6"></div>
+                        <div class="glass rounded-2xl p-6 mb-6 text-center">
+                            <p class="text-gray-400 text-sm mb-2">Actual Rating</p>
+                            <div id="actualRatingStars" class="text-4xl sm:text-5xl mb-2"></div>
+                            <p class="text-2xl font-bold" id="actualRatingText"></p>
+                        </div>
+                        <button id="nextRound" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold py-3 sm:py-4 rounded-xl transition-all duration-300 animate-glow">
+                            Next Product →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboardArea" class="hidden">
+            <div class="glass-strong rounded-3xl p-6 sm:p-10 mb-8">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center">
+                    <span class="gradient-text">Your Final Results</span>
+                </h2>
+                
+                <div class="grid sm:grid-cols-3 gap-6 mb-10">
+                    <div class="glass rounded-2xl p-6 text-center">
+                        <div class="text-4xl sm:text-5xl font-extrabold gradient-text mb-2" id="accuracyPercent">0%</div>
+                        <p class="text-gray-400 text-sm">Prediction Accuracy</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 text-center">
+                        <div class="text-4xl sm:text-5xl font-extrabold text-indigo-400 mb-2" id="correctGuesses">0</div>
+                        <p class="text-gray-400 text-sm">Correct Guesses</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 text-center">
+                        <div class="text-4xl sm:text-5xl font-extrabold text-purple-400 mb-2" id="totalRounds">0</div>
+                        <p class="text-gray-400 text-sm">Total Rounds</p>
+                    </div>
+                </div>
+
+                <div class="glass rounded-2xl p-6 sm:p-8">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-6">Community Predictions vs Reality</h3>
+                    <canvas id="comparisonChart" class="max-h-96"></canvas>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <button id="playAgain" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 text-lg">
+                        Play Again
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass-strong rounded-3xl p-6 sm:p-8">
+                <h3 class="text-xl sm:text-2xl font-bold mb-6">Round Breakdown</h3>
+                <div id="roundsBreakdown" class="space-y-4"></div>
+            </div>
+        </div>
+    </div>
+ 
+    <footer>
+      <p>&copy; 2026 KarthikCodingSolutions</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

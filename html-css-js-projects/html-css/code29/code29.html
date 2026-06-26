@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 29: Sticky Header - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code29.css">
+</head>
+<body>
+  <header>
+    <p><a href="index.html">← Back to All Codes</a></p>
+    <h1>Code 29: Sticky Header on Scroll</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p><code>position: sticky</code> makes an element stick to the top when you scroll past it. Unlike <code>position: fixed</code>, it stays in the document flow until it hits the scroll threshold.</p>
+      <p>Perfect for headers that should remain visible but not overlap content initially. Works with <code>top: 0</code> to stick to viewport top.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <p><small>↓ Scroll down in the box below to see the header stick</small></p>
+      <div class="demo-area">
+        <div class="scroll-container">
+          <!-- Normal content before sticky header -->
+          <div class="banner">
+            <h2>Welcome Banner</h2>
+            <p>This banner scrolls away normally</p>
+          </div>
+
+          <!-- Sticky header -->
+          <header class="sticky-header">
+            <div class="header-content">
+              <div class="logo">BrandLogo</div>
+              <nav class="header-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+              </nav>
+              <button class="cta-btn">Sign Up</button>
+            </div>
+          </header>
+
+          <!-- Long content to enable scrolling -->
+          <div class="content">
+            <article>
+              <h3>Article 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            </article>
+
+            <article>
+              <h3>Article 2</h3>
+              <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+              <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </article>
+
+            <article>
+              <h3>Article 3</h3>
+              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+              <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
+            </article>
+
+            <article>
+              <h3>Article 4</h3>
+              <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+              <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;header class="sticky-header"&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+      <pre><code>.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Parent must NOT have <code>overflow: hidden</code> or <code>overflow: auto</code> — breaks sticky</li>
+        <li>Must set <code>top</code>, <code>bottom</code>, <code>left</code>, or <code>right</code> value. Use <code>top: 0</code> for header</li>
+        <li>Add <code>z-index</code> so it stays above scrolling content</li>
+        <li>Add background color — otherwise content shows through when stuck</li>
+        <li><code>position: sticky</code> keeps element in normal flow until scroll threshold</li>
+        <li>Unlike <code>fixed</code>, it won't overlap content that comes before it</li>
+        <li>Add shadow or border when stuck for visual separation: <code>box-shadow</code></li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="code28.html">← Prev: Code 28: Footer with Columns</a> |
+        <a href="index.html">Home</a> |
+        <a href="code30.html">Next: Code 30: Hero Section →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 29 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

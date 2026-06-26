@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FilterNotes - 095</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>FILTERNOTES <span class="project-num">095</span></h1>
+      <div class="mode-switch">
+        <button class="mode-btn active" data-mode="filter">🎨 Photo Filter</button>
+        <button class="mode-btn" data-mode="notes">📝 Markdown Notes</button>
+      </div>
+    </header>
+
+    <!-- PHOTO FILTER MODE -->
+    <div class="mode-panel" id="filterMode">
+      <div class="filter-layout">
+        <div class="controls-panel">
+          <h3>Upload Image</h3>
+          <input type="file" id="imageInput" accept="image/*">
+          
+          <h3>Filters</h3>
+          <div class="filter-control">
+            <label>Brightness: <span id="brightVal">100</span>%</label>
+            <input type="range" id="brightness" min="0" max="200" value="100">
+          </div>
+          <div class="filter-control">
+            <label>Contrast: <span id="contrastVal">100</span>%</label>
+            <input type="range" id="contrast" min="0" max="200" value="100">
+          </div>
+          <div class="filter-control">
+            <label>Saturation: <span id="satVal">100</span>%</label>
+            <input type="range" id="saturation" min="0" max="200" value="100">
+          </div>
+          <div class="filter-control">
+            <label>Blur: <span id="blurVal">0</span>px</label>
+            <input type="range" id="blur" min="0" max="10" value="0">
+          </div>
+
+          <h3>Presets</h3>
+          <div class="preset-btns">
+            <button class="preset-btn" data-preset="grayscale">B&W</button>
+            <button class="preset-btn" data-preset="sepia">Sepia</button>
+            <button class="preset-btn" data-preset="invert">Invert</button>
+            <button class="preset-btn" data-preset="vintage">Vintage</button>
+          </div>
+
+          <button id="resetFiltersBtn">Reset All</button>
+          <button id="downloadBtn">Download Image</button>
+        </div>
+
+        <div class="canvas-wrapper">
+          <canvas id="filterCanvas"></canvas>
+          <div class="canvas-info" id="canvasInfo">Upload an image to start</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKDOWN NOTES MODE -->
+    <div class="mode-panel" id="notesMode" style="display:none;">
+      <div class="notes-layout">
+        <div class="notes-sidebar">
+          <h3>My Notes</h3>
+          <button id="newNoteBtn">+ New Note</button>
+          <div id="notesList" class="notes-list"></div>
+        </div>
+
+        <div class="editor-panel">
+          <div class="editor-header">
+            <input type="text" id="noteTitle" placeholder="Note title...">
+            <div class="editor-stats">
+              <span id="wordCount">0 words</span>
+              <button id="deleteNoteBtn">Delete</button>
+            </div>
+          </div>
+          <div class="editor-split">
+            <textarea id="markdownInput" placeholder="# Heading 1
+## Heading 2
+**bold** *italic* `code`
+- List item
+[Link](url)
+
+Start typing..."></textarea>
+            <div id="markdownPreview" class="preview"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

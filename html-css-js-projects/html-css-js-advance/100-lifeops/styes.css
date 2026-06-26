@@ -1,0 +1,193 @@
+:root {
+  --bg: #030712;
+  --c1: #111827;
+  --c2: #1f2937;
+  --txt: #f3f4f6;
+  --muted: #9ca3af;
+  --acc: #22d3ee;
+  --deep: #a855f7;
+  --ok: #10b981;
+  --warn: #f59e0b;
+  --bad: #ef4444;
+  --r: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font: 14px/1.5 system-ui;
+  padding-bottom: 40px;
+}
+
+header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+h1 { font-size: 20px; color: var(--acc); }
+#date { font-size: 12px; color: var(--muted); }
+.stats { display: flex; gap: 8px; }
+.stat-pill {
+  background: var(--c1);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  gap: 6px;
+  padding: 0 16px 16px;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+}
+nav button {
+  flex: 1;
+  padding: 11px;
+  background: var(--c1);
+  border: 1px solid var(--c2);
+  color: var(--muted);
+  border-radius: var(--r);
+  font-weight: 600;
+  cursor: pointer;
+}
+nav button.active { background: var(--acc); color: var(--bg); border-color: var(--acc); }
+
+main { padding: 0 16px; }
+.v { display: none; }
+.v.active { display: block; }
+
+.card {
+  background: var(--c1);
+  border: 1px solid var(--c2);
+  border-radius: var(--r);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.card h2 { font-size: 16px; margin-bottom: 12px; }
+.card h3 { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  padding: 10px;
+  background: var(--bg);
+  border: 1px solid var(--c2);
+  border-radius: 8px;
+  color: var(--txt);
+  font: inherit;
+}
+button {
+  background: var(--acc);
+  color: var(--bg);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+button.danger { background: var(--bad); color: white; }
+button:disabled { opacity: 0.4; }
+
+form { display: flex; gap: 8px; }
+form input, form select { flex: 1; }
+form button { flex: 0 0 auto; }
+
+.quick-actions,.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+.quick-actions button,.quick-grid button {
+  background: var(--c2);
+  color: var(--txt);
+  font-size: 12px;
+  padding: 8px;
+}
+
+.ring {
+  width: 100px;
+  height: 100px;
+  margin: 8px auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(var(--acc) var(--p, 0%), var(--c2) 0);
+  position: relative;
+}
+.ring::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  background: var(--c1);
+  border-radius: 50%;
+}
+.ring span { position: relative; font-weight: 700; font-size: 18px; }
+
+.item {
+  padding: 12px;
+  background: var(--bg);
+  border-radius: 8px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-info { flex: 1; }
+.item-title { font-weight: 600; }
+.item-meta { font-size: 12px; color: var(--muted); }
+.item-actions { display: flex; gap: 6px; }
+.item-actions button { width: auto; padding: 6px 10px; font-size: 12px; }
+
+.check {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--c2);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.check.done { background: var(--ok); border-color: var(--ok); }
+
+.block {
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border-left: 3px solid;
+  font-size: 14px;
+}
+.block.Deep { background: #2e1065; border-color: var(--deep); }
+.block.Shallow { background: #083344; border-color: var(--acc); }
+.block.Admin { background: #451a03; border-color: var(--warn); }
+
+.focus-card { text-align: center; }
+.timer {
+  font-size: 56px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin: 16px 0;
+}
+.focus-ctrl { display: flex; gap: 8px; justify-content: center; }
+.focus-ctrl button { width: auto; padding: 12px 20px; }
+
+dialog {
+  background: var(--c1);
+  border: 1px solid var(--c2);
+  border-radius: var(--r);
+  padding: 20px;
+  color: var(--txt);
+  max-width: 400px;
+}
+dialog::backdrop { background: rgba(0,0,0,0.8); }
+.modal-actions { display: flex; gap: 8px; margin-top: 12px; }
+.modal-actions button { flex: 1; }
+
+.empty { color: var(--muted); text-align: center; padding: 20px; }

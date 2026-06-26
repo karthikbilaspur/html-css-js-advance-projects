@@ -1,0 +1,146 @@
+/* Base styles for the docs page */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header h1 {
+  margin: 0.5rem 0 2rem 0;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Demo navbar styles */
+.demo-navbar {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  background: #1a1a1a;
+}
+
+.nav-container {
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Desktop menu */
+.nav-desktop {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #4dabf7;
+}
+
+/* Mobile hamburger - hidden on desktop */
+.nav-toggle {
+  display: none;
+  position: relative;
+}
+
+/* Hamburger icon styling */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  list-style: none;
+  padding: 5px;
+}
+
+.hamburger::-webkit-details-marker {
+  display: none;
+}
+
+.hamburger.bar {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate to X when open */
+.nav-toggle[open].hamburger.bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav-toggle[open].hamburger.bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[open].hamburger.bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile dropdown menu */
+.nav-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #252525;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.nav-menu.nav-link {
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid #333;
+}
+
+.nav-menu.nav-link:last-child {
+  border-bottom: none;
+}
+
+/* Responsive breakpoint */
+@media (max-width: 768px) {
+ .nav-desktop {
+    display: none;
+  }
+
+ .nav-toggle {
+    display: block;
+  }
+}

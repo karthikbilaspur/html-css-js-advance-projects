@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 31: Photo Gallery Grid | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code31.css">
+</head>
+<body>
+  <header>
+    <p><a href="index.html">← Back to All Codes</a></p>
+    <h1>Code 31: Responsive Photo Gallery Grid</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Overview</h2>
+      <p>This layout demonstrates a fluid gallery that adapts to any screen size without needing media queries. By leveraging CSS Grid, we create a responsive design that automatically reconfigures based on available width.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="gallery">
+        <div class="photo">1</div>
+        <div class="photo">2</div>
+        <div class="photo">3</div>
+        <div class="photo">4</div>
+        <div class="photo">5</div>
+        <div class="photo">6</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Breakdown</h2>
+      <h3>The Magic Rule</h3>
+      <p>The core of this responsiveness is <code>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</code></p>
+      <ul>
+        <li><strong>auto-fit:</strong> Allows the grid items to stretch to fill the row.</li>
+        <li><strong>minmax(200px, 1fr):</strong> Sets the minimum width to 200px and ensures items take up available space equally (1 fraction unit).</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code30/code30.html">← Prev: Code 30: Mega Menu</a> |
+        <a href="index.html">Home</a> |
+        <a href="../code32/code32.html">Next: Code 32: [Next Topic] →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 31 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

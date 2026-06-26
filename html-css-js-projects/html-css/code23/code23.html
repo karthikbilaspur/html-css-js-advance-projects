@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 23: Dropdown Menu - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code23.css">
+</head>
+<body>
+  <header>
+    <p><a href="index.html">← Back to All Codes</a></p>
+    <h1>Code 23: Dropdown Menu with :hover & :focus-within</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This dropdown menu works on mouse hover <em>and</em> keyboard focus with zero JavaScript. The <code>:focus-within</code> pseudo-class keeps the menu open when you Tab through links, making it accessible.</p>
+      <p>The dropdown is hidden by default and only shows when the parent <code>li</code> is hovered or has focus inside it.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <nav class="dropdown-nav">
+          <ul class="nav-list">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li class="dropdown">
+              <a href="#services" class="nav-link dropdown-trigger">
+                Services <span class="arrow">▾</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#web">Web Design</a></li>
+                <li><a href="#app">App Development</a></li>
+                <li><a href="#seo">SEO</a></li>
+                <li><a href="#marketing">Marketing</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#products" class="nav-link dropdown-trigger">
+                Products <span class="arrow">▾</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#templates">Templates</a></li>
+                <li><a href="#plugins">Plugins</a></li>
+                <li><a href="#themes">Themes</a></li>
+              </ul>
+            </li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p><small>↑ Hover over "Services" or "Products". Try using Tab to navigate with keyboard.</small></p>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;li class="dropdown"&gt;
+  &lt;a href="#services"&gt;Services&lt;/a&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a href="#web"&gt;Web Design&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#app"&gt;App Development&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;</code></pre>
+      <pre><code>/* Show on hover or keyboard focus */
+.dropdown:hover.dropdown-menu,
+.dropdown:focus-within.dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Parent <code>li.dropdown</code> needs <code>position: relative</code></li>
+        <li>Child <code>.dropdown-menu</code> uses <code>position: absolute</code> to overlay</li>
+        <li>Hide with <code>opacity: 0</code> + <code>visibility: hidden</code> not <code>display: none</code> to allow transitions</li>
+        <li><code>:focus-within</code> is critical for keyboard users - keeps menu open while tabbing</li>
+        <li>Add slight <code>transition</code> for smooth fade/slide effect</li>
+        <li>Use <code>pointer-events: none</code> when hidden to prevent accidental hover</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="code22.html">← Prev: Code 22: Dropdown</a> |
+        <a href="index.html">Home</a> |
+        <a href="code24.html">Next: Code 24: Tabs →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 23 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

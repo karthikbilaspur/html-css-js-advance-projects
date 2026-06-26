@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 66: legend - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 66: &lt;legend&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;legend&gt;</code> element represents a caption for the content of its parent <code>&lt;fieldset&gt;</code>. Must be the first child.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic legend in fieldset</h3>
+                <form>
+                    <fieldset>
+                        <legend>Contact Details</legend>
+                        <label for="email1">Email:</label>
+                        <input type="email" id="email1" name="email"><br><br>
+                        
+                        <label for="tel1">Phone:</label>
+                        <input type="tel" id="tel1" name="tel">
+                    </fieldset>
+                </form>
+
+                <h3>Legend for radio group</h3>
+                <form>
+                    <fieldset>
+                        <legend>Choose subscription plan:</legend>
+                        <input type="radio" id="basic" name="plan" value="basic">
+                        <label for="basic">Basic - Free</label><br>
+                        
+                        <input type="radio" id="pro" name="plan" value="pro">
+                        <label for="pro">Pro - $9/mo</label>
+                    </fieldset>
+                    <small>Legend tells screen readers what these radios mean</small>
+                </form>
+
+                <h3>Legend with inline elements</h3>
+                <form>
+                    <fieldset>
+                        <legend>Shipping Address <em>(required)</em></legend>
+                        <label for="street">Street:</label>
+                        <input type="text" id="street" name="street" required>
+                    </fieldset>
+                </form>
+
+                <h3>Multiple fieldsets with legends</h3>
+                <form>
+                    <fieldset>
+                        <legend>Login Info</legend>
+                        <label for="user2">Username:</label>
+                        <input type="text" id="user2" name="user">
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Preferences</legend>
+                        <input type="checkbox" id="news" name="news">
+                        <label for="news">Get newsletter</label>
+                    </fieldset>
+                </form>
+
+                <h3>Legend position</h3>
+                <form>
+                    <fieldset>
+                        <legend>Billing Details</legend>
+                        <p>Legend must be first child of fieldset to be valid.</p>
+                        <label for="card">Card number:</label>
+                        <input type="text" id="card" name="card">
+                    </fieldset>
+                </form>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>legend rules:</strong> Must be direct child of <code>&lt;fieldset&gt;</code> and should be the first element. Browsers render it on the fieldset border.</p>
+                <p><strong>Accessibility:</strong> Screen readers announce the legend text when a user enters any control in the fieldset. This is critical for radio/checkbox groups.</p>
+                <p><strong>Content:</strong> Can contain inline elements like <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;span&gt;</code>. Avoid block elements like <code>&lt;div&gt;</code> or <code>&lt;p&gt;</code> inside.</p>
+                <p><strong>Without legend:</strong> A <code>&lt;fieldset&gt;</code> without <code>&lt;legend&gt;</code> is valid but less accessible. Always add one for grouped controls.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code65.html">← Prev: Code 65: fieldset tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code67.html">Next: Code 67: form tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 66 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

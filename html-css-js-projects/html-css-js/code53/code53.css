@@ -1,0 +1,227 @@
+/* Styles for Code 53 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8f9fa;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin: 40px 0 32px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.controls {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+#search-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 14px 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    background: white;
+}
+
+#search-input:focus {
+    border-color: #007aff;
+    box-shadow: 0 0 0 3px rgba(0,122,255,0.1);
+}
+
+#region-filter {
+    padding: 14px 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    min-width: 160px;
+}
+
+#status {
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+    font-size: 1.05rem;
+}
+
+#countries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.country-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.country-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.flag {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.card-info {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card-info p {
+    margin-bottom: 6px;
+}
+
+.card-info strong {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: white;
+    margin: 40px auto;
+    padding: 0;
+    border-radius: 16px;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: 300;
+    color: #999;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.close:hover {
+    color: #000;
+}
+
+#modal-body img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.modal-details {
+    padding: 32px;
+}
+
+.modal-details h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.detail-item p {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.detail-item h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.border-countries {
+    margin-top: 20px;
+}
+
+.border-countries h4 {
+    margin-bottom: 12px;
+}
+
+.border-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.border-tag {
+    background: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+   .detail-grid {
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}

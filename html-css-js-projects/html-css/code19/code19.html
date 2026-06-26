@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 19: Custom Radio Buttons - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code19.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 19: Custom Radio Buttons</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This project builds custom radio button toggles for gender selection and theme select using only HTML + CSS.</p>
+      <p>It demonstrates <code>appearance: none</code> to remove default radio styling, <code>:checked</code> pseudo-class for active states, and <code>label</code> wrapping for larger click areas.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="form-container">
+        <form class="custom-form">
+          <h3>Profile Settings</h3>
+
+          <div class="form-section">
+            <label class="section-label">Gender</label>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input type="radio" name="gender" value="male" required>
+                <span class="radio-content">
+                  <span class="radio-icon">👨</span>
+                  <span class="radio-text">Male</span>
+                </span>
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="gender" value="female">
+                <span class="radio-content">
+                  <span class="radio-icon">👩</span>
+                  <span class="radio-text">Female</span>
+                </span>
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="gender" value="other">
+                <span class="radio-content">
+                  <span class="radio-icon">👤</span>
+                  <span class="radio-text">Other</span>
+                </span>
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="gender" value="prefer-not">
+                <span class="radio-content">
+                  <span class="radio-icon">🚫</span>
+                  <span class="radio-text">Prefer not to say</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <label class="section-label">Choose Theme</label>
+            <div class="radio-group theme-group">
+              <label class="theme-card">
+                <input type="radio" name="theme" value="light" checked>
+                <span class="theme-content">
+                  <span class="theme-preview theme-light"></span>
+                  <span class="theme-name">Light</span>
+                </span>
+              </label>
+
+              <label class="theme-card">
+                <input type="radio" name="theme" value="dark">
+                <span class="theme-content">
+                  <span class="theme-preview theme-dark"></span>
+                  <span class="theme-name">Dark</span>
+                </span>
+              </label>
+
+              <label class="theme-card">
+                <input type="radio" name="theme" value="auto">
+                <span class="theme-content">
+                  <span class="theme-preview theme-auto"></span>
+                  <span class="theme-name">Auto</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <label class="section-label">Notification Preference</label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="notify" value="all">
+                <span>All</span>
+              </label>
+
+              <label class="radio-pill">
+                <input type="radio" name="notify" value="important" checked>
+                <span>Important Only</span>
+              </label>
+
+              <label class="radio-pill">
+                <input type="radio" name="notify" value="none">
+                <span>None</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Save Preferences</button>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;label class="radio-card"&gt;
+  &lt;input type="radio" name="gender" value="male"&gt;
+  &lt;span class="radio-content"&gt;
+    &lt;span class="radio-icon"&gt;👨&lt;/span&gt;
+    &lt;span&gt;Male&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/label&gt;
+
+.radio-card input {
+  appearance: none;
+  position: absolute;
+}
+
+.radio-card input:checked + .radio-content {
+  border-color: #667eea;
+  background: #f0f4ff;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li><code>appearance: none</code> - Removes default browser radio styling</li>
+        <li><code>position: absolute</code> on input - Hides radio but keeps it accessible</li>
+        <li><code>input:checked + span</code> - Styles the visual content when selected</li>
+        <li>Wrap input in label - Makes entire card clickable, better UX</li>
+        <li>Use <code>name="gender"</code> on all radios - Groups them so only one selects</li>
+        <li><code>transition</code> on border/background - Smooth state changes</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code18/code18.html">← Prev: Code 18</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code20/code20.html">Next: Code 20 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 19 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

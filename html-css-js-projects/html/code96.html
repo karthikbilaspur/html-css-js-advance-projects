@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 96: script - HTML 100 Codes</title>
+    <meta name="description" content="Learn the HTML script tag: load JavaScript, use async/defer, ES modules, and inline scripts. Code 96 of HTML 100 Codes Vault.">
+    <meta name="author" content="HTML 100 Codes Vault">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 96: &lt;script&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;script&gt;</code> element embeds or references executable code, typically JavaScript. It can go in <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code>.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>1. External JavaScript file</h3>
+                <pre><code>&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
+                <small>Most common. Loads JS from a file. Put before <code>&lt;/body&gt;</code> or use defer</small>
+
+                <h3>2. Inline JavaScript</h3>
+                <pre><code>&lt;script&gt;
+  console.log('Hello from inline JS!');
+  document.getElementById('btn').onclick = () => alert('Clicked');
+&lt;/script&gt;</code></pre>
+                <small>Code runs immediately. Keep it small - big scripts belong in files</small>
+
+                <h3>3. defer - load after HTML parsing</h3>
+                <pre><code>&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></pre>
+                <small>Downloads in parallel, executes after HTML is parsed. Best for scripts that need the DOM</small>
+
+                <h3>4. async - load independently</h3>
+                <pre><code>&lt;script src="analytics.js" async&gt;&lt;/script&gt;</code></pre>
+                <small>Downloads in parallel, executes ASAP when ready. Use for independent scripts like analytics</small>
+
+                <h3>5. ES Modules</h3>
+                <pre><code>&lt;script type="module"&gt;
+  import { sum } from './utils.js';
+  console.log(sum(2, 3));
+&lt;/script&gt;</code></pre>
+                <small>Modern JS. Supports <code>import/export</code>. Modules are deferred by default</small>
+
+                <h3>6. External module</h3>
+                <pre><code>&lt;script type="module" src="main.js"&gt;&lt;/script&gt;</code></pre>
+                <small>Loads main.js as an ES module. Can use imports inside</small>
+
+                <h3>7. No JavaScript fallback</h3>
+                <pre><code>&lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;noscript&gt;
+  &lt;p&gt;This app requires JavaScript to run.&lt;/p&gt;
+&lt;/noscript&gt;</code></pre>
+                <small><code>&lt;noscript&gt;</code> shows only when JS is disabled</small>
+
+                <h3>8. JSON-LD structured data</h3>
+                <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "HTML Script Tag Guide"
+}
+&lt;/script&gt;</code></pre>
+                <small>Not executed as JS. Used for SEO structured data</small>
+
+                <h3>9. defer vs async vs normal</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <tr><th>Attribute</th><th>Download</th><th>Execute</th><th>Use for</th></tr>
+                    <tr><td>none</td><td>Blocks HTML</td><td>Immediately</td><td>Small critical inline</td></tr>
+                    <tr><td>defer</td><td>Parallel</td><td>After HTML</td><td>Scripts needing DOM</td></tr>
+                    <tr><td>async</td><td>Parallel</td><td>ASAP</td><td>Analytics, ads</td></tr>
+                </table>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>script purpose:</strong> <code>&lt;script&gt;</code> loads or defines executable code. Mostly JavaScript, but can hold JSON, shaders, or templates via <code>type</code>.</p>
+                <p><strong>Blocking by default:</strong> Normal <code>&lt;script&gt;</code> blocks HTML parsing until it downloads + runs. This hurts page speed.</p>
+                <p><strong>defer is your friend:</strong> Use <code>defer</code> for your own scripts. It won’t block rendering and runs in order after DOM is ready.</p>
+                <p><strong>async for independent code:</strong> Use <code>async</code> for analytics, ads, or tracking. Order isn’t guaranteed.</p>
+                <p><strong>Placement:</strong> Old rule: scripts at bottom of <code>&lt;body&gt;</code>. Modern rule: use <code>defer</code> in <code>&lt;head&gt;</code>.</p>
+                <p><strong>type="module":</strong> Enables ES6 imports. Modules are automatically deferred and run in strict mode. Always use <code>.js</code> extension in imports.</p>
+                <p><strong>No src + content:</strong> If you set <code>src</code>, any content inside the tag is ignored.</p>
+                <p><strong>Security:</strong> Never inline user data. Use <code>Content-Security-Policy</code> and avoid <code>eval()</code>. Consider <code>integrity</code> and <code>crossorigin</code> for CDN scripts.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code94.html">← Prev: Code 94: link Tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code96.html">Next: Code 96: style Tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 96 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+    <!-- Example script placement -->
+    <script>
+        console.log('Page loaded. DOM is ready here.');
+    </script>
+    
+    <script src="app.js" defer></script>
+
+</body>
+</html>

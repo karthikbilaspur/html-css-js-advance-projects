@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 10: Coming Soon Page - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code10.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 10: Coming Soon Page</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This project builds a "Coming Soon" page with animated countdown using only HTML + CSS.</p>
+      <p>It uses CSS <code>@keyframes</code> to animate numbers, <code>animation-delay</code> to stagger timers, and <code>counter()</code> is not used - we fake it with stacked animated spans. No JavaScript needed.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="coming-soon-container">
+        <div class="coming-soon-content">
+          <h3 class="launch-title">We're Launching Soon</h3>
+          <p class="launch-subtitle">Something amazing is coming your way!</p>
+          
+          <div class="countdown">
+            <div class="countdown-item">
+              <div class="countdown-number">
+                <span class="days">14</span>
+              </div>
+              <div class="countdown-label">Days</div>
+            </div>
+            
+            <div class="countdown-item">
+              <div class="countdown-number">
+                <div class="hours-animation">
+                  <span>23</span>
+                  <span>22</span>
+                  <span>21</span>
+                  <span>20</span>
+                </div>
+              </div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            
+            <div class="countdown-item">
+              <div class="countdown-number">
+                <div class="minutes-animation">
+                  <span>59</span>
+                  <span>58</span>
+                  <span>57</span>
+                  <span>56</span>
+                </div>
+              </div>
+              <div class="countdown-label">Minutes</div>
+            </div>
+            
+            <div class="countdown-item">
+              <div class="countdown-number">
+                <div class="seconds-animation">
+                  <span>59</span>
+                  <span>58</span>
+                  <span>57</span>
+                  <span>56</span>
+                  <span>55</span>
+                  <span>54</span>
+                  <span>53</span>
+                  <span>52</span>
+                  <span>51</span>
+                  <span>50</span>
+                </div>
+              </div>
+              <div class="countdown-label">Seconds</div>
+            </div>
+          </div>
+
+          <div class="notify-section">
+            <p>Get notified when we launch</p>
+            <form class="notify-form">
+              <input type="email" placeholder="Enter your email" class="email-input">
+              <button type="button" class="notify-btn">Notify Me</button>
+            </form>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-icon">📘</a>
+            <a href="#" class="social-icon">🐦</a>
+            <a href="#" class="social-icon">📷</a>
+            <a href="#" class="social-icon">💼</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;div class="countdown"&gt;
+  &lt;div class="countdown-item"&gt;
+    &lt;div class="countdown-number"&gt;
+      &lt;div class="seconds-animation"&gt;
+        &lt;span&gt;59&lt;/span&gt;
+        &lt;span&gt;58&lt;/span&gt;
+        &lt;span&gt;57&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="countdown-label"&gt;Seconds&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>CSS countdown is fake - it loops infinitely, not real time</li>
+        <li><code>@keyframes</code> with <code>transform: translateY()</code> moves numbers up</li>
+        <li><code>animation: slide 60s steps(60) infinite</code> - 1 step per second</li>
+        <li>Use <code>overflow: hidden</code> on number container to show one digit at a time</li>
+        <li>Real countdowns need JavaScript - this is for visual effect only</li>
+        <li><code>steps()</code> timing function makes discrete jumps instead of smooth scroll</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code9/code9.html">← Prev: Code 9: 404 Error Page</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code11/code11.html">Next: Code 11 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 10 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

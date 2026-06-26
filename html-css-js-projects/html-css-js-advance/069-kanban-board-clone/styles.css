@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0079bf;
+    color: #1c1e21;
+    min-height: 100vh;
+}
+
+.app {
+    padding: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#add-board {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#add-board:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: start;
+}
+
+.column {
+    background: #ebecf0;
+    border-radius: 12px;
+    padding: 0.5rem;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    font-weight: 600;
+}
+
+.count {
+    background: #dfe1e6;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+}
+
+.cards {
+    flex: 1;
+    min-height: 50px;
+    padding: 0 0.5rem;
+    overflow-y: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    position: relative;
+}
+
+.card:active {
+    cursor: grabbing;
+}
+
+.card.dragging {
+    opacity: 0.5;
+    transform: rotate(3deg);
+}
+
+.card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    word-break: break-word;
+}
+
+.card p {
+    font-size: 0.85rem;
+    color: #5e6c84;
+    word-break: break-word;
+}
+
+.card.delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #e41e3f;
+    color: white;
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.card:hover.delete {
+    opacity: 1;
+}
+
+.cards.drag-over {
+    background: #dfe1e6;
+    border-radius: 8px;
+}
+
+.add-card {
+    background: transparent;
+    border: none;
+    color: #5e6c84;
+    padding: 8px;
+    margin: 4px 0.5rem 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 500;
+}
+
+.add-card:hover {
+    background: #dfe1e6;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content h3 {
+    margin-bottom: 1rem;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0.75rem;
+    border: 2px solid #dfe1e6;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+    outline: none;
+    border-color: #0079bf;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#cancel {
+    background: #e4e6eb;
+}
+
+.modal-actions button[type="submit"] {
+    background: #0079bf;
+    color: white;
+}
+
+/* Scrollbar */
+.cards::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+    background: #bfc4ce;
+    border-radius: 3px;
+}

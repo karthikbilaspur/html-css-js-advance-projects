@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Snake v2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Snake v2</h1>
+    <div class="stats">
+      <div class="stat">Score: <span id="score">0</span></div>
+      <div class="stat">Level: <span id="level">1</span></div>
+      <div class="stat">Best: <span id="highScore">0</span></div>
+    </div>
+
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas"></canvas>
+
+      <div class="overlay" id="menuScreen">
+        <h2>Snake v2</h2>
+        <p>Swipe or use arrows to move</p>
+        <button id="startBtn">Start Game</button>
+      </div>
+
+      <div class="overlay" id="pauseScreen">
+        <h2>Paused</h2>
+        <button id="resumeBtn">Resume</button>
+        <button id="menuBtn">Main Menu</button>
+      </div>
+
+      <div class="overlay" id="gameOverScreen">
+        <h2>Game Over</h2>
+        <p>Final Score: <span id="finalScore">0</span></p>
+        <p>Level Reached: <span id="finalLevel">1</span></p>
+        <button id="restartBtn">Play Again</button>
+        <button id="menuBtn2">Main Menu</button>
+      </div>
+    </div>
+
+    <div class="mobile-controls" id="mobileControls">
+      <button class="dpad-btn" data-dir="up">▲</button>
+      <div class="dpad-row">
+        <button class="dpad-btn" data-dir="left">◀</button>
+        <button class="dpad-btn" data-dir="down">▼</button>
+        <button class="dpad-btn" data-dir="right">▶</button>
+      </div>
+      <button class="pause-btn" id="pauseBtn">⏸</button>
+    </div>
+
+    <div class="controls-text">
+      Desktop: Arrow Keys / WASD | Space to pause
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

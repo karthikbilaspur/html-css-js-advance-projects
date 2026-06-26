@@ -1,0 +1,5 @@
+/* Styles for Code 8 */
+.calculator { width: 200px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; }
+#display { width: 100%; height: 40px; margin-bottom: 10px; text-align: right; }
+.buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; }
+button { padding: 10px; cursor: pointer; }

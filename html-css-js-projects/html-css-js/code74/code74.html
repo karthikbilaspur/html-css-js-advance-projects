@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich Text Editor 74</title>
+    <link rel="stylesheet" href="code74.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rich Text Editor</h1>
+            <div class="actions">
+                <button id="toggle-source" class="btn-secondary">
+                    <i class="fas fa-code"></i> HTML Source
+                </button>
+                <button id="clear-btn" class="btn-secondary">
+                    <i class="fas fa-trash"></i> Clear
+                </button>
+            </div>
+        </header>
+
+        <div class="editor-wrapper">
+            <div class="toolbar">
+                <div class="toolbar-group">
+                    <button data-command="undo" title="Undo (Ctrl+Z)">
+                        <i class="fas fa-undo"></i>
+                    </button>
+                    <button data-command="redo" title="Redo (Ctrl+Y)">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="toolbar-group">
+                    <select id="format-block" title="Heading">
+                        <option value="">Normal</option>
+                        <option value="h1">Heading 1</option>
+                        <option value="h2">Heading 2</option>
+                        <option value="h3">Heading 3</option>
+                        <option value="p">Paragraph</option>
+                    </select>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="toolbar-group">
+                    <button data-command="bold" title="Bold (Ctrl+B)">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button data-command="italic" title="Italic (Ctrl+I)">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button data-command="underline" title="Underline (Ctrl+U)">
+                        <i class="fas fa-underline"></i>
+                    </button>
+                    <button data-command="strikeThrough" title="Strikethrough">
+                        <i class="fas fa-strikethrough"></i>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="toolbar-group">
+                    <button data-command="insertUnorderedList" title="Bullet List">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                    <button data-command="insertOrderedList" title="Numbered List">
+                        <i class="fas fa-list-ol"></i>
+                    </button>
+                    <button data-command="outdent" title="Decrease Indent">
+                        <i class="fas fa-outdent"></i>
+                    </button>
+                    <button data-command="indent" title="Increase Indent">
+                        <i class="fas fa-indent"></i>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="toolbar-group">
+                    <button data-command="justifyLeft" title="Align Left">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button data-command="justifyCenter" title="Align Center">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button data-command="justifyRight" title="Align Right">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="toolbar-group">
+                    <button id="create-link" title="Insert Link">
+                        <i class="fas fa-link"></i>
+                    </button>
+                    <button data-command="unlink" title="Remove Link">
+                        <i class="fas fa-unlink"></i>
+                    </button>
+                    <button id="insert-image" title="Insert Image">
+                        <i class="fas fa-image"></i>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="toolbar-group">
+                    <input type="color" id="fore-color" title="Text Color" value="#000000">
+                    <input type="color" id="hilite-color" title="Highlight Color" value="#ffff00">
+                    <button data-command="removeFormat" title="Clear Formatting">
+                        <i class="fas fa-remove-format"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="editor" class="editor" contenteditable="true">
+                <p>Start typing your content here...</p>
+            </div>
+
+            <textarea id="html-source" class="html-source hidden" placeholder="HTML source will appear here..."></textarea>
+        </div>
+
+        <div class="status-bar">
+            <span id="word-count">0 words</span>
+            <span id="char-count">0 characters</span>
+        </div>
+    </div>
+
+    <script src="code74.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 32: CSS Lightbox | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code32.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 32: CSS Lightbox (:target)</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Overview</h2>
+      <p>This Lightbox effect uses the CSS <code>:target</code> pseudo-class. When you click a thumbnail, the URL hash changes to match the ID of the full-size image container, making it visible.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="gallery">
+        <a href="#img1" class="thumb">Thumb 1</a>
+        <a href="#img2" class="thumb">Thumb 2</a>
+      </div>
+
+      <!-- Lightbox Overlays -->
+      <div id="img1" class="lightbox">
+        <a href="#" class="close">×</a>
+        <div class="content">Full Image 1</div>
+      </div>
+
+      <div id="img2" class="lightbox">
+        <a href="#" class="close">×</a>
+        <div class="content">Full Image 2</div>
+      </div>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code31/code31.html">← Prev: Code 31: Photo Gallery Grid</a> |
+        <a href="../index.html">Home</a> |
+        <a href="../code33/code33.html">Next: Code 33: [Next Topic] →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 32 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

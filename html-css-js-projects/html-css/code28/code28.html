@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 28: Footer with Columns - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code28.css">
+</head>
+<body>
+  <header>
+    <p><a href="index.html">← Back to All Codes</a></p>
+    <h1>Code 28: Multi-Column Responsive Footer</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>A footer with multiple link columns that stacks on mobile. Uses CSS Grid for responsive columns and <code>&lt;footer&gt;</code> semantic tag.</p>
+      <p>Common pattern: brand section + 3-4 link groups + social icons + copyright bar. Grid auto-flows to 1 column under 768px.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <footer class="site-footer">
+          <div class="footer-container">
+            <!-- Brand column -->
+            <div class="footer-brand">
+              <h3 class="footer-logo">CodeVault</h3>
+              <p class="footer-tagline">Learn HTML, CSS & JS with 100 practical code examples.</p>
+              <div class="footer-social">
+                <a href="#twitter" aria-label="Twitter">𝕏</a>
+                <a href="#github" aria-label="GitHub">⚙</a>
+                <a href="#youtube" aria-label="YouTube">▶</a>
+              </div>
+            </div>
+
+            <!-- Link columns -->
+            <div class="footer-links">
+              <h4>Learn</h4>
+              <ul>
+                <li><a href="#html">HTML Basics</a></li>
+                <li><a href="#css">CSS Layouts</a></li>
+                <li><a href="#js">JavaScript</a></li>
+                <li><a href="#projects">Projects</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-links">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#docs">Documentation</a></li>
+                <li><a href="#cheatsheet">Cheat Sheets</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#community">Community</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-links">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#press">Press Kit</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Bottom bar -->
+          <div class="footer-bottom">
+            <p>&copy; 2026 CodeVault. All rights reserved.</p>
+            <div class="footer-legal">
+              <a href="#privacy">Privacy Policy</a>
+              <a href="#terms">Terms of Service</a>
+              <a href="#cookies">Cookie Policy</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <p><small>↑ Resize browser to see columns stack on mobile</small></p>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;footer class="site-footer"&gt;
+  &lt;div class="footer-container"&gt;
+    &lt;div class="footer-brand"&gt;
+      &lt;h3&gt;Logo&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="footer-links"&gt;
+      &lt;h4&gt;Links&lt;/h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+      <pre><code>.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+ .footer-container {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Use <code>&lt;footer&gt;</code> semantic tag, not <code>&lt;div class="footer"&gt;</code></li>
+        <li>CSS Grid with <code>grid-template-columns</code> is easiest for responsive columns</li>
+        <li>Give brand column more space: <code>2fr 1fr 1fr 1fr</code></li>
+        <li>Use <code>&lt;ul&gt;</code> for link lists — semantically correct</li>
+        <li>Add <code>aria-label</code> to social icons if they only show symbols</li>
+        <li>Bottom bar with copyright should be separate from link grid</li>
+        <li>Stack to 1 column on mobile with <code>@media (max-width: 768px)</code></li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="code27.html">← Prev: Code 27: Pagination UI</a> |
+        <a href="index.html">Home</a> |
+        <a href="code29.html">Next: Code 29: Hero Section →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 28 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 45: Stats Counter - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code45.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 45: Stats Counter</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This creates a CSS-only number counter. By using <code>@keyframes</code> to animate a CSS variable, we can force the browser to recalculate and display increasing numbers.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="stats">
+        <div class="stat-item" style="--end: 100;"><span>0</span>+ Projects</div>
+        <div class="stat-item" style="--end: 50;"><span>0</span>+ Clients</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Use <code>@property</code> to define a custom CSS variable as an integer for animation.</li>
+        <li><code>counter-reset</code> is used alongside <code>content: counter(variable)</code> to render the dynamic number.</li>
+        <li><code>animation-fill-mode: forwards</code> ensures the counter stays at the final number.</li>
+        <li>This technique is highly performant as it relies on CSS hardware acceleration.</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code44/code44.html">← Prev: Code 44: Testimonials Slider</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code46/code46.html">Next: Code 46 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 45 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

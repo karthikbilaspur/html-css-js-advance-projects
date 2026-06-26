@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Sudoku - 088</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>SUDOKU <span class="project-num">088</span></h1>
+
+    <div class="stats">
+      <div class="stat">Difficulty: <span id="difficulty">Easy</span></div>
+      <div class="stat">Mistakes: <span id="mistakes">0</span>/3</div>
+      <div class="stat">Time: <span id="time">00:00</span></div>
+    </div>
+
+    <div class="controls">
+      <button id="newGameBtn">New Game</button>
+      <button id="solveBtn">Solve</button>
+      <button id="hintBtn">Hint</button>
+      <button id="notesBtn" class="toggle">Notes: Off</button>
+    </div>
+
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <div class="number-pad">
+      <button class="num-btn" data-num="1">1</button>
+      <button class="num-btn" data-num="2">2</button>
+      <button class="num-btn" data-num="3">3</button>
+      <button class="num-btn" data-num="4">4</button>
+      <button class="num-btn" data-num="5">5</button>
+      <button class="num-btn" data-num="6">6</button>
+      <button class="num-btn" data-num="7">7</button>
+      <button class="num-btn" data-num="8">8</button>
+      <button class="num-btn" data-num="9">9</button>
+      <button class="num-btn erase" data-num="0">⌫</button>
+    </div>
+
+    <div class="overlay" id="winScreen">
+      <h2>Puzzle Solved!</h2>
+      <p>Time: <span id="finalTime">00:00</span></p>
+      <p>Difficulty: <span id="finalDiff">Easy</span></p>
+      <button id="newGameWinBtn">New Puzzle</button>
+    </div>
+
+    <div class="overlay" id="difficultyScreen">
+      <h2>Select Difficulty</h2>
+      <button class="diff-btn" data-diff="easy">Easy - 40 clues</button>
+      <button class="diff-btn" data-diff="medium">Medium - 32 clues</button>
+      <button class="diff-btn" data-diff="hard">Hard - 25 clues</button>
+      <button class="diff-btn" data-diff="expert">Expert - 17 clues</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

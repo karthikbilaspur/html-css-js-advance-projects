@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 91: meta - HTML 100 Codes</title>
+    
+    <!-- Basic meta tags -->
+    <meta name="description" content="Learn the HTML <meta> tag: charset, viewport, SEO, social sharing, and more. Code 91 of HTML 100 Codes Vault.">
+    <meta name="keywords" content="HTML, meta tag, SEO, viewport, charset, HTML tutorial">
+    <meta name="author" content="HTML 100 Codes Vault">
+    
+    <!-- Control browser behavior -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph for Facebook, LinkedIn -->
+    <meta property="og:title" content="Code 91: meta Tag | HTML 100 Codes Vault">
+    <meta property="og:description" content="Master the HTML meta tag for SEO, responsive design, and social sharing.">
+    <meta property="og:image" content="https://example.com/og-meta.jpg">
+    <meta property="og:url" content="https://example.com/code91.html">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Code 91: meta Tag">
+    <meta name="twitter:description" content="Master the HTML meta tag for SEO and social sharing.">
+    <meta name="twitter:image" content="https://example.com/twitter-meta.jpg">
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 91: &lt;meta&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;meta&gt;</code> element provides metadata about the HTML document. It always goes in <code>&lt;head&gt;</code> and is not displayed on the page.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>1. Character encoding - always first</h3>
+                <pre><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+                <small>Defines character set. UTF-8 handles all languages + emoji. Put this first in <code>&lt;head&gt;</code></small>
+
+                <h3>2. Viewport for responsive design</h3>
+                <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                <small>Makes your site mobile-friendly. Without it, phones show zoomed-out desktop view</small>
+
+                <h3>3. SEO description</h3>
+                <pre><code>&lt;meta name="description" content="Learn HTML in 100 code examples"&gt;</code></pre>
+                <small>Shows up in Google search results. Keep under 160 characters</small>
+
+                <h3>4. Prevent search indexing</h3>
+                <pre><code>&lt;meta name="robots" content="noindex, nofollow"&gt;</code></pre>
+                <small>Tells search engines not to show this page in results. Use for admin pages</small>
+
+                <h3>5. Page refresh or redirect</h3>
+                <pre><code>&lt;meta http-equiv="refresh" content="5; url=https://example.com"&gt;</code></pre>
+                <small>Redirects after 5 seconds. Avoid for UX - use server redirects instead</small>
+
+                <h3>6. Theme color for mobile browsers</h3>
+                <pre><code>&lt;meta name="theme-color" content="#1a73e8"&gt;</code></pre>
+                <small>Colors the browser address bar on Android Chrome</small>
+
+                <h3>7. Open Graph for social sharing</h3>
+                <pre><code>&lt;meta property="og:title" content="My Article"&gt;
+&lt;meta property="og:image" content="https://site.com/image.jpg"&gt;</code></pre>
+                <small>Controls how your link looks when shared on Facebook, LinkedIn, WhatsApp</small>
+
+                <h3>8. Twitter Cards</h3>
+                <pre><code>&lt;meta name="twitter:card" content="summary_large_image"&gt;
+&lt;meta name="twitter:title" content="My Article"&gt;</code></pre>
+                <small>Twitter-specific tags for rich previews. Falls back to og: tags if missing</small>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>meta purpose:</strong> <code>&lt;meta&gt;</code> tags describe your page to browsers, search engines, and social platforms. They never show in page content.</p>
+                <p><strong>Required metas:</strong> Every page should have <code>charset</code> and <code>viewport</code>. For SEO, add <code>description</code>.</p>
+                <p><strong>name vs property vs http-equiv:</strong> Use <code>name</code> for standard metas, <code>property</code> for Open Graph, <code>http-equiv</code> for HTTP header equivalents.</p>
+                <p><strong>No closing tag:</strong> <code>&lt;meta&gt;</code> is void. Never write <code>&lt;/meta&gt;</code>.</p>
+                <p><strong>Order matters:</strong> <code>charset</code> must be within first 1024 bytes. Put it right after <code>&lt;head&gt;</code>.</p>
+                <p><strong>Too many metas:</strong> Only add what you need. Bloated <code>&lt;head&gt;</code> slows initial page load.</p>
+                <p><strong>Case sensitive:</strong> Attribute values like <code>UTF-8</code> are case-insensitive, but be consistent.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code90.html">← Prev: Code 90: span Tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code92.html">Next: Code 92: link Tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 91 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

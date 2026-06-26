@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 44: Testimonials Slider - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code44.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 44: Testimonials Slider</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This creates a functional slider without JavaScript. By linking labels to hidden radio inputs, we can toggle visibility of specific slide content.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="slider">
+        <input type="radio" name="slider" id="s1" checked>
+        <input type="radio" name="slider" id="s2">
+        <input type="radio" name="slider" id="s3">
+        
+        <div class="slides">
+          <div class="slide">"The best service I've ever used!" - Jane</div>
+          <div class="slide">"Absolutely game-changing product." - John</div>
+          <div class="slide">"I highly recommend this to everyone." - Sam</div>
+        </div>
+
+        <div class="nav">
+          <label for="s1"></label>
+          <label for="s2"></label>
+          <label for="s3"></label>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Hidden <code>input[type="radio"]</code> acts as the "state" manager.</li>
+        <li>The <code>~</code> (sibling) or <code>+</code> (adjacent) combinators allow us to style the <code>.slide</code> based on which radio is <code>:checked</code>.</li>
+        <li><code>overflow: hidden</code> on the container ensures only one slide is visible at a time.</li>
+        <li>Use <code>transition</code> to make the slide switching appear smooth.</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code43/code43.html">← Prev: Code 43: Pricing Table</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code45/code45.html">Next: Code 45 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 44 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

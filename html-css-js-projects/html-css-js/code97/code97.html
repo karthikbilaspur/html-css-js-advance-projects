@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code97 Editor</title>
+    <link rel="stylesheet" href="code97.css">
+</head>
+<body data-theme="dark">
+    <div class="app">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">📁</div>
+                <span>EXPLORER</span>
+            </div>
+            <div class="file-tree">
+                <div class="folder">
+                    <div class="folder-header" data-folder="src">
+                        <span class="arrow">▼</span>
+                        <span>📂 src</span>
+                    </div>
+                    <div class="folder-content" id="folder-src">
+                        <div class="file-item" data-file="index.html" data-lang="html">
+                            <span>📄</span> index.html
+                        </div>
+                        <div class="file-item" data-file="style.css" data-lang="css">
+                            <span>🎨</span> style.css
+                        </div>
+                        <div class="file-item" data-file="app.js" data-lang="javascript">
+                            <span>📜</span> app.js
+                        </div>
+                        <div class="file-item" data-file="config.json" data-lang="json">
+                            <span>⚙️</span> config.json
+                        </div>
+                    </div>
+                </div>
+                <button class="new-file-btn" id="new-file">+ New File</button>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="titlebar">
+                <div class="tabs" id="tabs"></div>
+                <div class="titlebar-actions">
+                    <button id="theme-toggle" title="Toggle Theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <button id="run-btn" title="Run Code">▶ Run</button>
+                    <button id="save-btn" title="Save (Ctrl+S)">💾</button>
+                </div>
+            </div>
+
+            <div class="editor-container">
+                <div class="line-numbers" id="line-numbers"></div>
+                <textarea id="editor" spellcheck="false" placeholder="Select a file to start editing..."></textarea>
+            </div>
+
+            <div class="statusbar">
+                <div class="status-left">
+                    <span id="cursor-pos">Ln 1, Col 1</span>
+                    <span id="file-info">UTF-8</span>
+                </div>
+                <div class="status-right">
+                    <span id="language">Plain Text</span>
+                    <span id="file-status">● Unsaved</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="output-panel" id="output-panel">
+            <div class="output-header">
+                <span>OUTPUT</span>
+                <button id="close-output">✕</button>
+            </div>
+            <div class="output-content" id="output-content"></div>
+        </div>
+    </div>
+
+    <script src="code97.js"></script>
+</body>
+</html>

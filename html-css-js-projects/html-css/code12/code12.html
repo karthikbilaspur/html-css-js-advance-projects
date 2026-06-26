@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 12: Contact Form - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code12.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 12: Contact Form</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This project builds a contact form with styled <code>:focus</code>, <code>:valid</code>, and <code>:invalid</code> states using only HTML + CSS.</p>
+      <p>It demonstrates HTML5 validation, CSS pseudo-classes for form feedback, and floating label effect with <code>:placeholder-shown</code>.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="form-wrapper">
+        <form class="contact-form" novalidate>
+          <h3>Get in Touch</h3>
+          <p class="form-intro">We'd love to hear from you. Send us a message!</p>
+
+          <div class="input-group">
+            <input type="text" id="name" name="name" placeholder=" " required minlength="2">
+            <label for="name">Full Name</label>
+            <span class="error-msg">Please enter at least 2 characters</span>
+            <span class="success-icon">✓</span>
+          </div>
+
+          <div class="input-group">
+            <input type="email" id="email" name="email" placeholder=" " required>
+            <label for="email">Email Address</label>
+            <span class="error-msg">Please enter a valid email</span>
+            <span class="success-icon">✓</span>
+          </div>
+
+          <div class="input-group">
+            <input type="tel" id="phone" name="phone" placeholder=" " pattern="[0-9]{10}">
+            <label for="phone">Phone Number (Optional)</label>
+            <span class="error-msg">Enter 10 digit number</span>
+            <span class="success-icon">✓</span>
+          </div>
+
+          <div class="input-group">
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected hidden></option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="feedback">Feedback</option>
+              <option value="other">Other</option>
+            </select>
+            <label for="subject">Subject</label>
+            <span class="error-msg">Please select a subject</span>
+          </div>
+
+          <div class="input-group">
+            <textarea id="message" name="message" placeholder=" " rows="5" required minlength="10"></textarea>
+            <label for="message">Your Message</label>
+            <span class="error-msg">Message must be at least 10 characters</span>
+            <span class="success-icon">✓</span>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;div class="input-group"&gt;
+  &lt;input type="email" id="email" placeholder=" " required&gt;
+  &lt;label for="email"&gt;Email Address&lt;/label&gt;
+  &lt;span class="error-msg"&gt;Please enter a valid email&lt;/span&gt;
+&lt;/div&gt;
+
+input:invalid:not(:placeholder-shown) {
+  border-color: #e74c3c;
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: #27ae60;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li><code>:focus</code> - Styles input when user clicks into it</li>
+        <li><code>:valid</code> - Applies when input passes HTML5 validation</li>
+        <li><code>:invalid</code> - Applies when input fails validation</li>
+        <li><code>:placeholder-shown</code> - Detects if placeholder is visible/empty</li>
+        <li>Combine <code>:invalid:not(:placeholder-shown)</code> to only show errors after user types</li>
+        <li><code>pattern="[0-9]{10}"</code> enforces 10-digit phone with regex</li>
+        <li>Use <code>novalidate</code> on form to disable browser popup, style with CSS instead</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code11/code11.html">← Prev: Code 11</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code13/code13.html">Next: Code 13 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 12 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

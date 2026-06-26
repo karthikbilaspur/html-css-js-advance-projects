@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 97: noscript - HTML 100 Codes</title>
+    
+    <meta name="description" content="Learn the HTML noscript tag: provide fallback content when JavaScript is disabled. Examples for forms, images, and app warnings. Code 97 of HTML 100 Codes Vault.">
+    <meta name="author" content="HTML 100 Codes Vault">
+    
+    <style>
+        .noscript-warning {
+            background: #fce8e6;
+            border: 2px solid #d93025;
+            padding: 16px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+        .feature-card {
+            border: 1px solid #dadce0;
+            padding: 16px;
+            margin: 12px 0;
+        }
+    </style>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 97: &lt;noscript&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;noscript&gt;</code> element defines alternate content for users who have JavaScript disabled or if the browser doesn't support it. Content inside only renders when JS can't run.</p>
+            </blockquote>
+          </header>
+
+          <noscript>
+            <div class="noscript-warning">
+              <strong>JavaScript is disabled.</strong> Some features like live search, form validation, and interactive demos won't work. Enable JavaScript for the full experience.
+            </div>
+          </noscript>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>1. Basic JS warning</h3>
+                <pre><code>&lt;noscript&gt;
+  &lt;p&gt;Please enable JavaScript to use this site.&lt;/p&gt;
+&lt;/noscript&gt;</code></pre>
+                <small>Shows only when JS is off or blocked</small>
+
+                <h3>2. Fallback for JS-powered image gallery</h3>
+                <div class="feature-card">
+                  <div id="gallery">Loading gallery...</div>
+                  <noscript>
+                    <p>Gallery requires JavaScript.</p>
+                    <img src="/gallery-fallback.jpg" alt="Static image gallery">
+                    <p><a href="/images/">View all images</a></p>
+                  </noscript>
+                </div>
+
+                <h3>3. Form without JS validation</h3>
+                <form action="/submit" method="post">
+                  <label>Email: <input type="email" name="email" required></label>
+                  <button type="submit">Submit</button>
+                  <noscript>
+                    <p><small>Note: Server will validate your email since JavaScript is off.</small></p>
+                  </noscript>
+                </form>
+
+                <h3>4. iframe for tracking pixels</h3>
+                <pre><code>&lt;!-- Analytics script --&gt;
+&lt;script src="analytics.js"&gt;&lt;/script&gt;
+
+&lt;!-- Fallback for no-JS tracking --&gt;
+&lt;noscript&gt;
+  &lt;img src="/track?noscript=1" width="1" height="1" alt=""&gt;
+&lt;/noscript&gt;</code></pre>
+                <small>Common pattern for analytics when JS fails</small>
+
+                <h3>5. noscript in head for CSS</h3>
+                <pre><code>&lt;head&gt;
+  &lt;noscript&gt;
+    &lt;link rel="stylesheet" href="no-js.css"&gt;
+  &lt;/noscript&gt;
+&lt;/head&gt;</code></pre>
+                <small>Loads alternate CSS only when JS is disabled</small>
+
+                <h3>6. SPA fallback message</h3>
+                <div id="app"></div>
+                <noscript>
+                  <h2>App Requires JavaScript</h2>
+                  <p>This is a single-page application. Please enable JavaScript or use a modern browser.</p>
+                  <p><a href="/basic-version.html">Try basic HTML version</a></p>
+                </noscript>
+
+                <h3>7. What NOT to do</h3>
+                <p><strong>Bad - hiding content that doesn't need JS:</strong></p>
+                <pre><code>&lt;noscript&gt;
+  &lt;style&gt;body { display: none; }&lt;/style&gt;
+  Enable JS to view this page
+&lt;/noscript&gt;</code></pre>
+                <small>Don't block content unnecessarily. Use progressive enhancement instead</small>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>noscript purpose:</strong> <code>&lt;noscript&gt;</code> provides fallback HTML when scripts can’t run. Browsers with JS enabled completely ignore its contents.</p>
+                <p><strong>Two contexts:</strong> In <code>&lt;head&gt;</code>, <code>&lt;noscript&gt;</code> can only contain <code>&lt;link&gt;</code>, <code>&lt;style&gt;</code>, and <code>&lt;meta&gt;</code>. In <code>&lt;body&gt;</code>, it can contain any flow content.</p>
+                <p><strong>When it triggers:</strong> 1. User disabled JS. 2. Browser doesn't support <code>&lt;script&gt;</code>. 3. Corporate firewall strips JS. It does NOT trigger if JS errors out.</p>
+                <p><strong>Progressive enhancement:</strong> Best practice is to build core functionality in HTML/CSS first, then layer JS on top. Use <code>&lt;noscript&gt;</code> for truly JS-dependent features.</p>
+                <p><strong>SEO:</strong> Googlebot runs JavaScript, but <code>&lt;noscript&gt;</code> content is still indexed. Don’t stuff keywords here - it looks spammy.</p>
+                <p><strong>Usage today:</strong> ~0.2% of users have JS disabled. But <code>&lt;noscript&gt;</code> is still useful for tracking pixels, print styles, and accessibility.</p>
+                <p><strong>Can't detect with JS:</strong> Obviously you can’t use JS to check if <code>&lt;noscript&gt;</code> ran. It’s purely a browser fallback mechanism.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code96.html">← Prev: Code 96: script Tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code98.html">Next: Code 98: template Tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 97 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+    <script>
+        document.getElementById('gallery').textContent = 'JS gallery loaded with 24 images';
+    </script>
+
+</body>
+</html>

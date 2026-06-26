@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 55: input type number - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 55: &lt;input type="number"&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;input type="number"&gt;</code> element creates a field for entering numbers. Browsers show spinner controls and numeric keyboards on mobile.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic number input</h3>
+                <form>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age">
+                    <button type="submit">Submit</button>
+                </form>
+
+                <h3>Number with min, max, step</h3>
+                <form>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" 
+                           min="1" 
+                           max="10" 
+                           step="1" 
+                           value="1">
+                    <small>Between 1 and 10</small>
+                </form>
+
+                <h3>Decimal numbers</h3>
+                <form>
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" 
+                           min="0" 
+                           max="9999.99" 
+                           step="0.01" 
+                           placeholder="0.00">
+                </form>
+
+                <h3>Required number with validation</h3>
+                <form>
+                    <label for="rating">Rating 1-5:</label>
+                    <input type="number" id="rating" name="rating" 
+                           min="1" 
+                           max="5" 
+                           required>
+                    <button type="submit">Rate</button>
+                </form>
+
+                <h3>Number without spinners</h3>
+                <form>
+                    <label for="zip">ZIP Code:</label>
+                    <input type="number" id="zip" name="zip" 
+                           inputmode="numeric" 
+                           pattern="[0-9]*">
+                    <small>Use inputmode for mobile numeric keypad</small>
+                </form>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>number type rules:</strong> Only accepts floating-point numbers. Letters blocked by browser. Spinner arrows increment by <code>step</code> value.</p>
+                <p><strong>Key attributes:</strong> <code>min</code> and <code>max</code> set range. <code>step</code> sets increment — use <code>step="0.01"</code> for currency, <code>step="any"</code> for any decimal. <code>value</code> sets default.</p>
+                <p><strong>Validation:</strong> Blocks non-numbers and out-of-range values on submit. Empty is valid unless <code>required</code>. <code>step</code> mismatch shows error.</p>
+                <p><strong>UX caveat:</strong> Spinner controls are tiny on mobile. For ZIP codes or IDs, prefer <code>type="text" inputmode="numeric" pattern="[0-9]*"</code> to get keypad without spinners.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code54.html">← Prev: Code 54: input email tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code56.html">Next: Code 56: input range tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 55 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

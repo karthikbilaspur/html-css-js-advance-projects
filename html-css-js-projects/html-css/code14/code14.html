@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 14: Sign Up Form - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code14.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 14: Sign Up Form</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This project builds a multi-field sign up form with nice layout using CSS Grid.</p>
+      <p>It demonstrates <code>display: grid</code> for 2-column layout, <code>grid-column: span 2</code> for full-width fields, and password strength validation with HTML5 attributes.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="signup-wrapper">
+        <div class="signup-container">
+          <div class="signup-left">
+            <h3>Create Account</h3>
+            <p>Join thousands of developers learning HTML</p>
+            <ul class="benefits-list">
+              <li>✓ Access 100+ code examples</li>
+              <li>✓ Track your progress</li>
+              <li>✓ Join developer community</li>
+              <li>✓ Get weekly coding tips</li>
+            </ul>
+          </div>
+
+          <form class="signup-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstname">First Name <span class="required">*</span></label>
+                <input type="text" id="firstname" name="firstname" placeholder="John" required minlength="2">
+              </div>
+              
+              <div class="form-group">
+                <label for="lastname">Last Name <span class="required">*</span></label>
+                <input type="text" id="lastname" name="lastname" placeholder="Doe" required minlength="2">
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="username">Username <span class="required">*</span></label>
+              <input type="text" id="username" name="username" placeholder="johndoe123" required minlength="4" pattern="[a-zA-Z0-9]+">
+              <small class="hint">4+ characters, letters and numbers only</small>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="password">Password <span class="required">*</span></label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required minlength="8">
+              </div>
+              
+              <div class="form-group">
+                <label for="confirm-password">Confirm Password <span class="required">*</span></label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••" required minlength="8">
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="">Select your country</option>
+                <option value="in">India</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ca">Canada</option>
+                <option value="au">Australia</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="checkbox-label">
+                <input type="checkbox" name="terms" required>
+                <span class="checkbox-custom"></span>
+                I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a> <span class="required">*</span>
+              </label>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="checkbox-label">
+                <input type="checkbox" name="newsletter">
+                <span class="checkbox-custom"></span>
+                Send me updates and coding tips
+              </label>
+            </div>
+
+            <button type="submit" class="signup-btn">Create Account</button>
+
+            <p class="login-link">
+              Already have an account? <a href="#">Sign in</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;form class="signup-form"&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="firstname"&gt;First Name&lt;/label&gt;
+      &lt;input type="text" id="firstname" required&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="lastname"&gt;Last Name&lt;/label&gt;
+      &lt;input type="text" id="lastname" required&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li><code>display: grid</code> + <code>grid-template-columns: 1fr 1fr</code> creates 2-column layout</li>
+        <li><code>grid-column: span 2</code> or <code>.full-width</code> makes field span both columns</li>
+        <li><code>minlength="8"</code> + <code>pattern</code> attribute for password validation</li>
+        <li><code>gap: 15px</code> adds consistent spacing between grid items</li>
+        <li>Use <code>autocomplete</code> attributes: <code>given-name</code>, <code>family-name</code>, <code>email</code></li>
+        <li>Wrap checkboxes in labels for better click area and accessibility</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code13/code13.html">← Prev: Code 13</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code15/code15.html">Next: Code 15 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 14 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code99 Real-time Chat</title>
+    <link rel="stylesheet" href="code99.css">
+</head>
+<body>
+    <div class="app">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Chats</h2>
+                <div class="connection-status">
+                    <div class="status-dot" id="status-dot"></div>
+                    <span id="status-text">Connecting...</span>
+                </div>
+            </div>
+            <div class="chat-list">
+                <div class="chat-item active">
+                    <div class="avatar">GC</div>
+                    <div class="chat-info">
+                        <div class="chat-name">General Chat</div>
+                        <div class="chat-preview">You: Hello there!</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">now</div>
+                        <div class="unread-badge">3</div>
+                    </div>
+                </div>
+                <div class="chat-item">
+                    <div class="avatar">JD</div>
+                    <div class="chat-info">
+                        <div class="chat-name">John Doe</div>
+                        <div class="chat-preview">See you tomorrow</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">5m</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-main">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="avatar">GC</div>
+                    <div>
+                        <div class="chat-title">General Chat</div>
+                        <div class="chat-subtitle" id="online-count">5 members online</div>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button id="search-btn" title="Search">🔍</button>
+                    <button id="info-btn" title="Info">ℹ️</button>
+                </div>
+            </div>
+
+            <div class="messages-container" id="messages-container">
+                <div class="messages-viewport" id="messages-viewport">
+                    <div class="load-more" id="load-more">
+                        <div class="spinner"></div>
+                        <span>Loading older messages...</span>
+                    </div>
+                    <div id="messages-list"></div>
+                    <div class="typing-indicator" id="typing-indicator">
+                        <div class="typing-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span id="typing-text">Someone is typing...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="composer">
+                <button class="attach-btn" title="Attach">📎</button>
+                <div class="input-wrapper">
+                    <textarea id="message-input" placeholder="Type a message..." rows="1"></textarea>
+                    <button class="emoji-btn" id="emoji-btn" title="Emoji">😊</button>
+                </div>
+                <button class="send-btn" id="send-btn" title="Send (Enter)">
+                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="code99.js"></script>
+</body>
+</html>

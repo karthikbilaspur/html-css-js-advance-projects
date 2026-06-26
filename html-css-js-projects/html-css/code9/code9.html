@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 9: 404 Error Page - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code9.css">
+</head>
+<body>
+  <header>
+    <p><a href="../index.html">← Back to All Codes</a></p>
+    <h1>Code 9: 404 Error Page</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This project builds a creative "Page Not Found" design using only HTML + CSS.</p>
+      <p>It demonstrates CSS animations with <code>@keyframes</code>, large typography, and centered layouts with flexbox. No JavaScript needed.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="error-container">
+        <div class="error-content">
+          <div class="error-code">
+            <span class="four">4</span>
+            <span class="zero">0</span>
+            <span class="four">4</span>
+          </div>
+          <h3>Oops! Page Not Found</h3>
+          <p class="error-message">
+            The page you're looking for seems to have wandered off into the digital void.
+          </p>
+          <div class="astronaut">👨‍🚀</div>
+          <div class="error-actions">
+            <a href="#" class="btn btn-primary">Go Home</a>
+            <a href="#" class="btn btn-secondary">Report Issue</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;div class="error-container"&gt;
+  &lt;div class="error-code"&gt;
+    &lt;span&gt;4&lt;/span&gt;
+    &lt;span&gt;0&lt;/span&gt;
+    &lt;span&gt;4&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Oops! Page Not Found&lt;/h3&gt;
+  &lt;p&gt;The page you're looking for...&lt;/p&gt;
+  &lt;a href="/" class="btn"&gt;Go Home&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Use <code>display: flex</code> + <code>align-items: center</code> to center vertically</li>
+        <li><code>@keyframes</code> with <code>transform: translateY()</code> creates floating animation</li>
+        <li>Large <code>font-size</code> with <code>text-shadow</code> makes the 404 stand out</li>
+        <li><code>clamp()</code> for responsive font sizes: <code>clamp(4rem, 15vw, 8rem)</code></li>
+        <li>Always provide a "Go Home" link - users need an escape route</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="../code8/code8.html">← Prev: Code 8</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code10/code10.html">Next: Code 10 →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 9 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

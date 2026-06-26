@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Worms - 090</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>WORMS <span class="project-num">090</span></h1>
+    <div class="stats">
+      <div class="stat">Player: <span id="currentPlayer">1</span></div>
+      <div class="stat">Angle: <span id="angle">45</span>°</div>
+      <div class="stat">Power: <span id="power">50</span></div>
+      <div class="stat">Wind: <span id="wind">0</span></div>
+    </div>
+
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas"></canvas>
+
+      <div class="overlay" id="menuScreen">
+        <h2>WORMS</h2>
+        <p>Destroy enemy worms with parabolic shots</p>
+        <button id="startBtn">Start Game</button>
+        <div class="controls-info">
+          <p>← → Aim | ↑ ↓ Power | Space Fire</p>
+          <p>Mobile: Drag to aim, release to fire</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="gameOverScreen">
+        <h2 id="gameOverText">Player 1 Wins!</h2>
+        <button id="restartBtn">Play Again</button>
+        <button id="menuBtn">Main Menu</button>
+      </div>
+    </div>
+
+    <div class="power-bar-container">
+      <div class="power-bar" id="powerBar"></div>
+    </div>
+
+    <div class="mobile-controls" id="mobileControls">
+      <button class="control-btn" id="leftBtn">◀</button>
+      <button class="control-btn" id="fireBtn">FIRE</button>
+      <button class="control-btn" id="rightBtn">▶</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

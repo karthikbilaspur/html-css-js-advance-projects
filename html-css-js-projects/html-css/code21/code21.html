@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 21: Responsive Navbar - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code21.css">
+</head>
+<body>
+  <header>
+    <p><a href="index.html">← Back to All Codes</a></p>
+    <h1>Code 21: Responsive Navbar with &lt;details&gt;</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>This navbar uses the <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags to create a hamburger menu with zero JavaScript. The browser handles the open/close state natively.</p>
+      <p>On screens wider than 768px you get a normal horizontal menu. On mobile, it collapses into a hamburger icon.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      <div class="demo-navbar">
+        <div class="nav-container">
+          <a href="#" class="logo">Brand</a>
+
+          <!-- Mobile hamburger using details/summary -->
+          <details class="nav-toggle">
+            <summary class="hamburger" aria-label="Toggle navigation">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </summary>
+            <nav class="nav-menu">
+              <a href="#home" class="nav-link">Home</a>
+              <a href="#about" class="nav-link">About</a>
+              <a href="#work" class="nav-link">Work</a>
+              <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+          </details>
+
+          <!-- Desktop menu -->
+          <nav class="nav-desktop">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <p><small>↑ Resize your browser below 768px to see the hamburger</small></p>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;details class="nav-toggle"&gt;
+  &lt;summary class="hamburger"&gt;
+    &lt;span class="bar"&gt;&lt;/span&gt;
+    &lt;span class="bar"&gt;&lt;/span&gt;
+    &lt;span class="bar"&gt;&lt;/span&gt;
+  &lt;/summary&gt;
+  &lt;nav class="nav-menu"&gt;
+    &lt;a href="#home"&gt;Home&lt;/a&gt;
+    &lt;a href="#about"&gt;About&lt;/a&gt;
+    &lt;a href="#work"&gt;Work&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/details&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Use <code>list-style: none</code> on <code>&lt;summary&gt;</code> to hide the default triangle</li>
+        <li>Target <code>details[open]</code> in CSS to style the open state</li>
+        <li>Hide <code>.nav-toggle</code> on desktop with <code>display: none</code></li>
+        <li>Position <code>.nav-menu</code> absolutely so it drops down over content</li>
+        <li>Add <code>aria-label</code> to summary for accessibility</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="code20.html">← Prev: Code 20: Nav Tag</a> |
+        <a href="index.html">Home</a> |
+        <a href="code22.html">Next: Code 22: Dropdown →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 21 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

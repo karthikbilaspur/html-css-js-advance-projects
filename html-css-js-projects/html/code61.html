@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 61: select - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 61: &lt;select&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;select&gt;</code> element represents a dropdown control for selecting options. Contains <code>&lt;option&gt;</code> elements.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic dropdown</h3>
+                <form>
+                    <label for="color">Choose a color:</label><br>
+                    <select id="color" name="color">
+                        <option value="">--Select--</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <h3>Select with default option</h3>
+                <form>
+                    <label for="size">Size:</label><br>
+                    <select id="size" name="size">
+                        <option value="s">Small</option>
+                        <option value="m" selected>Medium</option>
+                        <option value="l">Large</option>
+                    </select>
+                </form>
+
+                <h3>Required select</h3>
+                <form>
+                    <label for="country">Country:</label><br>
+                    <select id="country" name="country" required>
+                        <option value="">Choose country</option>
+                        <option value="in">India</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                    </select>
+                    <button type="submit">Save</button>
+                </form>
+
+                <h3>Grouped options with optgroup</h3>
+                <form>
+                    <label for="car">Choose a car:</label><br>
+                    <select id="car" name="car">
+                        <optgroup label="German Cars">
+                            <option value="bmw">BMW</option>
+                            <option value="audi">Audi</option>
+                        </optgroup>
+                        <optgroup label="Japanese Cars">
+                            <option value="toyota">Toyota</option>
+                            <option value="honda">Honda</option>
+                        </optgroup>
+                    </select>
+                </form>
+
+                <h3>Multiple select</h3>
+                <form>
+                    <label for="skills">Skills:</label><br>
+                    <select id="skills" name="skills" multiple size="4">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">JavaScript</option>
+                        <option value="py">Python</option>
+                    </select><br>
+                    <small>Hold Ctrl/Cmd to select multiple</small>
+                </form>
+
+                <h3>Disabled option and select</h3>
+                <form>
+                    <label for="plan">Plan:</label><br>
+                    <select id="plan" name="plan">
+                        <option value="free">Free</option>
+                        <option value="pro" disabled>Pro - unavailable</option>
+                        <option value="team">Team</option>
+                    </select><br><br>
+                    
+                    <label for="locked">Locked:</label><br>
+                    <select id="locked" name="locked" disabled>
+                        <option value="1">Cannot change</option>
+                    </select>
+                </form>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>select rules:</strong> <code>&lt;select&gt;</code> wraps <code>&lt;option&gt;</code> elements. The <code>value</code> of the selected option is submitted. If no <code>value</code>, the text content submits.</p>
+                <p><strong>Key attributes:</strong> <code>multiple</code> allows selecting many options. <code>size="4"</code> shows it as listbox instead of dropdown. <code>required</code> forces selection if first option has empty <code>value=""</code>.</p>
+                <p><strong>Option control:</strong> <code>selected</code> makes an option default. <code>disabled</code> on option prevents selection. Use <code>&lt;optgroup label="..."&gt;</code> to group related options.</p>
+                <p><strong>Submit behavior:</strong> Single select sends <code>name=value</code>. Multiple select sends <code>name=val1&name=val2</code>. Empty selection submits nothing unless first option has <code>value=""</code>.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code60.html">← Prev: Code 60: textarea tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code62.html">Next: Code 62: option tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 61 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

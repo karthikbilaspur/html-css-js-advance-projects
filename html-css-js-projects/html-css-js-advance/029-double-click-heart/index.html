@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>029-double-click-heart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Double Click to Like</h1>
+        <p class="subtitle">Double tap the image to drop a ❤️</p>
+
+        <div class="card">
+            <div class="card-header">
+                <img src="https://i.pravatar.cc/40" alt="Avatar" class="avatar">
+                <span class="username">karthik_cwrp</span>
+            </div>
+
+            <div class="image-container" id="imageContainer">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500" alt="Post" class="post-image">
+                <div class="heart-overlay" id="heartOverlay">❤️</div>
+            </div>
+
+            <div class="card-footer">
+                <div class="actions">
+                    <button class="like-btn" id="likeBtn">
+                        <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                    <span class="like-count" id="likeCount">0 likes</span>
+                </div>
+                <p class="caption"><strong>karthik_cwrp</strong> Sunset in Bangalore 🌅</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

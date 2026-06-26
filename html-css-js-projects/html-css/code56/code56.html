@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 56: Sticky Table of Contents | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code56.css">
+</head>
+<body>
+
+  <header class="page-header">
+    <p><a href="../index.html" class="back-link">← Back to All Codes</a></p>
+    <h1>Code 56: Sticky Table of Contents</h1>
+  </header>
+
+  <div class="layout-wrapper">
+    
+    <!-- Sticky Sidebar with TOC -->
+    <aside class="toc-sidebar">
+      <nav class="toc-nav" aria-label="Table of contents">
+        <h3 class="toc-title">On This Page</h3>
+        <ul class="toc-list">
+          <li><a href="#intro" class="toc-link">Introduction</a></li>
+          <li><a href="#setup" class="toc-link">Project Setup</a></li>
+          <li><a href="#core-concepts" class="toc-link">Core Concepts</a>
+            <ul class="toc-sublist">
+              <li><a href="#variables" class="toc-link">Variables</a></li>
+              <li><a href="#mixins" class="toc-link">Mixins</a></li>
+              <li><a href="#nesting" class="toc-link">Nesting</a></li>
+            </ul>
+          </li>
+          <li><a href="#advanced" class="toc-link">Advanced Patterns</a></li>
+          <li><a href="#performance" class="toc-link">Performance Tips</a></li>
+          <li><a href="#conclusion" class="toc-link">Conclusion</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Article Content -->
+    <main class="content-area">
+      <article>
+        <header class="article-header">
+          <h2>Modern SCSS Architecture Guide</h2>
+          <p class="article-lead">Build maintainable stylesheets that scale with your team and project complexity.</p>
+        </header>
+
+        <section id="intro" class="content-section">
+          <h3>Introduction</h3>
+          <p>SCSS has become the de facto standard for writing maintainable CSS at scale. Its features like nesting, variables, and mixins help teams avoid repetition and enforce consistency across large codebases.</p>
+          <p>This guide covers practical patterns we've battle-tested in production applications serving millions of users. Each section builds on the previous one.</p>
+        </section>
+
+        <section id="setup" class="content-section">
+          <h3>Project Setup</h3>
+          <p>Start with a clear folder structure. Separate concerns into partials: <code>_variables.scss</code>, <code>_mixins.scss</code>, <code>_base.scss</code>, and component files.</p>
+          <p>Configure your build tool to compile SCSS with source maps in development. This makes debugging significantly easier when styles span multiple files.</p>
+        </section>
+
+        <section id="core-concepts" class="content-section">
+          <h3>Core Concepts</h3>
+          <p>Understanding SCSS fundamentals is critical before adopting advanced patterns. The three pillars are variables, mixins, and nesting rules.</p>
+          
+          <h4 id="variables">Variables</h4>
+          <p>Store colors, spacing, and breakpoints in variables. This creates a single source of truth for your design system. Prefix global vars with <code>$</code> and scope them appropriately.</p>
+          
+          <h4 id="mixins">Mixins</h4>
+          <p>Mixins let you define reusable chunks of styles. Use them for vendor prefixes, media queries, or complex animations. Pass arguments to make them flexible.</p>
+          
+          <h4 id="nesting">Nesting</h4>
+          <p>Nest selectors to mirror your HTML structure, but avoid going deeper than 3 levels. Deep nesting creates overly specific selectors that are hard to override.</p>
+        </section>
+
+        <section id="advanced" class="content-section">
+          <h3>Advanced Patterns</h3>
+          <p>Once comfortable with basics, explore functions, loops, and conditionals. <code>@each</code> loops can generate utility classes from maps. <code>@if</code> statements enable theme switching.</p>
+          <p>Consider adopting BEM or similar methodology alongside SCSS. The nesting features pair well with BEM's explicit naming.</p>
+        </section>
+
+        <section id="performance" class="content-section">
+          <h3>Performance Tips</h3>
+          <p>Avoid <code>@extend</code> in large projects — it can generate unexpected selector combinations. Prefer mixins for reusable styles.</p>
+          <p>Keep compiled CSS under 50KB gzipped when possible. Audit your output regularly and remove unused code with PurgeCSS or similar tools.</p>
+        </section>
+
+        <section id="conclusion" class="content-section">
+          <h3>Conclusion</h3>
+          <p>SCSS is powerful, but with power comes responsibility. Establish conventions early, document your architecture, and refactor mercilessly.</p>
+          <p>The goal isn't to use every SCSS feature — it's to write CSS that your future self and teammates can understand and modify confidently.</p>
+        </section>
+
+      </article>
+    </main>
+
+  </div>
+
+  <nav class="pagination-nav">
+    <hr>
+    <p>
+      <a href="../code55/code55.html">← Prev: Code 55</a> | 
+      <a href="../index.html">Home</a> | 
+      <a href="../code57/code57.html">Next: Code 57 →</a>
+    </p>
+  </nav>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 78: tfoot - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 78: &lt;tfoot&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;tfoot&gt;</code> element groups footer content in a table. Usually contains summaries, totals, or results. Renders after <code>&lt;tbody&gt;</code> regardless of source order.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic tfoot with totals</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Book</td>
+                            <td>₹250</td>
+                        </tr>
+                        <tr>
+                            <td>Pen</td>
+                            <td>₹30</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total</td>
+                            <td>₹280</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <h3>tfoot before tbody in source</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Sales</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td>Grand Total</td>
+                            <td>₹95,000</td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>January</td>
+                            <td>₹45,000</td>
+                        </tr>
+                        <tr>
+                            <td>February</td>
+                            <td>₹50,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <small>tfoot renders at bottom even when written before tbody</small>
+
+                <h3>tfoot with colspan</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Qty</th>
+                            <th>Rate</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Keyboard</td>
+                            <td>2</td>
+                            <td>₹600</td>
+                            <td>₹1200</td>
+                        </tr>
+                        <tr>
+                            <td>Mouse</td>
+                            <td>3</td>
+                            <td>₹300</td>
+                            <td>₹900</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Total Amount</td>
+                            <td>₹2100</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <h3>tfoot for pagination</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Arun</td><td>Active</td></tr>
+                        <tr><td>Divya</td><td>Active</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Showing 1-2 of 50 users</td>
+                        </tr>
+                    </tfoot>
+                </table>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>tfoot rules:</strong> Must be direct child of <code>&lt;table&gt;</code>. Only one <code>&lt;tfoot&gt;</code> per table. Contains <code>&lt;tr&gt;</code> elements with summary data.</p>
+                <p><strong>Render order:</strong> Browser always displays <code>&lt;tfoot&gt;</code> after <code>&lt;tbody&gt;</code>, even if you write it before <code>&lt;tbody&gt;</code> in HTML.</p>
+                <p><strong>Purpose:</strong> Use for totals, averages, summaries, or pagination info. When printing, browsers repeat <code>&lt;tfoot&gt;</code> at bottom of each page.</p>
+                <p><strong>Optional:</strong> Table works without <code>&lt;tfoot&gt;</code>. Add it when you need footer rows semantically separate from body data.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code77.html">← Prev: Code 77: tbody tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code79.html">Next: Code 79: caption tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 78 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 24: Breadcrumb Navigation - HTML 100 Codes</title>
+  <link rel="stylesheet" href="code24.css">
+</head>
+<body>
+  <header>
+    <p><a href="index.html">← Back to All Codes</a></p>
+    <h1>Code 24: Breadcrumb Navigation</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <p>Breadcrumbs show users where they are in your site hierarchy. They use <code>&lt;nav&gt;</code> with <code>aria-label="breadcrumb"</code> for accessibility, and CSS <code>::after</code> pseudo-elements for separators.</p>
+      <p>The last item is usually not a link, indicating the current page.</p>
+    </section>
+
+    <section>
+      <h2>Live Demo</h2>
+      
+      <h3>Style 1: Slash Separator</h3>
+      <div class="demo-area">
+        <nav aria-label="breadcrumb" class="breadcrumb breadcrumb-slash">
+          <ol>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#laptops">Laptops</a></li>
+            <li aria-current="page">Gaming Laptops</li>
+          </ol>
+        </nav>
+      </div>
+
+      <h3>Style 2: Arrow Separator</h3>
+      <div class="demo-area">
+        <nav aria-label="breadcrumb" class="breadcrumb breadcrumb-arrow">
+          <ol>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#docs">Documentation</a></li>
+            <li><a href="#html">HTML</a></li>
+            <li aria-current="page">Semantic Tags</li>
+          </ol>
+        </nav>
+      </div>
+
+      <h3>Style 3: Pills Style</h3>
+      <div class="demo-area">
+        <nav aria-label="breadcrumb" class="breadcrumb breadcrumb-pills">
+          <ol>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#tech">Technology</a></li>
+            <li aria-current="page">CSS Grid Guide</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Code</h2>
+      <pre><code>&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#products"&gt;Products&lt;/a&gt;&lt;/li&gt;
+    &lt;li aria-current="page"&gt;Current Page&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+      <pre><code>/* Add separator after each li except last */
+.breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin: 0 0.5rem;
+  color: #999;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Key Rules</h2>
+      <ul>
+        <li>Use <code>&lt;nav aria-label="breadcrumb"&gt;</code> for screen readers</li>
+        <li>Structure with <code>&lt;ol&gt;</code> because order matters semantically</li>
+        <li>Mark current page with <code>aria-current="page"</code> and don't make it a link</li>
+        <li>Use <code>::after</code> on <code>li:not(:last-child)</code> to add separators</li>
+        <li>Common separators: <code>/</code>, <code>›</code>, <code>→</code>, or use <code>border</code> for arrows</li>
+        <li>Keep breadcrumb text short - truncate if needed on mobile</li>
+      </ul>
+    </section>
+
+    <nav>
+      <hr>
+      <p>
+        <a href="code23.html">← Prev: Code 23: Dropdown Menu</a> |
+        <a href="index.html">Home</a> |
+        <a href="code25.html">Next: Code 25: Pagination →</a>
+      </p>
+    </nav>
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>Code 24 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>
