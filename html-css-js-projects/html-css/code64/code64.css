@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f9fafb;
-  color: #111827;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #fafafa;
+  color: #18181b;
   line-height: 1.6;
 }
 
@@ -15,35 +15,32 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
-  background: #ffffff;
 }
 
 .resume-header {
   text-align: center;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 2px solid #e5e7eb;
+  border-bottom: 2px solid #e4e4e7;
 }
 
 .resume-header h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #111827;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #09090b;
   margin-bottom: 0.5rem;
 }
 
-.resume-header .role {
+.role {
   font-size: 1.125rem;
-  color: #6b7280;
+  color: #71717a;
   font-weight: 500;
 }
 
 .skills-section h2 {
-  font-size: 1.5rem;
-  color: #111827;
+  font-size: 1.75rem;
   margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #e5e7eb;
+  color: #09090b;
 }
 
 .skill-group {
@@ -52,9 +49,11 @@ body {
 
 .skill-group h3 {
   font-size: 1.125rem;
-  color: #374151;
+  font-weight: 700;
+  color: #3f3f46;
   margin-bottom: 1.25rem;
-  font-weight: 600;
+  padding-left: 0.5rem;
+  border-left: 3px solid #6366f1;
 }
 
 .skill-bar {
@@ -69,51 +68,48 @@ body {
 }
 
 .skill-name {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #374151;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: #27272a;
 }
 
 .skill-percent {
+  font-weight: 700;
   font-size: 0.875rem;
-  font-weight: 600;
-  color: #4b5563;
+  color: #52525b;
 }
 
 .skill-track {
   width: 100%;
-  height: 8px;
-  background: #e5e7eb;
-  border-radius: 4px;
+  height: 10px;
+  background: #e4e4e7;
+  border-radius: 9999px;
   overflow: hidden;
 }
 
 .skill-level {
   height: 100%;
-  background: #3b82f6;
-  border-radius: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 9999px;
   width: 0;
-  animation: slideIn 1.5s ease-out forwards;
+  animation: growBar 1.5s ease-out forwards;
 }
 
-@keyframes slideIn {
-  from {
-    width: 0;
-  }
-  to {
-    width: calc(var(--level) * 1%);
-  }
+@keyframes growBar {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
-.skill-level[data-level="95"] { --level: 95; animation-delay: 0.1s; }
-.skill-level[data-level="88"] { --level: 88; animation-delay: 0.2s; }
-.skill-level[data-level="82"] { --level: 82; animation-delay: 0.3s; }
-.skill-level[data-level="90"] { --level: 90; animation-delay: 0.4s; }
-.skill-level[data-level="80"] { --level: 80; animation-delay: 0.5s; }
-.skill-level[data-level="75"] { --level: 75; animation-delay: 0.6s; }
-.skill-level[data-level="78"] { --level: 78; animation-delay: 0.7s; }
-.skill-level[data-level="92"] { --level: 92; animation-delay: 0.8s; }
-.skill-level[data-level="68"] { --level: 68; animation-delay: 0.9s; }
+/* Individual skill widths */
+.skill-level.html-css { max-width: 95%; animation-delay: 0.1s; }
+.skill-level.javascript { max-width: 88%; animation-delay: 0.2s; }
+.skill-level.react { max-width: 82%; animation-delay: 0.3s; }
+.skill-level.scss-tailwind { max-width: 90%; animation-delay: 0.4s; }
+.skill-level.node { max-width: 80%; animation-delay: 0.5s; }
+.skill-level.python { max-width: 75%; animation-delay: 0.6s; }
+.skill-level.database { max-width: 78%; animation-delay: 0.7s; }
+.skill-level.git { max-width: 92%; animation-delay: 0.8s; }
+.skill-level.docker-aws { max-width: 68%; animation-delay: 0.9s; }
 
 .pagination-nav {
   margin: 4rem 0 1rem;
@@ -122,30 +118,32 @@ body {
 
 .pagination-nav p {
   font-size: 0.95rem;
-  color: #6b7280;
+  color: #71717a;
 }
 
 .pagination-nav a {
-  color: #3b82f6;
+  color: #6366f1;
   text-decoration: none;
   padding: 0 0.5rem;
+  font-weight: 500;
 }
 
 .pagination-nav a:hover {
   text-decoration: underline;
+  color: #4f46e5;
 }
 
 .pagination-nav hr,
 .page-footer hr {
   border: none;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #e4e4e7;
   margin-bottom: 1rem;
 }
 
 .page-footer {
   text-align: center;
   margin-top: 1rem;
-  color: #9ca3af;
+  color: #a1a1aa;
 }
 
 .page-footer small {
@@ -153,11 +151,13 @@ body {
 }
 
 @media (max-width: 640px) {
-  .resume-container {
-    padding: 2rem 1rem;
+  .resume-header h1 {
+    font-size: 2rem;
   }
   
-  .resume-header h1 {
-    font-size: 1.875rem;
+  .pagination-nav p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }

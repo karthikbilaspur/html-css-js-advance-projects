@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 29: Sticky Header - HTML 100 Codes</title>
+  <meta name="description" content="Code 29: Sticky Header - Position sticky header that stays on scroll using HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 29: Sticky Header | HTML 100 Codes</title>
   <link rel="stylesheet" href="code29.css">
 </head>
 <body>
-  <header>
-    <p><a href="index.html">← Back to All Codes</a></p>
-    <h1>Code 29: Sticky Header on Scroll</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 29: Sticky Header</h1>
+      <p class="subtitle">Position: sticky for headers that stick on scroll - zero JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p><code>position: sticky</code> makes an element stick to the top when you scroll past it. Unlike <code>position: fixed</code>, it stays in the document flow until it hits the scroll threshold.</p>
       <p>Perfect for headers that should remain visible but not overlap content initially. Works with <code>top: 0</code> to stick to viewport top.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <p><small>↓ Scroll down in the box below to see the header stick</small></p>
       <div class="demo-area">
@@ -74,7 +79,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;header class="sticky-header"&gt;
   &lt;nav&gt;...&lt;/nav&gt;
@@ -88,9 +93,9 @@
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li>Parent must NOT have <code>overflow: hidden</code> or <code>overflow: auto</code> — breaks sticky</li>
         <li>Must set <code>top</code>, <code>bottom</code>, <code>left</code>, or <code>right</code> value. Use <code>top: 0</code> for header</li>
         <li>Add <code>z-index</code> so it stays above scrolling content</li>
@@ -101,19 +106,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="code28.html">← Prev: Code 28: Footer with Columns</a> |
-        <a href="index.html">Home</a> |
-        <a href="code30.html">Next: Code 30: Hero Section →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code28/index.html" class="nav-link">← Prev: Code 28</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code30/index.html" class="nav-link">Next: Code 30 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 29 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 29 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

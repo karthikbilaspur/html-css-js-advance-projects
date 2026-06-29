@@ -130,4 +130,10 @@ h1 {
   .stats-grid {
     grid-template-columns: 1fr;
   }
+  
+  .pagination-nav p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

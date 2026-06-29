@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 23: Dropdown Menu - HTML 100 Codes</title>
+  <meta name="description" content="Code 23: Dropdown Menu - Accessible hover and keyboard dropdown using :hover and :focus-within with HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 23: Dropdown Menu | HTML 100 Codes</title>
   <link rel="stylesheet" href="code23.css">
 </head>
 <body>
-  <header>
-    <p><a href="index.html">← Back to All Codes</a></p>
-    <h1>Code 23: Dropdown Menu with :hover & :focus-within</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 23: Dropdown Menu</h1>
+      <p class="subtitle">Hover + keyboard accessible with :focus-within - zero JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This dropdown menu works on mouse hover <em>and</em> keyboard focus with zero JavaScript. The <code>:focus-within</code> pseudo-class keeps the menu open when you Tab through links, making it accessible.</p>
       <p>The dropdown is hidden by default and only shows when the parent <code>li</code> is hovered or has focus inside it.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="demo-area">
         <nav class="dropdown-nav">
@@ -53,7 +58,7 @@
       <p><small>↑ Hover over "Services" or "Products". Try using Tab to navigate with keyboard.</small></p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;li class="dropdown"&gt;
   &lt;a href="#services"&gt;Services&lt;/a&gt;
@@ -63,17 +68,17 @@
   &lt;/ul&gt;
 &lt;/li&gt;</code></pre>
       <pre><code>/* Show on hover or keyboard focus */
-.dropdown:hover.dropdown-menu,
-.dropdown:focus-within.dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li>Parent <code>li.dropdown</code> needs <code>position: relative</code></li>
         <li>Child <code>.dropdown-menu</code> uses <code>position: absolute</code> to overlay</li>
         <li>Hide with <code>opacity: 0</code> + <code>visibility: hidden</code> not <code>display: none</code> to allow transitions</li>
@@ -83,19 +88,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="code22.html">← Prev: Code 22: Dropdown</a> |
-        <a href="index.html">Home</a> |
-        <a href="code24.html">Next: Code 24: Tabs →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code22/index.html" class="nav-link">← Prev: Code 22</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code24/index.html" class="nav-link">Next: Code 24 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 23 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 23 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

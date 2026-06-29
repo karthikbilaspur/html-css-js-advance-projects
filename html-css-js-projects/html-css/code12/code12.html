@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 12: Contact Form - HTML 100 Codes</title>
+  <meta name="description" content="Code 12: Contact Form - CSS form validation using :focus, :valid, :invalid and floating labels with HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="Karthik Cwrp">
+  <title>Code 12: Contact Form | HTML 100 Codes</title>
   <link rel="stylesheet" href="code12.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 12: Contact Form</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 12: Contact Form</h1>
+      <p class="subtitle">HTML5 validation, CSS pseudo-classes, and floating labels with pure CSS</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This project builds a contact form with styled <code>:focus</code>, <code>:valid</code>, and <code>:invalid</code> states using only HTML + CSS.</p>
       <p>It demonstrates HTML5 validation, CSS pseudo-classes for form feedback, and floating label effect with <code>:placeholder-shown</code>.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="form-wrapper">
         <form class="contact-form" novalidate>
@@ -71,7 +76,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;div class="input-group"&gt;
   &lt;input type="email" id="email" placeholder=" " required&gt;
@@ -88,9 +93,9 @@ input:valid:not(:placeholder-shown) {
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li><code>:focus</code> - Styles input when user clicks into it</li>
         <li><code>:valid</code> - Applies when input passes HTML5 validation</li>
         <li><code>:invalid</code> - Applies when input fails validation</li>
@@ -101,19 +106,17 @@ input:valid:not(:placeholder-shown) {
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code11/code11.html">← Prev: Code 11</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code13/code13.html">Next: Code 13 →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code11/index.html" class="nav-link">← Prev: Code 11</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code13/index.html" class="nav-link">Next: Code 13 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 12 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 12 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

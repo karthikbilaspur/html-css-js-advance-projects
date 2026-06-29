@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 18: Custom Checkboxes - HTML 100 Codes</title>
+  <meta name="description" content="Code 18: Custom Checkboxes - Style native inputs with appearance: none, ::before, and :checked using HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 18: Custom Checkboxes | HTML 100 Codes</title>
   <link rel="stylesheet" href="code18.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 18: Custom Checkboxes</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 18: Custom Checkboxes</h1>
+      <p class="subtitle">Replace default browser checkboxes with custom styles using pure CSS</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This project styles native checkbox inputs using <code>appearance: none</code> to remove browser defaults.</p>
       <p>It demonstrates custom styling with <code>::before</code> and <code>::after</code> pseudo-elements, <code>:checked</code> state, and smooth transitions.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="checkbox-section">
         <h3>Style 1: Classic Checkmark</h3>
@@ -93,14 +98,14 @@
           <label class="heart-checkbox">
             <input type="checkbox">
             <span class="heart-icon">🤍</span>
-            <span class="heart-icon-checked">❤️</span>
+            <span class="heart-icon-checked">❤</span>
             <span>Add to favorites</span>
           </label>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;label class="custom-checkbox"&gt;
   &lt;input type="checkbox"&gt;
@@ -121,9 +126,9 @@ input[type="checkbox"]:checked {
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li><code>appearance: none</code> - Removes default browser checkbox styling</li>
         <li><code>::after</code> or <code>::before</code> - Creates custom checkmark with CSS</li>
         <li><code>input:checked</code> - Styles checkbox when selected</li>
@@ -133,19 +138,17 @@ input[type="checkbox"]:checked {
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code17/code17.html">← Prev: Code 17</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code19/code19.html">Next: Code 19 →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code17/index.html" class="nav-link">← Prev: Code 17</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code19/index.html" class="nav-link">Next: Code 19 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 18 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 18 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

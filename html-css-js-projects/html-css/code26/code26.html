@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 26: Accordion FAQ - HTML 100 Codes</title>
+  <meta name="description" content="Code 26: Accordion FAQ - Disclosure widget using details/summary tags with zero JavaScript. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 26: Accordion FAQ | HTML 100 Codes</title>
   <link rel="stylesheet" href="code26.css">
 </head>
 <body>
-  <header>
-    <p><a href="index.html">← Back to All Codes</a></p>
-    <h1>Code 26: Accordion FAQ with &lt;details&gt;</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 26: Accordion FAQ</h1>
+      <p class="subtitle">Disclosure widget with &lt;details&gt;/&lt;summary&gt; - zero JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>The <code>&lt;details&gt;</code> element creates a disclosure widget that users can open and close. Perfect for FAQs — no JavaScript needed.</p>
       <p>The <code>&lt;summary&gt;</code> is the visible question. Everything else inside <code>&lt;details&gt;</code> is the answer shown when open.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="demo-area">
         <div class="faq">
@@ -71,7 +76,7 @@
       <p><small>↑ Click any question to expand. Multiple can be open at once.</small></p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;details class="faq-item"&gt;
   &lt;summary&gt;What is HTML?&lt;/summary&gt;
@@ -90,9 +95,9 @@ details[open] summary::after {
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li><code>&lt;summary&gt;</code> must be the first child of <code>&lt;details&gt;</code></li>
         <li>Remove default marker with <code>summary::marker { display: none; }</code> or <code>list-style: none</code></li>
         <li>Style open state with <code>details[open] summary</code></li>
@@ -102,19 +107,17 @@ details[open] summary::after {
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="code25.html">← Prev: Code 25: Tabs Component</a> |
-        <a href="index.html">Home</a> |
-        <a href="code27.html">Next: Code 27: Modal →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code25/index.html" class="nav-link">← Prev: Code 25</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code27/index.html" class="nav-link">Next: Code 27 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 26 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 26 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

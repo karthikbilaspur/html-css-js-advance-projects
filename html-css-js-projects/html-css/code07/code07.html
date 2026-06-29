@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 7: Book Card - HTML 100 Codes</title>
+  <meta name="description" content="Create a book card with cover, author, and CSS-only star rating using pseudo-elements. Code 7 of HTML 100 Codes Vault.">
+  <meta name="author" content="HTML 100 Codes Vault">
+  <link rel="stylesheet" href="code07.css">
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="../index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 7: Book Card</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>This project creates a book card with cover image, title, author, and CSS-only star rating.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">What it does</font></h2>
+              <blockquote>
+                <p>It uses <code>::before</code> with <code>content: "★★★★★"</code> for stars, <code>background-clip: text</code> for gradient stars, and hover effects with <code>transform</code>.</p>
+              </blockquote>
+            </section>
+
+            <section>
+              <h2><font color="#333333">Live Demo</font></h2>
+              <blockquote>
+                <div class="books-container">
+                  <article class="book-card">
+                    <img 
+                      src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop" 
+                      alt="Atomic Habits Book Cover" 
+                      class="book-cover"
+                      "max-width: 100%; height: auto;"
+                    >
+                    <div class="book-info">
+                      <h3>Atomic Habits</h3>
+                      <p class="author">by James Clear</p>
+                      <div class="rating" data-rating="5">
+                        <span class="stars"></span>
+                        <span class="rating-text">5.0</span>
+                      </div>
+                      <p class="price">₹499</p>
+                    </div>
+                  </article>
+
+                  <article class="book-card">
+                    <img 
+                      src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=450&fit=crop" 
+                      alt="The Alchemist Book Cover" 
+                      class="book-cover"
+                      "max-width: 100%; height: auto;"
+                    >
+                    <div class="book-info">
+                      <h3>The Alchemist</h3>
+                      <p class="author">by Paulo Coelho</p>
+                      <div class="rating" data-rating="4">
+                        <span class="stars"></span>
+                        <span class="rating-text">4.2</span>
+                      </div>
+                      <p class="price">₹299</p>
+                    </div>
+                  </article>
+
+                  <article class="book-card">
+                    <img 
+                      src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300&h=450&fit=crop" 
+                      alt="Wings of Fire Book Cover" 
+                      class="book-cover"
+                      "max-width: 100%; height: auto;"
+                    >
+                    <div class="book-info">
+                      <h3>Wings of Fire</h3>
+                      <p class="author">by Dr. A.P.J. Abdul Kalam</p>
+                      <div class="rating" data-rating="5">
+                        <span class="stars"></span>
+                        <span class="rating-text">4.8</span>
+                      </div>
+                      <p class="price">₹350</p>
+                    </div>
+                  </article>
+                </div>
+              </blockquote>
+            </section>
+
+            <section>
+              <h2><font color="#333333">The Code</font></h2>
+              <blockquote>
+                <pre><code>&lt;article class="book-card"&gt;
+  &lt;img src="cover.jpg" alt="Book Cover" class="book-cover"&gt;
+  &lt;h3&gt;Atomic Habits&lt;/h3&gt;
+  &lt;p class="author"&gt;by James Clear&lt;/p&gt;
+  &lt;div class="rating" data-rating="5"&gt;
+    &lt;span class="stars"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+              </blockquote>
+            </section>
+
+            <section>
+              <h2><font color="#333333">Key Rules</font></h2>
+              <blockquote>
+                <ul>
+                  <li>Use <code>data-rating="5"</code> attribute to set star rating from 1-5</li>
+                  <li><code>::before</code> with <code>content: "★★★★★"</code> creates the stars</li>
+                  <li><code>background: linear-gradient</code> + <code>background-clip: text</code> colors filled stars</li>
+                  <li><code>aspect-ratio: 2/3</code> keeps book covers proportional</li>
+                  <li><code>transform: translateY(-5px)</code> on <code>:hover</code> adds lift effect</li>
+                </ul>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="../code06/code06.html">← Prev: Code 6: Product Card</a></b> | 
+                <b><a href="../index.html">Home</a></b> | 
+                <b><a href="../code08/code08.html">Next: Code 8 →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 7 of 100 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

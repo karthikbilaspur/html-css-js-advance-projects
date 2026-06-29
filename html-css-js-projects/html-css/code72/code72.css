@@ -27,7 +27,6 @@ main {
 
 .spinner-section {
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 40px;
     margin-bottom: 24px;

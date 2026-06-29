@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 27: Pagination UI - HTML 100 Codes</title>
+  <meta name="description" content="Code 27: Pagination UI - Accessible pagination with aria-current, Prev/Next controls, and page numbers using HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 27: Pagination UI | HTML 100 Codes</title>
   <link rel="stylesheet" href="code27.css">
 </head>
 <body>
-  <header>
-    <p><a href="index.html">← Back to All Codes</a></p>
-    <h1>Code 27: Pagination UI</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 27: Pagination UI</h1>
+      <p class="subtitle">Accessible page navigation with aria-current and keyboard support</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>Pagination splits content across multiple pages. This component uses <code>&lt;nav aria-label="pagination"&gt;</code> with numbered links and shows the current page with <code>aria-current="page"</code>.</p>
       <p>The active page is styled differently and disabled to prevent clicking yourself. Prev/Next buttons handle navigation.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       
       <h3>Style 1: Classic Numbers</h3>
@@ -64,7 +69,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;nav aria-label="Pagination"&gt;
   &lt;a href="#prev"&gt;‹ Prev&lt;/a&gt;
@@ -82,9 +87,9 @@
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li>Wrap in <code>&lt;nav aria-label="Pagination"&gt;</code> for screen readers</li>
         <li>Use <code>&lt;ul&gt;</code> for page numbers because it's a list of links</li>
         <li>Mark active page with <code>aria-current="page"</code> not just a class</li>
@@ -95,19 +100,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="code26.html">← Prev: Code 26: Accordion FAQ</a> |
-        <a href="index.html">Home</a> |
-        <a href="code28.html">Next: Code 28: Cards →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code26/index.html" class="nav-link">← Prev: Code 26</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code28/index.html" class="nav-link">Next: Code 28 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 27 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 27 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

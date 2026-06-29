@@ -3,53 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 49: Brand Partners Strip - HTML 100 Codes</title>
+  <meta name="description" content="Code 49: Brand Partners Strip - Infinite scrolling logo carousel with CSS keyframes. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 49: Brand Partners Strip | HTML 100 Codes</title>
   <link rel="stylesheet" href="code49.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 49: Brand Partners Strip</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 49: Brand Partners Strip</h1>
+      <p class="subtitle">Infinite scrolling logos with keyframes - zero JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This creates a seamless, infinite scrolling strip of brand logos. It uses CSS <code>@keyframes</code> to animate the horizontal position of a container containing duplicated sets of logos.</p>
+      <p>Perfect for "Trusted by" sections. Loops forever with no JS, no libraries.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
-      <div class="logo-strip">
-        <div class="logo-slide">
-          <span>Brand A</span> <span>Brand B</span> <span>Brand C</span> <span>Brand D</span> 
-          <span>Brand A</span> <span>Brand B</span> <span>Brand C</span> <span>Brand D</span>
+      <div class="demo-area">
+        <div class="logo-strip">
+          <div class="logo-slide">
+            <span class="brand">Brand A</span>
+            <span class="brand">Brand B</span>
+            <span class="brand">Brand C</span>
+            <span class="brand">Brand D</span>
+            <span class="brand">Brand E</span>
+            <span class="brand">Brand A</span>
+            <span class="brand">Brand B</span>
+            <span class="brand">Brand C</span>
+            <span class="brand">Brand D</span>
+            <span class="brand">Brand E</span>
+          </div>
         </div>
-      </div>
+      <p><small>↑ Duplicated logos create seamless infinite loop</small></p>
     </section>
 
-    <section>
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;div class="logo-strip"&gt;
+  &lt;div class="logo-slide"&gt;
+    &lt;span&gt;Brand A&lt;/span&gt;
+    &lt;span&gt;Brand B&lt;/span&gt;
+    &lt;!-- Duplicate all logos once --&gt;
+    &lt;span&gt;Brand A&lt;/span&gt;
+    &lt;span&gt;Brand B&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
-        <li>Use <code>white-space: nowrap</code> on the container to prevent items from wrapping to a new line.</li>
-        <li>The <code>@keyframes</code> animation moves the <code>margin-left</code> or <code>transform: translateX</code> from 0 to -50%.</li>
-        <li>Ensure the total width of the logos is accounted for so the animation reset is invisible to the user.</li>
+      <ul class="rules-list">
+        <li><code>white-space: nowrap</code> on container prevents logos from wrapping</li>
+        <li>Duplicate the logo set once — this creates the illusion of infinite scroll</li>
+        <li><code>@keyframes</code> moves <code>transform: translateX(0)</code> to <code>translateX(-50%)</code></li>
+        <li>Animate to <code>-50%</code> because half the content is duplicated</li>
+        <li>Use <code>animation: scroll 20s linear infinite</code> for constant speed</li>
+        <li><code>overflow: hidden</code> on parent hides logos outside viewport</li>
+        <li>Add <code>animation-play-state: paused</code> on <code>:hover</code> to pause on interaction</li>
+        <li>Use <code>will-change: transform</code> for GPU acceleration on long strips</li>
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code48/code48.html">← Prev: Code 48: Newsletter</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code50/code50.html">Next: Code 50 →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code48/index.html" class="nav-link">← Prev: Code 48</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code50/index.html" class="nav-link">Next: Code 50 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 49 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 49 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 25: Tabs Component - HTML 100 Codes</title>
+  <meta name="description" content="Code 25: Tabs Component - Radio button hack with :checked to switch content panels. Zero JavaScript. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 25: Tabs Component | HTML 100 Codes</title>
   <link rel="stylesheet" href="code25.css">
 </head>
 <body>
-  <header>
-    <p><a href="index.html">← Back to All Codes</a></p>
-    <h1>Code 25: Tabs with Radio + :checked</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 25: Tabs Component</h1>
+      <p class="subtitle">Radio button + :checked for tab switching - zero JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This tabs component uses hidden radio buttons and <code>:checked</code> to switch content panels. The <code>label</code> acts as the tab button.</p>
       <p>Only one tab can be active at a time because all radios share the same <code>name</code>. Fully keyboard accessible — use Tab + Arrow keys or Space.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="demo-area">
         <div class="tabs">
@@ -64,11 +69,10 @@
             </div>
           </div>
         </div>
-      </div>
       <p><small>↑ Click tabs or use Tab + Space/Enter to switch</small></p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;input type="radio" id="tab1" name="tabs" checked&gt;
 &lt;input type="radio" id="tab2" name="tabs"&gt;
@@ -85,9 +89,9 @@
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li>All radios must have the same <code>name</code> attribute to form a group</li>
         <li>Hide radios with <code>display: none</code> or <code>position: absolute; opacity: 0</code></li>
         <li>Use <code>label for="id"</code> to make labels clickable</li>
@@ -97,19 +101,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="code24.html">← Prev: Code 24: Accordion</a> |
-        <a href="index.html">Home</a> |
-        <a href="code26.html">Next: Code 26: Modal →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code24/index.html" class="nav-link">← Prev: Code 24</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code26/index.html" class="nav-link">Next: Code 26 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 25 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 25 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

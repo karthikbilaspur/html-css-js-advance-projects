@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 16: Feedback Form - HTML 100 Codes</title>
+  <meta name="description" content="Code 16: Feedback Form - Interactive star rating with CSS checkbox hack and radio buttons using HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 16: Feedback Form | HTML 100 Codes</title>
   <link rel="stylesheet" href="code16.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 16: Feedback Form</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 16: Feedback Form</h1>
+      <p class="subtitle">Star rating with radio buttons and CSS sibling selectors - pure CSS</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This project builds a feedback form with interactive star rating using radio buttons and pure CSS.</p>
       <p>It demonstrates the "checkbox hack" with <code>input[type="radio"]</code>, <code>:checked</code> + <code>~</code> sibling selector, and <code>flex-direction: row-reverse</code> for hover effects.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="feedback-wrapper">
         <form class="feedback-form">
@@ -87,7 +92,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;div class="star-rating"&gt;
   &lt;input type="radio" id="star5" name="rating" value="5"&gt;
@@ -106,9 +111,9 @@
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li><code>flex-direction: row-reverse</code> - Reverses stars so 5 is on left visually</li>
         <li><code>input:checked ~ label</code> - Colors all stars before the checked one</li>
         <li><code>input:hover ~ label</code> - Shows hover effect on previous stars</li>
@@ -118,19 +123,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code15/code15.html">← Prev: Code 15</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code17/code17.html">Next: Code 17 →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code15/index.html" class="nav-link">← Prev: Code 15</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code17/index.html" class="nav-link">Next: Code 17 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 16 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 16 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

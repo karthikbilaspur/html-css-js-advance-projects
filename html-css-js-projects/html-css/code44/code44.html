@@ -3,65 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 44: Testimonials Slider - HTML 100 Codes</title>
+  <meta name="description" content="Code 44: Testimonials Slider - CSS-only carousel using radio buttons and :checked. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 44: Testimonials Slider | HTML 100 Codes</title>
   <link rel="stylesheet" href="code44.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 44: Testimonials Slider</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 44: Testimonials Slider</h1>
+      <p class="subtitle">CSS-only carousel with radio inputs - zero JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This creates a functional slider without JavaScript. By linking labels to hidden radio inputs, we can toggle visibility of specific slide content.</p>
+      <p>The radio hack: <code>:checked</code> + sibling combinators control which testimonial shows. Fully keyboard accessible.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
-      <div class="slider">
-        <input type="radio" name="slider" id="s1" checked>
-        <input type="radio" name="slider" id="s2">
-        <input type="radio" name="slider" id="s3">
-        
-        <div class="slides">
-          <div class="slide">"The best service I've ever used!" - Jane</div>
-          <div class="slide">"Absolutely game-changing product." - John</div>
-          <div class="slide">"I highly recommend this to everyone." - Sam</div>
-        </div>
+      <div class="demo-area">
+        <div class="slider">
+          <input type="radio" name="testimonial" id="s1" checked>
+          <input type="radio" name="testimonial" id="s2">
+          <input type="radio" name="testimonial" id="s3">
+          
+          <div class="slides">
+            <div class="slide">
+              <blockquote>"The best service I've ever used! Changed how our team ships."</blockquote>
+              <cite>— Jane D., CEO at StartupCo</cite>
+            </div>
+            <div class="slide">
+              <blockquote>"Absolutely game-changing product. Support is 10/10."</blockquote>
+              <cite>— John S., Lead Dev at TechCorp</cite>
+            </div>
+            <div class="slide">
+              <blockquote>"I highly recommend this to everyone. ROI in week one."</blockquote>
+              <cite>— Sam L., Founder at DesignHub</cite>
+            </div>
+          </div>
 
-        <div class="nav">
-          <label for="s1"></label>
-          <label for="s2"></label>
-          <label for="s3"></label>
+          <div class="nav">
+            <label for="s1" aria-label="Testimonial 1"></label>
+            <label for="s2" aria-label="Testimonial 2"></label>
+            <label for="s3" aria-label="Testimonial 3"></label>
+          </div>
         </div>
-      </div>
+      <p><small>↑ Click dots or tab to labels and hit Space to switch slides</small></p>
     </section>
 
-    <section>
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;input type="radio" name="testimonial" id="s1" checked&gt;
+&lt;input type="radio" name="testimonial" id="s2"&gt;
+
+&lt;div class="slides"&gt;
+  &lt;div class="slide"&gt;Testimonial 1&lt;/div&gt;
+  &lt;div class="slide"&gt;Testimonial 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;label for="s1"&gt;&lt;/label&gt;
+&lt;label for="s2"&gt;&lt;/label&gt;</code></pre>
+      <pre><code>.slides { overflow: hidden; }
+
+.slide {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.5s;
+}
+
+#s1:checked ~ .slides .slide:nth-child(1),
+#s2:checked ~ .slides .slide:nth-child(2) {
+  opacity: 1;
+  position: relative;
+}
+
+input[type="radio"] { display: none; }</code></pre>
+    </section>
+
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
-        <li>Hidden <code>input[type="radio"]</code> acts as the "state" manager.</li>
-        <li>The <code>~</code> (sibling) or <code>+</code> (adjacent) combinators allow us to style the <code>.slide</code> based on which radio is <code>:checked</code>.</li>
-        <li><code>overflow: hidden</code> on the container ensures only one slide is visible at a time.</li>
-        <li>Use <code>transition</code> to make the slide switching appear smooth.</li>
+      <ul class="rules-list">
+        <li>Hidden <code>input[type="radio"]</code> acts as the state manager — group with same <code>name</code></li>
+        <li>Use <code>~</code> sibling combinator: <code>#s1:checked ~ .slides .slide:nth-child(1)</code></li>
+        <li><code>overflow: hidden</code> on container ensures only one slide visible</li>
+        <li>Hide inactive slides with <code>opacity: 0</code> + <code>position: absolute</code></li>
+        <li>Show active slide with <code>opacity: 1</code> + <code>position: relative</code> to set height</li>
+        <li><code>transition: opacity</code> makes switching smooth — no layout shift</li>
+        <li>Labels are the controls — style as dots. Add <code>aria-label</code> for accessibility</li>
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code43/code43.html">← Prev: Code 43: Pricing Table</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code45/code45.html">Next: Code 45 →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code43/index.html" class="nav-link">← Prev: Code 43</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code45/index.html" class="nav-link">Next: Code 45 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 44 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 44 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

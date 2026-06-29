@@ -3,55 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 48: Newsletter Section - HTML 100 Codes</title>
+  <meta name="description" content="Code 48: Newsletter Section - Email capture form with flex inline layout. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 48: Newsletter Section | HTML 100 Codes</title>
   <link rel="stylesheet" href="code48.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 48: Newsletter Section</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 48: Newsletter Section</h1>
+      <p class="subtitle">Email capture with flex inline layout - zero JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
-      <p>This layout provides a clean, user-friendly interface for capturing email addresses. It ensures the input and button remain inline even on smaller screens by stacking them dynamically.</p>
+      <p>This layout provides a clean, user-friendly interface for capturing email addresses. It ensures the input and button remain inline on desktop and stack gracefully on mobile.</p>
+      <p>Essential for lead generation, blog subscriptions, and product updates.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
-      <div class="newsletter-section">
-        <h3>Subscribe to our updates</h3>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required>
-          <button type="submit">Join</button>
-        </form>
-      </div>
+      <div class="demo-area">
+        <div class="newsletter-section">
+          <h3>Subscribe to our updates</h3>
+          <p>Get the latest CSS tricks and new components delivered weekly.</p>
+          <form class="newsletter-form">
+            <label for="email-input" class="sr-only">Email address</label>
+            <input 
+              type="email" 
+              id="email-input"
+              placeholder="Enter your email" 
+              required
+            >
+            <button type="submit">Join</button>
+          </form>
+          <p class="form-note"><small>No spam. Unsubscribe anytime.</small></p>
+        </div>
+      <p><small>↑ Resize browser to see input + button stack on mobile</small></p>
     </section>
 
-    <section>
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;form class="newsletter-form"&gt;
+  &lt;label for="email" class="sr-only"&gt;Email&lt;/label&gt;
+  &lt;input type="email" id="email" placeholder="Enter your email" required&gt;
+  &lt;button type="submit"&gt;Join&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      <pre><code>.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 500px;
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+}</code></pre>
+    </section>
+
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
-        <li>Use <code>display: flex</code> on the form container to keep elements inline.</li>
-        <li>Set the <code>input</code> to <code>flex-grow: 1</code> so it consumes the available remaining space.</li>
-        <li><code>gap</code> adds consistent spacing between the field and the button without needing margin hacks.</li>
-        <li>Ensure the <code>button</code> and <code>input</code> have matching <code>height</code> for a professional finish.</li>
+      <ul class="rules-list">
+        <li><code>display: flex</code> on form keeps input and button inline</li>
+        <li><code>flex-grow: 1</code> on input makes it consume remaining space</li>
+        <li><code>gap</code> adds spacing without margin hacks or extra wrappers</li>
+        <li>Match <code>padding</code> + <code>border-radius</code> on input/button for visual alignment</li>
+        <li><code>white-space: nowrap</code> prevents button text wrapping</li>
+        <li>Use <code>@media (max-width: 480px)</code> + <code>flex-direction: column</code> to stack on mobile</li>
+        <li>Add <code>type="email"</code> + <code>required</code> for native validation</li>
+        <li>Use <code>.sr-only</code> label for accessibility without visual clutter</li>
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code47/code47.html">← Prev: Code 47: App Download</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code49/code49.html">Next: Code 49 →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code47/index.html" class="nav-link">← Prev: Code 47</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code49/index.html" class="nav-link">Next: Code 49 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 48 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 48 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

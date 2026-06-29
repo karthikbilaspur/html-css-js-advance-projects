@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 13: Login Form - HTML 100 Codes</title>
+  <meta name="description" content="Code 13: Login Form - Password show/hide toggle using CSS checkbox hack with HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="Karthik Cwrp">
+  <title>Code 13: Login Form | HTML 100 Codes</title>
   <link rel="stylesheet" href="code13.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 13: Login Form</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 13: Login Form</h1>
+      <p class="subtitle">Show/hide password toggle with checkbox hack - pure CSS, no JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This project builds a login form with username/password and a "Show Password" toggle using only HTML + CSS.</p>
       <p>It demonstrates the checkbox hack with <code>:checked</code> pseudo-class to toggle password visibility. No JavaScript required.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="login-wrapper">
         <form class="login-form">
@@ -54,7 +59,7 @@
               >
               <input type="checkbox" id="show-password" class="show-password-toggle">
               <label for="show-password" class="show-password-label">
-                <span class="eye-icon eye-open">👁️</span>
+                <span class="eye-icon eye-open">👁</span>
                 <span class="eye-icon eye-closed">🙈</span>
               </label>
             </div>
@@ -86,12 +91,12 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;div class="password-wrapper"&gt;
   &lt;input type="password" id="password"&gt;
   &lt;input type="checkbox" id="show-password"&gt;
-  &lt;label for="show-password"&gt;👁️&lt;/label&gt;
+  &lt;label for="show-password"&gt;👁&lt;/label&gt;
 &lt;/div&gt;
 
 #show-password:checked ~ #password {
@@ -103,9 +108,9 @@
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li><code>input[type="checkbox"]:checked ~ input[type="password"]</code> - Checkbox hack to toggle state</li>
         <li><code>-webkit-text-security: none</code> - Webkit method to show password text</li>
         <li>Fallback: Use <code>type="text"</code> instead of password when checked - needs JS</li>
@@ -115,19 +120,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code12/code12.html">← Prev: Code 12</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code14/code14.html">Next: Code 14 →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code12/index.html" class="nav-link">← Prev: Code 12</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code14/index.html" class="nav-link">Next: Code 14 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 13 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 13 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

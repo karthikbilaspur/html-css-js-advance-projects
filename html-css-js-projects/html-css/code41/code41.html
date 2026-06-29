@@ -3,38 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 41: Hero Section - Full-width banner with centered content and CTA. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
   <title>Code 41: Hero Section | HTML 100 Codes</title>
   <link rel="stylesheet" href="code41.css">
 </head>
 <body>
-
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Build Amazing Experiences</h1>
-      <p>This is your hero section, the first thing visitors see.</p>
-      <button class="cta-btn">Get Started</button>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 41: Hero Section</h1>
+      <p class="subtitle">Full-width banner with centered CTA - pure CSS</p>
     </div>
-  </section>
+  </header>
 
-  <footer>
-    <hr>
-    <div class="footer-container">
-      <div class="footer-info">
-        <p><strong>HTML 100 Codes Vault</strong></p>
-        <p><small>A comprehensive collection of web development components.</small></p>
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>This is your hero section, the first thing visitors see. Full-viewport height with centered content, gradient overlay, and a clear call-to-action button.</p>
+      <p>The foundation of every landing page. Sets the tone and drives conversions.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <section class="hero">
+          <div class="hero-content">
+            <h1>Build Amazing Experiences</h1>
+            <p>Clean, fast, accessible web components built with HTML + CSS only.</p>
+            <button class="cta-btn">Get Started</button>
+          </div>
+        </section>
       </div>
-      
-      <div class="footer-nav">
-       <a href="../code40/code40.html">← Prev: Code 39: Polaroid Stack</a> |
-        <a href="../index.html">Home</a> |
-        <a href="../code42/code42.html">Next: Code 41: [Next Topic] →</a>
-      </div>
-    </div>
-    
-    <div class="copyright">
-      <p><small>&copy; 2026 Code 41 of 99 | Built with passion</small></p>
+      <p><small>↑ Full-width hero. Resize to test responsive typography</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;section class="hero"&gt;
+  &lt;div class="hero-content"&gt;
+    &lt;h1&gt;Build Amazing Experiences&lt;/h1&gt;
+    &lt;p&gt;Subheading text&lt;/p&gt;
+    &lt;button class="cta-btn"&gt;Get Started&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+      <pre><code>.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+              url('bg.jpg') center/cover;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 2rem;
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>min-height: 100vh</code> makes hero fill viewport height</li>
+        <li><code>display: flex</code> + <code>align-items: center</code> + <code>justify-content: center</code> centers content</li>
+        <li>Use <code>background: linear-gradient()</code> overlay for text contrast on images</li>
+        <li><code>background-size: cover</code> ensures image fills without distortion</li>
+        <li>Wrap text in <code>.hero-content</code> with <code>max-width</code> to prevent long lines</li>
+        <li>Use <code>clamp(2rem, 5vw, 4rem)</code> for responsive h1 sizing</li>
+        <li>Add <code>text-shadow</code> if background image is busy</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code40/index.html" class="nav-link">← Prev: Code 40</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code42/index.html" class="nav-link">Next: Code 42 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 41 of 99 | HTML + CSS 100 Codes Series</p>
     </div>
   </footer>
-
 </body>
 </html>

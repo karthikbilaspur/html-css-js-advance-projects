@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 14: Sign Up Form - HTML 100 Codes</title>
+  <meta name="description" content="Code 14: Sign Up Form - Multi-field layout with CSS Grid, 2-column design, and HTML5 validation using HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="Karthik Cwrp">
+  <title>Code 14: Sign Up Form | HTML 100 Codes</title>
   <link rel="stylesheet" href="code14.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 14: Sign Up Form</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 14: Sign Up Form</h1>
+      <p class="subtitle">CSS Grid layout, 2-column fields, and password validation with pure HTML + CSS</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This project builds a multi-field sign up form with nice layout using CSS Grid.</p>
       <p>It demonstrates <code>display: grid</code> for 2-column layout, <code>grid-column: span 2</code> for full-width fields, and password strength validation with HTML5 attributes.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="signup-wrapper">
         <div class="signup-container">
@@ -109,7 +114,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;form class="signup-form"&gt;
   &lt;div class="form-row"&gt;
@@ -131,9 +136,9 @@
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li><code>display: grid</code> + <code>grid-template-columns: 1fr 1fr</code> creates 2-column layout</li>
         <li><code>grid-column: span 2</code> or <code>.full-width</code> makes field span both columns</li>
         <li><code>minlength="8"</code> + <code>pattern</code> attribute for password validation</li>
@@ -143,19 +148,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code13/code13.html">← Prev: Code 13</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code15/code15.html">Next: Code 15 →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code13/index.html" class="nav-link">← Prev: Code 13</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code15/index.html" class="nav-link">Next: Code 15 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 14 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 14 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

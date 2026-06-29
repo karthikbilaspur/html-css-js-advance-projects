@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 24: Breadcrumb Navigation - HTML 100 Codes</title>
+  <meta name="description" content="Code 24: Breadcrumb Navigation - Accessible breadcrumbs with aria-label and ::after separators using HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 24: Breadcrumb Navigation | HTML 100 Codes</title>
   <link rel="stylesheet" href="code24.css">
 </head>
 <body>
-  <header>
-    <p><a href="index.html">← Back to All Codes</a></p>
-    <h1>Code 24: Breadcrumb Navigation</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 24: Breadcrumb Navigation</h1>
+      <p class="subtitle">Semantic site hierarchy with aria-label and ::after separators</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>Breadcrumbs show users where they are in your site hierarchy. They use <code>&lt;nav&gt;</code> with <code>aria-label="breadcrumb"</code> for accessibility, and CSS <code>::after</code> pseudo-elements for separators.</p>
       <p>The last item is usually not a link, indicating the current page.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       
       <h3>Style 1: Slash Separator</h3>
@@ -59,7 +64,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;nav aria-label="breadcrumb"&gt;
   &lt;ol&gt;
@@ -76,9 +81,9 @@
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li>Use <code>&lt;nav aria-label="breadcrumb"&gt;</code> for screen readers</li>
         <li>Structure with <code>&lt;ol&gt;</code> because order matters semantically</li>
         <li>Mark current page with <code>aria-current="page"</code> and don't make it a link</li>
@@ -88,19 +93,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="code23.html">← Prev: Code 23: Dropdown Menu</a> |
-        <a href="index.html">Home</a> |
-        <a href="code25.html">Next: Code 25: Pagination →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code23/index.html" class="nav-link">← Prev: Code 23</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code25/index.html" class="nav-link">Next: Code 25 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 24 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 24 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

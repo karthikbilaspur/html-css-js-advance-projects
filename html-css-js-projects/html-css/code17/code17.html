@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 17: Search Bar - HTML 100 Codes</title>
+  <meta name="description" content="Code 17: Search Bar - Expanding search input with :focus-within and smooth transitions using HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 17: Search Bar | HTML 100 Codes</title>
   <link rel="stylesheet" href="code17.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 17: Search Bar</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 17: Search Bar</h1>
+      <p class="subtitle">Expand on focus with :focus-within and CSS transitions - pure HTML + CSS</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This project builds a search bar that expands when focused using only HTML + CSS.</p>
       <p>It demonstrates <code>:focus-within</code> to style the parent wrapper, <code>transition</code> for smooth width animation, and <code>::placeholder</code> styling.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="search-section">
         <h3>Version 1: Expand on Focus</h3>
@@ -64,7 +69,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;div class="search-wrapper"&gt;
   &lt;span class="search-icon"&gt;🔍&lt;/span&gt;
@@ -82,9 +87,9 @@
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li><code>:focus-within</code> - Styles parent when any child input is focused</li>
         <li><code>transition: width 0.4s ease</code> - Smooth expand animation</li>
         <li><code>type="search"</code> - Gives mobile keyboards search button + clear X</li>
@@ -94,19 +99,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code16/code16.html">← Prev: Code 16</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code18/code18.html">Next: Code 18 →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code16/index.html" class="nav-link">← Prev: Code 16</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code18/index.html" class="nav-link">Next: Code 18 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 17 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 17 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

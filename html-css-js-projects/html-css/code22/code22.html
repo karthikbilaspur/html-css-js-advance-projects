@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 22: Sidebar Menu - HTML 100 Codes</title>
+  <meta name="description" content="Code 22: Slide-in Sidebar - Hamburger menu using checkbox hack and :checked selector with zero JavaScript. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 22: Slide-in Sidebar | HTML 100 Codes</title>
   <link rel="stylesheet" href="code22.css">
 </head>
 <body>
-  <header>
-    <p><a href="index.html">← Back to All Codes</a></p>
-    <h1>Code 22: Slide-in Sidebar with Checkbox</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 22: Slide-in Sidebar</h1>
+      <p class="subtitle">Checkbox hack + :checked for mobile sidebar - zero JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>This sidebar uses a hidden <code>&lt;input type="checkbox"&gt;</code> and the <code>:checked</code> CSS selector to slide in/out. No JavaScript needed.</p>
       <p>Click the hamburger to open, click the overlay or close icon to shut it. The checkbox state controls everything.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="demo-wrapper">
         <!-- Hidden checkbox controls the sidebar state -->
@@ -59,7 +64,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;input type="checkbox" id="sidebar-toggle"&gt;
 &lt;label for="sidebar-toggle"&gt;☰&lt;/label&gt;
@@ -74,9 +79,9 @@
 &lt;label for="sidebar-toggle" class="overlay"&gt;&lt;/label&gt;</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li>Checkbox must come before the elements it controls in HTML</li>
         <li>Use <code>label for="id"</code> to toggle checkbox from anywhere</li>
         <li>Target with <code>#sidebar-toggle:checked ~ .sidebar</code> using the general sibling selector</li>
@@ -86,19 +91,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="code21.html">← Prev: Code 21: Responsive Navbar</a> |
-        <a href="index.html">Home</a> |
-        <a href="code23.html">Next: Code 23: Accordion →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code21/index.html" class="nav-link">← Prev: Code 21</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code23/index.html" class="nav-link">Next: Code 23 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 22 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 22 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

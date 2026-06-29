@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 30: Mega Menu - HTML 100 Codes</title>
+  <meta name="description" content="Code 30: Mega Menu - Large dropdown with CSS Grid columns using :hover and :focus-within. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 30: Mega Menu | HTML 100 Codes</title>
   <link rel="stylesheet" href="code30.css">
 </head>
 <body>
-  <header>
-    <p><a href="index.html">← Back to All Codes</a></p>
-    <h1>Code 30: Mega Menu with Grid Layout</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 30: Mega Menu</h1>
+      <p class="subtitle">Full-width dropdown with CSS Grid columns - zero JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>A mega menu is a large dropdown that displays multiple columns of links, images, or featured content. Uses <code>:hover</code> + <code>:focus-within</code> to show, and CSS Grid for the multi-column layout.</p>
       <p>Unlike simple dropdowns, mega menus can show entire site sections at once. Common on e-commerce and news sites.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="demo-area">
         <nav class="main-nav" aria-label="Main navigation">
@@ -114,7 +119,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;li class="mega-dropdown"&gt;
   &lt;a href="#"&gt;Products&lt;/a&gt;
@@ -127,8 +132,8 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/li&gt;</code></pre>
-      <pre><code>.mega-dropdown:hover.mega-menu,
-.mega-dropdown:focus-within.mega-menu {
+      <pre><code>.mega-dropdown:hover .mega-menu,
+.mega-dropdown:focus-within .mega-menu {
   opacity: 1;
   visibility: visible;
 }
@@ -140,9 +145,9 @@
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li>Parent <code>li</code> needs <code>position: relative</code> or <code>static</code> with menu as <code>position: absolute</code></li>
         <li>Use <code>width: 100%</code> + <code>left: 0</code> to make mega menu full-width</li>
         <li>CSS Grid with <code>grid-template-columns: repeat(4, 1fr)</code> creates equal columns</li>
@@ -153,19 +158,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code29/code29.html">← Prev: Code 29: Sticky Header</a> |
-        <a href="index.html">Home</a> |
-        <a href="../code31/code31.html">Next: Code 31: Search Bar →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code29/index.html" class="nav-link">← Prev: Code 29</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code31/index.html" class="nav-link">Next: Code 31 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 30 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 30 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 28: Footer with Columns - HTML 100 Codes</title>
+  <meta name="description" content="Code 28: Multi-Column Footer - Responsive footer with CSS Grid, semantic footer tag, and link columns. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 28: Multi-Column Footer | HTML 100 Codes</title>
   <link rel="stylesheet" href="code28.css">
 </head>
 <body>
-  <header>
-    <p><a href="index.html">← Back to All Codes</a></p>
-    <h1>Code 28: Multi-Column Responsive Footer</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 28: Multi-Column Footer</h1>
+      <p class="subtitle">Responsive footer with CSS Grid - stacks on mobile</p>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="section">
       <h2>What it does</h2>
       <p>A footer with multiple link columns that stacks on mobile. Uses CSS Grid for responsive columns and <code>&lt;footer&gt;</code> semantic tag.</p>
       <p>Common pattern: brand section + 3-4 link groups + social icons + copyright bar. Grid auto-flows to 1 column under 768px.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
       <div class="demo-area">
         <footer class="site-footer">
@@ -81,7 +86,7 @@
       <p><small>↑ Resize browser to see columns stack on mobile</small></p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>The Code</h2>
       <pre><code>&lt;footer class="site-footer"&gt;
   &lt;div class="footer-container"&gt;
@@ -103,15 +108,15 @@
 }
 
 @media (max-width: 768px) {
- .footer-container {
+  .footer-container {
     grid-template-columns: 1fr;
   }
 }</code></pre>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Key Rules</h2>
-      <ul>
+      <ul class="rules-list">
         <li>Use <code>&lt;footer&gt;</code> semantic tag, not <code>&lt;div class="footer"&gt;</code></li>
         <li>CSS Grid with <code>grid-template-columns</code> is easiest for responsive columns</li>
         <li>Give brand column more space: <code>2fr 1fr 1fr 1fr</code></li>
@@ -122,19 +127,17 @@
       </ul>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="code27.html">← Prev: Code 27: Pagination UI</a> |
-        <a href="index.html">Home</a> |
-        <a href="code29.html">Next: Code 29: Hero Section →</a>
-      </p>
+    <nav class="project-nav">
+      <a href="../code27/index.html" class="nav-link">← Prev: Code 27</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code29/index.html" class="nav-link">Next: Code 29 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 28 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 28 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

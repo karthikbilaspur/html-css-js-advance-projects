@@ -3,45 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 37: Client Logos - Grayscale to color hover effect using CSS filter. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
   <title>Code 37: Client Logos | HTML 100 Codes</title>
   <link rel="stylesheet" href="code37.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 37: Client Logos (Grayscale to Color)</h1>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 37: Client Logos</h1>
+      <p class="subtitle">Grayscale to color hover with CSS filter - zero JavaScript</p>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Overview</h2>
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
       <p>This component uses the <code>filter: grayscale(100%)</code> property. On <code>:hover</code>, we set it back to <code>grayscale(0%)</code> to create a smooth, professional transition for brand logos.</p>
+      <p>Common on agency sites and SaaS landing pages to showcase clients without visual clutter.</p>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Live Demo</h2>
-      <div class="logo-grid">
-        <img src="https://picsum.photos/200/100?random=20" alt="Client 1" class="logo">
-        <img src="https://picsum.photos/200/100?random=21" alt="Client 2" class="logo">
-        <img src="https://picsum.photos/200/100?random=22" alt="Client 3" class="logo">
-        <img src="https://picsum.photos/200/100?random=23" alt="Client 4" class="logo">
-        <img src="https://picsum.photos/200/100?random=24" alt="Client 5" class="logo">
-      </div>
+      <div class="demo-area">
+        <div class="logo-grid">
+          <img src="https://picsum.photos/200/100?random=20" alt="Client 1" class="logo">
+          <img src="https://picsum.photos/200/100?random=21" alt="Client 2" class="logo">
+          <img src="https://picsum.photos/200/100?random=22" alt="Client 3" class="logo">
+          <img src="https://picsum.photos/200/100?random=23" alt="Client 4" class="logo">
+          <img src="https://picsum.photos/200/100?random=24" alt="Client 5" class="logo">
+        </div>
+      <p><small>↑ Hover over a logo to see color transition</small></p>
     </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code36/code36.html">← Prev: Code 36: Team Members</a> |
-        <a href="../index.html">Home</a> |
-        <a href="../code38/code38.html">Next: Code 38: [Next Topic] →</a>
-      </p>
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;div class="logo-grid"&gt;
+  &lt;img src="logo1.svg" alt="Client 1" class="logo"&gt;
+  &lt;img src="logo2.svg" alt="Client 2" class="logo"&gt;
+&lt;/div&gt;</code></pre>
+      <pre><code>.logo {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+.logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>filter: grayscale(100%)</code> converts image to full grayscale</li>
+        <li><code>grayscale(0%)</code> restores full color — use on <code>:hover</code></li>
+        <li>Add <code>transition</code> on <code>filter</code> and <code>opacity</code> for smooth effect</li>
+        <li>Combine with <code>opacity: 0.6</code> to make inactive logos more subtle</li>
+        <li>Use CSS Grid or Flexbox for <code>.logo-grid</code> layout</li>
+        <li>Works with SVG, PNG, JPG — but SVG scales best</li>
+        <li>Alternative: <code>filter: brightness(0) invert(1)</code> for monochrome logo effect</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code36/index.html" class="nav-link">← Prev: Code 36</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code38/index.html" class="nav-link">Next: Code 38 →</a>
     </nav>
   </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 37 of 99 | HTML 100 Codes Vault</small></p>
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 37 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
   </footer>
 </body>
 </html>

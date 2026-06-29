@@ -84,34 +84,39 @@ h1 {
     width: 0;
   }
   to {
-    width: var(--target-width);
+    width: 100%;
   }
 }
 
-/* Individual bar colors + staggered delays */
+/* Individual bar colors, widths + staggered delays */
 .progress-fill.html-css {
   background: linear-gradient(90deg, #f97316, #ea580c);
   animation-delay: 0.1s;
+  max-width: 92%;
 }
 
 .progress-fill.javascript {
   background: linear-gradient(90deg, #eab308, #ca8a04);
   animation-delay: 0.3s;
+  max-width: 78%;
 }
 
 .progress-fill.react {
   background: linear-gradient(90deg, #06b6d4, #0891b2);
   animation-delay: 0.5s;
+  max-width: 65%;
 }
 
 .progress-fill.node {
   background: linear-gradient(90deg, #22c55e, #16a34a);
   animation-delay: 0.7s;
+  max-width: 54%;
 }
 
 .progress-fill.db {
   background: linear-gradient(90deg, #8b5cf6, #7c3aed);
   animation-delay: 0.9s;
+  max-width: 70%;
 }
 
 .pagination-nav {
