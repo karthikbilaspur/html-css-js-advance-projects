@@ -6,17 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     copyBtn.addEventListener('click', async () => {
         try {
-            // Select the text from our input field
-            const text = textInput.value;
+            await navigator.clipboard.writeText(textInput.value);
             
-            // Modern API to write to clipboard
-            await navigator.clipboard.writeText(text);
-            
-            // Show feedback
+            // Visual feedback
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
             message.textContent = 'Code copied successfully!';
             
-            // Clear message after 2 seconds
-            setTimeout(() => { message.textContent = ''; }, 2000);
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+                message.textContent = '';
+            }, 2000);
+            
         } catch (err) {
             message.textContent = 'Failed to copy text.';
             console.error('Clipboard API Error: ', err);

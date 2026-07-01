@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Calculator</title>
+    <link rel="stylesheet" href="code08.css">
+    <script src="code08.js" defer></script>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" disabled label="Calculator Display" title="Calculator Display" aria-label="Calculator Display" />
+        <div class="buttons">
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="clearDisplay()">C</button>
+        </div>
+    </div>
+
+        <footer>
+  <main>
+    <nav class="page-footer-nav">
+      <p>
+        <a href="../code07/code07.html">&larr; Previous: Code 7</a> 
+        
+        <a href="../../index.html">Home</a> 
+        
+        <a href="../code09/code09.html">Next: Code 9 &rarr;</a>
+      </p>
+    </nav>
+ </main>
+  </footer>
+
+
+</body>
+</html>

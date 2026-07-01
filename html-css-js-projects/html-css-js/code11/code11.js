@@ -5,20 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            tabButtons.forEach(btn => btn.classList.remove('active'));
+            // Remove active from all buttons + update ARIA
+            tabButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
             
-            // Add active class to the clicked button
+            // Add active to clicked button
             button.classList.add('active');
+            button.setAttribute('aria-selected', 'true');
 
             // Hide all content sections
             tabContents.forEach(content => {
-                content.style.display = 'none';
+                content.classList.remove('active');
+                content.hidden = true;
             });
 
-            // Show the target content section
-            const targetId = button.getAttribute('data-target');
-            document.getElementById(targetId).style.display = 'block';
+            // Show target content using aria-controls
+            const targetId = button.getAttribute('aria-controls');
+            const targetContent = document.getElementById(targetId);
+            targetContent.classList.add('active');
+            targetContent.hidden = false;
         });
     });
 });

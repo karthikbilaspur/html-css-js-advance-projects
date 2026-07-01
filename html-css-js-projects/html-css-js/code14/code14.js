@@ -2,17 +2,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const textInput = document.getElementById('textInput');
     const wordCountDisplay = document.getElementById('wordCount');
+    const charCountDisplay = document.getElementById('charCount');
+    const charNoSpaceDisplay = document.getElementById('charNoSpaceCount');
 
-    textInput.addEventListener('input', () => {
-        const text = textInput.value.trim();
+    function updateCounts() {
+        const text = textInput.value;
         
-        // Split by spaces or newlines, then filter out empty strings
-        const words = text.split(/\s+/).filter(word => word.length > 0);
+        // Word count - handle empty string case
+        const trimmedText = text.trim();
+        const words = trimmedText === '' ? [] : trimmedText.split(/\s+/);
         
-        // Update the display
+        // Update displays
         wordCountDisplay.textContent = words.length;
-    });
+        charCountDisplay.textContent = text.length;
+        charNoSpaceDisplay.textContent = text.replace(/\s/g, '').length;
+    }
+
+    textInput.addEventListener('input', updateCounts);
     
     // Trigger count on load for the default text
-    textInput.dispatchEvent(new Event('input'));
+    updateCounts();
 });
