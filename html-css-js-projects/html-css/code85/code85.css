@@ -28,7 +28,6 @@ main {
 
 .compare-section {
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     padding: 48px;
@@ -246,4 +245,9 @@ footer p {
     .compare-section {
         padding: 32px 24px;
     }
+}
+
+.image-compare:hover .compare-after,
+.image-compare:focus-within .compare-after {
+  clip-path: inset(0 50% 0 0);
 }

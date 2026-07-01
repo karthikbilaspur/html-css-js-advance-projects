@@ -7,71 +7,97 @@
     <link rel="stylesheet" href="code82.css">
 </head>
 <body>
-  <main>
-    <h1 class="page-title">CSS Tooltips</h1>
-    
-    <section class="tooltip-section">
-      <h2>Hover Over Elements</h2>
-      <p class="description">Tooltips appear using <code>::after</code> and <code>:hover</code></p>
-      
-      <div class="tooltip-group">
-        <button class="tooltip-btn" data-tooltip="Click to save your changes">
-          Save
-        </button>
+    <main class="container">
+        <h1 class="page-title">CSS Tooltips</h1>
+        <p class="subtitle">Using <code>::after</code>, <code>:hover</code>, and <code>aria-describedby</code></p>
 
-        <button class="tooltip-btn" data-tooltip="Delete this item permanently">
-          Delete
-        </button>
+        <section class="tooltip-section" aria-label="Interactive tooltip examples">
+            <h2>Hover Over Elements</h2>
+            <p class="description">Tooltips appear on hover/focus with pure CSS</p>
 
-        <button class="tooltip-btn" data-tooltip="Share with your team">
-          Share
-        </button>
-      </div>
+            <div class="tooltip-group" role="group" aria-label="Button tooltips">
+                <button class="tooltip-btn" aria-describedby="tooltip-save">
+                    Save
+                    <span class="tooltip" id="tooltip-save" role="tooltip">Click to save your changes</span>
+                </button>
 
-      <div class="tooltip-group">
-        <span class="tooltip-icon" data-tooltip="More information available">ℹ️</span>
-        <span class="tooltip-icon" data-tooltip="Warning: This action cannot be undone">⚠️</span>
-        <span class="tooltip-icon" data-tooltip="Success! Operation completed">✅</span>
-      </div>
+                <button class="tooltip-btn" aria-describedby="tooltip-delete">
+                    Delete
+                    <span class="tooltip" id="tooltip-delete" role="tooltip">Delete this item permanently</span>
+                </button>
 
-      <div class="tooltip-group">
-        <a href="#" class="tooltip-link" data-tooltip="Visit our documentation">Docs</a>
-        <a href="#" class="tooltip-link" data-tooltip="Contact support team">Help</a>
-        <a href="#" class="tooltip-link" data-tooltip="View your profile">Account</a>
-      </div>
-    </section>
+                <button class="tooltip-btn" aria-describedby="tooltip-share">
+                    Share
+                    <span class="tooltip" id="tooltip-share" role="tooltip">Share with your team</span>
+                </button>
+            </div>
 
-    <section class="tooltip-section">
-      <h2>Tooltip Positions</h2>
-      <div class="tooltip-group">
-        <button class="tooltip-btn tooltip-top" data-tooltip="Tooltip on top">
-          Top
-        </button>
-        <button class="tooltip-btn tooltip-bottom" data-tooltip="Tooltip on bottom">
-          Bottom
-        </button>
-        <button class="tooltip-btn tooltip-left" data-tooltip="Tooltip on left">
-          Left
-        </button>
-        <button class="tooltip-btn tooltip-right" data-tooltip="Tooltip on right">
-          Right
-        </button>
-      </div>
-    </section>
-    
-    <nav>
-      <hr>
-      <p>
-        <a href="../code81/code81.html">← Prev: Code 81</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code83/code83.html">Next: Code 83 →</a>
-      </p>
-    </nav>
-  </main>
+            <div class="tooltip-group" role="group" aria-label="Icon tooltips">
+                <span class="tooltip-icon" tabindex="0" aria-describedby="tooltip-info">
+                    ℹ
+                    <span class="tooltip" id="tooltip-info" role="tooltip">More information available</span>
+                </span>
+                <span class="tooltip-icon" tabindex="0" aria-describedby="tooltip-warn">
+                    ⚠
+                    <span class="tooltip" id="tooltip-warn" role="tooltip">Warning: This action cannot be undone</span>
+                </span>
+                <span class="tooltip-icon" tabindex="0" aria-describedby="tooltip-success">
+                    ✅
+                    <span class="tooltip" id="tooltip-success" role="tooltip">Success! Operation completed</span>
+                </span>
+            </div>
 
-  <footer>
-    <hr>
-    <p><small>Code 82 of 99 | HTML 100 Codes Vault</small></p>
-  </footer>
+            <div class="tooltip-group" role="group" aria-label="Link tooltips">
+                <a href="#" class="tooltip-link" aria-describedby="tooltip-docs">
+                    Docs
+                    <span class="tooltip" id="tooltip-docs" role="tooltip">Visit our documentation</span>
+                </a>
+                <a href="#" class="tooltip-link" aria-describedby="tooltip-help">
+                    Help
+                    <span class="tooltip" id="tooltip-help" role="tooltip">Contact support team</span>
+                </a>
+                <a href="#" class="tooltip-link" aria-describedby="tooltip-account">
+                    Account
+                    <span class="tooltip" id="tooltip-account" role="tooltip">View your profile</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="tooltip-section" aria-label="Tooltip position examples">
+            <h2>Tooltip Positions</h2>
+            <div class="tooltip-group" role="group" aria-label="Positioned tooltips">
+                <button class="tooltip-btn tooltip-top" aria-describedby="tooltip-top">
+                    Top
+                    <span class="tooltip" id="tooltip-top" role="tooltip">Tooltip on top</span>
+                </button>
+                <button class="tooltip-btn tooltip-bottom" aria-describedby="tooltip-bottom">
+                    Bottom
+                    <span class="tooltip" id="tooltip-bottom" role="tooltip">Tooltip on bottom</span>
+                </button>
+                <button class="tooltip-btn tooltip-left" aria-describedby="tooltip-left">
+                    Left
+                    <span class="tooltip" id="tooltip-left" role="tooltip">Tooltip on left</span>
+                </button>
+                <button class="tooltip-btn tooltip-right" aria-describedby="tooltip-right">
+                    Right
+                    <span class="tooltip" id="tooltip-right" role="tooltip">Tooltip on right</span>
+                </button>
+            </div>
+        </section>
+
+        <nav class="pagination-nav">
+            <hr>
+            <p>
+                <a href="../code81/code81.html">← Prev: Code 81</a> |
+                <a href="../index.html">Home</a> |
+                <a href="../code83/code83.html">Next: Code 83 →</a>
+            </p>
+        </nav>
+    </main>
+
+    <footer class="page-footer">
+        <hr>
+        <p><small>Code 82 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
 </body>
 </html>

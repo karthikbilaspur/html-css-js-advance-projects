@@ -7,83 +7,111 @@
     <link rel="stylesheet" href="code87.css">
 </head>
 <body>
-  <input type="radio" id="theme-light" name="color-theme" class="theme-input">
-  <input type="radio" id="theme-dark" name="color-theme" class="theme-input">
-  <input type="radio" id="theme-system" name="color-theme" class="theme-input" checked>
-  <input type="radio" id="accent-purple" name="accent-color" class="accent-input" checked>
-  <input type="radio" id="accent-blue" name="accent-color" class="accent-input">
-  <input type="radio" id="accent-green" name="accent-color" class="accent-input">
-  <input type="radio" id="accent-orange" name="accent-color" class="accent-input">
-  
-  <main>
-    <header>
-      <h1 class="page-title">Dark Mode Toggle</h1>
-      <div class="controls">
-        <div class="theme-selector">
-          <label for="theme-light" class="theme-btn" title="Light mode">☀️</label>
-          <label for="theme-dark" class="theme-btn" title="Dark mode">🌙</label>
-          <label for="theme-system" class="theme-btn" title="System preference">💻</label>
-        </div>
-        <div class="accent-selector">
-          <label for="accent-purple" class="accent-btn purple" title="Purple"></label>
-          <label for="accent-blue" class="accent-btn blue" title="Blue"></label>
-          <label for="accent-green" class="accent-btn green" title="Green"></label>
-          <label for="accent-orange" class="accent-btn orange" title="Orange"></label>
-        </div>
-      </div>
-    </header>
+    <!-- Theme Controls -->
+    <input type="radio" id="theme-light" name="color-theme" class="theme-input">
+    <input type="radio" id="theme-dark" name="color-theme" class="theme-input">
+    <input type="radio" id="theme-system" name="color-theme" class="theme-input" checked>
     
-    <section class="card-section">
-      <h2>Welcome to Advanced Dark Mode</h2>
-      <p>Uses CSS-only features: <code>:has()</code>, <code>prefers-color-scheme</code>, <code>prefers-reduced-motion</code>, and <code>@media print</code>. No JavaScript.</p>
-      
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>System Sync</h3>
-          <p>Auto-matches your OS theme preference</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🎨</div>
-          <h3>4 Accents</h3>
-          <p>Pick purple, blue, green, or orange</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">♿</div>
-          <h3>Accessible</h3>
-          <p>Respects reduced motion settings</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🖨️</div>
-          <h3>Print Ready</h3>
-          <p>Always prints in light mode</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card-section">
-      <h2>Sample Content</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <button class="action-btn">Primary Button</button>
-      <button class="action-btn secondary">Secondary Button</button>
-    </section>
+    <!-- Accent Controls -->
+    <input type="radio" id="accent-purple" name="accent-color" class="accent-input" checked>
+    <input type="radio" id="accent-blue" name="accent-color" class="accent-input">
+    <input type="radio" id="accent-green" name="accent-color" class="accent-input">
+    <input type="radio" id="accent-orange" name="accent-color" class="accent-input">
     
-    <nav>
-      <hr>
-      <p>
-        <a href="../code86/code86.html">← Prev: Code 86</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code88/code88.html">Next: Code 88 →</a>
-      </p>
-    </nav>
-  </main>
+    <main class="container">
+        <header class="page-header">
+            <h1 class="page-title">Dark Mode Toggle</h1>
+            <p class="subtitle">CSS-only with <code>:has()</code>, <code>prefers-color-scheme</code>, and accent theming</p>
+            
+            <div class="controls" role="toolbar" aria-label="Theme and accent color controls">
+                <fieldset class="theme-selector" aria-label="Theme mode selection">
+                    <legend class="sr-only">Choose theme mode</legend>
+                    <label for="theme-light" class="theme-btn" role="radio" aria-checked="false" title="Light mode">
+                        <span aria-hidden="true">☀</span>
+                        <span class="sr-only">Light mode</span>
+                    </label>
+                    <label for="theme-dark" class="theme-btn" role="radio" aria-checked="false" title="Dark mode">
+                        <span aria-hidden="true">🌙</span>
+                        <span class="sr-only">Dark mode</span>
+                    </label>
+                    <label for="theme-system" class="theme-btn" role="radio" aria-checked="true" title="System preference">
+                        <span aria-hidden="true">💻</span>
+                        <span class="sr-only">System preference</span>
+                    </label>
+                </fieldset>
+                
+                <fieldset class="accent-selector" aria-label="Accent color selection">
+                    <legend class="sr-only">Choose accent color</legend>
+                    <label for="accent-purple" class="accent-btn purple" role="radio" aria-checked="true" title="Purple accent">
+                        <span class="sr-only">Purple</span>
+                    </label>
+                    <label for="accent-blue" class="accent-btn blue" role="radio" aria-checked="false" title="Blue accent">
+                        <span class="sr-only">Blue</span>
+                    </label>
+                    <label for="accent-green" class="accent-btn green" role="radio" aria-checked="false" title="Green accent">
+                        <span class="sr-only">Green</span>
+                    </label>
+                    <label for="accent-orange" class="accent-btn orange" role="radio" aria-checked="false" title="Orange accent">
+                        <span class="sr-only">Orange</span>
+                    </label>
+                </fieldset>
+            </div>
+        </header>
+        
+        <section class="card-section" aria-label="Dark mode features">
+            <h2>Welcome to Advanced Dark Mode</h2>
+            <p>Uses modern CSS: <code>:has()</code>, 
+            <code>prefers-color-scheme</code>, 
+            <code>prefers-reduced-motion</code>, and 
+            <code>@media print</code>. No JavaScript.</p>
+            
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">⚡</div>
+                    <h3>System Sync</h3>
+                    <p>Auto-matches your OS theme preference</p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🎨</div>
+                    <h3>4 Accents</h3>
+                    <p>Pick purple, blue, green, or orange</p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">♿</div>
+                    <h3>Accessible</h3>
+                    <p>Respects reduced motion settings</p>
+                </article>
 
-  <footer>
-    <hr>
-    <p><small>Code 87 of 99 | HTML 100 Codes Vault</small></p>
-  </footer>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🖨</div>
+                    <h3>Print Ready</h3>
+                    <p>Always prints in light mode</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="card-section" aria-label="Sample content">
+            <h2>Sample Content</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button class="action-btn" type="button">Primary Button</button>
+            <button class="action-btn secondary" type="button">Secondary Button</button>
+        </section>
+        
+        <nav class="pagination-nav">
+            <hr>
+            <p>
+                <a href="../code86/code86.html">← Prev: Code 86</a> | 
+                <a href="../index.html">Home</a> | 
+                <a href="../code88/code88.html">Next: Code 88 →</a>
+            </p>
+        </nav>
+    </main>
+
+    <footer class="page-footer">
+        <hr>
+        <p><small>Code 87 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
 </body>
 </html>

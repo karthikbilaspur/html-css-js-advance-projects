@@ -28,7 +28,6 @@ main {
 
 .form-section {
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     padding: 48px;
@@ -448,4 +447,14 @@ footer p {
     .btn {
         width: 100%;
     }
+}
+
+.step-input:checked ~ .progress-container .step-indicator[for="step-1"] {
+  --step-active: true;
+}
+.form-panel { display: none; }
+#step-1:checked ~ .form-panels #panel-1,
+#step-2:checked ~ .form-panels #panel-2,
+#step-3:checked ~ .form-panels #panel-3 {
+  display: block;
 }

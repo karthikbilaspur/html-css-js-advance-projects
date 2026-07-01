@@ -7,76 +7,76 @@
     <link rel="stylesheet" href="code85.css">
 </head>
 <body>
-  <main>
-    <h1 class="page-title">Image Comparison Slider</h1>
-    
-    <section class="compare-section">
-      <h2>Before & After</h2>
-      <p class="description">Hover to reveal the comparison</p>
-      
-      <div class="image-compare">
-        <div class="compare-img compare-before">
-          <div class="img-placeholder before-placeholder">
-            <span>BEFORE</span>
-            <p>Original Image</p>
-          </div>
-        </div>
-        <div class="compare-img compare-after">
-          <div class="img-placeholder after-placeholder">
-            <span>AFTER</span>
-            <p>Edited Image</p>
-          </div>
-        </div>
-        <div class="compare-slider">
-          <div class="slider-line"></div>
-          <div class="slider-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
+    <main class="container">
+        <h1 class="page-title">Image Comparison Slider</h1>
+        <p class="subtitle">CSS-only before/after reveal with hover and focus states</p>
+        
+        <section class="compare-section" aria-label="Horizontal image comparison">
+            <h2>Before & After</h2>
+            <p class="description">Hover or focus to reveal the comparison</p>
+            
+            <div class="image-compare">
+                <div class="compare-img compare-before">
+                    <div class="img-placeholder before-placeholder">
+                        <span aria-hidden="true">BEFORE</span>
+                        <p>Original Image</p>
+                    </div>
+                </div>
+                <div class="compare-img compare-after">
+                    <div class="img-placeholder after-placeholder">
+                        <span aria-hidden="true">AFTER</span>
+                        <p>Edited Image</p>
+                    </div>
+                <div class="compare-slider" tabindex="0" aria-label="Image comparison slider" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                    <div class="slider-line" aria-hidden="true"></div>
+                    <div class="slider-button" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="compare-section">
-      <h2>Vertical Comparison</h2>
-      <div class="image-compare vertical">
-        <div class="compare-img compare-before">
-          <div class="img-placeholder before-placeholder">
-            <span>BEFORE</span>
-          </div>
-        </div>
-        <div class="compare-img compare-after">
-          <div class="img-placeholder after-placeholder">
-            <span>AFTER</span>
-          </div>
-        </div>
-        <div class="compare-slider">
-          <div class="slider-line"></div>
-          <div class="slider-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M18 9L12 15L6 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <nav>
-      <hr>
-      <p>
-        <a href="../code83/code83.html">← Prev: Code 83</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code86/code86.html">Next: Code 86 →</a>
-      </p>
-    </nav>
-  </main>
+        <section class="compare-section" aria-label="Vertical image comparison">
+            <h2>Vertical Comparison</h2>
+            <div class="image-compare vertical">
+                <div class="compare-img compare-before">
+                    <div class="img-placeholder before-placeholder">
+                        <span aria-hidden="true">BEFORE</span>
+                    </div>
+                </div>
+                <div class="compare-img compare-after">
+                    <div class="img-placeholder after-placeholder">
+                        <span aria-hidden="true">AFTER</span>
+                    </div>
+                </div>
+                <div class="compare-slider" tabindex="0" aria-label="Vertical image comparison slider" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                    <div class="slider-line" aria-hidden="true"></div>
+                    <div class="slider-button" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 9L12 15L6 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <nav class="pagination-nav">
+            <hr>
+            <p>
+                <a href="../code83/code83.html">← Prev: Code 83</a> | 
+                <a href="../index.html">Home</a> | 
+                <a href="../code86/code86.html">Next: Code 86 →</a>
+            </p>
+        </nav>
+    </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 85 of 99 | HTML 100 Codes Vault</small></p>
-  </footer>
+    <footer class="page-footer">
+        <hr>
+        <p><small>Code 85 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
 </body>
 </html>

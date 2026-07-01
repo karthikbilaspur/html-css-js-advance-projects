@@ -7,56 +7,54 @@
     <link rel="stylesheet" href="code81.css">
 </head>
 <body>
-  <main>
-    <h1 class="page-title">CSS-Only Modal</h1>
-    
-    <section class="demo-section">
-      <h2>Click to Open Modal</h2>
-      <p>Uses <code>:target</code> pseudo-class - no JavaScript required</p>
-      <a href="#modal-1" class="open-btn">Open Modal</a>
-    </section>
+    <main class="container">
+        <h1 class="page-title">CSS-Only Modal</h1>
+        <p class="subtitle">Uses <code>:target</code> pseudo-class — no JavaScript required</p>
+        
+        <section class="demo-section" aria-label="Modal trigger examples">
+            <h2>Click to Open Modal</h2>
+            <p>Multiple modals work independently using hash targets</p>
+            <a href="#modal-1" class="open-btn" role="button">Open Modal 1</a>
+            <a href="#modal-2" class="open-btn" role="button">Open Modal 2</a>
+        </section>
 
-    <section class="demo-section">
-      <h2>Another Modal</h2>
-      <p>Multiple modals work independently</p>
-      <a href="#modal-2" class="open-btn">Open Second Modal</a>
-    </section>
+        <!-- Modal 1 -->
+        <div id="modal-1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <div class="modal-content">
+                <a href="#" class="close-btn" aria-label="Close modal">&times;</a>
+                <h2 id="modal-1-title">Welcome to Modal 1</h2>
+                <p>This modal opens using the <code>:target</code> pseudo-class. Click the X or overlay to close.</p>
+                <p>Pure CSS — no JavaScript needed for open/close functionality.</p>
+                <a href="#" class="modal-action-btn" role="button">Close Modal</a>
+            </div>
+            <a href="#" class="modal-overlay" aria-label="Close modal"></a>
+        </div>
 
-    <!-- Modal 1 -->
-    <div id="modal-1" class="modal">
-      <div class="modal-content">
-        <a href="#" class="close-btn">&times;</a>
-        <h2>Welcome to Modal 1</h2>
-        <p>This modal opens using the <code>:target</code> pseudo-class. Click the X or outside to close.</p>
-        <p>Pure CSS - no JavaScript needed for open/close functionality.</p>
-        <a href="#" class="modal-action-btn">Close Modal</a>
-      </div>
-    </div>
+        <!-- Modal 2 -->
+        <div id="modal-2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
+            <div class="modal-content">
+                <a href="#" class="close-btn" aria-label="Close modal">&times;</a>
+                <h2 id="modal-2-title">Second Modal</h2>
+                <p>You can have multiple modals on the same page. Each one targets a different ID.</p>
+                <p>The background overlay also closes the modal when clicked.</p>
+                <a href="#" class="modal-action-btn" role="button">Got It</a>
+            </div>
+            <a href="#" class="modal-overlay" aria-label="Close modal"></a>
+        </div>
+        
+        <nav class="pagination-nav">
+            <hr>
+            <p>
+                <a href="../code79/code79.html">← Prev: Code 79</a> | 
+                <a href="../index.html">Home</a> | 
+                <a href="../code82/code82.html">Next: Code 82 →</a>
+            </p>
+        </nav>
+    </main>
 
-    <!-- Modal 2 -->
-    <div id="modal-2" class="modal">
-      <div class="modal-content">
-        <a href="#" class="close-btn">&times;</a>
-        <h2>Second Modal</h2>
-        <p>You can have multiple modals on the same page. Each one targets a different ID.</p>
-        <p>The background overlay also closes the modal when clicked.</p>
-        <a href="#" class="modal-action-btn">Got It</a>
-      </div>
-    </div>
-    
-    <nav>
-      <hr>
-      <p>
-        <a href="../code79/code79.html">← Prev: Code 79</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code82/code82.html">Next: Code 82 →</a>
-      </p>
-    </nav>
-  </main>
-
-  <footer>
-    <hr>
-    <p><small>Code 81 of 99 | HTML 100 Codes Vault</small></p>
-  </footer>
+    <footer class="page-footer">
+        <hr>
+        <p><small>Code 81 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
 </body>
 </html>

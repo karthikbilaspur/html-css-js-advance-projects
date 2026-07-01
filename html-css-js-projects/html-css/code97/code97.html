@@ -3,118 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 97 - Serenity Suites</title>
+  <title>Code 97 - XYZ Hotels</title>
   <link rel="stylesheet" href="code97.css">
 </head>
 <body>
-  <header class="hero">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="hero site-header" role="banner">
     <div class="nav-bar">
-      <div class="logo">Serenity Suites</div>
-      <nav>
+      <div class="logo">XYZ Hotels</div>
+      <nav aria-label="Primary navigation">
         <a href="#rooms">Rooms</a>
         <a href="#amenities">Amenities</a>
         <a href="#booking">Book Now</a>
       </nav>
     </div>
     <div class="hero-content">
-      <h1>Experience Luxury in Bangalore</h1>
-      <p>Boutique hotel in the heart of Indiranagar with rooftop pool and garden views</p>
-      <a href="#booking" class="hero-cta">Check Availability</a>
+      <h1>Experience Luxury in Bengaluru</h1>
+      <p>Boutique hotel with rooftop pool and garden views</p>
+      <a href="#booking" class="hero-cta" role="button">Check Availability</a>
     </div>
   </header>
 
-  <main>
-    <section id="rooms">
-      <h2>Our Rooms</h2>
+  <main id="main-content" class="container" role="main">
+    <h1 class="page-title sr-only">XYZ Hotels Bengaluru</h1>
+    <p class="subtitle sr-only">Boutique hotel landing page with booking form</p>
+
+    <section id="rooms" class="content-section" aria-labelledby="rooms-heading">
+      <h2 id="rooms-heading">Our Rooms</h2>
       <p class="section-subtext">Thoughtfully designed spaces for work and relaxation</p>
-      <div class="rooms-grid">
-        <div class="room-card">
-          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600" alt="Deluxe Room">
+      <div class="rooms-grid" role="list">
+        <article class="room-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600" 
+               alt="Deluxe Room with king bed and city view"
+               width="600" height="400">
           <div class="room-info">
             <h3>Deluxe Room</h3>
             <p class="room-desc">King bed, city view, work desk, 35 sqm</p>
             <ul class="room-features">
-              <li>✓ Free WiFi</li>
-              <li>✓ Rain shower</li>
-              <li>✓ Coffee machine</li>
+              <li><span aria-hidden="true">✓</span> Free WiFi</li>
+              <li><span aria-hidden="true">✓</span> Rain shower</li>
+              <li><span aria-hidden="true">✓</span> Coffee machine</li>
             </ul>
             <div class="room-footer">
               <span class="price">₹6,500 <small>/night</small></span>
               <button class="book-btn">Book</button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="room-card">
-          <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600" alt="Executive Suite">
+        <article class="room-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600" 
+               alt="Executive Suite with separate living area and balcony"
+               width="600" height="400">
           <div class="room-info">
             <h3>Executive Suite</h3>
             <p class="room-desc">Separate living area, balcony, 55 sqm</p>
             <ul class="room-features">
-              <li>✓ Garden view</li>
-              <li>✓ Bathtub + shower</li>
-              <li>✓ Mini bar</li>
+              <li><span aria-hidden="true">✓</span> Garden view</li>
+              <li><span aria-hidden="true">✓</span> Bathtub + shower</li>
+              <li><span aria-hidden="true">✓</span> Mini bar</li>
             </ul>
             <div class="room-footer">
               <span class="price">₹9,500 <small>/night</small></span>
               <button class="book-btn">Book</button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="room-card">
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600" alt="Garden Villa">
+        <article class="room-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600" 
+               alt="Garden Villa with private terrace and outdoor seating"
+               width="600" height="400">
           <div class="room-info">
             <h3>Garden Villa</h3>
             <p class="room-desc">Private terrace, outdoor seating, 75 sqm</p>
             <ul class="room-features">
-              <li>✓ Private garden</li>
-              <li>✓ Butler service</li>
-              <li>✓ Premium amenities</li>
+              <li><span aria-hidden="true">✓</span> Private garden</li>
+              <li><span aria-hidden="true">✓</span> Butler service</li>
+              <li><span aria-hidden="true">✓</span> Premium amenities</li>
             </ul>
             <div class="room-footer">
               <span class="price">₹14,000 <small>/night</small></span>
               <button class="book-btn">Book</button>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section id="amenities">
-      <h2>Hotel Amenities</h2>
-      <div class="amenities-grid">
-        <div class="amenity">
-          <h4>🏊 Rooftop Pool</h4>
-          <p>Infinity pool with city skyline views. Open 6 AM - 10 PM.</p>
-        </div>
-        <div class="amenity">
-          <h4>🍽️ All-Day Dining</h4>
+    <section id="amenities" class="content-section" aria-labelledby="amenities-heading">
+      <h2 id="amenities-heading">Hotel Amenities</h2>
+      <div class="amenities-grid" role="list">
+        <article class="amenity" role="listitem">
+          <h4><span aria-hidden="true">🏊</span> Rooftop Pool</h4>
+          <p>Infinity pool with city skyline views. Open <time datetime="06:00">6 AM</time> - <time datetime="22:00">10 PM</time>.</p>
+        </article>
+        <article class="amenity" role="listitem">
+          <h4><span aria-hidden="true">🍽</span> All-Day Dining</h4>
           <p>Multi-cuisine restaurant + in-room dining available 24/7.</p>
-        </div>
-        <div class="amenity">
-          <h4>💪 Fitness Center</h4>
+        </article>
+        <article class="amenity" role="listitem">
+          <h4><span aria-hidden="true">💪</span> Fitness Center</h4>
           <p>Modern gym with personal trainers. Yoga deck on terrace.</p>
-        </div>
-        <div class="amenity">
-          <h4>🧖 Spa & Wellness</h4>
+        </article>
+        <article class="amenity" role="listitem">
+          <h4><span aria-hidden="true">🧖</span> Spa & Wellness</h4>
           <p>Signature massages, steam, and sauna. Prior booking needed.</p>
-        </div>
-        <div class="amenity">
-          <h4>💼 Business Center</h4>
+        </article>
+        <article class="amenity" role="listitem">
+          <h4><span aria-hidden="true">💼</span> Business Center</h4>
           <p>Meeting rooms, high-speed WiFi, printing services.</p>
-        </div>
-        <div class="amenity">
-          <h4>🚗 Valet Parking</h4>
+        </article>
+        <article class="amenity" role="listitem">
+          <h4><span aria-hidden="true">🚗</span> Valet Parking</h4>
           <p>Complimentary valet and EV charging stations available.</p>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section id="booking">
-      <h2>Book Your Stay</h2>
+    <section id="booking" class="content-section" aria-labelledby="booking-heading">
+      <h2 id="booking-heading">Book Your Stay</h2>
       <div class="booking-container">
-        <form class="booking-form">
+        <form class="booking-form" aria-label="Hotel booking form">
           <div class="form-row">
             <div class="form-group">
               <label for="checkin">Check-in</label>
@@ -148,12 +159,12 @@
 
           <div class="form-group">
             <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="name">
           </div>
 
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="you@example.com" required>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
           </div>
 
           <button type="submit" class="submit-btn">Check Rates & Book</button>
@@ -168,12 +179,12 @@
             <li>Early check-in / late checkout</li>
             <li>Complimentary breakfast for 2</li>
           </ul>
-          <p class="contact-help">Need help? Call <a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p class="contact-help">Need help? Call <a href="tel:+xxx-xxx-xxxx">+ 91 xxx-xxx-xxxx</a></p>
         </div>
       </div>
     </section>
 
-    <nav class="page-nav">
+    <nav class="pagination-nav" aria-label="Hotel page pagination">
       <hr>
       <p>
         <a href="../code96/code96.html">← Prev: Code 96</a> |
@@ -183,8 +194,9 @@
     </nav>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Serenity Suites, Bangalore. All rights reserved.</p>
+  <footer class="page-footer" role="contentinfo">
+    <hr>
+    <p><small>&copy; 2026 XYZ Hotels, Bengaluru. This is a fictional hotel for demo purposes. | Code 97 of 99 | HTML 100 Codes Vault</small></p>
   </footer>
 </body>
 </html>

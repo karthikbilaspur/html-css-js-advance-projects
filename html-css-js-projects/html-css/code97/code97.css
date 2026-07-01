@@ -26,7 +26,6 @@ body {
   align-items: center;
   padding: 1.5rem 2rem;
   background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(10px);
 }
 
 .logo {

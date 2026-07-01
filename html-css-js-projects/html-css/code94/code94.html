@@ -1,57 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 33: Image Carousel | HTML 100 Codes</title>
-  <link rel="stylesheet" href="code33.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 94 - Advanced Image Carousel</title>
+    <link rel="stylesheet" href="code94.css">
 </head>
 <body>
-  <header>
-    <p><a href="../index.html">← Back to All Codes</a></p>
-    <h1>Code 33: Image Carousel (Radio Buttons)</h1>
-  </header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <main>
-    <section>
-      <h2>Overview</h2>
-      <p>This carousel uses hidden <code>&lt;input type="radio"&gt;</code> elements and CSS sibling selectors (<code>~</code>). When a radio button is checked, CSS shows the corresponding slide and hides the others.</p>
-    </section>
+    <header class="page-header" role="banner">
+        <p><a href="../index.html">← Back to All Codes</a></p>
+        <h1>Code 94: Advanced Image Carousel</h1>
+    </header>
 
-    <section>
-      <h2>Live Demo</h2>
-      <div class="carousel">
-        <input type="radio" name="slider" id="s1" checked>
-        <input type="radio" name="slider" id="s2">
-        <input type="radio" name="slider" id="s3">
-        
-        <div class="slides">
-          <div class="slide" id="slide1">Slide 1</div>
-          <div class="slide" id="slide2">Slide 2</div>
-          <div class="slide" id="slide3">Slide 3</div>
-        </div>
+    <main id="main-content" class="container" role="main">
+        <h1 class="page-title">Advanced Image Carousel</h1>
+        <p class="subtitle">CSS-only carousel with prev/next controls and ARIA carousel pattern</p>
 
-        <div class="controls">
-          <label for="s1"></label>
-          <label for="s2"></label>
-          <label for="s3"></label>
-        </div>
-      </div>
-    </section>
+        <section class="content-section" aria-labelledby="overview-heading">
+            <h2 id="overview-heading">Overview</h2>
+            <p>This carousel uses hidden <code>&lt;input type="radio"&gt;</code> elements, CSS sibling selectors, and <code>:has()</code> for prev/next navigation. When a radio is checked, CSS shows the active slide and updates ARIA states. No JavaScript required.</p>
+        </section>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code32/code32.html">← Prev: Code 32: CSS Lightbox</a> |
-        <a href="../index.html">Home</a> |
-        <a href="../code34/code34.html">Next: Code 34: [Next Topic] →</a>
-      </p>
-    </nav>
-  </main>
+        <section class="content-section" aria-labelledby="demo-heading">
+            <h2 id="demo-heading">Live Demo</h2>
+            
+            <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Image carousel">
+                <!-- Radio Controls -->
+                <input type="radio" name="slider" id="s1" class="carousel-input sr-only" checked aria-controls="slide1">
+                <input type="radio" name="slider" id="s2" class="carousel-input sr-only" aria-controls="slide2">
+                <input type="radio" name="slider" id="s3" class="carousel-input sr-only" aria-controls="slide3">
+                
+                <!-- Slides -->
+                <div class="slides" aria-live="polite">
+                    <div class="slide" id="slide1" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                        <div class="slide-content">
+                            <h3>Slide 1</h3>
+                            <p>First carousel item</p>
+                        </div>
+                    <div class="slide" id="slide2" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                        <div class="slide-content">
+                            <h3>Slide 2</h3>
+                            <p>Second carousel item</p>
+                        </div>
+                    </div>
+                    <div class="slide" id="slide3" role="group" aria-roledescription="slide" aria-label="3 of 3">
+                        <div class="slide-content">
+                            <h3>Slide 3</h3>
+                            <p>Third carousel item</p>
+                        </div>
+                    </div>
+                </div>
 
-  <footer>
-    <hr>
-    <p><small>Code 33 of 99 | HTML 100 Codes Vault</small></p>
-  </footer>
+                <!-- Prev/Next Navigation -->
+                <div class="carousel-nav" aria-label="Carousel navigation">
+                    <label for="s3" class="nav-arrow prev" aria-label="Previous slide" tabindex="0">
+                        <span aria-hidden="true">‹</span>
+                    </label>
+                    <label for="s2" class="nav-arrow next" aria-label="Next slide" tabindex="0">
+                        <span aria-hidden="true">›</span>
+                    </label>
+                </div>
+
+                <!-- Dot Indicators -->
+                <div class="controls" role="tablist" aria-label="Choose slide to display">
+                    <label for="s1" class="dot" role="tab" aria-selected="true" tabindex="0" aria-label="Go to slide 1"></label>
+                    <label for="s2" class="dot" role="tab" aria-selected="false" tabindex="0" aria-label="Go to slide 2"></label>
+                    <label for="s3" class="dot" role="tab" aria-selected="false" tabindex="0" aria-label="Go to slide 3"></label>
+                </div>
+            </div>
+        </section>
+
+        <nav class="pagination-nav" aria-label="Code navigation">
+            <hr>
+            <p>
+                <a href="../code93/code93.html">← Prev: Code 93</a> |
+                <a href="../index.html">Home</a> |
+                <a href="../code95/code95.html">Next: Code 95 →</a>
+            </p>
+        </nav>
+    </main>
+
+    <footer class="page-footer" role="contentinfo">
+        <hr>
+        <p><small>Code 94 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
 </body>
 </html>

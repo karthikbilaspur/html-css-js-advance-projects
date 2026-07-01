@@ -7,40 +7,41 @@
     <link rel="stylesheet" href="code77.css">
 </head>
 <body>
-  <main>
-    <h1 class="page-title">Coffee Cup Steam</h1>
-    
-    <section class="coffee-section">
-      <div class="coffee-container">
-        <div class="steam steam-1"></div>
-        <div class="steam steam-2"></div>
-        <div class="steam steam-3"></div>
+    <main class="container">
+        <h1 class="page-title">Coffee Cup Steam</h1>
+        <p class="subtitle">CSS @keyframes animation with pseudo-elements</p>
         
-        <div class="cup">
-          <div class="cup-body">
-            <div class="coffee"></div>
-          </div>
-          <div class="cup-handle"></div>
-        </div>
+        <section class="coffee-section" aria-label="Animated coffee cup">
+            <div class="coffee-container" role="img" aria-label="Hot coffee cup with rising steam">
+                <div class="steam steam-1" aria-hidden="true"></div>
+                <div class="steam steam-2" aria-hidden="true"></div>
+                <div class="steam steam-3" aria-hidden="true"></div>
+                
+                <div class="cup">
+                    <div class="cup-body">
+                        <div class="coffee" aria-hidden="true"></div>
+                    </div>
+                    <div class="cup-handle" aria-hidden="true"></div>
+                </div>
+                
+                <div class="saucer" aria-hidden="true"></div>
+            </div>
+            <p class="caption">Animated with @keyframes</p>
+        </section>
         
-        <div class="saucer"></div>
-      </div>
-      <p class="caption">Animated with @keyframes</p>
-    </section>
-    
-    <nav>
-      <hr>
-      <p>
-        <a href="../code76/code76.html">← Prev: Code 76</a> | 
-        <a href="../index.html">Home</a> | 
-        <a href="../code78/code78.html">Next: Code 78 →</a>
-      </p>
-    </nav>
-  </main>
+        <nav class="pagination-nav">
+            <hr>
+            <p>
+                <a href="../code76/code76.html">← Prev: Code 76</a> | 
+                <a href="../index.html">Home</a> | 
+                <a href="../code78/code78.html">Next: Code 78 →</a>
+            </p>
+        </nav>
+    </main>
 
-  <footer>
-    <hr>
-    <p><small>Code 77 of 99 | HTML 100 Codes Vault</small></p>
-  </footer>
+    <footer class="page-footer">
+        <hr>
+        <p><small>Code 77 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
 </body>
 </html>

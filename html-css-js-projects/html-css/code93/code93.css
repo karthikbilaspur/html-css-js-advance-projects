@@ -116,7 +116,6 @@ a:hover {
 
 .gallery {
   -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 /* Mobile tweaks */

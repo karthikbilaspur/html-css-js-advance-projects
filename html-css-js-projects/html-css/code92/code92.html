@@ -1,114 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code 92 - Spice Garden Restaurant</title>
-  <link rel="stylesheet" href="code92.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 92 - Spice Garden Restaurant</title>
+    <link rel="stylesheet" href="code92.css">
 </head>
 <body>
-  <header>
-    <h1>Spice Garden</h1>
-    <p>Authentic Flavors, Modern Twist</p>
-  </header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <main>
-    <section id="intro">
-      <h2>Welcome to Spice Garden</h2>
-      <p>Located in the heart of Bangalore, we serve fresh, locally-sourced dishes inspired by South Indian classics and global cuisine. Click a category to explore our menu.</p>
-    </section>
+    <header class="site-header" role="banner">
+        <h1 class="restaurant-name">Spice Garden</h1>
+        <p class="restaurant-tagline">Authentic Flavors, Modern Twist</p>
+    </header>
 
-    <section id="menu">
-      <h2>Our Menu</h2>
+    <main id="main-content" class="container" role="main">
+        <h1 class="page-title">Restaurant Menu</h1>
+        <p class="subtitle">CSS-only tabbed menu using radio buttons + <code>:checked</code></p>
 
-      <details class="menu-category">
-        <summary>Starters</summary>
-        <div class="menu-items">
-          <div class="item">
-            <h3>Gobi Manchurian <span>₹220</span></h3>
-            <p>Crispy cauliflower tossed in tangy Indo-Chinese sauce</p>
-          </div>
-          <div class="item">
-            <h3>Paneer Tikka <span>₹280</span></h3>
-            <p>Char-grilled cottage cheese with mint chutney</p>
-          </div>
-          <div class="item">
-            <h3>Chicken 65 <span>₹320</span></h3>
-            <p>Spicy deep-fried chicken, a Bangalore favorite</p>
-          </div>
-        </div>
-      </details>
+        <section id="intro" class="content-section" aria-labelledby="intro-heading">
+            <h2 id="intro-heading">Welcome to Spice Garden</h2>
+            <p>Located in the heart of Bangalore, we serve fresh, locally-sourced dishes inspired by South Indian classics and global cuisine. Select a category below.</p>
+        </section>
 
-      <details class="menu-category">
-        <summary>Main Course</summary>
-        <div class="menu-items">
-          <div class="item">
-            <h3>Butter Chicken <span>₹380</span></h3>
-            <p>Creamy tomato gravy with tender chicken pieces</p>
-          </div>
-          <div class="item">
-            <h3>Veg Biryani <span>₹300</span></h3>
-            <p>Fragrant basmati rice with seasonal veggies & raita</p>
-          </div>
-          <div class="item">
-            <h3>Masala Dosa <span>₹150</span></h3>
-            <p>Crispy dosa with potato masala, sambar & chutneys</p>
-          </div>
-        </div>
-      </details>
+        <section id="menu" class="content-section" aria-labelledby="menu-heading">
+            <h2 id="menu-heading">Our Menu</h2>
 
-      <details class="menu-category">
-        <summary>Desserts</summary>
-        <div class="menu-items">
-          <div class="item">
-            <h3>Gulab Jamun <span>₹120</span></h3>
-            <p>Warm milk-solid dumplings in rose syrup</p>
-          </div>
-          <div class="item">
-            <h3>Chocolate Lava Cake <span>₹180</span></h3>
-            <p>Served with vanilla ice cream</p>
-          </div>
-        </div>
-      </details>
+            <!-- Tab Controls -->
+            <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+                <input type="radio" id="tab-starters" name="menu-tab" class="tab-input" checked>
+                <label for="tab-starters" class="tab-btn" role="tab" aria-controls="panel-starters" aria-selected="true">Starters</label>
 
-      <details class="menu-category">
-        <summary>Beverages</summary>
-        <div class="menu-items">
-          <div class="item">
-            <h3>Filter Coffee <span>₹80</span></h3>
-            <p>Classic South Indian brew</p>
-          </div>
-          <div class="item">
-            <h3>Fresh Lime Soda <span>₹90</span></h3>
-            <p>Sweet, salty, or mixed</p>
-          </div>
-          <div class="item">
-            <h3>Mango Lassi <span>₹140</span></h3>
-            <p>Thick, creamy, and refreshing</p>
-          </div>
-        </div>
-      </details>
-    </section>
+                <input type="radio" id="tab-mains" name="menu-tab" class="tab-input">
+                <label for="tab-mains" class="tab-btn" role="tab" aria-controls="panel-mains" aria-selected="false">Main Course</label>
 
-    <section id="hours">
-      <h2>Visit Us</h2>
-      <p><strong>Hours:</strong> 11:00 AM – 11:00 PM, All Days</p>
-      <p><strong>Location:</strong> 12th Main, Indiranagar, Bangalore</p>
-      <p><strong>Call:</strong> +91 98765 43210</p>
-    </section>
+                <input type="radio" id="tab-desserts" name="menu-tab" class="tab-input">
+                <label for="tab-desserts" class="tab-btn" role="tab" aria-controls="panel-desserts" aria-selected="false">Desserts</label>
 
-    <nav>
-      <hr>
-      <p>
-        <a href="../code91/code91.html">← Prev: Code 91</a> |
-        <a href="../index.html">Home</a> |
-        <a href="../code93/code93.html">Next: Code 93 →</a>
-      </p>
-    </nav>
-  </main>
+                <input type="radio" id="tab-beverages" name="menu-tab" class="tab-input">
+                <label for="tab-beverages" class="tab-btn" role="tab" aria-controls="panel-beverages" aria-selected="false">Beverages</label>
+            </div>
 
-  <footer>
-    <p>&copy; 2026 Spice Garden. All rights reserved.</p>
-  </footer>
+            <!-- Tab Panels -->
+            <div class="tab-panels">
+                <div id="panel-starters" class="menu-panel" role="tabpanel" aria-labelledby="tab-starters">
+                    <div class="menu-items" role="list" aria-label="Starters menu">
+                        <article class="item" role="listitem">
+                            <h3>Gobi Manchurian <span class="price">₹220</span></h3>
+                            <p>Crispy cauliflower tossed in tangy Indo-Chinese sauce</p>
+                        </article>
+                        <article class="item" role="listitem">
+                            <h3>Paneer Tikka <span class="price">₹280</span></h3>
+                            <p>Char-grilled cottage cheese with mint chutney</p>
+                        </article>
+                        <article class="item" role="listitem">
+                            <h3>Chicken 65 <span class="price">₹320</span></h3>
+                            <p>Spicy deep-fried chicken, a Bangalore favorite</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="panel-mains" class="menu-panel" role="tabpanel" aria-labelledby="tab-mains">
+                    <div class="menu-items" role="list" aria-label="Main course menu">
+                        <article class="item" role="listitem">
+                            <h3>Butter Chicken <span class="price">₹380</span></h3>
+                            <p>Creamy tomato gravy with tender chicken pieces</p>
+                        </article>
+                        <article class="item" role="listitem">
+                            <h3>Veg Biryani <span class="price">₹300</span></h3>
+                            <p>Fragrant basmati rice with seasonal veggies & raita</p>
+                        </article>
+                        <article class="item" role="listitem">
+                            <h3>Masala Dosa <span class="price">₹150</span></h3>
+                            <p>Crispy dosa with potato masala, sambar & chutneys</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="panel-desserts" class="menu-panel" role="tabpanel" aria-labelledby="tab-desserts">
+                    <div class="menu-items" role="list" aria-label="Desserts menu">
+                        <article class="item" role="listitem">
+                            <h3>Gulab Jamun <span class="price">₹120</span></h3>
+                            <p>Warm milk-solid dumplings in rose syrup</p>
+                        </article>
+                        <article class="item" role="listitem">
+                            <h3>Chocolate Lava Cake <span class="price">₹180</span></h3>
+                            <p>Served with vanilla ice cream</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="panel-beverages" class="menu-panel" role="tabpanel" aria-labelledby="tab-beverages">
+                    <div class="menu-items" role="list" aria-label="Beverages menu">
+                        <article class="item" role="listitem">
+                            <h3>Filter Coffee <span class="price">₹80</span></h3>
+                            <p>Classic South Indian brew</p>
+                        </article>
+                        <article class="item" role="listitem">
+                            <h3>Fresh Lime Soda <span class="price">₹90</span></h3>
+                            <p>Sweet, salty, or mixed</p>
+                        </article>
+                        <article class="item" role="listitem">
+                            <h3>Mango Lassi <span class="price">₹140</span></h3>
+                            <p>Thick, creamy, and refreshing</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hours" class="content-section" aria-labelledby="hours-heading">
+            <h2 id="hours-heading">Visit Us</h2>
+            <address class="contact-info">
+                <p><strong>Hours:</strong> <time datetime="11:00">11:00 AM</time> – <time datetime="23:00">11:00 PM</time>, All Days</p>
+                <p><strong>Location:</strong> 12th Main, Indiranagar, Bangalore</p>
+                <p><strong>Call:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+            </address>
+        </section>
+
+        <nav class="pagination-nav" aria-label="Restaurant page pagination">
+            <hr>
+            <p>
+                <a href="../code91/code91.html">← Prev: Code 91</a> |
+                <a href="../index.html">Home</a> |
+                <a href="../code93/code93.html">Next: Code 93 →</a>
+            </p>
+        </nav>
+    </main>
+
+    <footer class="page-footer" role="contentinfo">
+        <hr>
+        <p><small>&copy; 2026 Spice Garden. All rights reserved. | Code 92 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
 </body>
 </html>
