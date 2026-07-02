@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 27: Random Quote Generator | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code27.css">
+  <script src="code27.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 27: Random Quote Generator</h1>
+    <p class="subtitle">Daily inspiration from great minds</p>
+  </header>
+
+  <div class="quote-container">
+    <div class="category-filter">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="motivation">Motivation</button>
+      <button class="filter-btn" data-category="wisdom">Wisdom</button>
+      <button class="filter-btn" data-category="success">Success</button>
+      <button class="filter-btn" data-category="life">Life</button>
+    </div>
+
+    <div class="quote-card" id="quoteCard">
+      <div class="quote-icon">"</div>
+      <p class="quote-text" id="quoteText">Click "New Quote" to get inspired</p>
+      <p class="quote-author" id="quoteAuthor">—</p>
+      <div class="quote-category" id="quoteCategory"></div>
+    </div>
+
+    <div class="controls">
+      <button id="newQuoteBtn" class="primary-btn">New Quote</button>
+      <button id="favBtn" class="icon-btn" title="Add to favorites">♡</button>
+      <button id="copyBtn" class="icon-btn" title="Copy quote">📋</button>
+      <button id="shareBtn" class="icon-btn" title="Share">📤</button>
+    </div>
+
+    <div class="favorites-section">
+      <h3>⭐ Favorites (<span id="favCount">0</span>)</h3>
+      <div id="favoritesList"></div>
+    </div>
+  </div>
+</body>
+</html>

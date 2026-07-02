@@ -1,0 +1,91 @@
+/* Styles for Code 12 */
+body { 
+    font-family: Arial, sans-serif; 
+    padding: 20px; 
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* The full-screen background overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* The actual box */
+.modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+#openModal, #closeModal {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#openModal {
+    background: #007bff;
+    color: white;
+}
+
+#closeModal {
+    background: #6c757d;
+    color: white;
+    margin-top: 12px;
+}
+
+/* Footer Pagination - Same as Code 11 */
+.page-footer-nav {
+    margin-top: 50px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.page-footer-nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+}
+
+.page-footer-nav a:hover {
+    text-decoration: underline;
+}

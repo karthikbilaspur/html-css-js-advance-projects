@@ -1,0 +1,18 @@
+/* Styles for Code 8 */
+.calculator { width: 200px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; }
+#display { width: 100%; height: 40px; margin-bottom: 10px; text-align: right; }
+.buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; }
+button { padding: 10px; cursor: pointer; }
+
+.page-footer-nav {
+  margin-top: 50px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 20px;
+}
+
+.page-footer-nav p {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 0;
+}

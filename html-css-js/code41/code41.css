@@ -1,0 +1,324 @@
+/* Styles for Code 41 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+.speech-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.controls {
+  margin-bottom: 30px;
+}
+
+.control-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 25px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.select-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.select-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.select-group select {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.select-group select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 20px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  user-select: none;
+}
+
+.checkbox-label input {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.mic-section {
+  text-align: center;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 16px;
+}
+
+.mic-btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+  transition: all 0.3s;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.mic-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+}
+
+.mic-btn.listening {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4); }
+  50% { box-shadow: 0 8px 30px rgba(231, 76, 60, 0.8); }
+}
+
+.mic-icon {
+  font-size: 40px;
+}
+
+.mic-text {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+.wave-animation {
+  display: none;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 15px;
+}
+
+.wave-animation.active {
+  display: flex;
+}
+
+.wave-animation span {
+  width: 4px;
+  height: 20px;
+  background: #667eea;
+  border-radius: 2px;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.wave-animation span:nth-child(2) { animation-delay: 0.1s; }
+.wave-animation span:nth-child(3) { animation-delay: 0.2s; }
+.wave-animation span:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(2); }
+}
+
+.output-section {
+  margin-bottom: 25px;
+}
+
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.output-header label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.output-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#wordCount {
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+}
+
+.action-btn {
+  padding: 8px 14px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
+.output-box {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.final-text {
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.interim-text {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.history-section {
+  padding-top: 25px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.history-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-btn {
+  padding: 6px 14px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.save-btn:hover {
+  background: #229954;
+}
+
+#historyList {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.history-item {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border-left: 3px solid #667eea;
+}
+
+.history-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.history-text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.info-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #856404;
+}
+
+@media (max-width: 600px) {
+.control-row {
+    flex-direction: column;
+  }
+}

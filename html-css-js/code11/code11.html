@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 11: Tabs Component | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code11.css">
+  <script src="code11.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 11: Tabs Component</h1>
+  </header>
+
+  <div class="tabs-container">
+    <div class="tab-header" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab1" id="tab-btn-1">Home</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab2" id="tab-btn-2">Profile</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab3" id="tab-btn-3">Settings</button>
+    </div>
+
+    <div class="tab-content active" id="tab1" role="tabpanel" aria-labelledby="tab-btn-1">
+      <h3>Home Content</h3>
+      <p>Welcome to the dashboard. This is the home view.</p>
+    </div>
+    <div class="tab-content" id="tab2" role="tabpanel" aria-labelledby="tab-btn-2" hidden>
+      <h3>Profile Content</h3>
+      <p>Here you can manage your personal information.</p>
+    </div>
+    <div class="tab-content" id="tab3" role="tabpanel" aria-labelledby="tab-btn-3" hidden>
+      <h3>Settings Content</h3>
+      <p>Adjust your preferences and security settings here.</p>
+    </div>
+  </div>
+
+<footer>
+    <nav class="page-footer-nav">
+        <a href="../code11/code11.html">&larr; Previous: Code 11</a> 
+        <a href="../../index.html">Home</a> 
+        <a href="../code12/code12.html">Next: Code 12 &rarr;</a>
+    </nav>
+</footer>
+
+</body>
+</html>

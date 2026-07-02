@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop List 58</title>
+    <link rel="stylesheet" href="code58.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Drag & Drop Todo</h1>
+            <p>Reorder tasks by dragging. Saved automatically.</p>
+        </header>
+
+        <div class="add-task">
+            <input 
+                type="text" 
+                id="task-input" 
+                placeholder="Add a new task..."
+                autocomplete="off"
+            >
+            <button id="add-btn">Add</button>
+        </div>
+
+        <div class="controls">
+            <button id="clear-completed">Clear Completed</button>
+            <span id="task-count">0 tasks</span>
+        </div>
+
+        <ul id="task-list" class="task-list">
+            <!-- Tasks rendered here -->
+        </ul>
+
+        <div id="empty-state" class="empty-state">
+            <div class="icon">📝</div>
+            <p>No tasks yet. Add one above!</p>
+        </div>
+    </div>
+
+    <script src="code58.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 21: Tip Calculator | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code21.css">
+  <script src="code21.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 21: Tip Calculator</h1>
+  </header>
+
+  <div class="tip-container">
+    <div class="input-group">
+      <label for="billAmount">Bill Amount (₹)</label>
+      <input type="number" id="billAmount" step="0.01" min="0" placeholder="0.00">
+    </div>
+
+    <div class="input-group">
+      <label>Select Tip %</label>
+      <div class="tip-buttons">
+        <button class="tip-btn" data-tip="5">5%</button>
+        <button class="tip-btn" data-tip="10">10%</button>
+        <button class="tip-btn active" data-tip="15">15%</button>
+        <button class="tip-btn" data-tip="20">20%</button>
+        <button class="tip-btn" data-tip="25">25%</button>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="customTip">Custom Tip %</label>
+      <input type="number" id="customTip" step="1" min="0" max="100" placeholder="Enter %">
+    </div>
+
+    <div class="input-group">
+      <label for="people">Number of People</label>
+      <input type="number" id="people" step="1" min="1" value="1">
+    </div>
+
+    <div class="result">
+      <div class="result-row">
+        <div>
+          <p>Tip Amount</p>
+          <span class="per-person">per person</span>
+        </div>
+        <span class="amount" id="tipPerPerson">₹0.00</span>
+      </div>
+      <div class="result-row">
+        <div>
+          <p>Total</p>
+          <span class="per-person">per person</span>
+        </div>
+        <span class="amount" id="totalPerPerson">₹0.00</span>
+      </div>
+    </div>
+
+    <button id="resetBtn">Reset</button>
+  </div>
+</body>
+</html>

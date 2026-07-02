@@ -1,0 +1,134 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #16213e;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #e94560;
+    }
+
+    .coin-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .coin {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in;
+    }
+
+    .coin.flip {
+      animation: flip 2s ease-out forwards;
+    }
+
+    @keyframes flip {
+      0% { transform: rotateY(0); }
+      100% { transform: rotateY(1800deg); }
+    }
+
+    .side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      backface-visibility: hidden;
+      box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+    }
+
+    .side img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .tails {
+      transform: rotateY(180deg);
+    }
+
+    #result {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e94560;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    #flipBtn {
+      background: #e94560;
+      color: white;
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    #flipBtn:hover {
+      background: #c73e54;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+    }
+
+    #flipBtn:active {
+      transform: translateY(0);
+    }
+
+    #flipBtn:disabled {
+      background: #555;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    footer {
+      background: #16213e;
+      padding: 1rem;
+    }
+
+    .page-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .page-footer-nav a {
+      color: #e94560;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .page-footer-nav a:hover {
+      color: #fff;
+    }

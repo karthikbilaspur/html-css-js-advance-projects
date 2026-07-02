@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Previewer 73</title>
+    <link rel="stylesheet" href="code73.css">
+    <!-- Marked.js for parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Highlight.js for code blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Markdown Previewer</h1>
+            <div class="toolbar">
+                <button id="toggle-view" data-view="split">Split View</button>
+                <button id="clear-btn">Clear</button>
+                <button id="copy-html">Copy HTML</button>
+                <button id="download-md">Download .md</button>
+            </div>
+        </header>
+
+        <div class="editor-container" id="editor-container">
+            <div class="pane editor-pane">
+                <div class="pane-header">
+                    <span>📝 Markdown</span>
+                    <span id="char-count">0 chars</span>
+                </div>
+                <textarea id="markdown-input" placeholder="# Hello World
+
+Start typing your markdown here...
+
+**Bold text** and *italic text*
+
+- List item 1
+- List item 2
+
+```javascript
+const hello = 'world';
+console.log(hello);
+```
+Link to Google"></textarea>
+</div>
+
+        <div class="pane preview-pane">
+            <div class="pane-header">
+                <span>👁️ Preview</span>
+                <span id="word-count">0 words</span>
+            </div>
+            <div id="preview" class="preview-content"></div>
+        </div>
+    </div>
+
+    <div class="cheatsheet">
+        <details>
+            <summary>Markdown Cheat Sheet</summary>
+            <div class="cheat-grid">
+                <div><code># H1</code> <span>Heading 1</span></div>
+                <div><code>**bold**</code> <span>Bold</span></div>
+                <div><code>*italic*</code> <span>Italic</span></div>
+                <div><code>`code`</code> <span>Inline code</span></div>
+                <div><code>- item</code> <span>List</span></div>
+                <div><code>[link](url)</code> <span>Link</span></div>
+                <div><code>![alt](url)</code> <span>Image</span></div>
+                <div><code>> quote</code> <span>Blockquote</span></div>
+            </div>
+        </details>
+    </div>
+</div>
+
+<script src="code73.js"></script>
+</body> </html>

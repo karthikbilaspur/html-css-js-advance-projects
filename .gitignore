@@ -1,4 +1,3 @@
-echo "html-css-js/" >> .gitignore  
 echo "node_modules/" >> .gitignore
 echo ".vscode/" >> .gitignore
 echo ".DS_Store" >> .gitignore

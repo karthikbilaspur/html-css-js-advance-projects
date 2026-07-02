@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code91 Page Builder</title>
+    <link rel="stylesheet" href="code91.css">
+</head>
+<body>
+    <div class="app">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Blocks</h2>
+                <p>Drag to canvas</p>
+            </div>
+            <div class="blocks-panel">
+                <div class="block-item" draggable="true" data-type="heading">
+                    <div class="block-icon">H</div>
+                    <span>Heading</span>
+                </div>
+                <div class="block-item" draggable="true" data-type="text">
+                    <div class="block-icon">T</div>
+                    <span>Text</span>
+                </div>
+                <div class="block-item" draggable="true" data-type="image">
+                    <div class="block-icon">🖼</div>
+                    <span>Image</span>
+                </div>
+                <div class="block-item" draggable="true" data-type="button">
+                    <div class="block-icon">▢</div>
+                    <span>Button</span>
+                </div>
+                <div class="block-item" draggable="true" data-type="columns">
+                    <div class="block-icon">||</div>
+                    <span>2 Columns</span>
+                </div>
+                <div class="block-item" draggable="true" data-type="spacer">
+                    <div class="block-icon">↕</div>
+                    <span>Spacer</span>
+                </div>
+            </div>
+
+            <div class="properties-panel" id="properties-panel">
+                <h3>Properties</h3>
+                <div id="properties-content">
+                    <p class="hint">Select a block to edit</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <button id="preview-btn">Preview</button>
+                    <button id="clear-btn">Clear</button>
+                </div>
+                <div class="toolbar-right">
+                    <button id="export-html">Export HTML</button>
+                    <button id="save-btn">Save</button>
+                </div>
+            </div>
+
+            <div class="canvas-wrapper">
+                <div id="canvas" class="canvas">
+                    <div class="drop-zone" data-index="0">
+                        <span>Drag blocks here to start building</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Preview</h3>
+                <button class="close-btn" id="close-preview">✕</button>
+            </div>
+            <iframe id="preview-frame"></iframe>
+        </div>
+    </div>
+
+    <script src="code91.js"></script>
+</body>
+</html>

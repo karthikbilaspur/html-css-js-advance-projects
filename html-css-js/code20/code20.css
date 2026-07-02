@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    color: #333;
+}
+
+header h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+.age-container {
+    max-width: 550px;
+    width: 100%;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #444;
+    font-size: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    background: #667eea;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #4d63d8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.reset {
+    background: #6c757d;
+}
+
+.reset:hover {
+    background: #5a6268;
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+}
+
+.result {
+    display: none;
+    margin-top: 35px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.result.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.result h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.age-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.age-item {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 12px;
+    text-align: center;
+    padding: 25px 15px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.age-item span {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.age-item p {
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f8f9fa;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.stats-table thead {
+    background: #667eea;
+    color: white;
+}
+
+.stats-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stats-table th:last-child {
+    text-align: right;
+}
+
+.stats-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 15px;
+}
+
+.stats-table td:last-child {
+    text-align: right;
+    font-weight: 600;
+    color: #764ba2;
+    font-variant-numeric: tabular-nums;
+}
+
+.stats-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.stats-table tbody tr:hover {
+    background: #eef2ff;
+}
+
+.stats-table.highlight {
+    background: #fff4e6;
+}
+
+.stats-table.highlight td:last-child {
+    color: #ff6b35;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.page-footer-nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-footer-nav a {
+    color: #e8e8ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.page-footer-nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .age-display {
+        grid-template-columns: 1fr;
+    }
+
+  .age-container {
+        padding: 25px;
+    }
+
+    body {
+        padding: 15px;
+    }
+
+   .btn-group {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board 59</title>
+    <link rel="stylesheet" href="code59.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kanban Board</h1>
+            <p>Drag cards between columns to update status</p>
+        </header>
+
+        <div class="add-card-bar">
+            <input 
+                type="text" 
+                id="card-input" 
+                placeholder="Add a new card..."
+                autocomplete="off"
+            >
+            <select id="column-select">
+                <option value="todo">To Do</option>
+                <option value="progress">In Progress</option>
+                <option value="done">Done</option>
+            </select>
+            <button id="add-btn">Add Card</button>
+        </div>
+
+        <div class="board">
+            <div class="column" data-status="todo">
+                <div class="column-header">
+                    <h3>To Do</h3>
+                    <span class="count" id="todo-count">0</span>
+                </div>
+                <div class="cards-container" id="todo-cards"></div>
+            </div>
+
+            <div class="column" data-status="progress">
+                <div class="column-header">
+                    <h3>In Progress</h3>
+                    <span class="count" id="progress-count">0</span>
+                </div>
+                <div class="cards-container" id="progress-cards"></div>
+            </div>
+
+            <div class="column" data-status="done">
+                <div class="column-header">
+                    <h3>Done</h3>
+                    <span class="count" id="done-count">0</span>
+                </div>
+                <div class="cards-container" id="done-cards"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="code59.js"></script>
+</body>
+</html>

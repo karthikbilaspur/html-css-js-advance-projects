@@ -1,0 +1,55 @@
+/* Styles for Code 14 */
+body { 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    padding: 20px; 
+}
+
+.counter-container { 
+    margin-top: 20px; 
+    width: 400px; 
+}
+
+textarea { 
+    width: 100%; 
+    height: 150px; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    resize: vertical;
+}
+
+p { 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    margin-top: 10px; 
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #555;
+}
+
+/* Footer Pagination - Same as Code 11, 12, 13 */
+.page-footer-nav {
+    margin-top: 50px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.page-footer-nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+}
+
+.page-footer-nav a:hover {
+    text-decoration: underline;
+}

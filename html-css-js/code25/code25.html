@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 25: Stopwatch Pro | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code25.css">
+  <script src="code25.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Code 25: Stopwatch Pro</h1>
+  </header>
+
+  <div class="stopwatch-container">
+    <div class="display-section">
+      <div class="time-display" id="display">00:00:00.000</div>
+      <div class="sub-display" id="subDisplay">Lap 0</div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn" class="btn-start">Start</button>
+      <button id="lapBtn" class="btn-lap" disabled>Lap</button>
+      <button id="resetBtn" class="btn-reset">Reset</button>
+    </div>
+
+    <div class="keyboard-hint">
+      <kbd>Space</kbd> Start/Pause • <kbd>L</kbd> Lap • <kbd>R</kbd> Reset
+    </div>
+
+    <div class="laps-container" id="lapsContainer">
+      <div class="laps-header">
+        <h3>Lap Times</h3>
+        <button id="clearLapsBtn" class="clear-btn">Clear</button>
+      </div>
+      <div class="laps-list" id="lapsList"></div>
+    </div>
+  </div>
+</body>
+</html>

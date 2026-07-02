@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Digital Clock 63</title>
+    <link rel="stylesheet" href="code63.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dual Clock</h1>
+            <p>Analog + Digital synced in real-time</p>
+        </header>
+
+        <div class="clock-card">
+            <div class="timezone">
+                <select id="timezone-select">
+                    <option value="local">Local Time</option>
+                    <option value="UTC">UTC</option>
+                    <option value="America/New_York">New York</option>
+                    <option value="Europe/London">London</option>
+                    <option value="Asia/Tokyo">Tokyo</option>
+                    <option value="Asia/Kolkata">India</option>
+                    <option value="Australia/Sydney">Sydney</option>
+                </select>
+            </div>
+
+            <div class="clocks">
+                <!-- Analog Clock -->
+                <div class="analog-clock">
+                    <canvas id="analog-canvas" width="300" height="300"></canvas>
+                </div>
+
+                <!-- Digital Clock -->
+                <div class="digital-clock">
+                    <div class="time" id="digital-time">00:00:00</div>
+                    <div class="date" id="digital-date">Monday, Jan 1</div>
+                    <div class="ampm" id="ampm">AM</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="toggle-24h">Switch to 24h</button>
+                <button id="toggle-seconds">Hide Seconds</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="code63.js"></script>
+</body>
+</html>

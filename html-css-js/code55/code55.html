@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics Finder 55</title>
+    <link rel="stylesheet" href="code55.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>Lyrics Finder</h1>
+            <p>Search any song via lyrics.ovh API</p>
+        </header>
+
+        <div class="search-container">
+            <div class="search-group">
+                <input type="text" id="artist-input" placeholder="Artist name...">
+                <input type="text" id="song-input" placeholder="Song title...">
+                <button id="search-btn">Search</button>
+            </div>
+            <button id="suggest-btn">Get Suggestions</button>
+        </div>
+
+        <div id="status"></div>
+
+        <div class="split-view">
+            <aside class="results-panel">
+                <h3>Results</h3>
+                <div id="results-list"></div>
+            </aside>
+
+            <main class="lyrics-panel">
+                <div id="lyrics-display">
+                    <div class="placeholder">
+                        <div class="icon">🎵</div>
+                        <p>Search for an artist + song to see lyrics</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="code55.js"></script>
+</body>
+</html>

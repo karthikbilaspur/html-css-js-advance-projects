@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Aggregator 52</title>
+    <link rel="stylesheet" href="code52.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>News Aggregator</h1>
+            <p class="subtitle">Top headlines powered by NewsAPI</p>
+        </header>
+
+        <div class="controls">
+            <div class="filters">
+                <button class="filter-btn active" data-category="general">General</button>
+                <button class="filter-btn" data-category="business">Business</button>
+                <button class="filter-btn" data-category="technology">Tech</button>
+                <button class="filter-btn" data-category="sports">Sports</button>
+                <button class="filter-btn" data-category="health">Health</button>
+                <button class="filter-btn" data-category="science">Science</button>
+                <button class="filter-btn" data-category="entertainment">Entertainment</button>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search headlines...">
+                <select id="country-select">
+                    <option value="us">US</option>
+                    <option value="gb">UK</option>
+                    <option value="in" selected>India</option>
+                    <option value="ca">Canada</option>
+                    <option value="au">Australia</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">Loading headlines...</div>
+        <div id="error" class="error"></div>
+        <div id="news-grid" class="news-grid"></div>
+    </div>
+
+    <script src="code52.js"></script>
+</body>
+</html>

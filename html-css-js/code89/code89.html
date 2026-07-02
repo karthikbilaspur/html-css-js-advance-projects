@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code89 Spreadsheet</title>
+    <link rel="stylesheet" href="code89.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Code89 Sheets</h1>
+            <div class="toolbar">
+                <button id="add-row">Add Row</button>
+                <button id="add-col">Add Column</button>
+                <button id="clear-all">Clear All</button>
+                <button id="export-csv">Export CSV</button>
+            </div>
+        </div>
+
+        <div class="formula-bar">
+            <div class="cell-ref" id="cell-ref">A1</div>
+            <div class="fx">fx</div>
+            <input type="text" id="formula-input" placeholder="Enter value or formula like =SUM(A1:A3)">
+        </div>
+
+        <div class="spreadsheet-wrapper">
+            <div id="spreadsheet"></div>
+        </div>
+
+        <div class="status-bar">
+            <div id="status">Ready</div>
+            <div id="selection-info"></div>
+        </div>
+    </div>
+
+    <script src="code89.js"></script>
+</body>
+</html>

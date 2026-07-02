@@ -1,0 +1,142 @@
+/* Styles for Code 19 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  padding: 30px;
+  color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.bmi-container {
+  flex: 1;
+  max-width: 350px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #3498db;
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.result {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background: #ecf0f1;
+  border: 2px solid #bdc3c7;
+  transition: all 0.3s ease;
+}
+
+.result p {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+#bmiValue, #bmiCategory {
+  font-weight: bold;
+}
+
+/* Conditional CSS based on BMI category */
+.result.underweight {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.result.normal {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.result.overweight {
+  background: #fff3e0;
+  border-color: #ff9800;
+}
+
+.result.obese {
+  background: #ffebee;
+  border-color: #f44336;
+}
+
+footer {
+  background: #2c3e50;
+  padding: 1rem;
+  margin-top: 30px;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-footer-nav a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.page-footer-nav a:hover {
+  color: #fff;
+}

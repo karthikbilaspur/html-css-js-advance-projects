@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search 50</title>
+    <link rel="stylesheet" href="code50.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Movie Search</h1>
+            <p>Powered by OMDB API</p>
+        </header>
+
+        <div class="search-wrapper">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search for movies, series..."
+                autocomplete="off"
+            >
+            <div id="search-status"></div>
+        </div>
+
+        <div id="error-message"></div>
+        <div id="results-grid"></div>
+        
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Movie Details Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-modal">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="code50.js"></script>
+</body>
+</html>

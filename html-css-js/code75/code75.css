@@ -1,0 +1,177 @@
+/* Styles for Code 75 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+header {
+    background: #252526;
+    padding: 20px 24px;
+    border-bottom: 1px solid #3e3e42;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #cccccc;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.controls select,
+.controls button {
+    padding: 8px 16px;
+    background: #3c3c3c;
+    border: 1px solid #555;
+    color: #cccccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.controls select:hover,
+.controls button:hover {
+    background: #4a4a4a;
+    border-color: #007acc;
+}
+
+.controls button:active {
+    transform: scale(0.95);
+}
+
+#copy-btn {
+    background: #007acc;
+    border-color: #007acc;
+}
+
+#copy-btn:hover {
+    background: #005a9e;
+}
+
+.editor-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+}
+
+.input-section,
+.output-section {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #3e3e42;
+}
+
+.output-section {
+    border-right: none;
+}
+
+.section-header {
+    padding: 12px 20px;
+    background: #2d2d30;
+    border-bottom: 1px solid #3e3e42;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #969696;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    text-transform: none;
+    font-weight: 400;
+}
+
+.toggle input {
+    cursor: pointer;
+}
+
+#code-input {
+    flex: 1;
+    padding: 20px;
+    background: #1e1e1e;
+    border: none;
+    color: #d4d4d4;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: none;
+    outline: none;
+}
+
+pre[class*="language-"] {
+    margin: 0!important;
+    border-radius: 0!important;
+    height: 100%;
+    overflow: auto;
+}
+
+code[class*="language-"] {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #424242;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4f4f4f;
+}
+
+@media (max-width: 968px) {
+   .editor-wrapper {
+        grid-template-columns: 1fr;
+    }
+   .input-section {
+        border-right: none;
+        border-bottom: 1px solid #3e3e42;
+    }
+}

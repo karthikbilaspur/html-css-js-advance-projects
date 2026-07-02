@@ -1,0 +1,121 @@
+/* Styles for Code 18 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #ecf0f1;
+  padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #bdc3c7;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+input.invalid {
+  border-color: #e74c3c;
+}
+
+input.valid {
+  border-color: #2ecc71;
+}
+
+.error {
+  display: block;
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  min-height: 18px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #3498db;
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+.success {
+  text-align: center;
+  color: #2ecc71;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+footer {
+  background: #2c3e50;
+  padding: 1rem;
+  margin-top: 30px;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-footer-nav a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.page-footer-nav a:hover {
+  color: #fff;
+}

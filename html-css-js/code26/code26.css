@@ -1,0 +1,263 @@
+/* Styles for Code 26 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #eee;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00d9ff;
+  font-size: 32px;
+  text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+.clock-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 35px;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.current-time {
+  text-align: center;
+  margin-bottom: 35px;
+  padding: 25px;
+  background: rgba(0, 217, 255, 0.1);
+  border-radius: 16px;
+  border: 2px solid rgba(0, 217, 255, 0.3);
+}
+
+.time-display {
+  font-size: 56px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  color: #00d9ff;
+  letter-spacing: 3px;
+  text-shadow: 0 0 30px rgba(0, 217, 255, 0.6);
+}
+
+.date-display {
+  font-size: 18px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+.alarm-section h3, .active-alarms h3 {
+  color: #00d9ff;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.alarm-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.time-input label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.time-input input, .time-input select, .sound-select select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #eee;
+  font-family: inherit;
+  text-align: center;
+}
+
+.time-input input:focus, .sound-select select:focus {
+  outline: none;
+  border-color: #00d9ff;
+}
+
+.sound-select {
+  margin-bottom: 20px;
+}
+
+.sound-select label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+#setAlarmBtn {
+  background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+  color: white;
+}
+
+#setAlarmBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 217, 255, 0.4);
+}
+
+.active-alarms {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#alarmList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alarm-item {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.alarm-item.active {
+  border-color: #00d9ff;
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+.alarm-time {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00d9ff;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+.alarm-alert {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s;
+}
+
+.alarm-alert.show {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.alert-content {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  padding: 50px;
+  border-radius: 24px;
+  text-align: center;
+  animation: shake 0.5s infinite;
+  box-shadow: 0 20px 60px rgba(231, 76, 60, 0.5);
+}
+
+.alert-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.alert-content h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.alert-content p {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.alert-content button {
+  margin: 5px;
+  padding: 15px 30px;
+  font-size: 16px;
+}
+
+#snoozeBtn {
+  background: #f39c12;
+  color: white;
+}
+
+#stopBtn {
+  background: white;
+  color: #e74c3c;
+}
+
+@media (max-width: 480px) {
+  .time-display {
+    font-size: 42px;
+  }
+  .alarm-inputs {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="code20.css">
+    <script src="code20.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>🎂 Age Calculator</h1>
+    </header>
+
+    <main class="age-container">
+        <div class="input-group">
+            <label for="birthdate">Select Your Date of Birth</label>
+            <input type="date" id="birthdate">
+        </div>
+
+        <div class="btn-group">
+            <button id="calcBtn">Calculate Age</button>
+            <button id="resetBtn" class="reset">Reset</button>
+        </div>
+
+        <div class="result" id="resultBox">
+            <h2>Your Age Breakdown</h2>
+
+            <div class="age-display">
+                <div class="age-item">
+                    <span id="years">0</span>
+                    <p>Years</p>
+                </div>
+                <div class="age-item">
+                    <span id="months">0</span>
+                    <p>Months</p>
+                </div>
+                <div class="age-item">
+                    <span id="days">0</span>
+                    <p>Days</p>
+                </div>
+            </div>
+
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Days Lived</td>
+                        <td id="totalDays">0</td>
+                    </tr>
+                    <tr>
+                        <td>Weeks Lived</td>
+                        <td id="totalWeeks">0</td>
+                    </tr>
+                    <tr>
+                        <td>Months Lived</td>
+                        <td id="totalMonths">0</td>
+                    </tr>
+                    <tr>
+                        <td>Hours Lived</td>
+                        <td id="totalHours">0</td>
+                    </tr>
+                    <tr>
+                        <td>Minutes Lived</td>
+                        <td id="totalMinutes">0</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Next Birthday</td>
+                        <td id="nextBirthday">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <nav class="page-footer-nav">
+            <a href="../code19/code19.html">&larr; Previous: Code 19</a>
+            <a href="../../index.html">Home</a>
+            <a href="../code21/code21.html">Next: Code 21 &rarr;</a>
+        </nav>
+    </footer>
+</body>
+</html>

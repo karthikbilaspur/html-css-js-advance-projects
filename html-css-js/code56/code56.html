@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator 56</title>
+    <link rel="stylesheet" href="code56.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QR Code Generator</h1>
+            <p>Create QR codes for URLs, text, WiFi, and more</p>
+        </header>
+
+        <div class="generator-grid">
+            <div class="controls-panel">
+                <div class="input-group">
+                    <label>Type</label>
+                    <select id="qr-type">
+                        <option value="text">Text / URL</option>
+                        <option value="wifi">WiFi</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                    </select>
+                </div>
+
+                <!-- Text/URL Input -->
+                <div class="input-group" id="text-group">
+                    <label>Text or URL</label>
+                    <textarea id="text-input" placeholder="https://example.com" rows="3"></textarea>
+                </div>
+
+                <!-- WiFi Input -->
+                <div class="input-group hidden" id="wifi-group">
+                    <label>SSID / Network Name</label>
+                    <input type="text" id="wifi-ssid" placeholder="MyWiFi">
+                    <label>Password</label>
+                    <input type="password" id="wifi-pass" placeholder="password">
+                    <label>Encryption</label>
+                    <select id="wifi-type">
+                        <option value="WPA">WPA/WPA2</option>
+                        <option value="WEP">WEP</option>
+                        <option value="nopass">None</option>
+                    </select>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group hidden" id="email-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email-to" placeholder="hello@example.com">
+                    <label>Subject</label>
+                    <input type="text" id="email-subject" placeholder="Hello">
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group hidden" id="phone-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone-num" placeholder="+1234567890">
+                </div>
+
+                <div class="options-row">
+                    <div class="input-group">
+                        <label>Size</label>
+                        <select id="qr-size">
+                            <option value="256">256x256</option>
+                            <option value="384">384x384</option>
+                            <option value="512" selected>512x512</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Color</label>
+                        <input type="color" id="qr-color" value="#000000">
+                    </div>
+                </div>
+
+                <button id="generate-btn">Generate QR Code</button>
+            </div>
+
+            <div class="output-panel">
+                <div id="qrcode-container">
+                    <div class="placeholder">
+                        <div class="icon">📱</div>
+                        <p>Your QR code will appear here</p>
+                    </div>
+                </div>
+                <button id="download-btn" class="hidden">Download PNG</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- qrcode.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="code56.js"></script>
+</body>
+</html>

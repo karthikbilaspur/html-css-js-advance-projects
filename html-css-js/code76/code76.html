@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Timeline 76</title>
+    <link rel="stylesheet" href="code76.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Animation Timeline</h1>
+            <p>Control CSS keyframe animations with requestAnimationFrame</p>
+        </header>
+
+        <div class="preview-stage">
+            <div id="target" class="animated-box">Animate Me</div>
+        </div>
+
+        <div class="timeline-controls">
+            <div class="playback">
+                <button id="play-btn" class="btn-primary">
+                    <span class="icon">▶</span> Play
+                </button>
+                <button id="pause-btn" class="btn-secondary" disabled>
+                    <span class="icon">⏸</span> Pause
+                </button>
+                <button id="reset-btn" class="btn-secondary">
+                    <span class="icon">↺</span> Reset
+                </button>
+            </div>
+
+            <div class="scrubber-wrapper">
+                <input type="range" id="scrubber" min="0" max="100" value="0" step="0.1">
+                <div class="time-display">
+                    <span id="current-time">0.00s</span> / <span id="total-time">2.00s</span>
+                </div>
+            </div>
+
+            <div class="speed-control">
+                <label>Speed:</label>
+                <select id="speed">
+                    <option value="0.25">0.25x</option>
+                    <option value="0.5">0.5x</option>
+                    <option value="1" selected>1x</option>
+                    <option value="1.5">1.5x</option>
+                    <option value="2">2x</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="inspector">
+            <h3>Computed Values</h3>
+            <div class="values-grid" id="values">
+                <div class="value-item">
+                    <span class="label">transform</span>
+                    <span class="value" id="val-transform">none</span>
+                </div>
+                <div class="value-item">
+                    <span class="label">opacity</span>
+                    <span class="value" id="val-opacity">1</span>
+                </div>
+                <div class="value-item">
+                    <span class="label">background</span>
+                    <span class="value" id="val-bg">#667eea</span>
+                </div>
+                <div class="value-item">
+                    <span class="label">progress</span>
+                    <span class="value" id="val-progress">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="animations">
+            <h3>Preset Animations</h3>
+            <div class="animation-buttons">
+                <button data-anim="bounce">Bounce</button>
+                <button data-anim="spin">Spin</button>
+                <button data-anim="pulse">Pulse</button>
+                <button data-anim="slide">Slide</button>
+                <button data-anim="fade">Fade</button>
+                <button data-anim="complex">Complex</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="code76.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code96 Screen Recorder</title>
+    <link rel="stylesheet" href="code96.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Code96 Screen Recorder</h1>
+            <div class="status">
+                <div class="status-dot" id="status-dot"></div>
+                <span id="status-text">Ready</span>
+            </div>
+        </header>
+
+        <div class="recorder">
+            <div class="preview-wrapper">
+                <video id="preview" autoplay muted playsinline></video>
+                <div class="recording-indicator" id="recording-indicator">
+                    <div class="rec-dot"></div>
+                    <span>REC</span>
+                    <span id="timer">00:00</span>
+                </div>
+                <div class="no-preview" id="no-preview">
+                    <div class="icon">🎥</div>
+                    <p>Click Start to capture your screen</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label>Audio Source</label>
+                    <select id="audio-source">
+                        <option value="none">No Audio</option>
+                        <option value="system">System Audio</option>
+                        <option value="mic">Microphone</option>
+                        <option value="both">System + Mic</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Video Quality</label>
+                    <select id="quality">
+                        <option value="1080">1080p - High</option>
+                        <option value="720" selected>720p - Standard</option>
+                        <option value="480">480p - Low</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Format</label>
+                    <select id="format">
+                        <option value="webm">WebM</option>
+                        <option value="mp4">MP4</option>
+                    </select>
+                </div>
+
+                <div class="buttons">
+                    <button id="start-btn" class="btn-primary">
+                        <span>●</span> Start Recording
+                    </button>
+                    <button id="pause-btn" disabled>Pause</button>
+                    <button id="stop-btn" disabled>Stop</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recordings" id="recordings-section">
+            <h3>Recordings</h3>
+            <div id="recordings-list"></div>
+        </div>
+    </div>
+
+    <script src="code96.js"></script>
+</body>
+</html>

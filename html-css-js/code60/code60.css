@@ -1,0 +1,292 @@
+/* Styles for Code 60 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin: 40px 0 32px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.calendar {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+#month-year {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #f5f5f7;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background: #e5e5e7;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.calendar-weekdays div {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6e6e73;
+    padding: 8px 0;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.day {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    font-weight: 500;
+}
+
+.day:hover:not(.empty) {
+    background: #f5f5f7;
+}
+
+.day.empty {
+    cursor: default;
+}
+
+.day.today {
+    background: #007aff;
+    color: white;
+    font-weight: 700;
+}
+
+.day.today:hover {
+    background: #0051d5;
+}
+
+.day.selected {
+    background: #1a1a1a;
+    color: white;
+}
+
+.day.other-month {
+    color: #c7c7cc;
+}
+
+.day.has-events::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    width: 5px;
+    height: 5px;
+    background: #ff3b30;
+    border-radius: 50%;
+}
+
+.day.today.has-events::after {
+    background: white;
+}
+
+.events-panel {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.events-header h3 {
+    font-size: 1.2rem;
+}
+
+#add-event-btn {
+    padding: 8px 16px;
+    background: #007aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#add-event-btn:hover {
+    background: #0051d5;
+}
+
+#events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    background: #f5f5f7;
+    border-radius: 10px;
+}
+
+.event-info {
+    flex: 1;
+}
+
+.event-title {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.event-time {
+    font-size: 0.85rem;
+    color: #6e6e73;
+}
+
+.delete-event {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    color: #c7c7cc;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.delete-event:hover {
+    background: #ff3b30;
+    color: white;
+}
+
+.empty-events {
+    text-align: center;
+    color: #a1a1a6;
+    padding: 40px 20px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #e5e5e7;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    outline: none;
+}
+
+.modal-content input:focus {
+    border-color: #007aff;
+}
+
+#save-event {
+    width: 100%;
+    padding: 12px;
+    background: #007aff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 28px;
+    color: #999;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none!important;
+}

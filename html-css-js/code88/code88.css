@@ -1,0 +1,267 @@
+/* Styles for Code 88 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #1a202c;
+    margin-bottom: 16px;
+    font-size: 1.8rem;
+}
+
+.game-info {
+    margin-bottom: 16px;
+    padding: 12px;
+    background: #edf2f7;
+    border-radius: 8px;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #2d3748;
+}
+
+.dot.white {
+    background: white;
+}
+
+.dot.black {
+    background: #2d3748;
+}
+
+.vs {
+    color: #718096;
+    font-weight: 700;
+}
+
+.turn-indicator {
+    text-align: center;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 4px;
+}
+
+#current-turn {
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: #4299e1;
+    color: white;
+}
+
+.status {
+    text-align: center;
+    font-size: 14px;
+    color: #4a5568;
+    min-height: 20px;
+}
+
+.status.thinking {
+    color: #ed8936;
+}
+
+.status.check {
+    color: #e53e3e;
+    font-weight: 600;
+}
+
+.board-wrapper {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.ranks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-weight: 600;
+    color: #718096;
+    padding: 0 4px;
+}
+
+#chess-board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 3px solid #1a202c;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    flex: 1;
+}
+
+.square {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.15s;
+    user-select: none;
+}
+
+.square.light {
+    background: #eeeed2;
+}
+
+.square.dark {
+    background: #769656;
+}
+
+.square.selected {
+    background: #f7f769!important;
+}
+
+.square.legal-move::after {
+    content: '';
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.square.legal-capture::after {
+    content: '';
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.square.last-move {
+    background: #cdd16a!important;
+}
+
+.square.ai-move {
+    animation: flash 0.5s;
+}
+
+@keyframes flash {
+    0%, 100% { background: inherit; }
+    50% { background: #90cdf4; }
+}
+
+.piece {
+    transition: transform 0.15s;
+    cursor: grab;
+    z-index: 10;
+}
+
+.piece:hover {
+    transform: scale(1.05);
+}
+
+.files {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 28px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: #718096;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+button {
+    flex: 1;
+    padding: 11px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #4299e1;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+button:hover:not(:disabled) {
+    background: #3182ce;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    background: #cbd5e0;
+    cursor: not-allowed;
+}
+
+#reset-btn {
+    background: #48bb78;
+}
+
+#reset-btn:hover {
+    background: #38a169;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: #f7fafc;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .container {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+  .square {
+        font-size: 1.7rem;
+    }
+}

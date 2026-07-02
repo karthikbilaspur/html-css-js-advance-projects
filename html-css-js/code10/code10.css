@@ -1,0 +1,34 @@
+/* Your existing FAQ styles */
+.faq-container { 
+    width: 400px; 
+    margin: 50px auto; 
+}
+.faq-item { border-bottom: 1px solid #ddd; margin-bottom: 10px; }
+.faq-question { width: 100%; text-align: left; padding: 15px; cursor: pointer; background: #f4f4f4; border: none; font-weight: bold; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 15px; background: #fff; }
+.faq-item.active .faq-answer { max-height: 100px; padding: 15px; }
+
+/* Fixed Footer Pagination */
+footer {
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+.page-footer-nav {
+    width: 400px;          /* Match FAQ width */
+    margin: 0 auto;        /* This centers it */
+    display: flex;
+    justify-content: center; /* Center the links */
+    gap: 20px;             /* Space between links */
+    text-align: center;
+}
+
+.page-footer-nav a {
+    text-decoration: none;
+    color: #007bff;
+    padding: 8px 12px;
+}
+
+.page-footer-nav a:hover {
+    text-decoration: underline;
+}

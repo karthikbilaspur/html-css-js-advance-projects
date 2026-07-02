@@ -1,0 +1,249 @@
+/* Styles for Code 38 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+.converter-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.category-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  padding: 12px;
+  background: #f0f0f0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.tab-btn:hover {
+  background: #e0e0e0;
+}
+
+.tab-btn.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.converter-box {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 25px;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 16px;
+}
+
+.input-section label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.input-section input[type="number"] {
+  width: 100%;
+  padding: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.input-section input[type="number"]:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.input-section input[readonly] {
+  background: #e8ecff;
+  color: #667eea;
+  cursor: default;
+}
+
+.unit-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.unit-select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.swap-btn {
+  padding: 12px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.2s;
+  margin-bottom: 8px;
+}
+
+.swap-btn:hover {
+  background: #5568d3;
+  transform: rotate(180deg);
+}
+
+.formula-box {
+  background: #e8ecff;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 25px;
+  border-left: 4px solid #667eea;
+}
+
+.formula-box p {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.quick-conversions {
+  margin-bottom: 25px;
+  padding-top: 25px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.quick-conversions h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.quick-item {
+  padding: 12px;
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.quick-item:hover {
+  border-color: #667eea;
+  background: #f0f3ff;
+}
+
+.history-section {
+  padding-top: 25px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.history-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#clearHistory {
+  padding: 6px 12px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#clearHistory:hover {
+  background: #c0392b;
+}
+
+.history-item {
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+  font-family: 'Courier New', monospace;
+  border-left: 3px solid #667eea;
+}
+
+@media (max-width: 600px) {
+.converter-box {
+    grid-template-columns: 1fr;
+  }
+.swap-btn {
+    transform: rotate(90deg);
+    justify-self: center;
+  }
+.category-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+.quick-grid {
+    grid-template-columns: 1fr;
+  }
+}
