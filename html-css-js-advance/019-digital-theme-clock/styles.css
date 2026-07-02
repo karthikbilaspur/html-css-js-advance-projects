@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #0f172a;
+  --secondary-color: #f1f5f9;
+  --accent-color: #38bdf8;
+}
+
+html {
+  transition: all 0.5s ease-in;
+}
+
+html.dark {
+  --primary-color: #f1f5f9;
+  --secondary-color: #0f172a;
+}
+
+html.dark {
+  background: #0f172a;
+  color: var(--primary-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  transition: all 0.5s ease-in;
+}
+
+.kcs-header {
+  position: absolute;
+  top: 20px;
+  text-align: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+}
+
+.kcs-header p {
+  color: var(--primary-color);
+  opacity: 0.6;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.toggle {
+  cursor: pointer;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 80px;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.toggle:hover {
+  background: var(--accent-color);
+  color: #0f172a;
+}
+
+.toggle:focus {
+  outline: 0;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.needle {
+  background: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 65px;
+  width: 3px;
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+}
+
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+  background: #ef4444;
+}
+
+.center-point {
+  background: #ef4444;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.center-point::after {
+  content: '';
+  background: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.time {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-top: 2rem;
+}
+
+.date {
+  color: var(--primary-color);
+  opacity: 0.7;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.date .circle {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 24px;
+  transition: all 0.5s ease-in;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media (max-width: 500px) {
+ .time {
+    font-size: 2.5rem;
+  }
+}

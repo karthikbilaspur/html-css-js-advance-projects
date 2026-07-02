@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Checkers 082</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Checkers <span class="version">AI</span></h1>
+    <div class="stats">
+      <div class="stat">Turn: <span id="turnDisplay">Red</span></div>
+      <div class="stat">Red: <span id="redScore">12</span></div>
+      <div class="stat">Black: <span id="blackScore">12</span></div>
+    </div>
+
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas"></canvas>
+
+      <div class="overlay" id="menuScreen">
+        <h2>Checkers vs AI</h2>
+        <div class="difficulty">
+          <label>Difficulty:</label>
+          <select id="difficultySelect">
+            <option value="2">Easy - Depth 2</option>
+            <option value="4" selected>Medium - Depth 4</option>
+            <option value="6">Hard - Depth 6</option>
+            <option value="8">Expert - Depth 8</option>
+          </select>
+        </div>
+        <button id="startBtn">Start Game</button>
+        <p class="controls-info">Drag pieces to move | Forced captures</p>
+      </div>
+
+      <div class="overlay" id="gameOverScreen">
+        <h2 id="gameOverText">Game Over</h2>
+        <p id="gameOverReason"></p>
+        <button id="restartBtn">Play Again</button>
+        <button id="menuBtn">Main Menu</button>
+      </div>
+
+      <div class="thinking" id="thinkingDisplay">AI Thinking...</div>
+    </div>
+
+    <div class="mobile-controls">
+      <button class="control-btn" id="undoBtn">↶ Undo</button>
+      <button class="control-btn" id="hintBtn">💡 Hint</button>
+      <button class="control-btn" id="newGameBtn">New</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

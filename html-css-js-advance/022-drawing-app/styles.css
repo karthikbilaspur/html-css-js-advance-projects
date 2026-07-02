@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.toolbar {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="color"] {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    cursor: pointer;
+}
+
+#sizeDisplay {
+    min-width: 20px;
+    font-weight: bold;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button.active {
+    background-color: #28a745;
+}
+
+#drawingCanvas {
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: white;
+    cursor: crosshair;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tesimonial-SVG | KarthikCodingSolutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>KarthikCodingSolutions</h1>
+      <p>Project 060: Testimonial-SVG</p>
+    </header>
+
+    <div class="progress-container">
+      <div class="progress" id="progress"></div>
+      <div class="circle active">1</div>
+      <div class="circle">2</div>
+      <div class="circle">3</div>
+      <div class="circle">4</div>
+    </div>
+
+    <div class="content">
+      <h2 id="step-title">Plan Project</h2>
+      <p id="step-desc">Define requirements, scope, and tech stack for your build.</p>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn" id="prev" disabled>Prev</button>
+      <button class="btn" id="next">Next</button>
+    </div>
+
+    <div class="bg-container">
+  <svg class="bg-svg" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.3" />
+        <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+      </linearGradient>
+      <filter id="blur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+      </filter>
+    </defs>
+    <circle class="floating-shape" cx="10%" cy="20%" r="120" fill="url(#grad1)" filter="url(#blur)" />
+    <rect class="floating-shape" x="70%" y="10%" width="200" height="200" rx="40" fill="url(#grad1)" filter="url(#blur)" />
+    <polygon class="floating-shape" points="50,300 150,450 50,600" fill="url(#grad1)" filter="url(#blur)" />
+    <circle class="floating-shape" cx="80%" cy="80%" r="150" fill="url(#grad1)" filter="url(#blur)" />
+  </svg>
+</div>
+
+<div class="container">
+  <div class="header glass">
+    <h1>Testimonial Memory Game</h1>
+    <p>Match AI-generated avatars to customer testimonials. Test your memory and see social proof in action.</p>
+  </div>
+
+  <div class="game-stats" id="gameStats">
+    <div class="stat-card glass">
+      <div class="label">Phase</div>
+      <div class="value" id="phaseValue">Gallery</div>
+    </div>
+    <div class="stat-card glass">
+      <div class="label">Time</div>
+      <div class="value" id="timeValue">0s</div>
+    </div>
+    <div class="stat-card glass">
+      <div class="label">Score</div>
+      <div class="value" id="scoreValue">--</div>
+    </div>
+  </div>
+
+  <!-- Start Screen -->
+  <div id="startScreen">
+    <div class="grid" id="testimonialGrid"></div>
+    <div class="btn-group">
+      <button class="btn" id="generateBtn">Generate Avatars</button>
+    </div>
+  </div>
+
+  <!-- Quiz Screen -->
+  <div id="quizScreen" class="quiz-container">
+    <div class="quiz-column">
+      <h3>Testimonials</h3>
+      <div id="testimonialColumn"></div>
+    </div>
+    <div class="quiz-column">
+      <h3>Drag Avatars Here</h3>
+      <div id="avatarPool" class="avatar-pool glass"></div>
+      <div class="btn-group">
+        <button class="btn" id="submitBtn">Submit Answers</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Screen -->
+  <div id="resultsScreen" class="results-container">
+    <div class="score-display glass">
+      <div class="score-percentage" id="scorePercent">0%</div>
+      <div class="score-subtitle">Your Memory Score</div>
+      <div class="results-grid">
+        <div class="stat-card glass">
+          <div class="label">Matched</div>
+          <div class="value" id="matchedValue">0/6</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="label">Time</div>
+          <div class="value" id="finalTimeValue">0s</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="label">Accuracy</div>
+          <div class="value" id="accuracyValue">0%</div>
+        </div>
+      </div>
+      
+      <div class="leaderboard glass">
+        <h3 style="margin-bottom: 16px; text-align: center;">Session Leaderboard</h3>
+        <div id="leaderboardList"></div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn" id="shareBtn">Share Your Score</button>
+        <button class="btn btn-secondary" id="playAgainBtn">Play Again</button>
+      </div>
+    </div>
+    
+    <div class="share-card glass" id="shareCard">
+      <h3>Score Card Generated!</h3>
+      <canvas id="shareCanvas" width="600" height="400"></canvas>
+      <div class="btn-group">
+        <button class="btn" id="downloadBtn">Download Image</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="toast glass" id="toast"></div>
+
+        <footer>
+      <p>&copy; 2026 KarthikCodingSolutions</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your Review | KarthikCodingSolutions</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body class="relative min-h-screen">
+  
+  <!-- Preloaded Product Images -->
+  <div hidden>
+    <img id="img-minimal-daily" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop" alt="Minimal watch">
+    <img id="img-minimal-gift" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop" alt="Minimal headphones">
+    <img id="img-minimal-professional" src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=600&fit=crop" alt="Professional setup">
+    <img id="img-minimal-travel" src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=600&fit=crop" alt="Travel tech">
+    <img id="img-maximal-daily" src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&h=600&fit=crop" alt="Maximal watch">
+    <img id="img-maximal-gift" src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=600&fit=crop" alt="Maximal sunglasses">
+    <img id="img-maximal-professional" src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&h=600&fit=crop" alt="Professional camera">
+    <img id="img-default" src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&h=600&fit=crop" alt="Default product">
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast glass-strong rounded-2xl p-4 max-w-sm">
+    <div class="flex items-start gap-3">
+      <div id="toast-icon" class="text-2xl"></div>
+      <div class="flex-1">
+        <div id="toast-title" class="font-semibold mb-1"></div>
+        <div id="toast-message" class="text-sm text-slate-300"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <main class="relative z-10 min-h-screen flex items-center justify-center p-4 py-8">
+    <div class="w-full max-w-4xl">
+      
+      <!-- Header with Progress -->
+      <div class="glass-strong rounded-3xl p-6 md:p-8 mb-6">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h1 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              Create Your Review
+            </h1>
+            <p class="text-slate-400 text-sm mt-1">Share what matters to you</p>
+          </div>
+          <div class="text-right">
+            <div class="text-sm text-slate-400 mb-1">Step <span id="current-step">1</span>/4</div>
+            <div class="text-lg font-semibold text-indigo-400" id="step-name">Preferences</div>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill" style="width: 25%"></div>
+        </div>
+      </div>
+
+      <!-- Step 1: Quiz -->
+      <section id="step-1" class="step active">
+        <div class="glass-strong rounded-3xl p-6 md:p-10">
+          <h2 class="text-xl md:text-2xl font-semibold mb-2">What do you care about in a product?</h2>
+          <p class="text-slate-400 text-sm mb-8">Select all that apply</p>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="checkbox" class="checkbox-custom" name="care-about" value="Design">
+              <span class="group-hover:text-indigo-400 transition-colors">Design</span>
+            </label>
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="checkbox" class="checkbox-custom" name="care-about" value="Durability">
+              <span class="group-hover:text-indigo-400 transition-colors">Durability</span>
+            </label>
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="checkbox" class="checkbox-custom" name="care-about" value="Price">
+              <span class="group-hover:text-indigo-400 transition-colors">Price</span>
+            </label>
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="checkbox" class="checkbox-custom" name="care-about" value="Sustainability">
+              <span class="group-hover:text-indigo-400 transition-colors">Sustainability</span>
+            </label>
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="checkbox" class="checkbox-custom" name="care-about" value="Performance">
+              <span class="group-hover:text-indigo-400 transition-colors">Performance</span>
+            </label>
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="checkbox" class="checkbox-custom" name="care-about" value="Brand Story">
+              <span class="group-hover:text-indigo-400 transition-colors">Brand Story</span>
+            </label>
+          </div>
+
+          <h3 class="text-lg font-semibold mb-4">Primary use case</h3>
+          <div class="space-y-3 mb-10">
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="radio" class="radio-custom" name="use-case" value="Daily Use">
+              <span class="group-hover:text-indigo-400 transition-colors">Daily Use</span>
+            </label>
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="radio" class="radio-custom" name="use-case" value="Gift">
+              <span class="group-hover:text-indigo-400 transition-colors">Gift</span>
+            </label>
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="radio" class="radio-custom" name="use-case" value="Professional">
+              <span class="group-hover:text-indigo-400 transition-colors">Professional</span>
+            </label>
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="radio" class="radio-custom" name="use-case" value="Travel">
+              <span class="group-hover:text-indigo-400 transition-colors">Travel</span>
+            </label>
+            <label class="glass rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-all flex items-center gap-3 group">
+              <input type="radio" class="radio-custom" name="use-case" value="Collection">
+              <span class="group-hover:text-indigo-400 transition-colors">Collection</span>
+            </label>
+          </div>
+
+          <h3 class="text-lg font-semibold mb-4">Style preference</h3>
+          <div class="glass rounded-xl p-6">
+            <div class="flex justify-between text-sm text-slate-400 mb-3">
+              <span>Minimal</span>
+              <span id="style-value" class="text-indigo-400 font-semibold">Balanced</span>
+              <span>Maximal</span>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider-custom" id="style-slider">
+          </div>
+
+          <button onclick="validateStep1()" class="w-full mt-8 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-indigo-500/50">
+            Generate My Product →
+          </button>
+        </div>
+      </section>
+
+      <!-- Step 2: Generated Product -->
+      <section id="step-2" class="step">
+        <div class="glass-strong rounded-3xl p-6 md:p-10">
+          <div id="loading-state" class="text-center py-16">
+            <div class="inline-block mb-6">
+              <div class="w-16 h-16 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin"></div>
+            </div>
+            <h2 class="text-2xl font-semibold mb-2">Crafting your product...</h2>
+            <p class="text-slate-400">Analyzing your preferences</p>
+          </div>
+
+          <div id="product-result" class="hidden">
+            <h2 class="text-xl md:text-2xl font-semibold mb-2">Your Perfect Match</h2>
+            <p class="text-slate-400 text-sm mb-8">Based on your unique preferences</p>
+
+            <div class="glass rounded-2xl p-6 md:p-8 mb-8 product-3d-card" id="product-card">
+              <div class="aspect-square rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 float-animation">
+                <img id="generated-image" src="" alt="Generated Product" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-semibold mb-4" id="product-name">Premium Collection</h3>
+              <div class="flex flex-wrap gap-2 mb-4" id="product-tags"></div>
+              <div class="glass rounded-xl p-4 text-sm text-slate-300" id="product-description"></div>
+            </div>
+
+            <div class="flex gap-3">
+              <button onclick="goToStep(1)" class="flex-1 glass hover:bg-white/10 text-white font-semibold py-4 rounded-xl transition-all">← Back</button>
+              <button onclick="goToStep(3)" class="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-indigo-500/50">Write Review →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 3: Write Review -->
+      <section id="step-3" class="step">
+        <div class="glass-strong rounded-3xl p-6 md:p-10">
+          <h2 class="text-xl md:text-2xl font-semibold mb-2">Share Your Thoughts</h2>
+          <p class="text-slate-400 text-sm mb-8">Help others discover great products</p>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <div class="mb-6">
+                <label class="block text-sm font-medium mb-2">Your Name *</label>
+                <input type="text" id="reviewer-name" class="w-full glass rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all" placeholder="Alex Johnson">
+                <div class="error-text" id="name-error">Name is required</div>
+              </div>
+
+              <div class="mb-6">
+                <label class="block text-sm font-medium mb-2">Rating *</label>
+                <div class="flex gap-2" id="star-rating">
+                  <span class="star-input text-3xl" data-rating="1">⭐</span>
+                  <span class="star-input text-3xl" data-rating="2">⭐</span>
+                  <span class="star-input text-3xl" data-rating="3">⭐</span>
+                  <span class="star-input text-3xl" data-rating="4">⭐</span>
+                  <span class="star-input text-3xl" data-rating="5">⭐</span>
+                </div>
+                <div class="error-text" id="rating-error">Please select a rating</div>
+              </div>
+
+              <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                  <label class="block text-sm font-medium">Your Review *</label>
+                  <span class="text-xs text-slate-400"><span id="char-count">0</span>/500</span>
+                </div>
+                <textarea id="review-text" rows="6" maxlength="500" class="w-full glass rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none" placeholder="Share your experience with this product..."></textarea>
+                <div class="error-text" id="text-error">Review must be at least 20 characters</div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2">Live Preview</label>
+              <div class="glass rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center font-semibold" id="preview-avatar">?</div>
+                  <div>
+                    <div class="font-semibold" id="preview-name">Your Name</div>
+                    <div class="flex gap-0.5 text-sm" id="preview-stars">☆☆☆☆☆</div>
+                  </div>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed" id="preview-text">Your review will appear here...</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <button onclick="goToStep(2)" class="flex-1 glass hover:bg-white/10 text-white font-semibold py-4 rounded-xl transition-all">← Back</button>
+            <button onclick="submitReview()" id="submit-btn" class="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-indigo-500/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none" disabled>Publish Review →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 4: Live Reviews Dashboard -->
+      <section id="step-4" class="step">
+        <div class="glass-strong rounded-3xl p-6 md:p-10">
+          <div class="text-center mb-8">
+            <div class="inline-block text-5xl mb-4">🎉</div>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-2">Review Published!</h2>
+            <p class="text-slate-400">Your feedback is now part of our community</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="glass rounded-2xl p-6 text-center stat-card">
+              <div class="text-3xl font-bold text-indigo-400 mb-1" id="total-reviews">127</div>
+              <div class="text-sm text-slate-400">Reviews Created</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center stat-card">
+              <div class="text-3xl font-bold text-purple-400 mb-1" id="avg-rating">4.6★</div>
+              <div class="text-sm text-slate-400">Avg Rating</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center stat-card">
+              <div class="text-3xl font-bold text-pink-400 mb-1" id="top-tag">Design</div>
+              <div class="text-sm text-slate-400">Top Tag</div>
+            </div>
+          </div>
+
+          <h3 class="text-lg font-semibold mb-4">Live Community Reviews</h3>
+          <div class="glass rounded-2xl p-4 md:p-6 mb-6 overflow-hidden">
+            <div class="review-slider" id="review-slider"></div>
+          </div>
+
+          <div class="flex items-center justify-center gap-4 mb-8">
+            <button onclick="prevReview()" class="glass w-10 h-10 rounded-full hover:bg-white/10 transition-all flex items-center justify-center">←</button>
+            <div class="flex gap-2" id="slider-dots"></div>
+            <button onclick="nextReview()" class="glass w-10 h-10 rounded-full hover:bg-white/10 transition-all flex items-center justify-center">→</button>
+          </div>
+
+          <button onclick="resetToStart()" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-indigo-500/50">
+            Create Another Review
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="text-center py-6 text-slate-500 text-sm">
+    <p>&copy; 2026 KarthikCodingSolutions</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

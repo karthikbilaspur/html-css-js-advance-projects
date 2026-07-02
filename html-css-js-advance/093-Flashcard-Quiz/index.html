@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz + Flashcards - 093</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>FLASHQUIZ <span class="project-num">093</span></h1>
+      <div class="mode-switch">
+        <button class="mode-btn active" data-mode="study">📚 Study</button>
+        <button class="mode-btn" data-mode="quiz">🎯 Quiz</button>
+        <button class="mode-btn" data-mode="create">➕ Create</button>
+      </div>
+    </header>
+
+    <div class="stats">
+      <div class="stat">Decks: <span id="deckCount">0</span></div>
+      <div class="stat">Cards: <span id="cardCount">0</span></div>
+      <div class="stat">Mastered: <span id="masteredCount">0</span></div>
+      <div class="stat">Streak: <span id="streak">0</span> days</div>
+    </div>
+
+    <!-- STUDY MODE -->
+    <div class="mode-panel" id="studyMode">
+      <div class="deck-selector">
+        <select id="deckSelect">
+          <option value="">Select a deck...</option>
+        </select>
+      </div>
+
+      <div class="flashcard-container">
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <div class="card-content" id="cardFront">Click a deck to start</div>
+            </div>
+            <div class="flashcard-back">
+              <div class="card-content" id="cardBack"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-counter" id="cardCounter">0 / 0</div>
+      </div>
+
+      <div class="study-controls">
+        <button id="prevCardBtn">◀ Previous</button>
+        <button id="flipCardBtn">🔄 Flip</button>
+        <button id="nextCardBtn">Next ▶</button>
+      </div>
+
+      <div class="difficulty-buttons">
+        <button class="diff-btn hard" data-diff="0">Again</button>
+        <button class="diff-btn medium" data-diff="1">Hard</button>
+        <button class="diff-btn easy" data-diff="2">Easy</button>
+      </div>
+    </div>
+
+    <!-- QUIZ MODE -->
+    <div class="mode-panel" id="quizMode" style="display:none;">
+      <div class="quiz-header">
+        <div class="quiz-progress">
+          Question <span id="currentQ">0</span> / <span id="totalQ">0</span>
+        </div>
+        <div class="quiz-score">Score: <span id="quizScore">0</span></div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="question" id="questionText">Select a deck and click Start Quiz</div>
+        <div class="options" id="optionsContainer"></div>
+      </div>
+
+      <div class="quiz-controls">
+        <button id="startQuizBtn">Start Quiz</button>
+        <button id="nextQBtn" style="display:none;">Next Question</button>
+      </div>
+
+      <div class="quiz-results" id="quizResults" style="display:none;">
+        <h2>Quiz Complete!</h2>
+        <div class="result-score" id="finalScore">0%</div>
+        <div class="result-details" id="resultDetails"></div>
+        <button id="retryQuizBtn">Retry</button>
+      </div>
+    </div>
+
+    <!-- CREATE MODE -->
+    <div class="mode-panel" id="createMode" style="display:none;">
+      <div class="create-form">
+        <h3>Create New Deck</h3>
+        <input type="text" id="deckNameInput" placeholder="Deck name (e.g. Biology Chapter 5)" />
+        <button id="createDeckBtn">Create Deck</button>
+      </div>
+
+      <div class="add-card-form">
+        <h3>Add Card to: <span id="currentDeckName">None</span></h3>
+        <textarea id="questionInput" placeholder="Question / Front of card" rows="3"></textarea>
+        <textarea id="answerInput" placeholder="Answer / Back of card" rows="3"></textarea>
+        <button id="addCardBtn">+ Add Card</button>
+      </div>
+
+      <div class="deck-list">
+        <h3>Your Decks</h3>
+        <div id="decksContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

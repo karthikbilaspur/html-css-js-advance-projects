@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>048-random-image-generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Random Image Generator</h1>
+        <p class="subtitle">Powered by Unsplash</p>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="">All</option>
+                    <option value="nature">Nature</option>
+                    <option value="city">City</option>
+                    <option value="technology">Technology</option>
+                    <option value="food">Food</option>
+                    <option value="animals">Animals</option>
+                    <option value="space">Space</option>
+                    <option value="abstract">Abstract</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="width">Width:</label>
+                <input type="number" id="width" value="800" min="200" max="1920" step="100">
+            </div>
+
+            <div class="control-group">
+                <label for="height">Height:</label>
+                <input type="number" id="height" value="600" min="200" max="1080" step="100">
+            </div>
+
+            <div class="control-group">
+                <label for="blur">Blur:</label>
+                <input type="range" id="blur" min="0" max="10" value="0">
+                <span id="blurValue">0</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-primary" id="generateBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                </svg>
+                Generate New
+            </button>
+            <button class="btn" id="downloadBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download
+            </button>
+        </div>
+
+        <div class="image-container">
+            <div class="loader" id="loader">
+                <div class="spinner"></div>
+            </div>
+            <img id="randomImage" src="https://picsum.photos/800/600" alt="Random Image">
+        </div>
+
+        <div class="image-info">
+            <div class="info-item">
+                <strong>URL:</strong>
+                <span id="imageUrl">https://picsum.photos/800/600</span>
+                <button class="copy-btn" id="copyBtn">Copy</button>
+            </div>
+            <div class="info-item">
+                <strong>Size:</strong>
+                <span id="imageSize">800 x 600</span>
+            </div>
+        </div>
+
+        <div class="history">
+            <h3>Recent Images</h3>
+            <div class="history-grid" id="historyGrid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

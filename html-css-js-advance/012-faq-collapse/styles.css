@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.kcs-header {
+  background: #1e293b;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-bottom: 1px solid #334155;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.kcs-header p {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin: 0.25rem 0 0;
+}
+
+h1 {
+  margin: 50px 0 30px;
+  text-align: center;
+  color: #f1f5f9;
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto 50px;
+  padding: 0 1rem;
+}
+
+.faq {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.faq.active {
+  background: #1e293b;
+  border-color: #38bdf8;
+  box-shadow: 0 3px 15px rgba(56, 189, 248, 0.1);
+}
+
+.faq.active::before,
+.faq.active::after {
+  content: '\f075';
+  font-family: 'Font Awesome 6 Free';
+  color: #38bdf8;
+  font-size: 7rem;
+  position: absolute;
+  opacity: 0.05;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+.faq.active::after {
+  color: #0ea5e9;
+  top: -10px;
+  left: -30px;
+  transform: rotateY(180deg);
+}
+
+.faq-title {
+  margin: 0 35px 0 0;
+  color: #f1f5f9;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-text {
+  display: none;
+  margin: 30px 0 0;
+  color: #cbd5e1;
+  position: relative;
+  z-index: 1;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-toggle {
+  background: #334155;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  color: #f1f5f9;
+  transition: all 0.3s ease;
+}
+
+.faq-toggle:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.faq-toggle:focus {
+  outline: 0;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+  display: block;
+  color: #0f172a;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background: #38bdf8;
+}
+
+@media (max-width: 600px) {
+  .faq {
+    padding: 20px;
+  }
+  
+  .faq-toggle {
+    top: 20px;
+    right: 20px;
+  }
+}

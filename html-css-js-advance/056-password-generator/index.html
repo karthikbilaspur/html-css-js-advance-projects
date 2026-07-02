@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>056-password-generator-strength-meter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Password Generator</h1>
+            <p>Create strong passwords instantly</p>
+        </header>
+
+        <div class="generator-card">
+            <div class="output-section">
+                <div class="password-display">
+                    <input type="text" id="passwordOutput" readonly placeholder="P4$5w0rD!">
+                    <div class="output-actions">
+                        <button class="icon-btn" id="refreshBtn" title="Generate New">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                            </svg>
+                        </button>
+                        <button class="icon-btn" id="copyBtn" title="Copy">
+                            <svg id="copyIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <svg id="checkIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="strength-meter">
+                    <div class="strength-bar">
+                        <div class="strength-fill" id="strengthFill"></div>
+                    </div>
+                    <div class="strength-info">
+                        <span id="strengthText">Very Weak</span>
+                        <span id="strengthScore">0/5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="control-group">
+                    <div class="control-header">
+                        <label>Password Length</label>
+                        <span class="length-value" id="lengthValue">12</span>
+                    </div>
+                    <input type="range" id="lengthSlider" min="4" max="32" value="12">
+                </div>
+
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="uppercase" checked>
+                        <span class="checkmark"></span>
+                        <span>Uppercase Letters (A-Z)</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="lowercase" checked>
+                        <span class="checkmark"></span>
+                        <span>Lowercase Letters (a-z)</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="numbers" checked>
+                        <span class="checkmark"></span>
+                        <span>Numbers (0-9)</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="symbols">
+                        <span class="checkmark"></span>
+                        <span>Symbols (!@#$%)</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="excludeSimilar">
+                        <span class="checkmark"></span>
+                        <span>Exclude Similar (0,O,l,1)</span>
+                    </label>
+                </div>
+
+                <button class="btn-generate" id="generateBtn">Generate Password</button>
+            </div>
+        </div>
+
+        <div class="history-card">
+            <div class="history-header">
+                <h3>Password History</h3>
+                <button class="btn-clear" id="clearHistoryBtn">Clear All</button>
+            </div>
+            <div class="history-list" id="historyList">
+                <div class="empty-state">
+                    <p>No passwords generated yet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

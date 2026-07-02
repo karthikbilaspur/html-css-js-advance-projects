@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>047-html-quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Start Screen -->
+        <div class="screen active" id="startScreen">
+            <h1>HTML Quiz</h1>
+            <p class="subtitle">Test your HTML knowledge</p>
+            <div class="difficulty-select">
+                <h3>Select Difficulty:</h3>
+                <button class="difficulty-btn" data-level="easy">
+                    <span class="level">Easy</span>
+                    <span class="count">10 Questions</span>
+                </button>
+                <button class="difficulty-btn" data-level="medium">
+                    <span class="level">Medium</span>
+                    <span class="count">10 Questions</span>
+                </button>
+                <button class="difficulty-btn" data-level="hard">
+                    <span class="level">Hard</span>
+                    <span class="count">10 Questions</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div class="screen" id="quizScreen">
+            <div class="quiz-header">
+                <div class="progress-info">
+                    <span id="questionNumber">Question 1/10</span>
+                    <span id="difficultyBadge" class="badge"></span>
+                </div>
+                <div class="score">Score: <span id="score">0</span></div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="question-box">
+                <h2 id="questionText"></h2>
+                <div class="options" id="options"></div>
+            </div>
+
+            <div class="explanation" id="explanation"></div>
+
+            <button class="btn" id="nextBtn">Next Question</button>
+        </div>
+
+        <!-- Result Screen -->
+        <div class="screen" id="resultScreen">
+            <h1>Quiz Complete!</h1>
+            <div class="result-circle">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" class="result-bg"></circle>
+                    <circle cx="50" cy="50" r="45" class="result-fill" id="resultCircle"></circle>
+                </svg>
+                <div class="result-text">
+                    <span id="finalScore">0</span>
+                    <span>/ 10</span>
+                </div>
+            </div>
+            <h2 id="resultMessage"></h2>
+            <p id="resultDetails"></p>
+            <div class="result-actions">
+                <button class="btn" id="retryBtn">Try Again</button>
+                <button class="btn btn-secondary" id="homeBtn">Change Level</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

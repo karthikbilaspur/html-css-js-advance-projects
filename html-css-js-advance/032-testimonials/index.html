@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>032-beginner-testimonial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="testimonial-container">
+        <div class="progress-bar" id="progressBar"></div>
+
+        <div class="testimonial" id="testimonial">
+            <div class="quote-icon">❝</div>
+            <p class="text" id="text">
+                I've been using this service for 6 months and it's completely changed how I work. The team is responsive and the product just works.
+            </p>
+            <div class="user">
+                <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="User" class="user-image" id="userImage">
+                <div class="user-details">
+                    <h4 class="username" id="username">Miyah Myles</h4>
+                    <p class="role" id="role">Marketing Manager</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" id="prevBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="btn" id="nextBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <div class="dots" id="dots"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

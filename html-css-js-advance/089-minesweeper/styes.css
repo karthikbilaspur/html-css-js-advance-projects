@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #c0c0c0;
+  font-family: 'Courier New', monospace;
+  color: #000;
+  touch-action: none;
+}
+
+.game-container {
+  padding: 20px;
+  background: #c0c0c0;
+  border: 3px solid;
+  border-color: #fff #808080 #808080 #fff;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.project-num {
+  font-size: 0.5em;
+  color: #808080;
+  vertical-align: super;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #c0c0c0;
+  border: 3px solid;
+  border-color: #808080 #fff #fff #808080;
+}
+
+.stat-box {
+  background: #000;
+  padding: 5px 10px;
+  border: 2px solid;
+  border-color: #808080 #fff #fff #808080;
+  min-width: 60px;
+  text-align: center;
+}
+
+.stat-box.label {
+  color: #ff0000;
+  font-size: 0.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.stat-box.value {
+  color: #ff0000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Digital', 'Courier New', monospace;
+}
+
+#resetBtn {
+  background: #c0c0c0;
+  border: 3px solid;
+  border-color: #fff #808080 #808080 #fff;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  padding: 0;
+}
+
+#resetBtn:active {
+  border-color: #808080 #fff #fff #808080;
+}
+
+.difficulty {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.diff-btn {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #fff #808080 #808080 #fff;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+}
+
+.diff-btn:active,.diff-btn.active {
+  border-color: #808080 #fff #fff #808080;
+  background: #a0a0a0;
+}
+
+.canvas-wrapper {
+  position: relative;
+}
+
+#gameCanvas {
+  display: block;
+  background: #c0c0c0;
+  border: 3px solid;
+  border-color: #808080 #fff #fff #808080;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(192, 192, 192, 0.95);
+  padding: 30px;
+  border: 3px solid;
+  border-color: #fff #808080 #808080 #fff;
+  display: none;
+  text-align: center;
+  z-index: 10;
+}
+
+.overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.overlay p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.overlay button {
+  background: #c0c0c0;
+  border: 3px solid;
+  border-color: #fff #808080 #808080 #fff;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+}
+
+.overlay button:active {
+  border-color: #808080 #fff #fff #808080;
+}
+
+.instructions {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #000;
+  line-height: 1.5;
+}
+
+.instructions p {
+  margin-bottom: 5px;
+}

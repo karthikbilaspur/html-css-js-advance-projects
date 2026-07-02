@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>044-custom-range-slider</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Custom Range Sliders</h1>
+
+        <!-- Single Slider -->
+        <div class="slider-section">
+            <h2>Single Value</h2>
+            <div class="slider-container">
+                <label for="singleSlider">Volume</label>
+                <div class="range-wrap">
+                    <input type="range" id="singleSlider" min="0" max="100" value="50" class="range">
+                    <div class="bubble" id="singleBubble">50</div>
+                </div>
+                <div class="range-labels">
+                    <span>0</span>
+                    <span>100</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dual Range Slider -->
+        <div class="slider-section">
+            <h2>Price Range</h2>
+            <div class="slider-container">
+                <label>Select Price Range</label>
+                <div class="dual-range-wrap">
+                    <div class="range-track"></div>
+                    <div class="range-fill" id="rangeFill"></div>
+                    <input type="range" id="minRange" min="0" max="1000" value="200" class="range-dual">
+                    <input type="range" id="maxRange" min="0" max="1000" value="800" class="range-dual">
+                    <div class="bubble dual" id="minBubble">$200</div>
+                    <div class="bubble dual" id="maxBubble">$800</div>
+                </div>
+                <div class="range-labels">
+                    <span>$0</span>
+                    <span>$1000</span>
+                </div>
+                <div class="range-display">
+                    Selected: <strong id="rangeDisplay">$200 - $800</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stepped Slider -->
+        <div class="slider-section">
+            <h2>Rating</h2>
+            <div class="slider-container">
+                <label for="stepSlider">Rate this product</label>
+                <div class="range-wrap">
+                    <input type="range" id="stepSlider" min="1" max="5" value="3" step="1" class="range stepped">
+                    <div class="bubble" id="stepBubble">3 ⭐</div>
+                </div>
+                <div class="step-labels">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Slider -->
+        <div class="slider-section">
+            <h2>Vertical Slider</h2>
+            <div class="slider-container vertical">
+                <label>Brightness</label>
+                <div class="range-wrap-vertical">
+                    <input type="range" id="verticalSlider" min="0" max="100" value="75" class="range-vertical">
+                    <div class="bubble vertical" id="verticalBubble">75%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

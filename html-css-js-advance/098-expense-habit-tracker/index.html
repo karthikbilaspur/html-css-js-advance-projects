@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>098 v2 - Habit + Budget Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>098</h1>
+    <div id="today-date"></div>
+  </header>
+
+  <nav>
+    <button data-tab="today" class="nav-btn active">Today</button>
+    <button data-tab="habits" class="nav-btn">Habits</button>
+    <button data-tab="money" class="nav-btn">Money</button>
+    <button data-tab="stats" class="nav-btn">Stats</button>
+  </nav>
+
+  <main>
+    <!-- TODAY TAB -->
+    <section id="today" class="tab active">
+      <div class="card">
+        <h2>Today's Habits</h2>
+        <div id="today-habits"></div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card stat">
+          <h3>Spent Today</h3>
+          <div class="big-num">₹<span id="spent-today">0</span></div>
+          <div class="sub" id="today-vs-avg"></div>
+        </div>
+        <div class="card stat">
+          <h3>Month Spent</h3>
+          <div class="big-num">₹<span id="spent-month">0</span></div>
+          <div class="sub" id="month-pace"></div>
+        </div>
+        <div class="card stat">
+          <h3>Budget Left</h3>
+          <div class="big-num">₹<span id="budget-left">0</span></div>
+          <div class="sub" id="daily-budget"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Quick Add</h3>
+        <div class="quick-add" id="quick-add-container"></div>
+        <form id="expense-form">
+          <div class="form-row">
+            <input type="number" id="expense-amount" placeholder="Amount" step="0.01" required>
+            <select id="expense-category" required></select>
+          </div>
+          <input type="text" id="expense-note" placeholder="Note - press Enter">
+          <input type="date" id="expense-date">
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Recent Expenses</h3>
+        <div id="recent-expenses"></div>
+      </div>
+    </section>
+
+    <!-- HABITS TAB -->
+    <section id="habits" class="tab">
+      <div class="card">
+        <h2>Add Habit</h2>
+        <form id="habit-form">
+          <div class="form-row">
+            <input type="text" id="habit-name" placeholder="Habit name" required>
+            <select id="habit-freq">
+              <option value="daily">Daily</option>
+              <option value="weekly">X per week</option>
+            </select>
+            <input type="number" id="habit-goal" placeholder="Goal" value="1" min="1">
+          </div>
+          <button type="submit">Add Habit</button>
+        </form>
+      </div>
+      <div id="habits-list"></div>
+    </section>
+
+    <!-- MONEY TAB -->
+    <section id="money" class="tab">
+      <div class="card">
+        <div class="card-header">
+          <h2>Monthly Budgets</h2>
+          <input type="month" id="budget-month-picker">
+        </div>
+        <form id="budget-form">
+          <div class="form-row">
+            <select id="budget-category"></select>
+            <input type="number" id="budget-limit" placeholder="Limit ₹" required>
+            <label class="checkbox"><input type="checkbox" id="budget-rollover"> Rollover</label>
+          </div>
+          <button type="submit">Set Budget</button>
+        </form>
+        <div id="budgets-list"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>Expenses</h2>
+          <input type="text" id="expense-search" placeholder="Search expenses...">
+        </div>
+        <div id="expenses-list"></div>
+      </div>
+    </section>
+
+    <!-- STATS TAB -->
+    <section id="stats" class="tab">
+      <div class="card">
+        <div class="card-header">
+          <h2>This Week</h2>
+          <div class="toggle-group">
+            <button data-period="week" class="toggle active">Week</button>
+            <button data-period="month" class="toggle">Month</button>
+          </div>
+        </div>
+        <canvas id="chart" width="300" height="140"></canvas>
+        <div id="category-totals"></div>
+      </div>
+
+      <div class="card">
+        <h2>Habit Completion</h2>
+        <div id="habit-stats"></div>
+      </div>
+
+      <div class="card">
+        <h3>Data</h3>
+        <div class="btn-row">
+          <button id="export-btn">Export JSON</button>
+          <input type="file" id="import-file" accept=".json" style="display:none">
+          <button id="import-btn">Import JSON</button>
+          <button id="reset-btn" class="danger">Reset All</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- EDIT MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h3 id="modal-title">Edit</h3>
+      <div id="modal-body"></div>
+      <div class="modal-actions">
+        <button id="modal-cancel">Cancel</button>
+        <button id="modal-save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
