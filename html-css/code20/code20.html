@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 20: Toggle Switch - iOS-style toggle switches using checkbox hack, :checked, and ::before with HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 20: Toggle Switch | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code20.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 20: Toggle Switch</h1>
+      <p class="subtitle">iOS-style toggles with checkbox hack and smooth CSS transitions</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>This project builds iOS-style toggle switches using only HTML + CSS with the checkbox hack.</p>
+      <p>It demonstrates <code>input[type="checkbox"]</code> hidden with <code>appearance: none</code>, <code>:checked</code> pseudo-class, and <code>::before</code>/<code>::after</code> for the sliding effect.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="toggle-section">
+        <div class="settings-card">
+          <h3>Settings</h3>
+          
+          <div class="setting-item">
+            <div class="setting-info">
+              <label for="wifi">Wi-Fi</label>
+              <span class="setting-desc">Connect to wireless networks</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="wifi" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <label for="bluetooth">Bluetooth</label>
+              <span class="setting-desc">Enable Bluetooth devices</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="bluetooth">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <label for="notifications">Notifications</label>
+              <span class="setting-desc">Allow push notifications</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="notifications" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <label for="darkmode">Dark Mode</label>
+              <span class="setting-desc">Switch to dark theme</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="darkmode">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <label for="location">Location Services</label>
+              <span class="setting-desc">Share your location</span>
+            </div>
+            <label class="toggle-switch toggle-switch-disabled">
+              <input type="checkbox" id="location" disabled>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="toggle-variants">
+          <h4>Different Sizes</h4>
+          <div class="variant-row">
+            <span>Small</span>
+            <label class="toggle-switch toggle-small">
+              <input type="checkbox"  title="toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          
+          <div class="variant-row">
+            <span>Default</span>
+            <label class="toggle-switch">
+              <input type="checkbox" checked title="toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          
+          <div class="variant-row">
+            <span>Large</span>
+            <label class="toggle-switch toggle-large">
+              <input type="checkbox" checked title="toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="toggle-variants">
+          <h4>Color Variants</h4>
+          <div class="variant-row">
+            <span>Green</span>
+            <label class="toggle-switch toggle-green">
+              <input type="checkbox" checked title="toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          
+          <div class="variant-row">
+            <span>Blue</span>
+            <label class="toggle-switch toggle-blue">
+              <input type="checkbox" checked title="toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          
+          <div class="variant-row">
+            <span>Red</span>
+            <label class="toggle-switch toggle-red">
+              <input type="checkbox" checked title="toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;label class="toggle-switch"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="toggle-slider"&gt;&lt;/span&gt;
+&lt;/label&gt;
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: #34c759;
+}
+
+.toggle-slider::before {
+  transform: translateX(26px);
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li>Hide checkbox with <code>display: none</code> or <code>opacity: 0</code></li>
+        <li><code>:checked + .toggle-slider</code> - Styles track when checked</li>
+        <li><code>::before</code> pseudo-element - Creates the sliding circle</li>
+        <li><code>transform: translateX()</code> - Moves circle from left to right</li>
+        <li><code>transition: all 0.3s ease</code> - Smooth slide animation</li>
+        <li>Wrap in <code>&lt;label&gt;</code> - Makes entire switch clickable, improves accessibility</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code19/index.html" class="nav-link">← Prev: Code 19</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code21/index.html" class="nav-link">Next: Code 21 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 20 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

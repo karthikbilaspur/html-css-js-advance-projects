@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 54: Article Card Grid - Responsive blog card layout with image, category, title and excerpt. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 54: Article Card Grid | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code54.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 54: Article Card Grid</h1>
+      <p class="subtitle">Image, category, title & excerpt layout</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>Responsive grid of article cards for blogs and magazines. Each card includes a featured image with overlay category, linked title, excerpt, and metadata with date + read time.</p>
+      <p>Uses CSS Grid with <code>auto-fit</code> and <code>object-fit: cover</code> for consistent layouts.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <section class="card-grid">
+          
+          <article class="article-card">
+            <div class="card-image">
+              <img src="https://picsum.photos/400/250?random=1" alt="Design workspace with laptop">
+              <span class="card-category">Design</span>
+            </div>
+            <div class="card-content">
+              <h2 class="card-title">
+                <a href="#">Mastering CSS Grid for Complex Layouts</a>
+              </h2>
+              <p class="card-excerpt">
+                Learn how to break free from traditional floats and build responsive, flexible grid systems that adapt to any screen size.
+              </p>
+              <div class="card-meta">
+                <time datetime="2026-06-15">June 15, 2026</time>
+                <span>5 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image">
+              <img src="https://picsum.photos/400/250?random=2" alt="Code on screen">
+              <span class="card-category">Development</span>
+            </div>
+            <div class="card-content">
+              <h2 class="card-title">
+                <a href="#">JavaScript Performance: Beyond the Basics</a>
+              </h2>
+              <p class="card-excerpt">
+                Dive into memory management, event loop optimization, and modern bundling techniques to ship faster applications.
+              </p>
+              <div class="card-meta">
+                <time datetime="2026-06-12">June 12, 2026</time>
+                <span>8 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image">
+              <img src="https://picsum.photos/400/250?random=3" alt="Typography books">
+              <span class="card-category">Typography</span>
+            </div>
+            <div class="card-content">
+              <h2 class="card-title">
+                <a href="#">Variable Fonts: The Future of Web Type</a>
+              </h2>
+              <p class="card-excerpt">
+                One font file, infinite styles. Explore how variable fonts reduce load times while expanding creative control.
+              </p>
+              <div class="card-meta">
+                <time datetime="2026-06-10">June 10, 2026</time>
+                <span>6 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-image">
+              <img src="https://picsum.photos/400/250?random=4" alt="Accessibility audit">
+              <span class="card-category">Accessibility</span>
+            </div>
+            <div class="card-content">
+              <h2 class="card-title">
+                <a href="#">Building Inclusive Components from Day One</a>
+              </h2>
+              <p class="card-excerpt">
+                Accessibility isn't a checklist. Learn practical ARIA patterns and keyboard navigation that work for everyone.
+              </p>
+              <div class="card-meta">
+                <time datetime="2026-06-08">June 8, 2026</time>
+                <span>7 min read</span>
+              </div>
+            </div>
+          </article>
+
+        </section>
+      <p><small>↑ Hover for lift. Grid auto-fits: 3→2→1 columns</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;article class="article-card"&gt;
+  &lt;div class="card-image"&gt;
+    &lt;img src="..." alt="..."&gt;
+    &lt;span class="card-category"&gt;Design&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="card-content"&gt;
+    &lt;h2 class="card-title"&gt;&lt;a href="#"&gt;Title&lt;/a&gt;&lt;/h2&gt;
+    &lt;p class="card-excerpt"&gt;Excerpt...&lt;/p&gt;
+    &lt;div class="card-meta"&gt;
+      &lt;time datetime="2026-06-15"&gt;June 15, 2026&lt;/time&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>display: grid</code> + <code>repeat(auto-fit, minmax(320px, 1fr))</code> = responsive cards</li>
+        <li><code>aspect-ratio: 16/10</code> on <code>.card-image</code> prevents layout shift</li>
+        <li><code>object-fit: cover</code> keeps images consistent without distortion</li>
+        <li><code>position: absolute</code> on <code>.card-category</code> overlays badge on image</li>
+        <li>Wrap <code>&lt;time datetime=""&gt;</code> for SEO + machine-readable dates</li>
+        <li>Use <code>gap: 2rem</code> on grid instead of margins for clean spacing</li>
+        <li><code>-webkit-line-clamp: 3</code> truncates excerpts uniformly</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code53/index.html" class="nav-link">← Prev: Code 53</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code55/index.html" class="nav-link">Next: Code 55 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 54 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

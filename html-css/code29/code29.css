@@ -1,0 +1,196 @@
+/* Base docs styles */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header h1 {
+  margin: 0.5rem 0 2rem 0;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Demo area */
+.demo-area {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+
+/* Scrollable container for demo */
+.scroll-container {
+  height: 500px;
+  overflow-y: auto;
+  background: #f9f9f9;
+}
+
+/* Banner before sticky header */
+.banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.banner h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+}
+
+.banner p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* THE STICKY HEADER */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.header-nav a {
+  color: #495057;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.header-nav a:hover {
+  color: #4dabf7;
+}
+
+.cta-btn {
+  background: #4dabf7;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cta-btn:hover {
+  background: #339af0;
+}
+
+/* Content below header */
+.content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content article {
+  background: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.content h3 {
+  margin: 0 0 1rem 0;
+  color: #1a1a1a;
+}
+
+.content p {
+  color: #555;
+  margin: 0 0 1rem 0;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Add stronger shadow when stuck - optional effect */
+.sticky-header::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+  pointer-events: none;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+ .header-content {
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+  }
+
+ .header-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+  }
+
+ .logo {
+    font-size: 1.1rem;
+  }
+
+ .cta-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+ .content {
+    padding: 1rem;
+  }
+
+ .content article {
+    padding: 1.5rem;
+  }
+}

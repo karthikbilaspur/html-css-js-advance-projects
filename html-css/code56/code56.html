@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 56: Sticky Table of Contents - Sidebar TOC with position sticky for docs and long-form articles. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 56: Sticky Table of Contents | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code56.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 56: Sticky Table of Contents</h1>
+      <p class="subtitle">Sidebar TOC with position sticky - zero JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>Documentation-style layout with sticky sidebar TOC. The TOC uses <code>position: sticky</code> to stay visible while scrolling through long content. Click links jump to sections via anchor IDs.</p>
+      <p>Essential for docs, guides, and long-form articles. No JS scroll-spy needed.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <div class="layout-wrapper">
+          
+          <!-- Sticky Sidebar with TOC -->
+          <aside class="toc-sidebar">
+            <nav class="toc-nav" aria-label="Table of contents">
+              <h3 class="toc-title">On This Page</h3>
+              <ul class="toc-list">
+                <li><a href="#intro" class="toc-link">Introduction</a></li>
+                <li><a href="#setup" class="toc-link">Project Setup</a></li>
+                <li><a href="#core-concepts" class="toc-link">Core Concepts</a>
+                  <ul class="toc-sublist">
+                    <li><a href="#variables" class="toc-link">Variables</a></li>
+                    <li><a href="#mixins" class="toc-link">Mixins</a></li>
+                    <li><a href="#nesting" class="toc-link">Nesting</a></li>
+                  </ul>
+                </li>
+                <li><a href="#advanced" class="toc-link">Advanced Patterns</a></li>
+                <li><a href="#performance" class="toc-link">Performance Tips</a></li>
+                <li><a href="#conclusion" class="toc-link">Conclusion</a></li>
+              </ul>
+            </nav>
+          </aside>
+
+          <!-- Main Article Content -->
+          <main class="content-area">
+            <article>
+              <header class="article-header">
+                <h2>Modern SCSS Architecture Guide</h2>
+                <p class="article-lead">Build maintainable stylesheets that scale with your team and project complexity.</p>
+              </header>
+
+              <section id="intro" class="content-section">
+                <h3>Introduction</h3>
+                <p>SCSS has become the de facto standard for writing maintainable CSS at scale. Its features like nesting, variables, and mixins help teams avoid repetition and enforce consistency.</p>
+              </section>
+
+              <section id="setup" class="content-section">
+                <h3>Project Setup</h3>
+                <p>Start with a clear folder structure. Separate concerns into partials: <code>_variables.scss</code>, <code>_mixins.scss</code>, <code>_base.scss</code>, and component files.</p>
+              </section>
+
+              <section id="core-concepts" class="content-section">
+                <h3>Core Concepts</h3>
+                <p>Understanding SCSS fundamentals is critical before adopting advanced patterns.</p>
+                
+                <h4 id="variables">Variables</h4>
+                <p>Store colors, spacing, and breakpoints in variables. This creates a single source of truth for your design system.</p>
+                
+                <h4 id="mixins">Mixins</h4>
+                <p>Mixins let you define reusable chunks of styles. Use them for vendor prefixes, media queries, or complex animations.</p>
+                
+                <h4 id="nesting">Nesting</h4>
+                <p>Nest selectors to mirror your HTML structure, but avoid going deeper than 3 levels.</p>
+              </section>
+
+              <section id="advanced" class="content-section">
+                <h3>Advanced Patterns</h3>
+                <p>Once comfortable with basics, explore functions, loops, and conditionals. <code>@each</code> loops can generate utility classes from maps.</p>
+              </section>
+
+              <section id="performance" class="content-section">
+                <h3>Performance Tips</h3>
+                <p>Avoid <code>@extend</code> in large projects — it can generate unexpected selector combinations. Prefer mixins for reusable styles.</p>
+              </section>
+
+              <section id="conclusion" class="content-section">
+                <h3>Conclusion</h3>
+                <p>SCSS is powerful, but with power comes responsibility. Establish conventions early, document your architecture, and refactor mercilessly.</p>
+              </section>
+
+            </article>
+          </main>
+
+        </div>
+      <p><small>↑ Scroll to see TOC stick. Click links to jump to sections</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;aside class="toc-sidebar"&gt;
+  &lt;nav class="toc-nav" aria-label="Table of contents"&gt;
+    &lt;h3 class="toc-title"&gt;On This Page&lt;/h3&gt;
+    &lt;ul class="toc-list"&gt;
+      &lt;li&gt;&lt;a href="#intro"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/aside&gt;
+
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>position: sticky</code> + <code>top: 2rem</code> keeps TOC visible during scroll</li>
+        <li><code>align-items: start</code> on grid prevents sidebar stretching to full height</li>
+        <li><code>max-height: calc(100vh - 4rem)</code> + <code>overflow-y: auto</code> scrolls long TOCs</li>
+        <li>Link <code>href="#id"</code> to matching <code>id="intro"</code> on sections</li>
+        <li><code>scroll-behavior: smooth</code> on <code>html</code> enables smooth anchor jumps</li>
+        <li><code>scroll-padding-top</code> prevents sticky header from covering jumped content</li>
+        <li>Nest <code>&lt;ul class="toc-sublist"&gt;</code> for H4 subsections under H3</li>
+        <li>Use <code>aria-label="Table of contents"</code> for screen readers</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code55/index.html" class="nav-link">← Prev: Code 55</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code57/index.html" class="nav-link">Next: Code 57 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 56 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

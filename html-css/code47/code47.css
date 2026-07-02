@@ -1,0 +1,37 @@
+/* --- App Section Layout --- */
+.app-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.app-content { max-width: 400px; }
+.store-badges { display: flex; gap: 15px; margin-top: 20px; }
+
+.badge {
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* --- CSS Phone Mockup --- */
+.phone-mockup {
+  width: 200px;
+  height: 400px;
+  border: 8px solid #333;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.1);
+}
+
+/* Base Page Styles */
+body { font-family: sans-serif; line-height: 1.6; max-width: 900px; margin: auto; padding: 20px; }

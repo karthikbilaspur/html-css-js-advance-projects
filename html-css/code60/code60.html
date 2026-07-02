@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 60: Timeline - Vertical timeline with events, markers, and tags using ::before. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 60: Timeline | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code60.scss">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 60: Timeline</h1>
+      <p class="subtitle">Vertical line with events using ::before - zero JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>Creates a vertical timeline for changelogs, project history, or event sequences. Uses <code>::before</code> on the container to draw the central line and positioned markers for each event.</p>
+      <p>Perfect for company histories, product roadmaps, and resume sections. Fully semantic with <code>&lt;article&gt;</code> and <code>&lt;time&gt;</code>.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <section class="timeline-container">
+          <h2 class="timeline-title">Project History</h2>
+          
+          <div class="timeline">
+            
+            <article class="timeline-event">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2026-01-15">January 15, 2026</time>
+                <h3 class="timeline-heading">Project Kickoff</h3>
+                <p class="timeline-description">
+                  Initial planning session with stakeholders. Defined core features, tech stack, and MVP scope. Team of 5 assembled.
+                </p>
+                <span class="timeline-tag">Milestone</span>
+              </div>
+            </article>
+
+            <article class="timeline-event">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2026-03-01">March 1, 2026</time>
+                <h3 class="timeline-heading">Alpha Release</h3>
+                <p class="timeline-description">
+                  First internal alpha deployed to staging. Core authentication and dashboard features complete. Started collecting feedback from early testers.
+                </p>
+                <span class="timeline-tag timeline-tag--release">Release</span>
+              </div>
+            </article>
+
+            <article class="timeline-event">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2026-04-20">April 20, 2026</time>
+                <h3 class="timeline-heading">Design System v2</h3>
+                <p class="timeline-description">
+                  Major refactor of component library. Introduced design tokens and dark mode support. Reduced CSS bundle size by 40%.
+                </p>
+                <span class="timeline-tag timeline-tag--update">Update</span>
+              </div>
+            </article>
+
+            <article class="timeline-event">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2026-06-10">June 10, 2026</time>
+                <h3 class="timeline-heading">Public Beta Launch</h3>
+                <p class="timeline-description">
+                  Opened beta to 1,000 users. Integrated analytics and error tracking. Performance improvements shipped based on real usage data.
+                </p>
+                <span class="timeline-tag timeline-tag--release">Release</span>
+              </div>
+            </article>
+
+            <article class="timeline-event">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2026-06-15">June 15, 2026</time>
+                <h3 class="timeline-heading">Current Status</h3>
+                <p class="timeline-description">
+                  Active development continues. Working toward v1.0 launch. Focus on accessibility audit and API documentation.
+                </p>
+                <span class="timeline-tag timeline-tag--current">Current</span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+      </div>
+      <p><small>↑ Markers connect to central line. Tags show event type</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;div class="timeline"&gt;
+  &lt;article class="timeline-event"&gt;
+    &lt;div class="timeline-marker"&gt;&lt;/div&gt;
+    &lt;div class="timeline-content"&gt;
+      &lt;time datetime="2026-01-15"&gt;January 15, 2026&lt;/time&gt;
+      &lt;h3&gt;Project Kickoff&lt;/h3&gt;
+      &lt;p&gt;Initial planning session...&lt;/p&gt;
+      &lt;span class="timeline-tag"&gt;Milestone&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ddd;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: #333;
+  border-radius: 50%;
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>.timeline::before</code> draws the vertical line with <code>position: absolute</code></li>
+        <li><code>.timeline-marker</code> uses <code>border-radius: 50%</code> for circular dots</li>
+        <li><code>position: relative</code> on <code>.timeline-event</code> anchors the markers</li>
+        <li><code>margin-left</code> on <code>.timeline-content</code> offsets text from the line</li>
+        <li>Use <code>&lt;article&gt;</code> for each event + <code>&lt;time datetime&gt;</code> for dates</li>
+        <li><code>.timeline-tag</code> modifiers like <code>--release</code> color-code event types</li>
+        <li>On mobile, move line to left edge and reduce content offset</li>
+        <li><code>:last-child</code> can fade the line end with a gradient</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code59/index.html" class="nav-link">← Prev: Code 59</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code61/index.html" class="nav-link">Next: Code 61 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 60 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', 'Monaco', monospace;
+    background: #0d1117;
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #c9d1d9;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 48px;
+    color: #58a6ff;
+    letter-spacing: -1px;
+}
+
+.typewriter-section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.typewriter-section h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #8b949e;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.typewriter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.typewriter {
+    font-size: 20px;
+    font-weight: 400;
+    color: #c9d1d9;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #58a6ff;
+    width: 0;
+}
+
+/* Single Line */
+.text-1 {
+    width: 29ch;
+    animation: typing 3s steps(29) 0.5s forwards, blink 0.75s step-end infinite;
+}
+
+/* Multiple Lines */
+.text-2 {
+    animation: blink 0.75s step-end infinite;
+}
+
+.line-1 {
+    width: 25ch;
+    animation: typing 2.5s steps(25) 0.5s forwards, blink 0.75s step-end infinite;
+}
+
+.line-2 {
+    width: 28ch;
+    animation: typing 2.8s steps(28) 3.5s forwards, blink 0.75s step-end infinite;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.line-3 {
+    width: 32ch;
+    animation: typing 3.2s steps(32) 6.8s forwards, blink 0.75s step-end infinite;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* Code Block */
+.code-block {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.code-line {
+    width: 41ch;
+    animation: typing 4s steps(41) 0.5s forwards, blink 0.75s step-end infinite;
+}
+
+.code-keyword {
+    color: #ff7b72;
+}
+
+.code-var {
+    color: #79c0ff;
+}
+
+.code-string {
+    color: #a5d6ff;
+}
+
+/* Animations */
+@keyframes typing {
+    from {
+        width: 0;
+        opacity: 1;
+    }
+    to {
+        width: var(--final-width, 100%);
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #58a6ff;
+    }
+}
+
+nav {
+    text-align: center;
+    margin-top: 40px;
+}
+
+nav hr {
+    border: none;
+    border-top: 1px solid #30363d;
+    margin-bottom: 16px;
+}
+
+nav p {
+    font-size: 14px;
+    color: #8b949e;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+nav a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #30363d;
+    margin-bottom: 12px;
+}
+
+footer p {
+    font-size: 12px;
+    color: #6e7681;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .typewriter {
+        font-size: 16px;
+    }
+    
+    .code-block {
+        font-size: 14px;
+    }
+    
+    .typewriter-section {
+        padding: 32px 24px;
+    }
+}

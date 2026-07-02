@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 38: Video Thumbnail Grid - Play button overlay with absolute positioning and hover effects. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 38: Video Thumbnail Grid | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code38.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 38: Video Thumbnail Grid</h1>
+      <p class="subtitle">Play button overlay with absolute positioning - zero JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>This layout uses absolute positioning to center a "Play" button over thumbnail images. The play button is hidden or transparent by default and becomes prominent on hover, providing immediate visual feedback for video content.</p>
+      <p>Pattern used by YouTube, Vimeo, and course platforms. Signals clickable video content.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <div class="video-grid">
+          <a href="#video1" class="video-card">
+            <img src="https://picsum.photos/400/225?random=30" alt="Video Thumbnail 1">
+            <div class="play-btn" aria-hidden="true">▶</div>
+          </a>
+          <a href="#video2" class="video-card">
+            <img src="https://picsum.photos/400/225?random=31" alt="Video Thumbnail 2">
+            <div class="play-btn" aria-hidden="true">▶</div>
+          </a>
+          <a href="#video3" class="video-card">
+            <img src="https://picsum.photos/400/225?random=32" alt="Video Thumbnail 3">
+            <div class="play-btn" aria-hidden="true">▶</div>
+          </a>
+        </div>
+      <p><small>↑ Hover over thumbnails to see play button + overlay effect</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;a href="#" class="video-card"&gt;
+  &lt;img src="thumb.jpg" alt="Video"&gt;
+  &lt;div class="play-btn"&gt;▶&lt;/div&gt;
+&lt;/a&gt;</code></pre>
+      <pre><code>.video-card {
+  position: relative;
+  display: block;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.video-card:hover .play-btn {
+  opacity: 1;
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li>Parent <code>.video-card</code> needs <code>position: relative</code> to contain absolute children</li>
+        <li>Center play button with <code>top: 50%; left: 50%; transform: translate(-50%, -50%)</code></li>
+        <li>Hide button with <code>opacity: 0</code>, show on <code>:hover</code> with <code>opacity: 1</code></li>
+        <li>Add overlay: <code>.video-card::before</code> with <code>background: rgba(0,0,0,0.4)</code> on hover</li>
+        <li>Use <code>aria-hidden="true"</code> on decorative play icon if link has accessible text</li>
+        <li>Wrap in <code>&lt;a&gt;</code> for keyboard access — add <code>:focus</code> styles matching <code>:hover</code></li>
+        <li>For scale effect: <code>transform: translate(-50%, -50%) scale(1.1)</code> on hover</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code37/index.html" class="nav-link">← Prev: Code 37</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code39/index.html" class="nav-link">Next: Code 39 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 38 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

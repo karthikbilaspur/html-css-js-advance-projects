@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 76 - Battery Indicator</title>
+    <link rel="stylesheet" href="code76.css">
+</head>
+<body>
+    <main class="container">
+        <h1 class="page-title">Battery Indicators</h1>
+        <p class="subtitle">CSS battery levels with color states</p>
+        
+        <section class="battery-section" aria-label="Battery at 100 percent">
+            <h2>100% Charged</h2>
+            <div class="battery" role="img" aria-label="Battery fully charged, 100%">
+                <div class="battery-body">
+                    <div class="battery-fill fill-100" aria-hidden="true"></div>
+                </div>
+                <div class="battery-tip" aria-hidden="true"></div>
+                <span class="battery-percent">100%</span>
+            </div>
+        </section>
+
+        <section class="battery-section" aria-label="Battery at 75 percent">
+            <h2>75% Medium</h2>
+            <div class="battery" role="img" aria-label="Battery at 75%">
+                <div class="battery-body">
+                    <div class="battery-fill fill-75" aria-hidden="true"></div>
+                </div>
+                <div class="battery-tip" aria-hidden="true"></div>
+                <span class="battery-percent">75%</span>
+            </div>
+        </section>
+
+        <section class="battery-section" aria-label="Battery at 50 percent">
+            <h2>50% Half</h2>
+            <div class="battery" role="img" aria-label="Battery at 50%">
+                <div class="battery-body">
+                    <div class="battery-fill fill-50" aria-hidden="true"></div>
+                </div>
+                <div class="battery-tip" aria-hidden="true"></div>
+                <span class="battery-percent">50%</span>
+            </div>
+        </section>
+
+        <section class="battery-section" aria-label="Battery at 25 percent">
+            <h2>25% Low</h2>
+            <div class="battery" role="img" aria-label="Battery low, 25%">
+                <div class="battery-body">
+                    <div class="battery-fill fill-25" aria-hidden="true"></div>
+                </div>
+                <div class="battery-tip" aria-hidden="true"></div>
+                <span class="battery-percent">25%</span>
+            </div>
+        </section>
+
+        <section class="battery-section" aria-label="Battery at 10 percent">
+            <h2>10% Critical</h2>
+            <div class="battery" role="img" aria-label="Battery critical, 10%">
+                <div class="battery-body">
+                    <div class="battery-fill fill-10" aria-hidden="true"></div>
+                </div>
+                <div class="battery-tip" aria-hidden="true"></div>
+                <span class="battery-percent">10%</span>
+            </div>
+        </section>
+        
+        <nav class="pagination-nav">
+            <hr>
+            <p>
+                <a href="../code75/code75.html">← Prev: Code 75</a> | 
+                <a href="../index.html">Home</a> | 
+                <a href="../code77/code77.html">Next: Code 77 →</a>
+            </p>
+        </nav>
+    </main>
+
+    <footer class="page-footer">
+        <hr>
+        <p><small>Code 76 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
+</body>
+</html>

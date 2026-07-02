@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 70 - Kanban Board & Invoice</title>
+    <link rel="stylesheet" href="code70.css">
+</head>
+<body>
+    <main class="container">
+        <h1 class="section-title">Kanban Board</h1>
+        <div class="kanban-board" role="region" aria-label="Kanban task board">
+            <div class="kanban-column">
+                <div class="column-header todo">
+                    <h3>To-do</h3>
+                    <span class="task-count" aria-label="3 tasks">3</span>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">Design landing page</div>
+                    <div class="task-meta">
+                        <span class="task-tag design">Design</span>
+                        <span class="task-date">Oct 20</span>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">Update documentation</div>
+                    <div class="task-meta">
+                        <span class="task-tag docs">Docs</span>
+                        <span class="task-date">Oct 22</span>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">Fix navbar bug</div>
+                    <div class="task-meta">
+                        <span class="task-tag bug">Bug</span>
+                        <span class="task-date">Oct 18</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kanban-column">
+                <div class="column-header progress">
+                    <h3>In Progress</h3>
+                    <span class="task-count" aria-label="2 tasks">2</span>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">API integration</div>
+                    <div class="task-meta">
+                        <span class="task-tag dev">Dev</span>
+                        <span class="task-date">Oct 19</span>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">User testing</div>
+                    <div class="task-meta">
+                        <span class="task-tag research">Research</span>
+                        <span class="task-date">Oct 21</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kanban-column">
+                <div class="column-header done">
+                    <h3>Done</h3>
+                    <span class="task-count" aria-label="4 tasks">4</span>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">Setup repo</div>
+                    <div class="task-meta">
+                        <span class="task-tag dev">Dev</span>
+                        <span class="task-date">Oct 15</span>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">Create wireframes</div>
+                    <div class="task-meta">
+                        <span class="task-tag design">Design</span>
+                        <span class="task-date">Oct 16</span>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">Client kickoff</div>
+                    <div class="task-meta">
+                        <span class="task-tag meeting">Meeting</span>
+                        <span class="task-date">Oct 14</span>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">Logo design</div>
+                    <div class="task-meta">
+                        <span class="task-tag design">Design</span>
+                        <span class="task-date">Oct 17</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="section-title invoice-title">Invoice Template</h1>
+        <div class="invoice" role="region" aria-label="Invoice INV-2026-0042">
+            <div class="invoice-header">
+                <div class="company-info">
+                    <h2>ACME Studios</h2>
+                    <p>123 Design Street<br>Bangalore, KA 560001<br>hello@acmestudios.com</p>
+                </div>
+                <div class="invoice-meta">
+                    <h2>INVOICE</h2>
+                    <p><strong>Invoice #:</strong> INV-2026-0042</p>
+                    <p><strong>Date:</strong> June 17, 2026</p>
+                    <p><strong>Due Date:</strong> July 17, 2026</p>
+                </div>
+            </div>
+
+            <div class="bill-to">
+                <h3>Bill To:</h3>
+                <p><strong>Karthik Cwrp</strong><br>
+                Devanhalli, Karnataka<br>
+                karthik@example.com</p>
+            </div>
+
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Website Design - Homepage</td>
+                        <td>1</td>
+                        <td>₹25,000</td>
+                        <td>₹25,000</td>
+                    </tr>
+                    <tr>
+                        <td>Responsive Development</td>
+                        <td>1</td>
+                        <td>₹35,000</td>
+                        <td>₹35,000</td>
+                    </tr>
+                    <tr>
+                        <td>SEO Setup & Optimization</td>
+                        <td>1</td>
+                        <td>₹8,000</td>
+                        <td>₹8,000</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-right">Subtotal</td>
+                        <td>₹68,000</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-right">GST 18%</td>
+                        <td>₹12,240</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="3" class="text-right"><strong>Total Due</strong></td>
+                        <td><strong>₹80,240</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="invoice-notes">
+                <h4>Notes</h4>
+                <p>Payment due within 30 days. Thank you for your business!</p>
+                <p class="bank-details"><strong>Bank:</strong> HDFC Bank | <strong>Acc:</strong> 1234567890 | <strong>IFSC:</strong> HDFC0001234</p>
+            </div>
+        </div>
+        
+        <nav class="pagination-nav">
+            <hr>
+            <p>
+                <a href="../code69/code69.html">← Prev: Code 69</a> | 
+                <a href="../index.html">Home</a> | 
+                <a href="../code71/code71.html">Next: Code 71 →</a>
+            </p>
+        </nav>
+    </main>
+
+    <footer class="page-footer">
+        <hr>
+        <p><small>Code 70 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
+</body>
+</html>
+
+

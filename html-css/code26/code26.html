@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 26: Accordion FAQ - Disclosure widget using details/summary tags with zero JavaScript. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 26: Accordion FAQ | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code26.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 26: Accordion FAQ</h1>
+      <p class="subtitle">Disclosure widget with &lt;details&gt;/&lt;summary&gt; - zero JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>The <code>&lt;details&gt;</code> element creates a disclosure widget that users can open and close. Perfect for FAQs — no JavaScript needed.</p>
+      <p>The <code>&lt;summary&gt;</code> is the visible question. Everything else inside <code>&lt;details&gt;</code> is the answer shown when open.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <div class="faq">
+          <details class="faq-item">
+            <summary class="faq-question">
+              What is semantic HTML?
+              <span class="icon"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Semantic HTML uses tags that describe their meaning, like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code>.</p>
+              <p>This helps screen readers, search engines, and developers understand your page structure better than generic <code>&lt;div&gt;</code> tags.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              Do I need JavaScript for dropdowns?
+              <span class="icon"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Not always. You can use <code>:hover</code> and <code>:focus-within</code> for basic dropdowns, or <code>&lt;details&gt;</code> for click-to-open menus.</p>
+              <p>JavaScript is only needed for complex interactions like closing on outside click or keyboard Esc key support.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              Can multiple details be open at once?
+              <span class="icon"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes, by default each <code>&lt;details&gt;</code> works independently. A user can open all FAQs at once.</p>
+              <p>If you want only one open at a time, use the <code>name</code> attribute: <code>&lt;details name="faq"&gt;</code> groups them.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              How do I style the default arrow?
+              <span class="icon"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Target <code>summary::marker</code> or <code>summary::-webkit-details-marker</code> and set <code>display: none</code>.</p>
+              <p>Then add your own icon with <code>::after</code> on the summary and rotate it when <code>details[open]</code>.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+      <p><small>↑ Click any question to expand. Multiple can be open at once.</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;details class="faq-item"&gt;
+  &lt;summary&gt;What is HTML?&lt;/summary&gt;
+  &lt;div class="answer"&gt;
+    &lt;p&gt;HTML stands for HyperText Markup Language...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre>
+      <pre><code>/* Custom arrow icon */
+details summary::after {
+  content: "+";
+  float: right;
+}
+
+details[open] summary::after {
+  content: "−";
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>&lt;summary&gt;</code> must be the first child of <code>&lt;details&gt;</code></li>
+        <li>Remove default marker with <code>summary::marker { display: none; }</code> or <code>list-style: none</code></li>
+        <li>Style open state with <code>details[open] summary</code></li>
+        <li>Add <code>name="group"</code> to multiple <code>&lt;details&gt;</code> to make them mutually exclusive</li>
+        <li>Keyboard accessible by default — Tab to focus, Space/Enter to toggle</li>
+        <li>Use <code>cursor: pointer</code> on summary to show it's clickable</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code25/index.html" class="nav-link">← Prev: Code 25</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code27/index.html" class="nav-link">Next: Code 27 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 26 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

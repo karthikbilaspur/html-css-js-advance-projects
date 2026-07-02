@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 84 - Star Rating</title>
+    <link rel="stylesheet" href="code84.css">
+</head>
+<body>
+    <main class="container">
+        <h1 class="page-title">CSS Star Rating</h1>
+        <p class="subtitle">Pure CSS with radio + <code>:checked</code> sibling selectors</p>
+        
+        <section class="rating-section" aria-label="Interactive star rating">
+            <h2>Rate This Product</h2>
+            <p class="description">Click or tab to stars. Keyboard accessible.</p>
+            
+            <fieldset class="star-rating" role="radiogroup" aria-required="true">
+                <legend class="sr-only">Product rating from 1 to 5 stars</legend>
+                
+                <input type="radio" id="star5" name="rating" value="5" class="star-input">
+                <label for="star5" class="star-label" aria-label="5 stars">
+                    <span aria-hidden="true">★</span>
+                </label>
+                
+                <input type="radio" id="star4" name="rating" value="4" class="star-input">
+                <label for="star4" class="star-label" aria-label="4 stars">
+                    <span aria-hidden="true">★</span>
+                </label>
+                
+                <input type="radio" id="star3" name="rating" value="3" class="star-input">
+                <label for="star3" class="star-label" aria-label="3 stars">
+                    <span aria-hidden="true">★</span>
+                </label>
+                
+                <input type="radio" id="star2" name="rating" value="2" class="star-input">
+                <label for="star2" class="star-label" aria-label="2 stars">
+                    <span aria-hidden="true">★</span>
+                </label>
+                
+                <input type="radio" id="star1" name="rating" value="1" class="star-input">
+                <label for="star1" class="star-label" aria-label="1 star">
+                    <span aria-hidden="true">★</span>
+                </label>
+            </fieldset>
+            
+            <p class="rating-text" aria-live="polite">Select your rating</p>
+        </section>
+
+        <section class="rating-section" aria-label="Pre-selected star rating example">
+            <h2>Pre-selected Rating</h2>
+            <p class="description">Default 4-star rating using <code>checked</code></p>
+            
+            <fieldset class="star-rating" role="radiogroup" aria-label="Pre-selected 4 star rating">
+                <legend class="sr-only">Product rating from 1 to 5 stars</legend>
+                
+                <input type="radio" id="star5b" name="rating-b" value="5" class="star-input">
+                <label for="star5b" class="star-label" aria-label="5 stars">
+                    <span aria-hidden="true">★</span>
+                </label>
+                
+                <input type="radio" id="star4b" name="rating-b" value="4" class="star-input" checked>
+                <label for="star4b" class="star-label" aria-label="4 stars">
+                    <span aria-hidden="true">★</span>
+                </label>
+                
+                <input type="radio" id="star3b" name="rating-b" value="3" class="star-input">
+                <label for="star3b" class="star-label" aria-label="3 stars">
+                    <span aria-hidden="true">★</span>
+                </label>
+                
+                <input type="radio" id="star2b" name="rating-b" value="2" class="star-input">
+                <label for="star2b" class="star-label" aria-label="2 stars">
+                    <span aria-hidden="true">★</span>
+                </label>
+                
+                <input type="radio" id="star1b" name="rating-b" value="1" class="star-input">
+                <label for="star1b" class="star-label" aria-label="1 star">
+                    <span aria-hidden="true">★</span>
+                </label>
+            </fieldset>
+        </section>
+        
+        <nav class="pagination-nav">
+            <hr>
+            <p>
+                <a href="../code83/code83.html">← Prev: Code 83</a> | 
+                <a href="../index.html">Home</a> | 
+                <a href="../code85/code85.html">Next: Code 85 →</a>
+            </p>
+        </nav>
+    </main>
+
+    <footer class="page-footer">
+        <hr>
+        <p><small>Code 84 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
+</body>
+</html>

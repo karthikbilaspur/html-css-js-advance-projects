@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #f1f5f9;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin-bottom: 3rem;
+}
+
+.progress-section {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.progress-item {
+  margin-bottom: 2rem;
+}
+
+.progress-item:last-child {
+  margin-bottom: 0;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.progress-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.progress-percent {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #334155;
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  width: 0;
+  animation: fillBar 1.8s ease-out forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Individual bar colors, widths + staggered delays */
+.progress-fill.html-css {
+  background: linear-gradient(90deg, #f97316, #ea580c);
+  animation-delay: 0.1s;
+  max-width: 92%;
+}
+
+.progress-fill.javascript {
+  background: linear-gradient(90deg, #eab308, #ca8a04);
+  animation-delay: 0.3s;
+  max-width: 78%;
+}
+
+.progress-fill.react {
+  background: linear-gradient(90deg, #06b6d4, #0891b2);
+  animation-delay: 0.5s;
+  max-width: 65%;
+}
+
+.progress-fill.node {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  animation-delay: 0.7s;
+  max-width: 54%;
+}
+
+.progress-fill.db {
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+  animation-delay: 0.9s;
+  max-width: 70%;
+}
+
+.pagination-nav {
+  margin: 3rem 0 1rem;
+  text-align: center;
+}
+
+.pagination-nav p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+.pagination-nav a {
+  color: #60a5fa;
+  text-decoration: none;
+  padding: 0 0.5rem;
+}
+
+.pagination-nav a:hover {
+  text-decoration: underline;
+  color: #93c5fd;
+}
+
+.pagination-nav hr,
+.page-footer hr {
+  border: none;
+  border-top: 1px solid #334155;
+  margin-bottom: 1rem;
+}
+
+.page-footer {
+  text-align: center;
+  margin-top: 1rem;
+  color: #64748b;
+}
+
+.page-footer small {
+  font-size: 0.8rem;
+}

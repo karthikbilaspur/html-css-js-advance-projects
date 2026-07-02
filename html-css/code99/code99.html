@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 99 - Lumina Ring Docs</title>
+  <link rel="stylesheet" href="code99.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="top-bar site-header" role="banner">
+    <div class="logo">Lumina Docs</div>
+    <div class="search">
+      <label for="docs-search" class="sr-only">Search documentation</label>
+      <input type="search" id="docs-search" name="search" placeholder="Search docs...">
+    </div>
+  </header>
+
+  <div class="docs-container">
+    <aside class="sidebar" role="complementary" aria-label="Documentation navigation">
+      <nav aria-label="Docs sidebar">
+        <div class="nav-section">
+          <h3>Getting Started</h3>
+          <ul>
+            <li><a href="#intro" class="active" aria-current="page">Introduction</a></li>
+            <li><a href="#quickstart">Quick Start</a></li>
+            <li><a href="#installation">Installation</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h3>API Reference</h3>
+          <ul>
+            <li><a href="#auth">Authentication</a></li>
+            <li><a href="#users">Users API</a></li>
+            <li><a href="#data">Health Data API</a></li>
+            <li><a href="#webhooks">Webhooks</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h3>Guides</h3>
+          <ul>
+            <li><a href="#sleep">Sleep Analysis</a></li>
+            <li><a href="#hrv">HRV Monitoring</a></li>
+            <li><a href="#errors">Error Handling</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#changelog">Changelog</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="content container" role="main">
+      <h1 class="page-title sr-only">Lumina Ring API Documentation</h1>
+      <p class="subtitle sr-only">REST API docs for developers integrating with Lumina Ring</p>
+
+      <article id="intro" class="content-section" aria-labelledby="intro-heading">
+        <h1 id="intro-heading">Introduction</h1>
+        <p class="lead">Welcome to the Lumina Ring API documentation. Use our REST API to access health data, manage users, and build integrations with the Lumina ecosystem.</p>
+        
+        <div class="callout info" role="note">
+          <strong>Base URL:</strong> <code>https://api.lumina.dev/v1</code>
+        </div>
+
+        <h2 id="quickstart">Quick Start</h2>
+        <p>Get your API key from the <a href="#">developer dashboard</a> and make your first request:</p>
+        
+        <pre><code>curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.lumina.dev/v1/user/profile</code></pre>
+
+        <h2 id="installation">Installation</h2>
+        <p>Install our official SDKs for faster development:</p>
+        
+        <h4>Node.js</h4>
+        <pre><code>npm install @lumina/sdk</code></pre>
+
+        <h4>Python</h4>
+        <pre><code>pip install lumina-ring</code></pre>
+      </article>
+
+      <article id="auth" class="content-section" aria-labelledby="auth-heading">
+        <h1 id="auth-heading">Authentication</h1>
+        <p>All API requests must include your API key in the Authorization header.</p>
+        
+        <pre><code>Authorization: Bearer lm_sk_1234567890abcdef</code></pre>
+
+        <div class="callout warning" role="alert">
+          <strong>Keep your API keys secure.</strong> Do not expose them in client-side code or public repositories.
+        </div>
+
+        <h3>Rate Limits</h3>
+        <table role="table" aria-label="API rate limits by plan">
+          <thead>
+            <tr>
+              <th scope="col">Plan</th>
+              <th scope="col">Requests/min</th>
+              <th scope="col">Requests/day</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Free</th>
+              <td>60</td>
+              <td>1,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Pro</th>
+              <td>600</td>
+              <td>100,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article id="data" class="content-section" aria-labelledby="data-heading">
+        <h1 id="data-heading">Health Data API</h1>
+        <p>Retrieve sleep, activity, and heart rate data for authenticated users.</p>
+
+        <h3>GET /data/sleep</h3>
+        <p>Returns sleep data for a date range.</p>
+        
+        <h4>Query Parameters</h4>
+        <table role="table" aria-label="Sleep endpoint query parameters">
+          <thead>
+            <tr>
+              <th scope="col">Parameter</th>
+              <th scope="col">Type</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>start_date</code></th>
+              <td>string</td>
+              <td>ISO 8601 date: YYYY-MM-DD</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>end_date</code></th>
+              <td>string</td>
+              <td>ISO 8601 date: YYYY-MM-DD</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example Response</h4>
+      </article>
+
+      <article id="errors" class="content-section" aria-labelledby="errors-heading">
+        <h1 id="errors-heading">Error Handling</h1>
+        <p>The API uses standard HTTP status codes to indicate success or failure.</p>
+        
+        <table role="table" aria-label="API error codes">
+          <thead>
+            <tr>
+              <th scope="col">Code</th>
+              <th scope="col">Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>200</code></th>
+              <td>Success</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>401</code></th>
+              <td>Unauthorized - Invalid API key</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>429</code></th>
+              <td>Too Many Requests - Rate limit exceeded</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>500</code></th>
+              <td>Internal Server Error</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <nav class="pagination-nav" aria-label="Docs page pagination">
+        <hr>
+        <p>
+          <a href="../code98/code98.html">← Prev: Code 98</a> |
+          <a href="../index.html">Home</a> |
+          <a href="../code100/code100.html">Next: Code 100 →</a>
+        </p>
+      </nav>
+    </main>
+  </div>
+
+  <footer class="page-footer" role="contentinfo">
+    <hr>
+    <p><small>&copy; 2026 Lumina Labs. This is fictional API documentation for demo purposes. | Code 99 of 99 | HTML 100 Codes Vault</small></p>
+  </footer>
+</body>
+</html>

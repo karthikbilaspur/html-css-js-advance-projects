@@ -1,0 +1,21 @@
+/* Masonry Container */
+.masonry-gallery {
+  column-count: 3; /* Automatically creates 3 columns */
+  column-gap: 1rem;
+  padding: 1rem;
+}
+
+/* Image styling */
+.brick {
+  width: 100%;
+  display: block; /* Removes baseline gap under images */
+  margin-bottom: 1rem;
+  break-inside: avoid; /* Keeps images from splitting across columns */
+  border-radius: 8px;
+  background-color: #ddd; /* Placeholder color while image loads */
+}
+
+/* Page Aesthetics */
+body { font-family: sans-serif; line-height: 1.6; max-width: 900px; margin: auto; padding: 20px; }
+nav p { text-align: center; font-weight: bold; }
+footer { margin-top: 2rem; }

@@ -1,0 +1,26 @@
+/* --- Slider Base --- */
+.slider { max-width: 500px; margin: auto; overflow: hidden; position: relative; }
+input { display: none; } /* Hide radio buttons */
+
+.slides { display: flex; width: 300%; transition: margin-left 0.5s; }
+.slide { width: 33.33%; padding: 20px; text-align: center; background: #eee; }
+
+/* --- Logic: Shift slides based on checked radio --- */
+#s1:checked ~ .slides { margin-left: 0; }
+#s2:checked ~ .slides { margin-left: -100%; }
+#s3:checked ~ .slides { margin-left: -200%; }
+
+/* --- Nav Dots --- */
+.nav { text-align: center; margin-top: 10px; }
+.nav label { 
+  display: inline-block; width: 12px; height: 12px; 
+  background: #ccc; border-radius: 50%; cursor: pointer; margin: 0 5px; 
+}
+
+/* Update dot appearance when checked */
+#s1:checked ~ .nav label[for="s1"],
+#s2:checked ~ .nav label[for="s2"],
+#s3:checked ~ .nav label[for="s3"] { background: #333; }
+
+/* Base Page Styles */
+body { font-family: sans-serif; line-height: 1.6; max-width: 900px; margin: auto; padding: 20px; }

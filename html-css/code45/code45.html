@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 45: Stats Counter - CSS-only animated number using @property and counter(). HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 45: Stats Counter | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code45.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 45: Stats Counter</h1>
+      <p class="subtitle">Animated numbers with @property - zero JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>This creates a CSS-only number counter. By using <code>@keyframes</code> to animate a CSS variable defined with <code>@property</code>, we force the browser to recalculate and display increasing numbers.</p>
+      <p>Pure CSS animation. No JS setInterval. GPU accelerated.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <div class="stats">
+          <div class="stat-item">
+            <span class="counter"></span>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-item">
+            <span class="counter"></span>
+            <p>Happy Clients</p>
+          </div>
+          <div class="stat-item">
+            <span class="counter"></span>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-item">
+            <span class="counter"></span>
+            <p>Team Members</p>
+          </div>
+        </div>
+      <p><small>↑ Reload page to see count-up animation</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;div class="stat-item"&gt;
+  &lt;span class="counter" style="--num: 150"&gt;&lt;/span&gt;
+  &lt;p&gt;Projects&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      <pre><code>@property --count {
+  syntax: '&lt;integer&gt;';
+  initial-value: 0;
+  inherits: false;
+}
+
+.counter {
+  animation: count 2s forwards;
+  counter-reset: num var(--count);
+}
+
+.counter::after {
+  content: counter(num) '+';
+}
+
+@keyframes count {
+  to { --count: var(--num); }
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>@property --count</code> defines custom property as <code>&lt;integer&gt;</code> so it can be animated</li>
+        <li><code>counter-reset: num var(--count)</code> ties CSS counter to animated variable</li>
+        <li><code>content: counter(num)</code> renders the current integer value</li>
+        <li><code>animation-fill-mode: forwards</code> keeps counter at final number</li>
+        <li>Set target with inline style: <code>style="--num: 150"</code></li>
+        <li><code>@keyframes</code> animates <code>--count</code> from 0 to <code>--num</code></li>
+        <li>Fallback: Use static numbers if <code>@property</code> unsupported in old browsers</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code44/index.html" class="nav-link">← Prev: Code 44</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code46/index.html" class="nav-link">Next: Code 46 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 45 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

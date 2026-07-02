@@ -1,0 +1,35 @@
+/* --- Base Styles --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+
+/* --- Features Grid --- */
+.features { padding: 40px 20px; text-align: center; }
+.features h2 { margin-bottom: 40px; font-size: 2.5rem; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.icon { font-size: 3rem; margin-bottom: 1rem; }
+
+/* --- Footer --- */
+footer { margin-top: 4rem; padding: 2rem; background: #f4f4f4; text-align: center; }
+.footer-container { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto 1rem auto; flex-wrap: wrap; gap: 1rem; }
+.footer-nav a { text-decoration: none; color: #333; margin: 0 5px; font-size: 0.9rem; }
+.copyright { border-top: 1px solid #ddd; padding-top: 1rem; font-size: 0.8rem; color: #777; }

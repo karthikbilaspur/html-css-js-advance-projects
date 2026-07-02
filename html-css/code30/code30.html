@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 30: Mega Menu - Large dropdown with CSS Grid columns using :hover and :focus-within. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 30: Mega Menu | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code30.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 30: Mega Menu</h1>
+      <p class="subtitle">Full-width dropdown with CSS Grid columns - zero JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>A mega menu is a large dropdown that displays multiple columns of links, images, or featured content. Uses <code>:hover</code> + <code>:focus-within</code> to show, and CSS Grid for the multi-column layout.</p>
+      <p>Unlike simple dropdowns, mega menus can show entire site sections at once. Common on e-commerce and news sites.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            
+            <li class="mega-dropdown">
+              <a href="#products" class="nav-link mega-trigger">
+                Products <span class="arrow">▾</span>
+              </a>
+              <div class="mega-menu">
+                <div class="mega-grid">
+                  <div class="mega-column">
+                    <h4 class="mega-heading">Electronics</h4>
+                    <ul class="mega-links">
+                      <li><a href="#laptops">Laptops</a></li>
+                      <li><a href="#phones">Smartphones</a></li>
+                      <li><a href="#tablets">Tablets</a></li>
+                      <li><a href="#accessories">Accessories</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="mega-column">
+                    <h4 class="mega-heading">Clothing</h4>
+                    <ul class="mega-links">
+                      <li><a href="#mens">Men's Wear</a></li>
+                      <li><a href="#womens">Women's Wear</a></li>
+                      <li><a href="#kids">Kids</a></li>
+                      <li><a href="#shoes">Shoes</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="mega-column">
+                    <h4 class="mega-heading">Home & Garden</h4>
+                    <ul class="mega-links">
+                      <li><a href="#furniture">Furniture</a></li>
+                      <li><a href="#decor">Decor</a></li>
+                      <li><a href="#kitchen">Kitchen</a></li>
+                      <li><a href="#garden">Garden Tools</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="mega-column mega-featured">
+                    <h4 class="mega-heading">Featured</h4>
+                    <div class="featured-card">
+                      <div class="featured-img"></div>
+                      <p class="featured-title">Summer Sale</p>
+                      <p class="featured-desc">Up to 50% off selected items</p>
+                      <a href="#sale" class="featured-btn">Shop Now →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="mega-dropdown">
+              <a href="#solutions" class="nav-link mega-trigger">
+                Solutions <span class="arrow">▾</span>
+              </a>
+              <div class="mega-menu">
+                <div class="mega-grid mega-grid-2col">
+                  <div class="mega-column">
+                    <h4 class="mega-heading">For Business</h4>
+                    <ul class="mega-links">
+                      <li><a href="#enterprise">Enterprise</a></li>
+                      <li><a href="#startup">Startups</a></li>
+                      <li><a href="#agencies">Agencies</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="mega-column">
+                    <h4 class="mega-heading">For Developers</h4>
+                    <ul class="mega-links">
+                      <li><a href="#api">API Docs</a></li>
+                      <li><a href="#sdk">SDKs</a></li>
+                      <li><a href="#webhooks">Webhooks</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="page-content">
+          <h3>Page Content Below</h3>
+          <p>Hover over "Products" or "Solutions" to see the mega menu. The menu spans full width and uses CSS Grid for columns.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;li class="mega-dropdown"&gt;
+  &lt;a href="#"&gt;Products&lt;/a&gt;
+  &lt;div class="mega-menu"&gt;
+    &lt;div class="mega-grid"&gt;
+      &lt;div class="mega-column"&gt;
+        &lt;h4&gt;Category&lt;/h4&gt;
+        &lt;ul&gt;&lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/li&gt;</code></pre>
+      <pre><code>.mega-dropdown:hover .mega-menu,
+.mega-dropdown:focus-within .mega-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li>Parent <code>li</code> needs <code>position: relative</code> or <code>static</code> with menu as <code>position: absolute</code></li>
+        <li>Use <code>width: 100%</code> + <code>left: 0</code> to make mega menu full-width</li>
+        <li>CSS Grid with <code>grid-template-columns: repeat(4, 1fr)</code> creates equal columns</li>
+        <li>Hide with <code>opacity: 0</code> + <code>visibility: hidden</code> to allow transitions</li>
+        <li><code>:focus-within</code> keeps menu open while tabbing through links</li>
+        <li>Add delay on mouse-leave with <code>transition-delay</code> to prevent accidental close</li>
+        <li>Mobile: convert to accordion or full-screen overlay — mega menus don't work on small screens</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code29/index.html" class="nav-link">← Prev: Code 29</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code31/index.html" class="nav-link">Next: Code 31 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 30 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

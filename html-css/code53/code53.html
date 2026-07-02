@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 53: Magazine Layout - Multi-column text flow with CSS columns property. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 53: Magazine Layout | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code53.scss">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 53: Magazine Layout</h1>
+      <p class="subtitle">Multi-column text flow with CSS columns - print aesthetic</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>Magazine layouts rely on negative space and visual flow. By utilizing the CSS <code>columns</code> property, we force text to flow naturally between columns, much like a printed publication.</p>
+      <p>Excellent for long-form content where readability is priority. No JS, no Grid, no Flexbox.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <article class="magazine-content">
+          <h2>The Art of Typography</h2>
+          <p class="lead">Magazine layouts rely heavily on negative space and visual flow. The CSS <code>columns</code> property lets text flow naturally between columns, much like a printed publication.</p>
+          
+          <p>This approach is excellent for long-form content where readability is a priority. Unlike traditional sidebar layouts, this design keeps the reader's eye moving down the page in a continuous rhythm. The text automatically balances across columns based on available space.</p>
+          
+          <p>You can adjust <code>column-gap</code> to control white space between columns and <code>column-rule</code> to add a subtle separator. For headlines, use <code>column-span: all</code> to break out of the column flow.</p>
+          
+          <p>Modern browsers handle multi-column layouts well, automatically calculating optimal line lengths. Combine this with <code>hyphens: auto</code> and <code>text-align: justify</code> for a true print aesthetic.</p>
+        </article>
+      <p><small>↑ Resize to see columns reflow: 3 → 2 → 1</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;article class="magazine-content"&gt;
+  &lt;h2&gt;The Art of Typography&lt;/h2&gt;
+  &lt;p class="lead"&gt;Magazine layouts...&lt;/p&gt;
+  &lt;p&gt;Long form content...&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+      <pre><code>.magazine-content {
+  column-count: 3;
+  column-gap: 2.5rem;
+  column-rule: 1px solid #e5e7eb;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.magazine-content h2,
+.magazine-content .lead {
+  column-span: all;
+}
+
+@media (max-width: 900px) {
+  .magazine-content {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .magazine-content {
+    column-count: 1;
+  }
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>column-count: 3</code> splits content into 3 equal columns automatically</li>
+        <li><code>column-gap</code> controls space between columns — use <code>rem</code> for scale</li>
+        <li><code>column-rule</code> adds a vertical divider without extra HTML</li>
+        <li><code>column-span: all</code> forces headlines to break across all columns</li>
+        <li><code>hyphens: auto</code> + <code>text-align: justify</code> = print-quality text flow</li>
+        <li><code>column-width</code> alternative: <code>columns: 18rem</code> auto-calculates count</li>
+        <li>Use media queries to reduce <code>column-count</code> on smaller screens</li>
+        <li>Avoid <code>height</code> on container — let content determine column height</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code52/index.html" class="nav-link">← Prev: Code 52</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code54/index.html" class="nav-link">Next: Code 54 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 53 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 61: Dashboards & Data - Analytics overview with stat cards, trend indicators, and data tables. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 61: Dashboards & Data | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code61.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 61: Dashboards & Data</h1>
+      <p class="subtitle">Stat cards and data tables with CSS grid - zero JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>Builds a dashboard layout with stat cards, trend indicators, and a data table. Uses CSS Grid for responsive layouts and utility classes for badges and status colors.</p>
+      <p>Perfect for admin panels, analytics pages, and internal tools. No JS charts needed for basic KPIs.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <div class="dashboard">
+          <header class="dash-header">
+            <h1>Analytics Overview</h1>
+            <p>Real-time data for Code 61</p>
+          </header>
+
+          <section class="stat-grid">
+            <div class="stat-card">
+              <h3>Active Users</h3>
+              <p class="stat-number">2,847</p>
+              <span class="stat-trend up">+12.5%</span>
+            </div>
+            <div class="stat-card">
+              <h3>Revenue</h3>
+              <p class="stat-number">₹1.2L</p>
+              <span class="stat-trend up">+8.1%</span>
+            </div>
+            <div class="stat-card">
+              <h3>Bounce Rate</h3>
+              <p class="stat-number">34.2%</p>
+              <span class="stat-trend down">-3.4%</span>
+            </div>
+            <div class="stat-card">
+              <h3>Conversions</h3>
+              <p class="stat-number">429</p>
+              <span class="stat-trend up">+19.0%</span>
+            </div>
+          </section>
+
+          <section class="data-panel">
+            <h2>Recent Activity</h2>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Action</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>@karthik_cwrp</td>
+                  <td>Created Dashboard</td>
+                  <td><span class="badge success">Complete</span></td>
+                  <td>Jun 16, 2026</td>
+                </tr>
+                <tr>
+                  <td>@demo_user</td>
+                  <td>Exported CSV</td>
+                  <td><span class="badge success">Complete</span></td>
+                  <td>Jun 16, 2026</td>
+                </tr>
+                <tr>
+                  <td>@test_admin</td>
+                  <td>API Query</td>
+                  <td><span class="badge warning">Pending</span></td>
+                  <td>Jun 15, 2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+      <p><small>↑ Responsive grid cards + styled table with status badges</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;section class="stat-grid"&gt;
+  &lt;div class="stat-card"&gt;
+    &lt;h3&gt;Active Users&lt;/h3&gt;
+    &lt;p class="stat-number"&gt;2,847&lt;/p&gt;
+    &lt;span class="stat-trend up"&gt;+12.5%&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;table class="data-table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;User&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;@user&lt;/td&gt;
+      &lt;td&gt;&lt;span class="badge success"&gt;Complete&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>display: grid</code> + <code>repeat(auto-fit, minmax(200px, 1fr))</code> for responsive cards</li>
+        <li><code>.stat-trend.up/.down</code> uses color + icons to show positive/negative change</li>
+        <li><code>border-collapse: collapse</code> on tables for clean grid lines</li>
+        <li><code>.badge</code> classes for status pills: <code>.success</code>, <code>.warning</code>, <code>.error</code></li>
+        <li><code>overflow-x: auto</code> on table wrapper prevents mobile layout break</li>
+        <li>Use <code>&lt;thead&gt;</code> + <code>&lt;tbody&gt;</code> for semantic tables and sticky headers</li>
+        <li><code>text-align: right</code> on numeric columns for easier scanning</li>
+        <li>Keep stat numbers large: <code>font-size: 2rem+</code> for hierarchy</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code60/index.html" class="nav-link">← Prev: Code 60</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code62/index.html" class="nav-link">Next: Code 62 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 61 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

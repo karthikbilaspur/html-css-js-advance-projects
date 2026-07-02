@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 67 - Static Calendar Grid</title>
+  <link rel="stylesheet" href="code67.css">
+</head>
+<body>
+  <main class="container">
+    <div class="calendar" role="application" aria-label="Calendar for June 2026">
+      <header class="calendar-header">
+        <button class="nav-btn" type="button" aria-label="Previous month">&lsaquo;</button>
+        <h1 class="month-title">June 2026</h1>
+        <button class="nav-btn" type="button" aria-label="Next month">&rsaquo;</button>
+      </header>
+
+      <div class="calendar-grid" role="grid" aria-label="Month view">
+        <div class="day-header-row" role="row">
+          <div class="day-header" role="columnheader" aria-label="Sunday">Sun</div>
+          <div class="day-header" role="columnheader" aria-label="Monday">Mon</div>
+          <div class="day-header" role="columnheader" aria-label="Tuesday">Tue</div>
+          <div class="day-header" role="columnheader" aria-label="Wednesday">Wed</div>
+          <div class="day-header" role="columnheader" aria-label="Thursday">Thu</div>
+          <div class="day-header" role="columnheader" aria-label="Friday">Fri</div>
+          <div class="day-header" role="columnheader" aria-label="Saturday">Sat</div>
+        </div>
+
+        <div class="week-row" role="row">
+          <div class="day other-month" role="gridcell" aria-label="May 31">31</div>
+          <div class="day" role="gridcell" aria-label="June 1">
+            <span class="day-number">1</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 2">
+            <span class="day-number">2</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 3">
+            <span class="day-number">3</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 4">
+            <span class="day-number">4</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 5">
+            <span class="day-number">5</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 6">
+            <span class="day-number">6</span>
+          </div>
+        </div>
+
+        <div class="week-row" role="row">
+          <div class="day" role="gridcell" aria-label="June 7">
+            <span class="day-number">7</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 8">
+            <span class="day-number">8</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 9">
+            <span class="day-number">9</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 10">
+            <span class="day-number">10</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 11">
+            <span class="day-number">11</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 12">
+            <span class="day-number">12</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 13">
+            <span class="day-number">13</span>
+          </div>
+        </div>
+
+        <div class="week-row" role="row">
+          <div class="day" role="gridcell" aria-label="June 14">
+            <span class="day-number">14</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 15">
+            <span class="day-number">15</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 16">
+            <span class="day-number">16</span>
+          </div>
+          <div class="day today" role="gridcell" aria-label="June 17, today" aria-current="date">
+            <span class="day-number">17</span>
+            <div class="event-dot" aria-hidden="true"></div>
+          </div>
+          <div class="day has-event" role="gridcell" aria-label="June 18, Code 67 Due">
+            <span class="day-number">18</span>
+            <div class="event">Code 67 Due</div>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 19">
+            <span class="day-number">19</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 20">
+            <span class="day-number">20</span>
+          </div>
+        </div>
+
+        <div class="week-row" role="row">
+          <div class="day" role="gridcell" aria-label="June 21">
+            <span class="day-number">21</span>
+          </div>
+          <div class="day has-event" role="gridcell" aria-label="June 22, Team Sync">
+            <span class="day-number">22</span>
+            <div class="event">Team Sync</div>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 23">
+            <span class="day-number">23</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 24">
+            <span class="day-number">24</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 25">
+            <span class="day-number">25</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 26">
+            <span class="day-number">26</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 27">
+            <span class="day-number">27</span>
+          </div>
+        </div>
+
+        <div class="week-row" role="row">
+          <div class="day" role="gridcell" aria-label="June 28">
+            <span class="day-number">28</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 29">
+            <span class="day-number">29</span>
+          </div>
+          <div class="day" role="gridcell" aria-label="June 30">
+            <span class="day-number">30</span>
+          </div>
+          <div class="day other-month" role="gridcell" aria-label="July 1">1</div>
+          <div class="day other-month" role="gridcell" aria-label="July 2">2</div>
+          <div class="day other-month" role="gridcell" aria-label="July 3">3</div>
+          <div class="day other-month" role="gridcell" aria-label="July 4">4</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="pagination-nav">
+      <hr>
+      <p>
+        <a href="../code66/code66.html">← Prev: Code 66</a> | 
+        <a href="../index.html">Home</a> | 
+        <a href="../code68/code68.html">Next: Code 68 →</a>
+      </p>
+    </nav>
+
+    <footer class="page-footer">
+      <hr>
+      <p><small>Code 67 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
+  </main>
+</body>
+</html>

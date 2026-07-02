@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 68 - Weather Widget</title>
+    <link rel="stylesheet" href="code68.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Weather Widget</h1>
+        <p class="subtitle">SVG icon + data rows layout</p>
+
+        <div class="weather-widget" role="region" aria-label="Current weather">
+            <div class="weather-main">
+                <div class="weather-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" class="icon">
+                        <circle cx="32" cy="32" r="12" class="sun"/>
+                        <path d="M20 42h24a8 8 0 0 0 0-16 10 10 0 0 0-18-2 8 8 0 0 0-6 18z" class="cloud"/>
+                    </svg>
+                </div>
+                <div class="weather-temp">
+                    <span class="temp-value">28</span>
+                    <span class="temp-unit">°C</span>
+                </div>
+            <div class="weather-details">
+                <div class="detail-row">
+                    <span class="detail-label">Condition</span>
+                    <span class="detail-value">Partly Cloudy</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Feels like</span>
+                    <span class="detail-value">31°C</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Humidity</span>
+                    <span class="detail-value">68%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Wind</span>
+                    <span class="detail-value">12 km/h</span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="pagination-nav">
+            <hr>
+            <p>
+                <a href="../code67/code67.html">← Prev: Code 67</a> | 
+                <a href="../index.html">Home</a> | 
+                <a href="../code69/code69.html">Next: Code 69 →</a>
+            </p>
+        </nav>
+    </main>
+
+    <footer class="page-footer">
+        <hr>
+        <p><small>Code 68 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
+</body>
+</html>

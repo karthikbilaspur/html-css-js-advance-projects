@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 52: Live Demo via SCSS - Injecting demo sections with SCSS pseudo-elements. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 52: Live Demo via SCSS | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code52.scss">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 52: Live Demo with Zero HTML</h1>
+      <p class="subtitle">Inject visual demos using SCSS only - no extra markup</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>This layout demonstrates how to inject a visual demo using only SCSS. No extra HTML markup needed for the demo box itself.</p>
+      <p>Uses <code>::before</code> / <code>::after</code> and SCSS variables/mixins to generate UI from empty hooks.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <div class="main-wrapper">
+          <main class="primary-content">
+            <article>
+              <header class="article-header">
+                <h2>SCSS-Only Demo Sections</h2>
+                <div class="meta-data">
+                  <span>Published: June 15, 2026</span> | 
+                  <span>Category: CSS Architecture</span>
+                </div>
+              </header>
+              <section class="body-text">
+                <p>This layout demonstrates how to inject a visual demo using only SCSS. The colored box below is rendered entirely from <code>.demo-hook</code> using pseudo-elements.</p>
+              </section>
+            </article>
+          </main>
+
+          <aside class="sidebar">
+            <nav aria-label="Sidebar Navigation">
+              <h3>Related Topics</h3>
+              <ul>
+                <li><a href="#">Pseudo Elements</a></li>
+                <li><a href="#">SCSS Mixins</a></li>
+                <li><a href="#">Grid Layouts</a></li>
+              </ul>
+            </nav>
+          </aside>
+        </div>
+
+        <!-- Live demo hook - styled entirely in SCSS -->
+        <div class="demo-hook"><span></span></div>
+      <p><small>↑ The demo box is generated from an empty div via SCSS</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;div class="demo-hook"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
+      <pre><code>// code52.scss
+$demo-color: #3b82f6;
+
+@mixin demo-box {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 200px;
+  background: $demo-color;
+  border-radius: 8px;
+}
+
+.demo-hook::before {
+  @include demo-box;
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>::before</code> and <code>::after</code> let you inject content without HTML</li>
+        <li><code>content: ''</code> is required or pseudo-element won't render</li>
+        <li>SCSS <code>@mixin</code> reuses demo styles across multiple hooks</li>
+        <li>Use <code>$variables</code> for colors/sizes to keep demos consistent</li>
+        <li><code>display: block</code> on pseudo-elements to set width/height</li>
+        <li>Keep hook divs empty — <code>&lt;span&gt;&lt;/span&gt;</code> only if you need multiple layers</li>
+        <li>Great for docs, styleguides, and component libraries</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code51/index.html" class="nav-link">← Prev: Code 51</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code53/index.html" class="nav-link">Next: Code 53 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 52 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

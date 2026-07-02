@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 83 - Accordion Menu</title>
+    <link rel="stylesheet" href="code83.css">
+</head>
+<body>
+    <main class="container">
+        <h1 class="page-title">CSS Accordion Menu</h1>
+        <p class="subtitle">Only one section opens at a time using radio buttons — no JavaScript</p>
+        
+        <section class="accordion-section" aria-label="FAQ accordion">
+            <h2>FAQ Accordion</h2>
+            <p class="description">Click headers to expand. Uses radio hack for single-open behavior.</p>
+            
+            <input type="radio" name="accordion" id="acc-1" checked class="accordion-input">
+            <input type="radio" name="accordion" id="acc-2" class="accordion-input">
+            <input type="radio" name="accordion" id="acc-3" class="accordion-input">
+            <input type="radio" name="accordion" id="acc-4" class="accordion-input">
+            
+            <div class="accordion" role="tablist">
+                <div class="accordion-item">
+                    <label for="acc-1" class="accordion-header" role="tab" aria-controls="panel-1" aria-expanded="true">
+                        <span class="accordion-title">What is HTML?</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </label>
+                    <div id="panel-1" class="accordion-content" role="tabpanel" aria-labelledby="acc-1">
+                        <p>HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages and web applications. HTML describes the structure of a web page semantically.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <label for="acc-2" class="accordion-header" role="tab" aria-controls="panel-2" aria-expanded="false">
+                        <span class="accordion-title">What is CSS?</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </label>
+                    <div id="panel-2" class="accordion-content" role="tabpanel" aria-labelledby="acc-2">
+                        <p>CSS stands for Cascading Style Sheets. It describes how HTML elements should be displayed on screen, paper, or in other media. CSS saves a lot of work and can control multiple pages at once.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <label for="acc-3" class="accordion-header" role="tab" aria-controls="panel-3" aria-expanded="false">
+                        <span class="accordion-title">What is JavaScript?</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </label>
+                    <div id="panel-3" class="accordion-content" role="tabpanel" aria-labelledby="acc-3">
+                        <p>JavaScript is a programming language that enables interactive web pages. It is an essential part of web applications and can update content, control multimedia, animate images, and much more.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <label for="acc-4" class="accordion-header" role="tab" aria-controls="panel-4" aria-expanded="false">
+                        <span class="accordion-title">What is Responsive Design?</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </label>
+                    <div id="panel-4" class="accordion-content" role="tabpanel" aria-labelledby="acc-4">
+                        <p>Responsive web design makes web pages render well on a variety of devices and window or screen sizes. It uses flexible layouts, media queries, and responsive images to adapt to the viewing environment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <nav class="pagination-nav">
+            <hr>
+            <p>
+                <a href="../code82/code82.html">← Prev: Code 82</a> | 
+                <a href="../index.html">Home</a> | 
+                <a href="../code84/code84.html">Next: Code 84 →</a>
+            </p>
+        </nav>
+    </main>
+
+    <footer class="page-footer">
+        <hr>
+        <p><small>Code 83 of 99 | HTML 100 Codes Vault</small></p>
+    </footer>
+</body>
+</html>

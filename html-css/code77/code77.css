@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 48px;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: -1px;
+}
+
+.coffee-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 60px 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.coffee-container {
+    position: relative;
+    width: 200px;
+    height: 280px;
+    margin: 0 auto;
+}
+
+/* Steam */
+.steam {
+    position: absolute;
+    width: 8px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    filter: blur(4px);
+    opacity: 0;
+}
+
+.steam-1 {
+    left: 60px;
+    bottom: 140px;
+    animation: steam-rise 3s ease-in-out infinite;
+}
+
+.steam-2 {
+    left: 95px;
+    bottom: 140px;
+    animation: steam-rise 3s ease-in-out infinite 0.5s;
+}
+
+.steam-3 {
+    left: 130px;
+    bottom: 140px;
+    animation: steam-rise 3s ease-in-out infinite 1s;
+}
+
+@keyframes steam-rise {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(1) translateX(0);
+    }
+    15% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-40px) scale(1.2) translateX(-10px);
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-80px) scale(1.5) translateX(10px);
+    }
+}
+
+/* Cup */
+.cup {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cup-body {
+    width: 120px;
+    height: 100px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    border-radius: 0 0 60px 60px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.cup-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 0 0 50% 50%;
+}
+
+.coffee {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    height: 70%;
+    background: linear-gradient(135deg, #6f4e37 0%, #4a2c17 100%);
+    border-radius: 0 0 50px 50px;
+}
+
+.cup-handle {
+    position: absolute;
+    right: -30px;
+    top: 20px;
+    width: 40px;
+    height: 50px;
+    border: 8px solid #ffffff;
+    border-left: none;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Saucer */
+.saucer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #e8e8e8 100%);
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.caption {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    margin-top: 32px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    text-align: center;
+    margin-top: 40px;
+}
+
+nav hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 16px;
+}
+
+nav p {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 12px;
+}
+
+footer p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 480px) {
+    .coffee-container {
+        transform: scale(0.85);
+    }
+}

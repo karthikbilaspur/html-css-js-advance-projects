@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 33: Image Carousel - CSS-only slider using radio buttons and :checked selector. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 33: Image Carousel | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code33.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 33: Image Carousel</h1>
+      <p class="subtitle">Radio button slider with :checked - zero JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>This carousel uses hidden <code>&lt;input type="radio"&gt;</code> elements and CSS sibling selectors (<code>~</code>). When a radio button is checked, CSS shows the corresponding slide and hides the others.</p>
+      <p>Labels act as dots/controls. Only one radio can be checked at a time because they share the same <code>name</code>.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <div class="carousel">
+          <input type="radio" name="slider" id="s1" checked>
+          <input type="radio" name="slider" id="s2">
+          <input type="radio" name="slider" id="s3">
+          
+          <div class="slides">
+            <div class="slide" id="slide1">Slide 1</div>
+            <div class="slide" id="slide2">Slide 2</div>
+            <div class="slide" id="slide3">Slide 3</div>
+          </div>
+
+          <div class="controls">
+            <label for="s1" aria-label="Go to slide 1"></label>
+            <label for="s2" aria-label="Go to slide 2"></label>
+            <label for="s3" aria-label="Go to slide 3"></label>
+          </div>
+        </div>
+      </div>
+      <p><small>↑ Click the dots to switch slides. Keyboard: Tab + Space</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;input type="radio" name="slider" id="s1" checked&gt;
+&lt;input type="radio" name="slider" id="s2"&gt;
+
+&lt;div class="slides"&gt;
+  &lt;div class="slide"&gt;Slide 1&lt;/div&gt;
+  &lt;div class="slide"&gt;Slide 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;label for="s1"&gt;&lt;/label&gt;
+&lt;label for="s2"&gt;&lt;/label&gt;</code></pre>
+      <pre><code>/* Hide all slides */
+.slide { display: none; }
+
+/* Show slide when radio is checked */
+#s1:checked ~ .slides #slide1,
+#s2:checked ~ .slides #slide2 {
+  display: block;
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li>All radios must share same <code>name</code> to form a group — only one checked at a time</li>
+        <li>Remove <code>checked</code> from all except the first input — you had all 3 checked</li>
+        <li>Hide radios with <code>display: none</code> or <code>position: absolute; opacity: 0</code></li>
+        <li>Use general sibling selector <code>~</code> — radios must come before <code>.slides</code> in HTML</li>
+        <li>Style active dot with <code>#s1:checked ~ .controls label[for="s1"]</code></li>
+        <li>Order matters: radios → slides → controls for <code>~</code> to work</li>
+        <li>No autoplay without JS — add it later if needed</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code32/index.html" class="nav-link">← Prev: Code 32</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code34/index.html" class="nav-link">Next: Code 34 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 33 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>

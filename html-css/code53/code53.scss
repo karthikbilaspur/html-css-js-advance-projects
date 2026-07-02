@@ -1,0 +1,133 @@
+// Variables
+$brand-color: #1f2937;
+$accent-color: #dc2626;
+$col-count: 3;
+$col-gap: 2.5rem;
+$max-width: 1200px;
+
+// Base styles
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.7;
+  color: $brand-color;
+  margin: 0;
+  background: #fefefe;
+}
+
+.page-header {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 2rem 2rem 0;
+  border-bottom: 3px double #e5e7eb;
+  
+  .back-link {
+    color: $accent-color;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: system-ui, sans-serif;
+    
+    &:hover { text-decoration: underline; }
+  }
+  
+  h1 {
+    margin: 0.5rem 0 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+  }
+}
+
+.page-wrapper {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.magazine-content {
+  padding: 3rem 0;
+  
+  // The magic property: Multi-column layout
+  columns: $col-count $col-gap;
+  column-rule: 1px solid #e5e7eb; // subtle separator
+  column-fill: balance;
+  hyphens: auto;
+  text-align: justify;
+
+  h2 {
+    // Heading spans all columns
+    column-span: all;
+    margin: 0 0 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: $brand-color;
+    text-align: left;
+    line-height: 1.2;
+    break-after: avoid;
+  }
+  
+  .lead {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #374151;
+    break-inside: avoid-column;
+  }
+
+  p {
+    margin: 0 0 1.2rem;
+    break-inside: avoid-column; // prevents paragraphs from splitting badly
+    
+    code {
+      font-family: 'Courier New', monospace;
+      background: #f3f4f6;
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      color: $accent-color;
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 1000px) {
+    columns: 2 $col-gap;
+  }
+
+  @media (max-width: 640px) {
+    columns: 1;
+    text-align: left;
+    hyphens: none;
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.pagination-nav,
+.page-footer {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  
+  hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 2rem 0 1rem;
+  }
+  
+  p {
+    margin: 0;
+    color: #6b7280;
+    
+    a {
+      color: $accent-color;
+      text-decoration: none;
+      &:hover { text-decoration: underline; }
+    }
+  }
+  
+  small {
+    font-size: 0.85rem;
+  }
+}

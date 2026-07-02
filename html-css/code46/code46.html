@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code 46: CTA Banner - Call-to-action section with gradient background. HTML + CSS only. Part of 100 HTML CSS Projects series.">
+  <meta name="author" content="HTML 100 Codes">
+  <title>Code 46: CTA Banner | HTML 100 Codes</title>
+  <link rel="stylesheet" href="code46.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">← Back to All Codes</a></p>
+      <h1>Code 46: CTA Banner</h1>
+      <p class="subtitle">Gradient call-to-action section - zero JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What it does</h2>
+      <p>A full-width call-to-action banner that sits between sections. Uses a gradient background, centered content, and dual buttons to drive conversions.</p>
+      <p>Place this after features/pricing to push users to sign up or start a trial.</p>
+    </section>
+
+    <section class="section">
+      <h2>Live Demo</h2>
+      <div class="demo-area">
+        <section class="cta-banner">
+          <div class="cta-content">
+            <h2>Ready to Ship Faster?</h2>
+            <p>Join 10,000+ developers building with pure HTML + CSS. No frameworks needed.</p>
+            <div class="cta-buttons">
+              <button class="btn-primary">Start Free Trial</button>
+              <button class="btn-secondary">View Demo</button>
+            </div>
+          </div>
+        </section>
+      <p><small>↑ Gradient + flex centering + button hover states</small></p>
+    </section>
+
+    <section class="section">
+      <h2>The Code</h2>
+      <pre><code>&lt;section class="cta-banner"&gt;
+  &lt;div class="cta-content"&gt;
+    &lt;h2&gt;Ready to Ship Faster?&lt;/h2&gt;
+    &lt;p&gt;Join 10,000+ developers...&lt;/p&gt;
+    &lt;div class="cta-buttons"&gt;
+      &lt;button class="btn-primary"&gt;Start Free Trial&lt;/button&gt;
+      &lt;button class="btn-secondary"&gt;View Demo&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+      <pre><code>.cta-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Key Rules</h2>
+      <ul class="rules-list">
+        <li><code>linear-gradient(135deg, ...)</code> creates angled brand gradient backgrounds</li>
+        <li><code>text-align: center</code> + <code>margin: 0 auto</code> centers content block</li>
+        <li>Use <code>flex-wrap: wrap</code> on button group so they stack on mobile</li>
+        <li><code>gap: 1rem</code> spaces buttons without margin hacks</li>
+        <li>Primary button: solid bg. Secondary: <code>border: 2px solid white</code> + transparent bg</li>
+        <li><code>transform: translateY(-2px)</code> on hover gives tactile lift</li>
+        <li>Keep copy short: 1 line h2, 1-2 lines p, 2-3 words per button</li>
+      </ul>
+    </section>
+
+    <nav class="project-nav">
+      <a href="../code45/index.html" class="nav-link">← Prev: Code 45</a>
+      <a href="../index.html" class="nav-link">All Projects</a>
+      <a href="../code47/index.html" class="nav-link">Next: Code 47 →</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>Code 46 of 99 | HTML + CSS 100 Codes Series</p>
+    </div>
+  </footer>
+</body>
+</html>
