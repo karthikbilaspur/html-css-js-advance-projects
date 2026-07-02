@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 44: track - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 44: &lt;track&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;track&gt;</code> element specifies timed text tracks for <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> elements. Used for subtitles, captions, descriptions, chapters.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Video with subtitles</h3>
+                <video controls width="640" height="360">
+                    <source src="lecture.mp4" type="video/mp4">
+                    <track kind="subtitles" src="lecture-en.vtt" srclang="en" label="English" default>
+                    <track kind="subtitles" src="lecture-es.vtt" srclang="es" label="Español">
+                    Your browser does not support the video element.
+                </video>
+
+                <h3>Captions vs subtitles</h3>
+                <video controls width="640" height="360">
+                    <source src="movie.mp4" type="video/mp4">
+                    <track kind="captions" src="movie-captions.vtt" srclang="en" label="English CC" default>
+                    <track kind="subtitles" src="movie-es.vtt" srclang="es" label="Spanish Subtitles">
+                </video>
+
+                <h3>Chapters and descriptions</h3>
+                <video controls width="640" height="360">
+                    <source src="tutorial.mp4" type="video/mp4">
+                    <track kind="chapters" src="tutorial-chapters.vtt" srclang="en" label="Chapters">
+                    <track kind="descriptions" src="tutorial-desc.vtt" srclang="en" label="Audio Descriptions">
+                </video>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>track rules:</strong> <code>&lt;track&gt;</code> is a void element — no closing tag. Must be child of <code>&lt;video&gt;</code> or <code>&lt;audio&gt;</code>. Uses WebVTT <code>.vtt</code> files.</p>
+                <p><strong>kind values:</strong> <code>subtitles</code> = dialogue translation. <code>captions</code> = dialogue + sound effects for deaf users. <code>descriptions</code> = audio descriptions for blind users. <code>chapters</code> = navigation. <code>metadata</code> = data for JS.</p>
+                <p><strong>Key attributes:</strong> <code>src</code> points to .vtt file. <code>srclang</code> sets language code like <code>en</code>. <code>label</code> shows in UI. <code>default</code> enables it by default.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code43.html">← Prev: Code 43: source tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code45.html">Next: Code 45: iframe tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 44 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

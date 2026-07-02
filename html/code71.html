@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 71: meter - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 71: &lt;meter&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;meter&gt;</code> element represents a scalar measurement within a known range, or a fractional value. Use for gauges, not progress.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic meter</h3>
+                <label for="fuel">Fuel level:</label><br>
+                <meter id="fuel" value="6" min="0" max="10">6 out of 10</meter><br>
+                <small>6 of 10</small>
+
+                <h3>Meter with low, high, optimum</h3>
+                <label for="disk">Disk usage:</label><br>
+                <meter id="disk" value="0.8" min="0" max="1" low="0.3" high="0.7" optimum="0.2">80%</meter><br>
+                <small>80% used — above high range</small>
+
+                <h3>Meter with optimum high</h3>
+                <label for="grade">Test score:</label><br>
+                <meter id="grade" value="85" min="0" max="100" low="40" high="70" optimum="90">85</meter><br>
+                <small>85 — in high range, near optimum</small>
+
+                <h3>Meter with optimum low</h3>
+                <label for="noise">Noise level:</label><br>
+                <meter id="noise" value="0.2" min="0" max="1" low="0.4" high="0.8" optimum="0.1">20%</meter><br>
+                <small>20% — low is good here</small>
+
+                <h3>Meter without optimum</h3>
+                <label for="battery">Battery:</label><br>
+                <meter id="battery" value="0.4" min="0" max="1" low="0.2" high="0.6">40%</meter><br>
+                <small>40% — in medium range</small>
+
+                <h3>Meter with decimal</h3>
+                <label for="rating">Rating:</label><br>
+                <meter id="rating" value="4.2" min="0" max="5">4.2 out of 5</meter>
+
+                <h3>Meter updated with input</h3>
+                <form>
+                    <label for="temp">Temperature:</label><br>
+                    <input type="range" id="temp" min="0" max="100" value="22" 
+                           oninput="tempMeter.value = temp.value; tempOut.textContent = temp.value + '°C'">
+                    <meter id="tempMeter" value="22" min="0" max="100" low="10" high="30" optimum="22"></meter>
+                    <span id="tempOut">22°C</span>
+                </form>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>meter vs progress:</strong> Use <code>&lt;meter&gt;</code> for static measurements like battery, grades, disk space. Use <code>&lt;progress&gt;</code> for task completion like file upload.</p>
+                <p><strong>Key attributes:</strong> <code>value</code> is current. <code>min</code> and <code>max</code> set range. <code>low</code> and <code>high</code> define ranges. <code>optimum</code> is the preferred value.</p>
+                <p><strong>Color regions:</strong> Browsers color the bar based on where <code>value</code> falls relative to <code>low</code>, <code>high</code>, and <code>optimum</code>. No CSS needed for green/yellow/red.</p>
+                <p><strong>Fallback content:</strong> Text inside <code>&lt;meter&gt;6 out of 10&lt;/meter&gt;</code> shows in old browsers and screen readers. Always include it.</p>
+                <p><strong>Don't use for:</strong> Don't use <code>&lt;meter&gt;</code> for percentages that change over time. That's <code>&lt;progress&gt;</code>. Meter is for known, static values.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code70.html">← Prev: Code 70: progress tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code72.html">Next: Code 72: details tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 71 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

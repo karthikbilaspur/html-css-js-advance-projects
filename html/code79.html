@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 79: caption - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 79: &lt;caption&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;caption&gt;</code> element represents the title of a table. It must be the first child of <code>&lt;table&gt;</code> and provides an accessible name.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic caption</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <caption>Employee Salary Data</caption>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Vikram</td>
+                            <td>Developer</td>
+                            <td>₹80,000</td>
+                        </tr>
+                        <tr>
+                            <td>Shreya</td>
+                            <td>Designer</td>
+                            <td>₹70,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Caption with description</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <caption>
+                        Q1 2026 Sales Report<br>
+                        <small>All figures in INR</small>
+                    </caption>
+                    <tr>
+                        <th>Region</th>
+                        <th>Revenue</th>
+                    </tr>
+                    <tr>
+                        <td>South</td>
+                        <td>₹12,50,000</td>
+                    </tr>
+                    <tr>
+                        <td>North</td>
+                        <td>₹9,80,000</td>
+                    </tr>
+                </table>
+
+                <h3>Caption with link</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <caption>
+                        Temperature Data - <a href="#">Source: IMD</a>
+                    </caption>
+                    <tr>
+                        <th>City</th>
+                        <th>Max</th>
+                        <th>Min</th>
+                    </tr>
+                    <tr>
+                        <td>Bangalore</td>
+                        <td>32°C</td>
+                        <td>21°C</td>
+                    </tr>
+                </table>
+
+                <h3>Caption placement</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <caption>Correct: caption is first child of table</caption>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Laptop</td>
+                            <td>15</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>caption rules:</strong> Must be first child of <code>&lt;table&gt;</code>, before <code>&lt;thead&gt;</code> or <code>&lt;tbody&gt;</code>. Only one <code>&lt;caption&gt;</code> per table.</p>
+                <p><strong>Purpose:</strong> Gives table an accessible name. Screen readers announce caption first, so users know what the table is about before hearing cells.</p>
+                <p><strong>Content:</strong> Can contain text, <code>&lt;small&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>. Keep it concise but descriptive. Not for styling — that’s CSS.</p>
+                <p><strong>caption vs summary:</strong> <code>&lt;caption&gt;</code> is visible title. The old <code>summary</code> attribute is obsolete. Use caption + surrounding text for description.</p>
+                <p><strong>Placement matters:</strong> If you put caption after <code>&lt;thead&gt;</code>, it’s invalid HTML. Always first inside <code>&lt;table&gt;</code>.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code78.html">← Prev: Code 78: tfoot tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code80.html">Next: Code 80: colgroup tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 79 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

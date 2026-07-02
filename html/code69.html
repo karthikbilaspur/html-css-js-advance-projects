@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 69: output - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 69: &lt;output&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;output&gt;</code> element represents the result of a calculation or user action. It links to inputs via the <code>for</code> attribute.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic calculation</h3>
+                <form oninput="sum.value = parseInt(num1.value) + parseInt(num2.value)">
+                    <label for="num1">Number 1:</label>
+                    <input type="number" id="num1" name="num1" value="5"><br><br>
+                    +
+                    <label for="num2">Number 2:</label>
+                    <input type="number" id="num2" name="num2" value="3"><br><br>
+                    =
+                    <output name="sum" for="num1 num2">8</output>
+                </form>
+
+                <h3>Range slider with output</h3>
+                <form>
+                    <label for="brightness">Brightness:</label><br>
+                    <input type="range" id="brightness" name="brightness" min="0" max="100" value="70" 
+                           oninput="brightVal.value = brightness.value">
+                    <output name="brightVal" for="brightness">70</output>%
+                </form>
+
+                <h3>Price calculator</h3>
+                <form oninput="cost.value = (items.value * unit.value).toFixed(2)">
+                    <label for="items">Items:</label>
+                    <input type="number" id="items" name="items" value="3" min="1"><br><br>
+                    
+                    <label for="unit">Price per item:</label>
+                    <input type="number" id="unit" name="unit" value="12.50" step="0.01"><br><br>
+                    
+                    Total: ₹<output name="cost" for="items unit">37.50</output>
+                </form>
+
+                <h3>Output with JavaScript</h3>
+                <form>
+                    <label for="text-in">Type text:</label><br>
+                    <input type="text" id="text-in" oninput="textOut.value = this.value.length"><br><br>
+                    
+                    Characters: <output id="textOut" name="textOut" for="text-in">0</output>
+                </form>
+
+                <h3>Output submits with form</h3>
+                <form>
+                    <input type="hidden" name="final" value="100">
+                    <output name="display">100 points</output><br>
+                    <small>name="display" means this value submits</small>
+                </form>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>output purpose:</strong> Use <code>&lt;output&gt;</code> specifically for calculated results from user input. For static text use <code>&lt;span&gt;</code> or <code>&lt;p&gt;</code>.</p>
+                <p><strong>Key attributes:</strong> <code>for</code> takes space-separated input ids it depends on. <code>name</code> includes it in form submission. <code>form</code> links it to a form by id.</p>
+                <p><strong>Live updates:</strong> Use <code>oninput</code> on the form or inputs to update <code>output.value</code> instantly as user types or changes values.</p>
+                <p><strong>Accessibility:</strong> Screen readers announce <code>&lt;output&gt;</code> changes when related inputs update. The <code>for</code> attribute provides context about which inputs affect it.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code68.html">← Prev: Code 68: datalist tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code70.html">Next: Code 70: progress tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 69 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

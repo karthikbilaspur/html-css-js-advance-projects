@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 57: input type radio - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 57: &lt;input type="radio"&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;input type="radio"&gt;</code> element creates a radio button for selecting one option from a group. Only one radio with the same <code>name</code> can be selected.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic radio group</h3>
+                <form>
+                    <fieldset>
+                        <legend>Favorite color:</legend>
+                        
+                        <input type="radio" id="red" name="color" value="red">
+                        <label for="red">Red</label><br>
+                        
+                        <input type="radio" id="blue" name="color" value="blue" checked>
+                        <label for="blue">Blue</label><br>
+                        
+                        <input type="radio" id="green" name="color" value="green">
+                        <label for="green">Green</label>
+                    </fieldset>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <h3>Required radio selection</h3>
+                <form>
+                    <fieldset>
+                        <legend>Shipping method:</legend>
+                        
+                        <input type="radio" id="standard" name="shipping" value="standard" required>
+                        <label for="standard">Standard - 5-7 days</label><br>
+                        
+                        <input type="radio" id="express" name="shipping" value="express" required>
+                        <label for="express">Express - 1-2 days</label>
+                    </fieldset>
+                    <br>
+                    <button type="submit">Checkout</button>
+                </form>
+
+                <h3>Multiple radio groups</h3>
+                <form>
+                    <fieldset>
+                        <legend>Size:</legend>
+                        <input type="radio" id="s" name="size" value="s">
+                        <label for="s">Small</label><br>
+                        
+                        <input type="radio" id="m" name="size" value="m">
+                        <label for="m">Medium</label><br>
+                        
+                        <input type="radio" id="l" name="size" value="l">
+                        <label for="l">Large</label>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Color:</legend>
+                        <input type="radio" id="black" name="item_color" value="black">
+                        <label for="black">Black</label><br>
+                        
+                        <input type="radio" id="white" name="item_color" value="white">
+                        <label for="white">White</label>
+                    </fieldset>
+                </form>
+
+                <h3>Disabled radio option</h3>
+                <form>
+                    <fieldset>
+                        <legend>Plan:</legend>
+                        
+                        <input type="radio" id="free" name="plan" value="free">
+                        <label for="free">Free</label><br>
+                        
+                        <input type="radio" id="pro" name="plan" value="pro" checked>
+                        <label for="pro">Pro</label><br>
+                        
+                        <input type="radio" id="enterprise" name="plan" value="enterprise" disabled>
+                        <label for="enterprise">Enterprise - coming soon</label>
+                    </fieldset>
+                </form>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>radio rules:</strong> Radio buttons with the same <code>name</code> form a group. Only one can be checked. Selecting a new one unchecks the previous.</p>
+                <p><strong>Key attributes:</strong> <code>name</code> groups radios together. <code>value</code> is what submits. <code>checked</code> sets default. <code>required</code> on any radio in group forces user to pick one.</p>
+                <p><strong>Unlike checkbox:</strong> Radios = choose one only. Checkboxes = choose zero to many. Once a radio is selected in a group, it can't be unselected except by choosing another.</p>
+                <p><strong>Accessibility:</strong> Always use <code>&lt;fieldset&gt;</code> + <code>&lt;legend&gt;</code> to group. Screen readers announce the group name when focusing any radio. Each needs its own <code>&lt;label for="id"&gt;</code>.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code56.html">← Prev: Code 56: input checkbox tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code58.html">Next: Code 58: input range tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 57 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

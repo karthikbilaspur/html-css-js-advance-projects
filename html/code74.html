@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 74: td - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 74: &lt;td&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;td&gt;</code> element defines a standard data cell in a table. It must be inside a <code>&lt;tr&gt;</code> element.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic td cells</h3>
+                <table border="1" cellpadding="5">
+                    <tr>
+                        <td>Apple</td>
+                        <td>Red</td>
+                        <td>₹120</td>
+                    </tr>
+                    <tr>
+                        <td>Banana</td>
+                        <td>Yellow</td>
+                        <td>₹60</td>
+                    </tr>
+                </table>
+
+                <h3>td with colspan</h3>
+                <table border="1" cellpadding="5">
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                    </tr>
+                    <tr>
+                        <td>Pen</td>
+                        <td>₹10</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Subtotal</td>
+                        <td>₹50</td>
+                    </tr>
+                </table>
+
+                <h3>td with rowspan</h3>
+                <table border="1" cellpadding="5">
+                    <tr>
+                        <th>Dept</th>
+                        <th>Employee</th>
+                        <th>Role</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">IT</td>
+                        <td>Anil</td>
+                        <td>Dev</td>
+                    </tr>
+                    <tr>
+                        <td>Sunita</td>
+                        <td>QA</td>
+                    </tr>
+                </table>
+
+                <h3>td with headers attribute</h3>
+                <table border="1" cellpadding="5">
+                    <tr>
+                        <th id="name">Name</th>
+                        <th id="math">Math</th>
+                        <th id="sci">Science</th>
+                    </tr>
+                    <tr>
+                        <th id="student1">Rohan</th>
+                        <td headers="student1 math">95</td>
+                        <td headers="student1 sci">88</td>
+                    </tr>
+                </table>
+                <small>headers links cell to specific th ids for complex tables</small>
+
+                <h3>td with content types</h3>
+                <table border="1" cellpadding="5">
+                    <tr>
+                        <th>Type</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>Text</td>
+                        <td>Sample data</td>
+                    </tr>
+                    <tr>
+                        <td>Link</td>
+                        <td><a href="#">Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Image</td>
+                        <td><img src="icon.png" alt="icon" width="20"></td>
+                    </tr>
+                </table>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>td rules:</strong> <code>&lt;td&gt;</code> is for data cells. Use <code>&lt;th&gt;</code> for headers. Must be direct child of <code>&lt;tr&gt;</code>.</p>
+                <p><strong>Key attributes:</strong> <code>colspan</code> merges cells horizontally. <code>rowspan</code> merges vertically. <code>headers</code> links to <code>&lt;th&gt;</code> ids for accessibility.</p>
+                <p><strong>Content:</strong> Can contain text, images, links, lists, even nested tables. Avoid block elements like <code>&lt;div&gt;</code> unless needed.</p>
+                <p><strong>td vs th:</strong> Use <code>&lt;td&gt;</code> for data, <code>&lt;th&gt;</code> for labels. Browsers bold <code>&lt;th&gt;</code> and center it by default. Screen readers treat them differently.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code73.html">← Prev: Code 73: tr tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code75.html">Next: Code 75: th tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 74 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

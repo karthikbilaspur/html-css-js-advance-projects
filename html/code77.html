@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 77: tbody - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 77: &lt;tbody&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;tbody&gt;</code> element groups the body content in a table. It contains the main data rows after <code>&lt;thead&gt;</code> and before <code>&lt;tfoot&gt;</code>.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic tbody</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kiran</td>
+                            <td>Sales</td>
+                        </tr>
+                        <tr>
+                            <td>Anita</td>
+                            <td>Marketing</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Multiple tbody elements</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Quarter</th>
+                            <th>Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="2">2025</th>
+                        </tr>
+                        <tr>
+                            <td>Q1</td>
+                            <td>₹1,20,000</td>
+                        </tr>
+                        <tr>
+                            <td>Q2</td>
+                            <td>₹1,50,000</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th colspan="2">2024</th>
+                        </tr>
+                        <tr>
+                            <td>Q1</td>
+                            <td>₹90,000</td>
+                        </tr>
+                        <tr>
+                            <td>Q2</td>
+                            <td>₹1,10,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <small>Multiple tbody groups related rows</small>
+
+                <h3>tbody with tfoot</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hosting</td>
+                            <td>₹500</td>
+                        </tr>
+                        <tr>
+                            <td>Domain</td>
+                            <td>₹800</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total</td>
+                            <td>₹1300</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <h3>Implicit tbody</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                    <tr>
+                        <th>City</th>
+                        <th>Temp</th>
+                    </tr>
+                    <tr>
+                        <td>Bangalore</td>
+                        <td>28°C</td>
+                    </tr>
+                    <tr>
+                        <td>Delhi</td>
+                        <td>35°C</td>
+                    </tr>
+                </table>
+                <small>Browser wraps tr in tbody automatically if omitted</small>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>tbody rules:</strong> <code>&lt;tbody&gt;</code> contains <code>&lt;tr&gt;</code> elements with main table data. Must be inside <code>&lt;table&gt;</code>, after <code>&lt;thead&gt;</code> and <code>&lt;caption&gt;</code>, before <code>&lt;tfoot&gt;</code>.</p>
+                <p><strong>Multiple tbody:</strong> A table can have multiple <code>&lt;tbody&gt;</code> elements to group rows. Useful for separating data sets like years or categories.</p>
+                <p><strong>Optional but recommended:</strong> If you skip <code>&lt;tbody&gt;</code>, browsers insert one automatically. Explicit <code>&lt;tbody&gt;</code> makes structure clear and helps CSS/JS targeting.</p>
+                <p><strong>Order matters:</strong> DOM order is <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code> regardless of source order. Browser renders <code>&lt;tfoot&gt;</code> at bottom.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code76.html">← Prev: Code 76: thead tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code78.html">Next: Code 78: tfoot tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 77 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

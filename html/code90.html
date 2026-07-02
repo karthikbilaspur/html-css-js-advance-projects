@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 90: span - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 90: &lt;span&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;span&gt;</code> element is a generic inline container with no semantic meaning. Use it to style or target parts of text when no other element fits.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Styling part of text</h3>
+                <p>This product is <span>on sale</span> for today only.</p>
+                <small><code>&lt;span&gt;</code> targets inline text without breaking the flow</small>
+
+                <h3>Multiple styled words</h3>
+                <p>
+                    Status: <span class="status-success">Active</span> | 
+                    Role: <span class="role-admin">Admin</span> | 
+                    Points: <span class="points">1,240</span>
+                </p>
+
+                <h3>Hook for JavaScript</h3>
+                <p>You have <span id="cart-count">3</span> items in your cart.</p>
+                <small>JS can update just the number inside the <code>&lt;span&gt;</code></small>
+
+                <h3>Icon + text grouping</h3>
+                <p>
+                    <span class="icon">⚠</span>
+                    <span class="message">Warning: Unsaved changes</span>
+                </p>
+
+                <h3>Highlighting for search results</h3>
+                <p>Search results for "HTML": Learn <span class="highlight">HTML</span> basics with our <span class="highlight">HTML</span> tutorial.</p>
+
+                <h3>span vs semantic elements</h3>
+                <p><strong>Bad:</strong> <code>&lt;span class="heading"&gt;My Title&lt;/span&gt;</code></p>
+                <p><strong>Good:</strong> <code>&lt;h2&gt;My Title&lt;/h2&gt;</code></p>
+                <small>If it has meaning like emphasis, time, or code, use <code>&lt;em&gt;</code>, <code>&lt;time&gt;</code>, or <code>&lt;code&gt;</code> instead</small>
+
+                <h3>div vs span comparison</h3>
+                <div>Block container - starts on new line</div>
+                <span>Inline container - stays in flow</span>
+                <span>Another span keeps going</span>
+                <small><code>&lt;div&gt;</code> = block, <code>&lt;span&gt;</code> = inline</small>
+
+                <h3>Nested spans for complex styling</h3>
+                <p class="price">
+                    <span class="currency">$</span><span class="amount">49</span><span class="cents">.99</span>
+                </p>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>span purpose:</strong> <code>&lt;span&gt;</code> is the inline version of <code>&lt;div&gt;</code>. Zero semantic meaning. It’s just a hook for CSS or JS.</p>
+                <p><strong>When to use it:</strong> When you need to style or manipulate a piece of text but there’s no semantic element like <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;mark&gt;</code>, or <code>&lt;time&gt;</code> that fits.</p>
+                <p><strong>Inline behavior:</strong> Unlike <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code> does not start on a new line. It flows with surrounding text.</p>
+                <p><strong>Overuse:</strong> Don't wrap everything in spans. If the text has meaning, use semantic tags. "Span soup" is just as bad as "div soup".</p>
+                <p><strong>Accessibility:</strong> <code>&lt;span&gt;</code> adds no meaning for screen readers. If you need to convey emphasis, use <code>&lt;em&gt;</code> or <code>&lt;strong&gt;</code> instead.</p>
+                <p><strong>Common pattern:</strong> <code>&lt;span class="sr-only"&gt;</code> is used to add text only for screen readers, hidden visually with CSS.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code89.html">← Prev: Code 89: div Tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code91.html">Next: Code 91: main Tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 90 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

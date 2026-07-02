@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 84: dialog - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 84: &lt;dialog&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;dialog&gt;</code> element represents a modal or non-modal dialog box. Use JavaScript <code>showModal()</code> or <code>show()</code> to display it.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic modal dialog</h3>
+                <button onclick="document.getElementById('basicDialog').showModal()">Open Dialog</button>
+                <dialog id="basicDialog">
+                    <p>This is a modal dialog. It traps focus and blocks interaction with the page.</p>
+                    <button onclick="document.getElementById('basicDialog').close()">Close</button>
+                </dialog>
+
+                <h3>dialog with open attribute</h3>
+                <dialog open>
+                    <p>This dialog is visible by default because of the open attribute.</p>
+                    <p>Usually you control it with JS instead.</p>
+                </dialog>
+                <small>open makes it visible but not modal</small>
+
+                <h3>dialog with form method="dialog"</h3>
+                <button onclick="document.getElementById('formDialog').showModal()">Delete Item</button>
+                <dialog id="formDialog">
+                    <form method="dialog">
+                        <p>Are you sure you want to delete this item?</p>
+                        <button type="submit" value="cancel">Cancel</button>
+                        <button type="submit" value="confirm">Delete</button>
+                    </form>
+                </dialog>
+                <small>form method="dialog" closes dialog and sets returnValue</small>
+
+                <h3>Non-modal dialog</h3>
+                <button onclick="document.getElementById('nonModal').show()">Show Info</button>
+                <dialog id="nonModal">
+                    <p>This is non-modal. You can still click the page behind it.</p>
+                    <button onclick="document.getElementById('nonModal').close()">Close</button>
+                </dialog>
+                <small>show() vs showModal() - modal blocks page</small>
+
+                <h3>dialog with header and footer</h3>
+                <button onclick="document.getElementById('fullDialog').showModal()">Open Terms</button>
+                <dialog id="fullDialog">
+                    <header>
+                        <h3>Terms and Conditions</h3>
+                    </header>
+                    <p>By using this service you agree to our terms. Please read carefully.</p>
+                    <p>This is placeholder text for terms content.</p>
+                    <footer>
+                        <button onclick="document.getElementById('fullDialog').close()">I Agree</button>
+                    </footer>
+                </dialog>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>dialog methods:</strong> Use <code>showModal()</code> for modal that blocks page. Use <code>show()</code> for non-modal. Use <code>close()</code> to hide it.</p>
+                <p><strong>open attribute:</strong> Makes dialog visible but not modal. Rarely used — control with JS instead for better UX.</p>
+                <p><strong>form method="dialog":</strong> Buttons inside close the dialog automatically. Button <code>value</code> becomes <code>dialog.returnValue</code>.</p>
+                <p><strong>Accessibility:</strong> <code>showModal()</code> traps focus, handles ESC to close, and sets proper ARIA roles. Don't build modals with divs when dialog exists.</p>
+                <p><strong>Backdrop:</strong> Modal dialogs have a <code>::backdrop</code> pseudo-element you can style with CSS. Not shown here since this is HTML-only.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code83.html">← Prev: Code 83: summary tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code85.html">Next: Code 85: form tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 84 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

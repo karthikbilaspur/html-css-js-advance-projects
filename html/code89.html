@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 89: div - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 89: &lt;div&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;div&gt;</code> element is a generic container with no semantic meaning. Use it for styling, layout, and grouping when no other semantic element fits.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic grouping for CSS</h3>
+                <div class="card">
+                    <h4>Product Card</h4>
+                    <p>Wireless Mouse</p>
+                    <p>$29.99</p>
+                </div>
+                <small><code>&lt;div&gt;</code> groups content so you can style it as one unit</small>
+
+                <h3>Layout wrapper</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">Column 1</div>
+                        <div class="col">Column 2</div>
+                        <div class="col">Column 3</div>
+                    </div>
+                </div>
+                <small>Common pattern for CSS grids and flexbox layouts</small>
+
+                <h3>Hook for JavaScript</h3>
+                <div id="app"></div>
+                <small>JS frameworks like React often mount into an empty <code>&lt;div&gt;</code></small>
+
+                <h3>Grouping form controls</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="pass">Password</label>
+                        <input type="password" id="pass">
+                    </div>
+                </form>
+
+                <h3>div vs semantic elements</h3>
+                <p><strong>Bad:</strong></p>
+                <div class="navigation">
+                    <div class="nav-item"><a href="/">Home</a></div>
+                </div>
+                <p><strong>Good:</strong></p>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                    </ul>
+                </nav>
+                <small>If it has meaning, use the semantic tag instead of <code>&lt;div&gt;</code></small>
+
+                <h3>Nested divs for complex components</h3>
+                <div class="modal">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Modal Title</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p>Modal content goes here.</p>
+                        </div>
+                    </div>
+                </div>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>div purpose:</strong> <code>&lt;div&gt;</code> is the "division" element. It has zero semantic meaning. It’s only for grouping content for styling or scripting.</p>
+                <p><strong>When to use it:</strong> When no other semantic element like <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, or <code>&lt;aside&gt;</code> makes sense.</p>
+                <p><strong>Div soup:</strong> Avoid excessive nesting. Too many <code>&lt;div&gt;</code> elements makes HTML hard to read and maintain. This is called "div soup".</p>
+                <p><strong>Block-level:</strong> <code>&lt;div&gt;</code> is block-level by default. It starts on a new line and stretches full width. For inline grouping, use <code>&lt;span&gt;</code>.</p>
+                <p><strong>Accessibility:</strong> <code>&lt;div&gt;</code> adds no landmarks or roles. Screen readers skip right over it. If you need a landmark, use a semantic element or add <code>role</code>.</p>
+                <p><strong>HTML5 rule:</strong> Always ask "Can I use something more meaningful?" before reaching for <code>&lt;div&gt;</code>.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code88.html">← Prev: Code 88: aside Tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code90.html">Next: Code 90: span Tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 89 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

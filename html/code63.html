@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 63: optgroup - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 63: &lt;optgroup&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;optgroup&gt;</code> element groups related <code>&lt;option&gt;</code> elements inside a <code>&lt;select&gt;</code>. Creates non-selectable headings for better organization.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic optgroup</h3>
+                <form>
+                    <label for="food">Choose food:</label><br>
+                    <select id="food" name="food">
+                        <optgroup label="Fruits">
+                            <option value="apple">Apple</option>
+                            <option value="banana">Banana</option>
+                        </optgroup>
+                        <optgroup label="Vegetables">
+                            <option value="carrot">Carrot</option>
+                            <option value="broccoli">Broccoli</option>
+                        </optgroup>
+                    </select>
+                </form>
+
+                <h3>Multiple optgroups</h3>
+                <form>
+                    <label for="laptop">Select laptop:</label><br>
+                    <select id="laptop" name="laptop">
+                        <option value="">--Choose--</option>
+                        <optgroup label="Apple">
+                            <option value="mba">MacBook Air</option>
+                            <option value="mbp">MacBook Pro</option>
+                        </optgroup>
+                        <optgroup label="Dell">
+                            <option value="xps">XPS 13</option>
+                            <option value="g15">G15 Gaming</option>
+                        </optgroup>
+                        <optgroup label="Lenovo">
+                            <option value="t14">ThinkPad T14</option>
+                            <option value="legion">Legion 5</option>
+                        </optgroup>
+                    </select>
+                </form>
+
+                <h3>Disabled optgroup</h3>
+                <form>
+                    <label for="city">Destination:</label><br>
+                    <select id="city" name="city">
+                        <optgroup label="India">
+                            <option value="del">Delhi</option>
+                            <option value="blr">Bangalore</option>
+                        </optgroup>
+                        <optgroup label="International" disabled>
+                            <option value="nyc">New York</option>
+                            <option value="lon">London</option>
+                        </optgroup>
+                    </select><br>
+                    <small>International disabled</small>
+                </form>
+
+                <h3>Optgroup with selected option</h3>
+                <form>
+                    <label for="course">Course:</label><br>
+                    <select id="course" name="course">
+                        <optgroup label="Frontend">
+                            <option value="html">HTML Basics</option>
+                            <option value="css" selected>CSS Advanced</option>
+                        </optgroup>
+                        <optgroup label="Backend">
+                            <option value="node">Node.js</option>
+                            <option value="db">Databases</option>
+                        </optgroup>
+                    </select>
+                </form>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>optgroup rules:</strong> Must be inside <code>&lt;select&gt;</code>. Cannot be nested. The <code>label</code> attribute is required — it displays as the group heading.</p>
+                <p><strong>Key behavior:</strong> <code>&lt;optgroup&gt;</code> itself is not selectable. Only the <code>&lt;option&gt;</code> elements inside it can be chosen. Groups options visually in the dropdown.</p>
+                <p><strong>Disabled groups:</strong> <code>&lt;optgroup disabled&gt;</code> greys out the whole group. All child options become unselectable.</p>
+                <p><strong>Accessibility:</strong> Screen readers announce the group label when navigating options. Use optgroup to organize long lists like countries by continent, products by brand.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code62.html">← Prev: Code 62: option tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code64.html">Next: Code 64: button tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 63 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

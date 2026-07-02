@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code 100: title - HTML 100 Codes</title>
+  
+  <meta name="description" content="Learn the HTML title tag: set browser tab text, SEO page titles, and social share previews. The most important tag in head. Code 100 of HTML 100 Codes Vault.">
+  <meta name="author" content="HTML 100 Codes Vault">
+  
+  <link rel="stylesheet" href="code100.css">
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="../index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 100: &lt;title&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;title&gt;</code> element defines the document's title shown in the browser tab, bookmarks, and search results. Only one per page, required in <code>&lt;head&gt;</code>.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>1. Basic page title</h3>
+                <pre><code>&lt;head&gt;
+  &lt;title&gt;HTML 100 Codes Vault&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+                <small>Shows in browser tab. Keep under 60 characters for Google</small>
+
+                <h3>2. SEO-optimized title</h3>
+                <pre><code>&lt;title&gt;HTML Template Tag - Clone DOM Elements | HTML 100 Codes&lt;/title&gt;</code></pre>
+                <small>Pattern: Primary Keyword - Secondary | Brand. Front-load keywords</small>
+
+                <h3>3. Dynamic title with JS</h3>
+                <pre><code>&lt;script&gt;
+  document.title = `(${count}) New Messages | Inbox`;
+&lt;/script&gt;</code></pre>
+                <small>Updates tab text. Gmail uses this for unread count</small>
+
+                <h3>4. Title vs h1</h3>
+                <table border="1" cellpadding="6" cellspacing="0">
+                  <tr><th>Element</th><th>Where it shows</th><th>Purpose</th></tr>
+                  <tr><td><code>&lt;title&gt;</code></td><td>Browser tab, search results</td><td>SEO, bookmarks</td></tr>
+                  <tr><td><code>&lt;h1&gt;</code></td><td>On the page</td><td>Content structure, users</td></tr>
+                </table>
+                <small>They should match context but don't have to be identical</small>
+
+                <h3>5. Social media fallback</h3>
+                <pre><code>&lt;title&gt;Learn HTML Template Tag&lt;/title&gt;
+&lt;meta property="og:title" content="Master HTML &lt;template&gt; in 5 Minutes"&gt;</code></pre>
+                <small>Facebook/Twitter use <code>og:title</code> if present, else falls back to <code>&lt;title&gt;</code></small>
+
+                <h3>6. What NOT to do</h3>
+                <p><strong>Bad - keyword stuffing:</strong></p>
+                <pre><code>&lt;title&gt;HTML HTML Tutorial HTML Learn HTML Code HTML Example&lt;/title&gt;</code></pre>
+                <small>Google penalizes this. Write for humans first</small>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>title purpose:</strong> <code>&lt;title&gt;</code> is the only required element in <code>&lt;head&gt;</code>. It sets tab text, bookmark name, and search result headline.</p>
+                <p><strong>Only one allowed:</strong> Multiple <code>&lt;title&gt;</code> tags = browser uses the first one. Validators will flag extras.</p>
+                <p><strong>Length limit:</strong> Google displays ~50-60 characters. Longer titles get truncated with <code>...</code> Put key info first.</p>
+                <p><strong>No HTML inside:</strong> <code>&lt;title&gt;My &lt;b&gt;Bold&lt;/b&gt; Page&lt;/title&gt;</code> renders the tags as text. Use plain text only.</p>
+                <p><strong>SEO weight:</strong> Highest on-page ranking factor. Match search intent. Unique per page.</p>
+                <p><strong>Accessibility:</strong> Screen readers announce <code>&lt;title&gt;</code> first. Make it descriptive: "Checkout - Cart" not just "Page 3".</p>
+                <p><strong>Default behavior:</strong> If missing, browsers show the filename: <code>code100.html</code>. Looks unprofessional.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="../code99/code99.html">← Prev: Code 99: template Tag</a></b> | 
+                <b><a href="../index.html">Home</a></b> | 
+                <b><a href="../code1/code1.html">Next: Code 1 →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 100 of 100 | HTML 100 Codes Vault Complete<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

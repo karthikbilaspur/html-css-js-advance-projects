@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 53: input password - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 53: &lt;input type="password"&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;input type="password"&gt;</code> element creates a single-line text field where characters are masked. Used for sensitive data like passwords.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic password field</h3>
+                <form action="/login" method="post">
+                    <label for="pwd">Password:</label>
+                    <input type="password" id="pwd" name="pwd" required>
+                    <button type="submit">Log In</button>
+                </form>
+
+                <h3>Password with validation</h3>
+                <form action="/signup" method="post">
+                    <label for="new-pwd">New Password:</label>
+                    <input type="password" id="new-pwd" name="new-pwd" 
+                           minlength="8" 
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                           title="Must contain at least one number, one uppercase and lowercase letter, and 8+ characters"
+                           required>
+                    <br><br>
+                    <label for="confirm-pwd">Confirm Password:</label>
+                    <input type="password" id="confirm-pwd" name="confirm-pwd" required>
+                    <br><br>
+                    <button type="submit">Sign Up</button>
+                </form>
+
+                <h3>Password with autocomplete hints</h3>
+                <form action="/change-password" method="post">
+                    <label for="current">Current Password:</label>
+                    <input type="password" id="current" name="current" autocomplete="current-password" required>
+                    <br><br>
+                    <label for="new">New Password:</label>
+                    <input type="password" id="new" name="new" autocomplete="new-password" required>
+                </form>
+
+                <h3>Show/hide password pattern</h3>
+                <form>
+                    <label for="pwd-toggle">Password:</label>
+                    <input type="password" id="pwd-toggle" name="pwd-toggle">
+                    <input type="checkbox" id="show" onclick="document.getElementById('pwd-toggle').type = this.checked ? 'text' : 'password'">
+                    <label for="show">Show password</label>
+                </form>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>password rules:</strong> Characters are masked with dots or asterisks. Value is still sent as plain text — always use HTTPS in production.</p>
+                <p><strong>Key attributes:</strong> <code>minlength</code>/<code>maxlength</code> limit length. <code>pattern</code> enforces regex like <code>(?=.*\d)</code> for numbers. <code>required</code> blocks empty submit.</p>
+                <p><strong>autocomplete:</strong> Use <code>autocomplete="current-password"</code> for login forms. Use <code>autocomplete="new-password"</code> for signup/change forms. This helps password managers.</p>
+                <p><strong>Security:</strong> Browser may block autocomplete on password fields if site isn't HTTPS. Never use <code>value=""</code> to prefill passwords. Don't rely on client-side validation only.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code52.html">← Prev: Code 52: input tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code54.html">Next: Code 54: label tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 53 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

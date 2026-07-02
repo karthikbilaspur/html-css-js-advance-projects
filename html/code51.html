@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 51: form - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 51: &lt;form&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;form&gt;</code> element represents a document section containing interactive controls for submitting information.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic form with GET</h3>
+                <form action="/search" method="get">
+                    <label for="q">Search:</label>
+                    <input type="text" id="q" name="q">
+                    <button type="submit">Go</button>
+                </form>
+
+                <h3>POST form for login</h3>
+                <form action="/login" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <br><br>
+                    <button type="submit">Log In</button>
+                    <button type="reset">Clear</button>
+                </form>
+
+                <h3>Form with fieldset</h3>
+                <form action="/register" method="post">
+                    <fieldset>
+                        <legend>Account Details</legend>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username">
+                        <br><br>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="13">
+                    </fieldset>
+                    <br>
+                    <button type="submit">Register</button>
+                </form>
+
+                <h3>Form with autocomplete and novalidate</h3>
+                <form action="/checkout" method="post" autocomplete="on" novalidate>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" autocomplete="name">
+                    <br><br>
+                    <label for="cc">Card:</label>
+                    <input type="text" id="cc" name="cc" autocomplete="cc-number">
+                    <br><br>
+                    <button type="submit">Pay</button>
+                </form>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>form rules:</strong> <code>&lt;form&gt;</code> groups controls like <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;select&gt;</code>. Forms cannot be nested inside other forms.</p>
+                <p><strong>Key attributes:</strong> <code>action</code> sets where data is sent. <code>method</code> is <code>get</code> for search/bookmarkable data, <code>post</code> for sensitive data. <code>name</code> on inputs becomes the key in submitted data.</p>
+                <p><strong>Validation:</strong> <code>required</code>, <code>min</code>, <code>max</code>, <code>pattern</code> on inputs enable browser validation. Add <code>novalidate</code> to disable it.</p>
+                <p><strong>UX:</strong> <code>autocomplete="on"</code> helps users fill forms faster. Use <code>&lt;label for="id"&gt;</code> to link labels to inputs for accessibility.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code50.html">← Prev: Code 50: svg tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code52.html">Next: Code 52: input tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 51 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

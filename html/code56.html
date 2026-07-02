@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 56: input type checkbox - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 56: &lt;input type="checkbox"&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;input type="checkbox"&gt;</code> element creates a checkbox control that can be toggled on or off. Used for single or multiple selections.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Single checkbox</h3>
+                <form>
+                    <input type="checkbox" id="agree" name="agree" value="yes">
+                    <label for="agree">I agree to the terms</label>
+                    <button type="submit">Continue</button>
+                </form>
+
+                <h3>Required checkbox</h3>
+                <form>
+                    <input type="checkbox" id="tos" name="tos" value="accepted" required>
+                    <label for="tos">I accept the Terms of Service</label>
+                    <button type="submit">Register</button>
+                </form>
+
+                <h3>Multiple checkboxes</h3>
+                <form>
+                    <fieldset>
+                        <legend>Select interests:</legend>
+                        
+                        <input type="checkbox" id="html" name="skills" value="html">
+                        <label for="html">HTML</label><br>
+                        
+                        <input type="checkbox" id="css" name="skills" value="css" checked>
+                        <label for="css">CSS</label><br>
+                        
+                        <input type="checkbox" id="js" name="skills" value="js">
+                        <label for="js">JavaScript</label>
+                    </fieldset>
+                    <br>
+                    <button type="submit">Save</button>
+                </form>
+
+                <h3>Checkbox with checked and disabled</h3>
+                <form>
+                    <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
+                    <label for="newsletter">Subscribe to newsletter</label><br><br>
+                    
+                    <input type="checkbox" id="admin" name="admin" value="1" checked disabled>
+                    <label for="admin">Admin access - cannot change</label>
+                </form>
+
+                <h3>Indeterminate state via JS</h3>
+                <form>
+                    <input type="checkbox" id="indeterminate" name="indeterminate">
+                    <label for="indeterminate">Select all items</label>
+                    <script>
+                        document.getElementById('indeterminate').indeterminate = true;
+                    </script>
+                </form>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>checkbox rules:</strong> Only sends data if checked. If unchecked, the <code>name</code>/<code>value</code> pair is omitted from submission entirely.</p>
+                <p><strong>Key attributes:</strong> <code>checked</code> makes it on by default. <code>required</code> forces user to check it. <code>value</code> is what gets submitted — defaults to "on" if omitted.</p>
+                <p><strong>Grouping:</strong> Multiple checkboxes with same <code>name</code> submit as array: <code>skills=html&skills=css</code>. Use <code>&lt;fieldset&gt;</code> + <code>&lt;legend&gt;</code> to group related checkboxes.</p>
+                <p><strong>States:</strong> Has three states: checked, unchecked, and indeterminate. Indeterminate only set via JS — used for "select all" when some children are checked.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code55.html">← Prev: Code 55: input password tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code57.html">Next: Code 57: input radio tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 56 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>

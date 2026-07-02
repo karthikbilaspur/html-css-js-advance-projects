@@ -1,0 +1,6 @@
+echo "html-css/" >> .gitignore
+echo "html-css-js/" >> .gitignore  
+echo "html-css-js-advance/" >> .gitignore
+echo "node_modules/" >> .gitignore
+echo ".vscode/" >> .gitignore
+echo ".DS_Store" >> .gitignore

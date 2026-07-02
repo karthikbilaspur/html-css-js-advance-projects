@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 85: article - HTML 100 Codes</title>
+</head>
+<body bgcolor="#f5f5f5" text="#222222" link="#0066cc" vlink="#663399">
+  
+  <center>
+    <table width="90%" cellpadding="20" cellspacing="0" border="1" bordercolor="#cccccc" bgcolor="#ffffff">
+      <tr>
+        <td>
+          <header>
+            <p><a href="index.html">← Back to All Codes</a></p>
+            <h1 align="center"><font color="#1a1a1a">Code 85: &lt;article&gt;</font></h1>
+            <hr size="2" color="#e0e0e0">
+            <blockquote>
+              <p>The <code>&lt;article&gt;</code> element represents a self-contained composition that could be distributed independently — like a blog post, news story, or comment.</p>
+            </blockquote>
+          </header>
+
+          <main>
+            <section>
+              <h2><font color="#333333">Examples</font></h2>
+              <blockquote>
+                <h3>Basic article</h3>
+                <article>
+                    <h2>Understanding Semantic HTML</h2>
+                    <p>Published on <time datetime="2026-06-10">June 10, 2026</time></p>
+                    <p>Semantic HTML gives meaning to content. Tags like article, section, and nav help browsers and assistive tech understand structure.</p>
+                </article>
+
+                <h3>Multiple articles on a page</h3>
+                <article>
+                    <h3>HTML 100 Codes Update</h3>
+                    <p>We've reached Code 85. Only 14 more to complete the vault.</p>
+                </article>
+                <article>
+                    <h3>New Feature: Dark Mode</h3>
+                    <p>Dark mode support is now live for all users. Toggle it in settings.</p>
+                </article>
+                <small>Each article is independent and could appear in RSS</small>
+
+                <h3>article with header and footer</h3>
+                <article>
+                    <header>
+                        <h2>Bangalore Weather Report</h2>
+                        <p>By <strong>Weather Team</strong> | <time datetime="2026-06-10">June 10, 2026</time></p>
+                    </header>
+                    <p>Today's high: 32°C. Low: 21°C. Light showers expected in the evening.</p>
+                    <footer>
+                        <p>Filed under: Weather, Bangalore</p>
+                    </footer>
+                </article>
+
+                <h3>Nested article for comments</h3>
+                <article>
+                    <h2>Post: Learning CSS Grid</h2>
+                    <p>CSS Grid makes layouts simple. Here's how to start...</p>
+                    <section>
+                        <h3>Comments</h3>
+                        <article>
+                            <p><strong>Ravi:</strong> Great post! Helped me understand grid-template.</p>
+                        </article>
+                        <article>
+                            <p><strong>Anu:</strong> Can you do one on flexbox next?</p>
+                        </article>
+                    </section>
+                </article>
+                <small>Comments are often articles nested inside the main post</small>
+
+                <h3>article vs section</h3>
+                <article>
+                    <h2>This is an article</h2>
+                    <p>It makes sense on its own. Could be RSS feed item.</p>
+                </article>
+                <section>
+                    <h2>This is a section</h2>
+                    <p>It groups related content but isn't standalone.</p>
+                </section>
+              </blockquote>
+            </section>
+
+            <br>
+
+            <section>
+              <h2><font color="#333333">Note</font></h2>
+              <blockquote>
+                <p><strong>article purpose:</strong> Use for self-contained content that makes sense alone — blog posts, news items, comments, product cards.</p>
+                <p><strong>Independent:</strong> If content could be syndicated in RSS or shared alone and still make sense, use <code>&lt;article&gt;</code>.</p>
+                <p><strong>Structure:</strong> Can contain <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>, headings, and other articles nested inside.</p>
+                <p><strong>article vs section:</strong> <code>&lt;article&gt;</code> = standalone piece. <code>&lt;section&gt;</code> = thematic grouping. If unsure, ask "would this make sense in an RSS reader?"</p>
+                <p><strong>Multiple allowed:</strong> Page can have many <code>&lt;article&gt;</code> elements. Each should have its own heading for structure.</p>
+              </blockquote>
+            </section>
+
+            <nav>
+              <hr size="1" color="#e0e0e0">
+              <p align="center">
+                <b><a href="code84.html">← Prev: Code 84: dialog Tag</a></b> | 
+                <b><a href="index.html">Home</a></b> | 
+                <b><a href="code86.html">Next: Code 86: section Tag →</a></b>
+              </p>
+            </nav>
+          </main>
+
+          <footer>
+            <hr size="1" color="#e0e0e0">
+            <p align="center">
+              <small><font color="#666666">
+                Code 85 of 99 | HTML 100 Codes Vault<br>
+                &copy; 2026 KarthikCodingSolutions. All Rights Reserved.
+              </font></small>
+            </p>
+          </footer>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+</html>
