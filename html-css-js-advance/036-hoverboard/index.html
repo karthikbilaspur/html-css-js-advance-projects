@@ -12,18 +12,30 @@
         <p class="subtitle">Move your mouse over the squares</p>
 
         <div class="controls">
-            <label for="colorPicker">Color:</label>
-            <input type="color" id="colorPicker" value="#5cdb95">
+            <div class="control-group">
+                <label for="colorPicker">Color:</label>
+                <input type="color" id="colorPicker" value="#5cdb95" aria-label="Pick hover color">
+            </div>
 
-            <label for="sizeSlider">Grid Size:</label>
-            <input type="range" id="sizeSlider" min="10" max="40" value="20">
-            <span id="sizeValue">20</span>
+            <div class="control-group">
+                <label for="sizeSlider">Grid Size:</label>
+                <input type="range" id="sizeSlider" min="10" max="40" value="20" aria-label="Adjust grid size">
+                <span id="sizeValue">20</span>
+            </div>
 
             <button class="btn" id="clearBtn">Clear</button>
         </div>
 
-        <div class="board" id="board"></div>
+        <div class="board" id="board" role="grid" aria-label="Drawing board"></div>
     </div>
+
+    <nav class="page-footer-nav" aria-label="Project navigation">
+        <a href="../035-image-carousel/index.html">&larr; Previous: Code 035</a>
+        <a href="../../index.html">Home</a>
+        <a href="../037-pokemon/index.html">Next: Code 037 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
 
     <script src="script.js"></script>
 </body>

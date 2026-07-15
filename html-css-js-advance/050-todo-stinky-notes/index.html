@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>050-stinky-todo-list-notes</title>
+    <title>050 - Stinky To-Do Pro</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <header>
-            <h1>🗑️ Stinky To-Do</h1>
-            <p class="tagline">Tasks rot if you ignore them</p>
-            <div class="stats">
+            <h1>🗑 Stinky To-Do</h1>
+            <p class="tagline">Tasks rot if you ignore them • Press <kbd>N</kbd> for new task</p>
+            <div class="stats" role="status" aria-live="polite">
                 <div class="stat">
                     <span class="stat-number" id="totalCount">0</span>
                     <span class="stat-label">Total</span>
@@ -24,36 +24,46 @@
                     <span class="stat-number" id="doneCount">0</span>
                     <span class="stat-label">Done ✓</span>
                 </div>
+                <div class="stat">
+                    <span class="stat-number" id="overdueCount">0</span>
+                    <span class="stat-label">Overdue ⚠️</span>
+                </div>
             </div>
         </header>
 
-        <div class="add-section">
-            <input type="text" id="todoInput" placeholder="Add a task before it starts stinking..." maxlength="100">
-            <input type="text" id="noteInput" placeholder="Add a note (optional)" maxlength="200">
+        <section class="add-section" aria-labelledby="add-heading">
+            <h2 id="add-heading" class="sr-only">Add New Task</h2>
+            <input type="text" id="todoInput" placeholder="Add a task before it starts stinking..." maxlength="100" aria-label="Task name">
+            <input type="text" id="noteInput" placeholder="Add a note (optional)" maxlength="200" aria-label="Task note">
             <div class="add-controls">
-                <select id="prioritySelect">
+                <select id="prioritySelect" aria-label="Priority">
                     <option value="low">Low 🟢</option>
                     <option value="medium" selected>Medium 🟡</option>
                     <option value="high">High 🔴</option>
                 </select>
-                <select id="categorySelect">
+                <select id="categorySelect" aria-label="Category">
                     <option value="general">General</option>
                     <option value="work">Work</option>
                     <option value="personal">Personal</option>
                     <option value="urgent">Urgent</option>
                 </select>
-                <button id="addBtn">Add Task</button>
+                <input type="date" id="dueDateInput" aria-label="Due date">
+                <button id="addBtn" aria-label="Add task">Add Task</button>
             </div>
+        </section>
+
+        <div class="filters" role="tablist" aria-label="Filter tasks">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
+            <button class="filter-btn" data-filter="stinky" role="tab" aria-selected="false">Stinky</button>
+            <button class="filter-btn" data-filter="overdue" role="tab" aria-selected="false">Overdue</button>
+            <button class="filter-btn" data-filter="done" role="tab" aria-selected="false">Done</button>
         </div>
 
-        <div class="filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="active">Active</button>
-            <button class="filter-btn" data-filter="stinky">Stinky</button>
-            <button class="filter-btn" data-filter="done">Done</button>
-        </div>
+        <div class="todo-list" id="todoList" role="list" aria-live="polite"></div>
 
-        <div class="todo-list" id="todoList"></div>
+        <!-- PAGINATION IN BETWEEN LIST + FOOTER -->
+        <nav class="pagination" id="pagination" aria-label="Todo pagination"></nav>
 
         <div class="empty-state" id="emptyState">
             <div class="empty-icon">🧹</div>
@@ -62,7 +72,19 @@
         </div>
 
         <button class="clear-btn" id="clearDoneBtn">Clear Completed</button>
-    </div>
+    </main>
+
+    <footer class="footer-wrap">
+        <nav class="page-footer-nav" aria-label="Project navigation">
+            <a href="../049-brand-mood-boards/index.html">&larr; Previous: Code 049</a>
+            <a href="../../index.html">Home</a>
+            <a href="../051-video-background/index.html">Next: Code 051 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+        <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
 </body>

@@ -1,4 +1,21 @@
-/* Styles for Code 30 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #667eea;
+  --primary-dark: #764ba2;
+  --bg-start: #667eea;
+  --bg-end: #764ba2;
+  --card-bg: #ffffff;
+  --text-dark: #2c3e50;
+  --text-gray: #64748b;
+  --input-bg: #f8f9fa;
+  --border: #e0e0e0;
+  --success: #28a745;
+  --error: #dc3545;
+  --warning: #ffc107;
+  --info: #2196f3;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,70 +23,78 @@
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
 header {
   text-align: center;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 2.5rem;
 }
 
 header h1 {
-  font-size: 32px;
-  margin-bottom: 8px;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .subtitle {
   opacity: 0.9;
-  font-size: 16px;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .game-container {
   max-width: 550px;
-  margin: 0 auto;
-  background: white;
-  padding: 35px;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  width: 100%;
+  background: var(--card-bg);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .difficulty-section {
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
 }
 
 .difficulty-section h3 {
-  color: #333;
-  margin-bottom: 12px;
-  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
 }
 
 .difficulty-buttons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 0.75rem;
 }
 
 .diff-btn {
-  padding: 15px;
+  padding: 1rem;
   background: #f0f0f0;
   border: 3px solid transparent;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.2s;
-  font-family: inherit;
-  color: #333;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
 }
 
 .diff-btn span {
   display: block;
-  font-size: 12px;
-  color: #666;
-  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--text-gray);
+  margin-top: 0.25rem;
+  font-weight: 600;
 }
 
 .diff-btn:hover {
@@ -78,103 +103,112 @@ header h1 {
 }
 
 .diff-btn.active {
-  background: #667eea;
+  background: var(--primary);
   color: white;
-  border-color: #667eea;
+  border-color: var(--primary);
 }
 
 .diff-btn.active span {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .game-info {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 25px;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .info-card {
-  background: #f8f9fa;
-  padding: 15px;
-  border-radius: 10px;
+  background: var(--input-bg);
+  padding: 1rem;
+  border-radius: 0.6rem;
   text-align: center;
   border: 2px solid #e9ecef;
 }
 
 .info-label {
-  font-size: 11px;
-  color: #666;
+  font-size: 0.7rem;
+  color: var(--text-gray);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 6px;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
 }
 
 .info-value {
-  font-size: 18px;
-  font-weight: bold;
-  color: #667eea;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--primary);
 }
 
 .game-area {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .hint-box {
   background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 1rem;
   border: 2px solid #90caf9;
 }
 
 .hint-icon {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .hint-box p {
   flex: 1;
   color: #1565c0;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 0.95rem;
 }
 
 .input-section {
   display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 #guessInput {
   flex: 1;
-  padding: 16px;
-  font-size: 18px;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
-  font-family: inherit;
+  padding: 1rem;
+  font-size: 1.125rem;
+  border: 2px solid var(--border);
+  border-radius: 0.6rem;
+  font-family: 'Inter', sans-serif;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
+  transition: border 0.2s;
 }
 
 #guessInput:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--primary);
+}
+
+#guessInput::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
 }
 
 #guessBtn {
-  padding: 16px 30px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
-  transition: transform 0.2s;
-  font-family: inherit;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 #guessBtn:hover:not(:disabled) {
@@ -189,11 +223,11 @@ header h1 {
 
 .feedback {
   min-height: 50px;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 1rem;
+  border-radius: 0.6rem;
   text-align: center;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 1rem;
   display: none;
   animation: popIn 0.3s ease;
 }
@@ -216,51 +250,52 @@ header h1 {
 .feedback.hot {
   background: #ffe5e5;
   color: #c0392b;
-  border: 2px solid #e74c3c;
+  border: 2px solid var(--error);
 }
 
 .feedback.cold {
   background: #e3f2fd;
   color: #1565c0;
-  border: 2px solid #2196f3;
+  border: 2px solid var(--info);
 }
 
 .feedback.win {
   background: #d4edda;
   color: #155724;
-  border: 2px solid #28a745;
-  font-size: 18px;
+  border: 2px solid var(--success);
+  font-size: 1.125rem;
 }
 
 .feedback.lose {
   background: #f8d7da;
   color: #721c24;
-  border: 2px solid #dc3545;
+  border: 2px solid var(--error);
 }
 
 .guess-history {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .guess-history h4 {
-  color: #333;
-  margin-bottom: 10px;
-  font-size: 15px;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
 }
 
 #guessList {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0.5rem;
   min-height: 40px;
 }
 
 .guess-chip {
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
+  padding: 0.5rem 0.875rem;
+  border-radius: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
   animation: slideIn 0.3s ease;
+  font-family: 'Courier New', monospace;
 }
 
 @keyframes slideIn {
@@ -291,16 +326,18 @@ header h1 {
 
 .new-game-btn {
   width: 100%;
-  padding: 16px;
-  background: #2ecc71;
+  padding: 1rem;
+  background: var(--success);
   color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   transition: all 0.2s;
-  font-family: inherit;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .new-game-btn:hover {
@@ -309,8 +346,70 @@ header h1 {
   box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
 }
 
+/* Pagination Footer - Same as Code 21-29 */
+footer {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 550px;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.page-footer-nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  transition: all 0.2s;
+  text-align: center;
+  flex: 1;
+}
+
+.page-footer-nav a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.page-footer-nav a:nth-child(2) {
+  background-color: var(--input-bg);
+  max-width: 120px;
+}
+
 @media (max-width: 480px) {
+  .game-container {
+    padding: 1.5rem;
+  }
+  
   .difficulty-buttons, .game-info {
     grid-template-columns: 1fr;
+  }
+  
+  .input-section {
+    flex-direction: column;
+  }
+  
+  .page-footer-nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .page-footer-nav a {
+    width: 100%;
+  }
+  
+  .page-footer-nav a:nth-child(2) {
+    max-width: 100%;
+    order: -1;
   }
 }

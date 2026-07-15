@@ -3,14 +3,13 @@ const btn = document.getElementById('btn');
 const input = document.getElementById('input');
 const results = document.getElementById('results');
 
-// Sample data for KarthikCodingSolutions
-const projects = [
-  { title: 'Expanding Cards', desc: 'Flex-based card animation - Project 001' },
-  { title: 'Progress Steps', desc: 'Multi-step form UI - Project 002' },
-  { title: 'Rotating Navigation', desc: '3D rotate menu effect - Project 003' },
-  { title: 'Weather App', desc: 'Vanilla JS + API integration' },
-  { title: 'Task Manager', desc: 'CRUD with LocalStorage' },
-  { title: 'Portfolio Site', desc: 'Responsive showcase site' }
+const projectList = [
+  'Expanding Cards', 
+  'Progress Steps', 
+  'Rotating Navigation', 
+  'Hidden Search', 
+  'Blurry Loading', 
+  'Scroll Animation'
 ];
 
 btn.addEventListener('click', () => {
@@ -18,44 +17,33 @@ btn.addEventListener('click', () => {
   input.focus();
 });
 
-// Live search
-input.addEventListener('input', (e) => {
-  const query = e.target.value.toLowerCase();
+input.addEventListener('input', e => {
+  const query = e.target.value.toLowerCase().trim();
   
-  if (query === '') {
+  if (!query) {
     results.innerHTML = '';
     return;
   }
   
-  const filtered = projects.filter(project => 
-    project.title.toLowerCase().includes(query) || 
-    project.desc.toLowerCase().includes(query)
-  );
+  const filtered = projectList.filter(p => p.toLowerCase().includes(query));
   
-  displayResults(filtered);
+  results.innerHTML = filtered.length 
+    ? filtered.map(p => `<div class="result-item">${p}</div>`).join('')
+    : '<div class="result-item">No results found</div>';
 });
 
-// Close on Escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && search.classList.contains('active')) {
+// Close on ESC or click outside
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
     search.classList.remove('active');
     input.value = '';
     results.innerHTML = '';
   }
 });
 
-function displayResults(items) {
-  if (items.length === 0) {
-    results.innerHTML = `<div class="result-item"><p>No projects found</p></div>`;
-    return;
+document.addEventListener('click', e => {
+  if (!search.contains(e.target)) {
+    search.classList.remove('active');
+    if (!input.value) results.innerHTML = '';
   }
-  
-  results.innerHTML = items.map(item => `
-    <div class="result-item">
-      <h3>${item.title}</h3>
-      <p>${item.desc}</p>
-    </div>
-  `).join('');
-}
-
-console.log('Hidden Search loaded - KarthikCodingSolutions ⚡');
+});

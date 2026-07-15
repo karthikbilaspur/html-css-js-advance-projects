@@ -1,4 +1,11 @@
 /* Styles for Code 47 */
+:root {
+    --primary: #667eea;
+    --card-bg: rgba(255, 255, 255, 0.15);
+    --text-dark: #1d1d1f;
+    --input-bg: rgba(255, 255, 255, 0.2);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +17,8 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 20px;
     color: #fff;
 }
@@ -19,6 +26,10 @@ body {
 .container {
     width: 100%;
     max-width: 450px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 header {
@@ -47,7 +58,6 @@ h1 {
     outline: none;
     background: rgba(255,255,255,0.2);
     color: white;
-    backdrop-filter: blur(10px);
 }
 
 #city-input::placeholder {
@@ -61,8 +71,7 @@ h1 {
     background: rgba(255,255,255,0.3);
     color: white;
     font-weight: 600;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
+    cursor: pointer; 
     transition: background 0.2s;
 }
 
@@ -91,12 +100,10 @@ h1 {
     padding: 16px;
     border-radius: 12px;
     text-align: center;
-    backdrop-filter: blur(10px);
 }
 
 .weather-card {
     background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(20px);
     border-radius: 24px;
     padding: 32px;
     border: 1px solid rgba(255,255,255,0.2);
@@ -174,4 +181,67 @@ h1 {
 
 .hidden {
     display: none;
+}
+
+footer {
+    margin: 3rem auto 2rem;
+    width: 100%;
+    max-width: 450px;
+}
+
+.page-footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.page-footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.4rem;
+    transition: all 0.2s;
+    text-align: center;
+    flex: 1;
+}
+
+.page-footer-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.page-footer-nav a:nth-child(2) {
+    background-color: rgba(255, 255, 255, 0.2);
+    max-width: 120px;
+}
+
+@media (max-width: 480px) {
+    .search-box {
+        flex-direction: column;
+    }
+
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .page-footer-nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .page-footer-nav a {
+        width: 100%;
+    }
+
+    .page-footer-nav a:nth-child(2) {
+        max-width: 100%;
+        order: -1;
+    }
 }

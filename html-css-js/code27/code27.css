@@ -1,4 +1,19 @@
-/* Styles for Code 27 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #667eea;
+  --primary-dark: #764ba2;
+  --bg-start: #667eea;
+  --bg-end: #764ba2;
+  --card-bg: #ffffff;
+  --text-dark: #2c3e50;
+  --text-gray: #64748b;
+  --input-bg: #f8f9fa;
+  --border: #e0e0e0;
+  --error: #e74c3c;
+  --success: #2ecc71;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,76 +21,84 @@
 }
 
 body {
-  font-family: 'Georgia', serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
 header {
   text-align: center;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 2.5rem;
 }
 
 header h1 {
-  font-size: 32px;
-  margin-bottom: 8px;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .subtitle {
   opacity: 0.9;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: italic;
+  font-weight: 400;
 }
 
 .quote-container {
   max-width: 650px;
-  margin: 0 auto;
-  background: white;
-  padding: 40px 35px;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  width: 100%;
+  background: var(--card-bg);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .category-filter {
   display: flex;
-  gap: 8px;
-  margin-bottom: 25px;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .filter-btn {
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   background: #f0f0f0;
   border: 2px solid transparent;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   transition: all 0.2s;
-  font-family: inherit;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-gray);
 }
 
 .filter-btn:hover {
   background: #e0e0e0;
+  transform: translateY(-1px);
 }
 
 .filter-btn.active {
-  background: #667eea;
+  background: var(--primary);
   color: white;
-  border-color: #667eea;
+  border-color: var(--primary);
 }
 
 .quote-card {
-  background: #f8f9fa;
-  padding: 40px 35px;
-  border-radius: 16px;
-  margin-bottom: 25px;
+  background: var(--input-bg);
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
   min-height: 200px;
-  border-left: 5px solid #667eea;
+  border-left: 5px solid var(--primary);
   animation: fadeIn 0.5s ease;
 }
 
@@ -91,64 +114,67 @@ header h1 {
 }
 
 .quote-icon {
-  font-size: 80px;
-  color: #667eea;
+  font-size: 5rem;
+  color: var(--primary);
   opacity: 0.2;
   position: absolute;
-  top: 10px;
-  left: 20px;
+  top: 0.75rem;
+  left: 1.25rem;
   font-family: Georgia, serif;
   line-height: 1;
 }
 
 .quote-text {
-  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 1.6;
-  color: #2c3e50;
-  margin-bottom: 20px;
+  color: var(--text-dark);
+  margin-bottom: 1.25rem;
   position: relative;
   z-index: 1;
+  font-weight: 500;
 }
 
 .quote-author {
-  font-size: 18px;
-  color: #667eea;
-  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--primary);
+  font-weight: 700;
   text-align: right;
   font-style: italic;
 }
 
 .quote-category {
   display: inline-block;
-  margin-top: 12px;
-  padding: 5px 12px;
-  background: #667eea;
+  margin-top: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  background: var(--primary);
   color: white;
-  border-radius: 12px;
-  font-size: 12px;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .controls {
   display: grid;
   grid-template-columns: 1fr auto auto auto;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
 }
 
 .primary-btn {
-  padding: 14px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0.875rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  transition: transform 0.2s;
-  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .primary-btn:hover {
@@ -156,13 +182,17 @@ header h1 {
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
+.primary-btn:active {
+  transform: translateY(0);
+}
+
 .icon-btn {
-  padding: 14px 18px;
+  padding: 0.875rem 1.125rem;
   background: #f0f0f0;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 1.25rem;
   transition: all 0.2s;
 }
 
@@ -172,67 +202,160 @@ header h1 {
 }
 
 .icon-btn.active {
-  background: #e74c3c;
+  background: var(--error);
   color: white;
 }
 
 .favorites-section {
   border-top: 2px solid #f0f0f0;
-  padding-top: 25px;
+  padding-top: 1.5rem;
 }
 
 .favorites-section h3 {
-  color: #333;
-  margin-bottom: 15px;
-  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
 }
 
 #favoritesList {
   max-height: 300px;
   overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+#favoritesList::-webkit-scrollbar {
+  width: 6px;
+}
+
+#favoritesList::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+#favoritesList::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
 }
 
 .fav-item {
-  background: #f8f9fa;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  border-left: 3px solid #667eea;
+  background: var(--input-bg);
+  padding: 1rem;
+  border-radius: 0.6rem;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--primary);
   position: relative;
+  transition: all 0.2s;
+}
+
+.fav-item:hover {
+  background: #eef1f6;
+  transform: translateX(4px);
 }
 
 .fav-item p {
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 5px;
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
   line-height: 1.5;
+  padding-right: 2rem;
 }
 
 .fav-item .author {
-  font-size: 12px;
-  color: #667eea;
+  font-size: 0.75rem;
+  color: var(--primary);
   font-style: italic;
+  font-weight: 600;
 }
 
 .fav-item .remove-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.75rem;
+  right: 0.75rem;
   background: none;
   border: none;
-  color: #e74c3c;
+  color: var(--error);
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125rem;
   padding: 0;
   width: 24px;
   height: 24px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.fav-item .remove-btn:hover {
+  background: var(--error);
+  color: white;
+}
+
+/* Pagination Footer - Same as Code 21-26 */
+footer {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 650px;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.page-footer-nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  transition: all 0.2s;
+  text-align: center;
+  flex: 1;
+}
+
+.page-footer-nav a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.page-footer-nav a:nth-child(2) {
+  background-color: var(--input-bg);
+  max-width: 120px;
 }
 
 @media (max-width: 480px) {
+  .quote-container {
+    padding: 1.5rem;
+  }
+  
+  .quote-text {
+    font-size: 1.125rem;
+  }
+  
   .controls {
     grid-template-columns: 1fr;
   }
+  
   .icon-btn {
     width: 100%;
+  }
+  
+  .page-footer-nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .page-footer-nav a {
+    width: 100%;
+  }
+  
+  .page-footer-nav a:nth-child(2) {
+    max-width: 100%;
+    order: -1;
   }
 }

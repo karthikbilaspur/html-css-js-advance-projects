@@ -10,10 +10,25 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   margin: 0;
   background: #0f172a;
+  background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1200&auto=format&fit=crop');
+  background-position: center center;
+  background-size: cover;
+  transition: background-image 0.4s ease;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.7);
+  z-index: -1;
 }
 
 .kcs-header {
@@ -48,6 +63,7 @@ body {
   overflow: hidden;
   border-radius: 12px;
   border: 1px solid #334155;
+  margin: auto 0;
 }
 
 .slide {
@@ -63,11 +79,30 @@ body {
   z-index: 1;
 }
 
+.slide-1 {
+  background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1200&auto=format&fit=crop');
+}
+
+.slide-2 {
+  background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&auto=format&fit=crop');
+}
+
+.slide-3 {
+  background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&auto=format&fit=crop');
+}
+
+.slide-4 {
+  background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&auto=format&fit=crop');
+}
+
+.slide-5 {
+  background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop');
+}
+
 .slide.active {
   opacity: 1;
 }
 
-/* Dark overlay for better contrast */
 .slider-container::before {
   content: '';
   position: absolute;
@@ -112,27 +147,78 @@ body {
   right: calc(15vw - 65px);
 }
 
+footer {
+  width: 100%;
+  background: #1e293b;
+  border-top: 1px solid #334155;
+  padding: 1.25rem 1rem;
+  color: #64748b;
+  font-size: 0.8rem;
+  text-align: center;
+  z-index: 100;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-footer-nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.page-footer-nav a:hover {
+  color: #38bdf8;
+}
+
+footer.credit {
+  margin: 0.25rem 0 0;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
 @media (max-width: 768px) {
- .slider-container {
+.slider-container {
     height: 60vh;
     width: 90vw;
   }
 
- .slide {
+.slide {
     top: -20vh;
     left: -5vw;
   }
 
- .left-arrow {
+.left-arrow {
     left: calc(5vw - 50px);
   }
 
- .right-arrow {
+.right-arrow {
     right: calc(5vw - 50px);
   }
 
- .arrow {
+.arrow {
     padding: 15px;
     font-size: 1.2rem;
+  }
+
+.page-footer-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+.page-footer-nav a {
+    font-size: 0.8rem;
+  }
+
+  footer {
+    padding: 1rem 0.5rem;
   }
 }

@@ -48,10 +48,10 @@ let currentUserIndex = 0;
 let currentStoryIndex = 0;
 let progressInterval;
 let viewedUsers = new Set();
+let isPaused = false;
 
-const STORY_DURATION = 3000; // 3 seconds per story
+const STORY_DURATION = 3000;
 
-// Render story circles
 function renderStoriesList() {
     storiesList.innerHTML = '';
     storiesData.forEach((user, index) => {
@@ -73,7 +73,6 @@ function renderStoriesList() {
     });
 }
 
-// Open story modal
 function openStory(userIndex) {
     currentUserIndex = userIndex;
     currentStoryIndex = 0;
@@ -82,7 +81,6 @@ function openStory(userIndex) {
     showStory();
 }
 
-// Show current story
 function showStory() {
     const user = storiesData[currentUserIndex];
     const story = user.stories[currentStoryIndex];
@@ -104,7 +102,6 @@ function showStory() {
     startProgress();
 }
 
-// Update progress bar segments
 function updateProgressBar() {
     const user = storiesData[currentUserIndex];
     progressBar.innerHTML = '';
@@ -122,13 +119,15 @@ function updateProgressBar() {
     });
 }
 
-// Start progress animation
 function startProgress() {
     clearInterval(progressInterval);
+    isPaused = false;
     const activeSegment = progressBar.querySelector('.progress-segment.active.progress-fill');
     let width = 0;
 
     progressInterval = setInterval(() => {
+        if (isPaused) return;
+        
         width += (100 / (STORY_DURATION / 100));
         if (activeSegment) {
             activeSegment.style.width = `${width}%`;
@@ -140,7 +139,14 @@ function startProgress() {
     }, 100);
 }
 
-// Next story
+function pauseProgress() {
+    isPaused = true;
+}
+
+function resumeProgress() {
+    isPaused = false;
+}
+
 function nextStory() {
     clearInterval(progressInterval);
     const user = storiesData[currentUserIndex];
@@ -153,7 +159,6 @@ function nextStory() {
     }
 }
 
-// Previous story
 function prevStory() {
     clearInterval(progressInterval);
 
@@ -165,7 +170,6 @@ function prevStory() {
     }
 }
 
-// Next user
 function nextUser() {
     viewedUsers.add(currentUserIndex);
 
@@ -178,16 +182,14 @@ function nextUser() {
     }
 }
 
-// Previous user
 function prevUser() {
     if (currentUserIndex > 0) {
         currentUserIndex--;
-        currentStoryIndex = 0;
+        currentStoryIndex = storiesData[currentUserIndex].stories.length - 1;
         showStory();
     }
 }
 
-// Close story
 function closeStory() {
     clearInterval(progressInterval);
     viewedUsers.add(currentUserIndex);
@@ -201,14 +203,21 @@ closeBtn.addEventListener('click', closeStory);
 tapLeft.addEventListener('click', prevStory);
 tapRight.addEventListener('click', nextStory);
 
-// Keyboard navigation
+// Pause on hold / mouse down
+storyModal.addEventListener('mousedown', pauseProgress);
+storyModal.addEventListener('mouseup', resumeProgress);
+storyModal.addEventListener('touchstart', pauseProgress);
+storyModal.addEventListener('touchend', resumeProgress);
+
 document.addEventListener('keydown', (e) => {
     if (!storyModal.classList.contains('active')) return;
-
     if (e.key === 'ArrowLeft') prevStory();
     if (e.key === 'ArrowRight') nextStory();
     if (e.key === 'Escape') closeStory();
+    if (e.key === ' ') {
+        e.preventDefault();
+        isPaused? resumeProgress() : pauseProgress();
+    }
 });
 
-// Init
 renderStoriesList();

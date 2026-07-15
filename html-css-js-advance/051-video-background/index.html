@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="video-container">
-        <video id="bgVideo" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920">
+        <video id="bgVideo" autoplay muted loop  poster="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920">
             <source src="https://cdn.coverr.co/videos/coverr-cinematic-snowy-mountains-7610/1080p.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -30,7 +30,7 @@
                     <rect x="6" y="4" width="4" height="16"></rect>
                     <rect x="14" y="4" width="4" height="16"></rect>
                 </svg>
-                <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor">
                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
                 </svg>
             </button>
@@ -40,7 +40,7 @@
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                     <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
                 </svg>
-                <svg id="muteIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                <svg id="muteIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polygon points="11 5 6 9 2 15 6 15 11 19 11 5"></polygon>
                     <line x1="23" y1="9" x2="17" y2="15"></line>
                     <line x1="17" y1="9" x2="23" y2="15"></line>
@@ -65,6 +65,16 @@
         <p>This page demonstrates a responsive video background with custom controls. The video autoplays muted for browser compatibility, with fallback poster image.</p>
         <p>Features: play/pause, mute toggle, time display, overlay gradient, responsive text, and scroll indicator.</p>
     </section>
+
+    <footer class="footer-wrap">
+        <nav class="page-footer-nav" aria-label="Project navigation">
+            <a href="../050-todo-stinky-notes/index.html">&larr; Previous: Code 050</a>
+            <a href="../../index.html">Home</a>
+            <a href="../052-weather-dashboard/index.html">Next: Code 052 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+        <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

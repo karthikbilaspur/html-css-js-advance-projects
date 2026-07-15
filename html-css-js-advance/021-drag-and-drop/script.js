@@ -71,7 +71,7 @@ function dragLeave() {
 
 function dragDrop() {
   this.className = 'empty';
-  this.append(this.fill || fill);
+  this.append(fill);
 }
 
 // Prevent image drag ghost

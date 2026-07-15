@@ -11,13 +11,14 @@
         <h1>Pokédex</h1>
 
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search Pokémon by name or ID...">
+            <input type="text" id="searchInput" placeholder="Search Pokémon by name or ID..." aria-label="Search Pokémon">
             <button class="btn" id="searchBtn">Search</button>
             <button class="btn btn-secondary" id="randomBtn">Random</button>
         </div>
 
         <div class="filters">
-            <select id="typeFilter">
+            <label for="typeFilter" class="sr-only">Filter by type</label>
+            <select id="typeFilter" aria-label="Filter by Pokémon type">
                 <option value="">All Types</option>
                 <option value="fire">Fire</option>
                 <option value="water">Water</option>
@@ -28,29 +29,46 @@
                 <option value="dragon">Dragon</option>
                 <option value="dark">Dark</option>
                 <option value="fairy">Fairy</option>
+                <option value="normal">Normal</option>
+                <option value="fighting">Fighting</option>
+                <option value="poison">Poison</option>
+                <option value="ground">Ground</option>
+                <option value="flying">Flying</option>
+                <option value="bug">Bug</option>
+                <option value="rock">Rock</option>
+                <option value="ghost">Ghost</option>
+                <option value="steel">Steel</option>
             </select>
         </div>
 
-        <div class="loader" id="loader">
+        <div class="loader" id="loader" aria-hidden="true">
             <div class="pokeball"></div>
         </div>
 
-        <div class="pokemon-grid" id="pokemonGrid"></div>
+        <div class="pokemon-grid" id="pokemonGrid" role="list" aria-live="polite"></div>
 
         <div class="pagination">
             <button class="btn" id="prevBtn" disabled>Previous</button>
-            <span id="pageInfo">Page 1</span>
+            <span id="pageInfo" aria-live="polite">Page 1</span>
             <button class="btn" id="nextBtn">Next</button>
         </div>
     </div>
 
     <!-- Modal for detailed view -->
-    <div class="modal" id="modal">
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <button class="close-btn" id="closeBtn">&times;</button>
+            <button class="close-btn" id="closeBtn" aria-label="Close dialog">&times;</button>
             <div id="modalBody"></div>
         </div>
     </div>
+                
+    <nav class="page-footer-nav" aria-label="Project navigation">
+        <a href="../036-hoverboard/index.html">&larr; Previous: Code 036</a>
+        <a href="../../index.html">Home</a>
+        <a href="../038-mobile-tab-navigation/index.html">Next: Code 038 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
 
     <script src="script.js"></script>
 </body>

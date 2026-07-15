@@ -13,38 +13,50 @@
   </header>
 
   <div class="converter-container">
-    <div class="input-section">
+    <div class="input-group">
       <label for="tempInput">Enter Temperature</label>
       <input type="number" id="tempInput" step="0.01" placeholder="0" value="0">
-
-      <label for="fromUnit">From</label>
-      <select id="fromUnit">
-        <option value="celsius">Celsius (°C)</option>
-        <option value="fahrenheit">Fahrenheit (°F)</option>
-        <option value="kelvin">Kelvin (K)</option>
-      </select>
     </div>
 
-    <div class="swap-btn">
-      <button id="swapBtn">⇅ Swap</button>
-    </div>
+    <div class="input-row">
+      <div class="input-group">
+        <label for="fromUnit">From</label>
+        <select id="fromUnit">
+          <option value="celsius">Celsius (°C)</option>
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+      </div>
 
-    <div class="input-section">
-      <label for="toUnit">To</label>
-      <select id="toUnit">
-        <option value="celsius">Celsius (°C)</option>
-        <option value="fahrenheit" selected>Fahrenheit (°F)</option>
-        <option value="kelvin">Kelvin (K)</option>
-      </select>
+      <button id="swapBtn" title="Swap units">⇅</button>
+
+      <div class="input-group">
+        <label for="toUnit">To</label>
+        <select id="toUnit">
+          <option value="celsius">Celsius (°C)</option>
+          <option value="fahrenheit" selected>Fahrenheit (°F)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+      </div>
     </div>
 
     <div class="result">
-      <p>Result: <span id="resultValue">32.00</span> <span id="resultUnit">°F</span></p>
+      <p>Result</p>
+      <span class="amount" id="resultValue">32.00</span>
+      <span class="unit" id="resultUnit">°F</span>
     </div>
 
     <div class="formula">
       <p id="formulaText">°F = (°C × 9/5) + 32</p>
     </div>
   </div>
+
+  <footer>
+    <nav class="page-footer-nav">
+      <a href="../code21/code21.html">&larr; Previous: Code 21</a>
+      <a href="../../index.html">Home</a>
+      <a href="../code23/code23.html">Next: Code 23 &rarr;</a>
+    </nav>
+  </footer>
 </body>
 </html>

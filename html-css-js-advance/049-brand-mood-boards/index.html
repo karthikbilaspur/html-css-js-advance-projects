@@ -3,79 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>049-brand-mood-board</title>
+    <title>049 - Brand Mood Board Pro</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="app">
+    <main class="app">
         <!-- Quiz Screen -->
-        <div class="screen active" id="quizScreen">
-            <div class="header">
-                <h1>Brand Mood Board Quiz</h1>
+        <section class="screen active" id="quizScreen" aria-labelledby="quiz-title">
+            <header class="header">
+                <h1 id="quiz-title">Brand Mood Board Quiz</h1>
                 <p>Answer 5 questions to generate your custom brand vibe</p>
-                <div class="progress">
+                <div class="progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20">
                     <div class="progress-fill" id="progressFill"></div>
                 </div>
-                <div class="step" id="stepCount">Question 1/5</div>
-            </div>
+                <div class="step" id="stepCount" aria-live="polite">Question 1/5</div>
+            </header>
 
-            <div class="quiz-card" id="quizCard">
+            <article class="quiz-card" id="quizCard">
                 <h2 id="quizQuestion"></h2>
-                <div class="quiz-options" id="quizOptions"></div>
-            </div>
-        </div>
+
+                <!-- PAGINATION NOW BETWEEN QUESTION + OPTIONS -->
+                <nav class="question-pagination" id="questionPagination" role="tablist" aria-label="Question navigation"></nav>
+
+                <div class="quiz-options" id="quizOptions" role="radiogroup" aria-labelledby="quizQuestion"></div>
+
+                <div class="quiz-actions">
+                    <button class="btn btn-ghost" id="backBtn" disabled>← Back</button>
+                </div>
+            </article>
+        </section>
 
         <!-- Loading Screen -->
-        <div class="screen" id="loadingScreen">
+        <section class="screen" id="loadingScreen" aria-live="assertive">
             <div class="loader-content">
-                <div class="spinner"></div>
+                <div class="spinner" aria-hidden="true"></div>
                 <h2>Generating Your Mood Board...</h2>
                 <p id="loadingText">Creating image 1 of 3</p>
             </div>
-        </div>
+        </section>
 
         <!-- Result Screen -->
-        <div class="screen" id="resultScreen">
-            <div class="header">
-                <h1>Your Brand Mood Board</h1>
+        <section class="screen" id="resultScreen" aria-labelledby="result-title">
+            <header class="header">
+                <h1 id="result-title">Your Brand Mood Board</h1>
                 <p id="brandSummary"></p>
-            </div>
+            </header>
 
-            <div class="mood-board" id="moodBoard"></div>
+            <div class="mood-board" id="moodBoard" role="region" aria-label="Generated mood board images"></div>
 
             <div class="rating-section">
                 <h3>Rate Your Brand Vibe</h3>
-                <div class="star-rating" id="starRating">
-                    <span class="star" data-value="1">★</span>
-                    <span class="star" data-value="2">★</span>
-                    <span class="star" data-value="3">★</span>
-                    <span class="star" data-value="4">★</span>
-                    <span class="star" data-value="5">★</span>
+                <div class="star-rating" id="starRating" role="radiogroup" aria-label="Rate from 1 to 5 stars">
+                    <button class="star" data-value="1" role="radio" aria-checked="false" aria-label="1 star">★</button>
+                    <button class="star" data-value="2" role="radio" aria-checked="false" aria-label="2 stars">★</button>
+                    <button class="star" data-value="3" role="radio" aria-checked="false" aria-label="3 stars">★</button>
+                    <button class="star" data-value="4" role="radio" aria-checked="false" aria-label="4 stars">★</button>
+                    <button class="star" data-value="5" role="radio" aria-checked="false" aria-label="5 stars">★</button>
                 </div>
-                <textarea id="reviewText" placeholder="Add a short review for your brand..."></textarea>
-                <button class="btn" id="addToSliderBtn" disabled>Add to Testimonials</button>
+                <textarea id="reviewText" placeholder="Add a short review for your brand..." aria-label="Brand review"></textarea>
+                <div class="result-actions">
+                    <button class="btn" id="addToSliderBtn" disabled>Add to Testimonials</button>
+                    <button class="btn btn-outline" id="shareBtn">Share Board</button>
+                </div>
             </div>
 
             <button class="btn btn-secondary" id="restartBtn">Start Over</button>
-        </div>
+        </section>
 
         <!-- Testimonial Slider Screen -->
-        <div class="screen" id="sliderScreen">
-            <div class="header">
-                <h1>Community Mood Boards</h1>
+        <section class="screen" id="sliderScreen" aria-labelledby="slider-title">
+            <header class="header">
+                <h1 id="slider-title">Community Mood Boards</h1>
                 <p>See what others created</p>
+            </header>
+
+            <div class="slider-container" aria-roledescription="carousel">
+                <div class="slider-wrapper" id="sliderWrapper" aria-live="polite"></div>
+                <button class="nav-btn prev" id="prevBtn" aria-label="Previous testimonial">‹</button>
+                <button class="nav-btn next" id="nextBtn" aria-label="Next testimonial">›</button>
             </div>
 
-            <div class="slider-container">
-                <div class="slider-wrapper" id="sliderWrapper"></div>
-                <button class="nav-btn prev" id="prevBtn">‹</button>
-                <button class="nav-btn next" id="nextBtn">›</button>
-            </div>
-
-            <div class="dots" id="dots"></div>
+            <div class="dots" id="dots" role="tablist" aria-label="Testimonial pages"></div>
             <button class="btn" id="createNewBtn">Create Your Own</button>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <footer class="footer-wrap">
+        <nav class="page-footer-nav" aria-label="Project navigation">
+            <a href="../048-image-generator/index.html">&larr; Previous: Code 048</a>
+            <a href="../../index.html">Home</a>
+            <a href="../050-todo-stinky-notes/index.html">Next: Code 050 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+        <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
 </body>

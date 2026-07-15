@@ -1,7 +1,7 @@
 const boxesContainer = document.getElementById('boxes');
 const toggleBtn = document.getElementById('toggleBtn');
 
-const BOX_COUNT = 80;
+const BOX_COUNT = window.innerWidth < 768? 40 : 80;
 const colors = [
     'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
@@ -12,9 +12,20 @@ const colors = [
 ];
 
 let isPaused = false;
+let mouseX = 0;
+let mouseY = 0;
+let rafId = null;
+let boxes = [];
+
+// Check for reduced motion preference
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Create boxes
 function createBoxes() {
+    boxesContainer.innerHTML = '';
+    boxes = [];
+    const fragment = document.createDocumentFragment();
+
     for (let i = 0; i < BOX_COUNT; i++) {
         const box = document.createElement('div');
         box.classList.add('box');
@@ -40,47 +51,88 @@ function createBoxes() {
         box.style.animationDelay = `${delay}s`;
         box.style.animationDuration = `${duration}s`;
 
-        // Random depth
+        // Store base z-depth for parallax calc
         const z = Math.random() * 400 - 200;
-        box.style.transform = `translateZ(${z}px)`;
+        box.style.setProperty('--z', `${z}px`);
+        box.dataset.speed = ((i % 5) + 1) * 0.5;
 
-        boxesContainer.appendChild(box);
+        fragment.appendChild(box);
+        boxes.push(box);
     }
+
+    boxesContainer.appendChild(fragment);
 }
 
-// Parallax effect on mouse move
-document.addEventListener('mousemove', (e) => {
-    if (isPaused) return;
+// Parallax update loop - doesn't kill CSS animation
+function updateParallax() {
+    if (isPaused || prefersReducedMotion) {
+        rafId = requestAnimationFrame(updateParallax);
+        return;
+    }
 
-    const boxes = document.querySelectorAll('.box');
-    const mouseX = e.clientX / window.innerWidth - 0.5;
-    const mouseY = e.clientY / window.innerHeight - 0.5;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
 
-    boxes.forEach((box, index) => {
-        const speed = (index % 5 + 1) * 0.5;
-        const x = mouseX * speed * 50;
-        const y = mouseY * speed * 50;
+    boxes.forEach((box) => {
+        const speed = parseFloat(box.dataset.speed);
+        const x = (mouseX - centerX) * speed * 0.05;
+        const y = (mouseY - centerY) * speed * 0.05;
 
-        box.style.transform = `translateX(${x}px) translateY(${y}px) rotateX(${y}deg) rotateY(${x}deg)`;
+        box.style.setProperty('--x', `${x}px`);
+        box.style.setProperty('--y', `${y}px`);
     });
+
+    rafId = requestAnimationFrame(updateParallax);
+}
+
+// Mouse move - just update coords, RAF handles the rest
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 });
+
+// Touch support
+document.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+        mouseX = e.touches[0].clientX;
+        mouseY = e.touches[0].clientY;
+    }
+}, { passive: true });
 
 // Pause/Play toggle
 toggleBtn.addEventListener('click', () => {
-    isPaused = !isPaused;
+    isPaused =!isPaused;
     document.body.classList.toggle('paused', isPaused);
-    toggleBtn.textContent = isPaused ? 'Resume Animation' : 'Pause Animation';
+    toggleBtn.textContent = isPaused? 'Resume Animation' : 'Pause Animation';
+    toggleBtn.setAttribute('aria-pressed', isPaused);
+    toggleBtn.setAttribute('aria-label', isPaused? 'Resume animation' : 'Pause animation');
 });
 
-// Reset positions when mouse leaves
-document.addEventListener('mouseleave', () => {
-    if (isPaused) return;
-
-    const boxes = document.querySelectorAll('.box');
-    boxes.forEach(box => {
-        box.style.transform = '';
-    });
+// Handle resize - debounce recreation
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        const newBoxCount = window.innerWidth < 768? 40 : 80;
+        if (newBoxCount!== BOX_COUNT) {
+            // Would need to reload or recreate - for now just log
+            console.log('Resize detected, reload for optimal box count');
+        }
+    }, 250);
 });
 
 // Init
-createBoxes();
+if (prefersReducedMotion) {
+    document.body.classList.add('paused');
+    toggleBtn.textContent = 'Animation Disabled';
+    toggleBtn.disabled = true;
+    createBoxes();
+} else {
+    createBoxes();
+    updateParallax();
+}
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+    if (rafId) cancelAnimationFrame(rafId);
+});

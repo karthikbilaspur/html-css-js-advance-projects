@@ -83,6 +83,11 @@ h1 {
     transform: translateY(-1px);
 }
 
+.btn-add:focus-visible {
+    outline: 3px solid #90c2ff;
+    outline-offset: 2px;
+}
+
 .notes-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -108,7 +113,18 @@ h1 {
     background-color: #1877f2;
     padding: 12px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.note-date {
+    color: rgba(255,255,255,0.8);
+    font-size: 12px;
+}
+
+.note-actions {
+    display: flex;
     gap: 8px;
 }
 
@@ -129,6 +145,11 @@ h1 {
     background-color: rgba(255,255,255,0.3);
 }
 
+.note-btn:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 1px;
+}
+
 .note textarea {
     width: 100%;
     min-height: 250px;
@@ -138,6 +159,7 @@ h1 {
     font-size: 15px;
     line-height: 1.6;
     resize: none;
+    overflow-y: hidden;
 }
 
 .note textarea:focus {
@@ -152,7 +174,7 @@ h1 {
     word-wrap: break-word;
 }
 
-.note .main.hidden {
+.note .main.hidden,.note textarea.hidden {
     display: none;
 }
 
@@ -173,6 +195,13 @@ h1 {
     padding: 2px 6px;
     border-radius: 4px;
     font-family: 'Courier New', monospace;
+}
+
+.note .main pre {
+    background-color: #f0f2f5;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
 }
 
 .empty-state {
@@ -196,6 +225,38 @@ h1 {
     display: none;
 }
 
+.page-footer-nav {
+    max-width: 1200px;
+    margin: 40px auto 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.page-footer-nav a {
+    color: #1877f2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.page-footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.credit {
+    text-align: center;
+    color: #65676b;
+    font-size: 13px;
+}
+
+.credit + p {
+    text-align: center;
+    color: #8a8d91;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -212,5 +273,11 @@ h1 {
 
    .notes-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .note, .btn {
+        transition: none;
     }
 }

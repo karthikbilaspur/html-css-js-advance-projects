@@ -16,7 +16,7 @@
                 <a href="#services">Services</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <button class="menu-toggle" id="menuToggle">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -37,12 +37,12 @@
         </div>
 
         <main>
-            <section class="hero">
+            <section class="hero" id="home">
                 <h1>Responsive Design</h1>
                 <p>Resize your browser to see media queries in action</p>
             </section>
 
-            <section class="grid-demo">
+            <section class="grid-demo" id="about">
                 <h2>Responsive Grid</h2>
                 <div class="card-grid">
                     <div class="card">
@@ -56,7 +56,7 @@
                         <p>768px+ shows 2 columns and expanded navigation.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">🖥️</div>
+                        <div class="card-icon">🖥</div>
                         <h3>Desktop</h3>
                         <p>1024px+ shows 3 columns and full layout.</p>
                     </div>
@@ -68,7 +68,7 @@
                 </div>
             </section>
 
-            <section class="breakpoints">
+            <section class="breakpoints" id="services">
                 <h2>Current Breakpoints</h2>
                 <div class="breakpoint-list">
                     <div class="breakpoint-item" data-size="mobile">
@@ -90,11 +90,11 @@
                 </div>
             </section>
 
-            <section class="image-demo">
+            <section class="image-demo" id="contact">
                 <h2>Responsive Images</h2>
                 <div class="image-container">
                     <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200"
-                         alt="Responsive"
+                         alt="Responsive mountain landscape"
                          srcset="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400 400w,
                                  https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800 800w,
                                  https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200 1200w"
@@ -108,6 +108,14 @@
             <p>Resize your browser or open DevTools to test breakpoints</p>
         </footer>
     </div>
+
+    <nav class="page-footer-nav" aria-label="Project navigation">
+        <a href="../044-custom-range-slider/index.html">&larr; Previous: Code 044</a>
+        <a href="../../index.html">Home</a>
+        <a href="../046-testimonial-slider-box/index.html">Next: Code 046 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
 
     <script src="script.js"></script>
 </body>

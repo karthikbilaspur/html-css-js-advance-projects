@@ -22,25 +22,25 @@
 
             <div class="progress-container">
                 <span id="current-time">0:00</span>
-                <input type="range" id="progress" min="0" max="100" value="0" step="0.1">
+                <input type="range" id="progress" min="0" max="100" value="0" step="0.1" title="progress">Progress-Container
                 <span id="duration">0:00</span>
             </div>
 
             <div class="controls">
-                <button id="prev-btn" class="control-btn">
+                <button id="prev-btn" class="control-btn" title="button">Button
                     <i class="fas fa-backward-step"></i>
                 </button>
-                <button id="play-btn" class="control-btn play-btn">
+                <button id="play-btn" class="control-btn play-btn" title="play">Play
                     <i class="fas fa-play"></i>
                 </button>
-                <button id="next-btn" class="control-btn">
+                <button id="next-btn" class="control-btn" title="next-btn">Next-Btn
                     <i class="fas fa-forward-step"></i>
                 </button>
             </div>
 
             <div class="volume-control">
                 <i class="fas fa-volume-low"></i>
-                <input type="range" id="volume" min="0" max="100" value="70">
+                <input type="range" id="volume" min="0" max="100" value="70" title="volume">Volume-Control
                 <i class="fas fa-volume-high"></i>
             </div>
 
@@ -62,5 +62,13 @@
 
     <audio id="audio"></audio>
     <script src="code77.js"></script>
+       <footer>
+    <nav class="page-footer-nav">
+      <a href="../code76/code76.html">&larr; Previous: Code 76</a>
+      <a href="../../index.html">Home</a>
+      <a href="../code78/code78.html">Next: Code 78&rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+  </footer>
 </body>
 </html>

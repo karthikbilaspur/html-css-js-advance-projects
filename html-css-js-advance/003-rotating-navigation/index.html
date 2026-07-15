@@ -3,50 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project 003: Rotating Navigation by KarthikCodingSolutions">
   <title>Rotating Navigation | KarthikCodingSolutions</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
 <body>
-  <div class="container">
-    <div class="circle-container">
-      <div class="circle">
-        <button id="close">
-          <i class="fas fa-times"></i>
-        </button>
-        <button id="open">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
+  <div class="circle-container">
+    <div class="circle">
+      <button id="close" aria-label="Close menu" aria-expanded="false" aria-controls="main-menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <button id="open" aria-label="Open menu" aria-expanded="false" aria-controls="main-menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
+  </div>
 
+  <div class="container" id="main-content">
     <div class="content">
       <header>
         <div class="brand">
-          <span class="logo">⚡</span>
+          <span class="logo" aria-hidden="true">⚡</span>
           <span>KarthikCodingSolutions</span>
         </div>
         <p>Project 003: Rotating Navigation</p>
       </header>
 
       <h1>Full Stack Development</h1>
-      <small>By Karthik Cwrp</small>
+      <p class="author"><small>By Karthik Cwrp</small></p>
       <p>Rotating navigation is a cool UI effect where the entire page content rotates to reveal a hidden menu. It's built with CSS transforms and a bit of JavaScript to toggle classes. The effect gives your site a modern, app-like feel without heavy frameworks.</p>
 
-      <h3>Why Use It?</h3>
-      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200" alt="Code on screen">
+      <h2>Why Use It?</h2>
+      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200" alt="JavaScript code in VS Code editor with syntax highlighting" loading="lazy">
       <p>Instead of a boring slide-in menu, the rotation adds depth and motion. Perfect for portfolios, landing pages, or any project where you want to stand out. The menu stays fixed while content rotates, creating a 3D perspective effect that's lightweight and runs on pure CSS.</p>
     </div>
   </div>
 
-  <nav>
+  <nav id="main-menu" aria-label="Main menu" aria-hidden="true">
     <ul>
-      <li><i class="fas fa-home"></i> Home</li>
-      <li><i class="fas fa-user-alt"></i> About</li>
-      <li><i class="fas fa-envelope"></i> Contact</li>
+      <li><a href="../../index.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        Home
+      </a></li>
+      <li><a href="#about">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        About
+      </a></li>
+      <li><a href="#contact">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2.9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        Contact
+      </a></li>
     </ul>
   </nav>
 
-  <script src="script.js"></script>
+  <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <footer>
+    <nav class="page-footer-nav" aria-label="Project navigation">
+      <a href="../002-progress-steps/index.html">&larr; Previous: Code 002</a>
+      <a href="../../index.html">Home</a>
+      <a href="../004-hidden-search/index.html">Next: Code 004 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    <p>&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

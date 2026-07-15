@@ -1,9 +1,233 @@
-const sliderWrapper = document.getElementById('sliderWrapper');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const dotsContainer = document.getElementById('dots');
+class TestimonialSlider {
+    constructor(data) {
+        this.testimonials = data;
+        this.currentIndex = 0;
+        this.autoPlayInterval = null;
+        this.isPlaying = true;
+        this.isDragging = false;
 
-const testimonials = [
+        // DOM Elements
+        this.track = document.getElementById('sliderTrack');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.pagination = document.getElementById('pagination');
+
+        this.cardsPerView = this.getCardsPerView();
+        this.init();
+    }
+
+    getCardsPerView() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    }
+
+    createStarRating(rating) {
+        return Array.from({ length: 5 }, (_, i) => `
+            <svg class="star ${i < rating? 'filled' : ''}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+        `).join('');
+    }
+
+    createTestimonialCard(t, index) {
+        return `
+            <article class="testimonial-card" role="tabpanel" aria-roledescription="slide"
+                     aria-label="${index + 1} of ${this.testimonials.length}">
+                <div class="quote-icon" aria-hidden="true">"</div>
+                <div class="stars" aria-label="Rating: ${t.rating} out of 5 stars">
+                    ${this.createStarRating(t.rating)}
+                </div>
+                <p class="testimonial-text">${t.text}</p>
+                <div class="user-info">
+                    <img src="${t.avatar}" alt="${t.name}" class="user-avatar" loading="lazy">
+                    <div class="user-details">
+                        <h4>${t.name}</h4>
+                        <p>${t.role} at ${t.company}</p>
+                        ${t.verified? '<span class="verified-badge">✓ Verified</span>' : ''}
+                    </div>
+                </div>
+            </article>
+        `;
+    }
+
+    render() {
+        this.track.innerHTML = this.testimonials.map((t, i) => this.createTestimonialCard(t, i)).join('');
+        this.createPagination();
+        this.updateSlider(false);
+    }
+
+    createPagination() {
+        const pageCount = Math.ceil(this.testimonials.length / this.cardsPerView);
+        this.pagination.innerHTML = '';
+
+        for (let i = 0; i < pageCount; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'dot';
+            dot.setAttribute('role', 'tab');
+            dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+            dot.setAttribute('aria-controls', 'sliderTrack');
+            dot.addEventListener('click', () => this.goToPage(i));
+            this.pagination.appendChild(dot);
+        }
+    }
+
+    updateSlider(animate = true) {
+        const cardWidth = this.track.children[0].offsetWidth;
+        const gap = 30;
+        const offset = -(this.currentIndex * (cardWidth + gap));
+
+        this.track.style.transition = animate? '' : 'none';
+        this.track.style.transform = `translateX(${offset}px)`;
+
+        this.updatePagination();
+        this.updateButtons();
+    }
+
+    updatePagination() {
+        const currentPage = Math.floor(this.currentIndex / this.cardsPerView);
+        const dots = this.pagination.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.setAttribute('aria-selected', index === currentPage);
+            dot.setAttribute('tabindex', index === currentPage? '0' : '-1');
+        });
+    }
+
+    updateButtons() {
+        const maxIndex = this.testimonials.length - this.cardsPerView;
+        this.prevBtn.disabled = this.currentIndex <= 0;
+        this.nextBtn.disabled = this.currentIndex >= maxIndex;
+    }
+
+    next() {
+        const maxIndex = this.testimonials.length - this.cardsPerView;
+        this.currentIndex = this.currentIndex >= maxIndex? 0 : this.currentIndex + 1;
+        this.updateSlider();
+    }
+
+    prev() {
+        const maxIndex = this.testimonials.length - this.cardsPerView;
+        this.currentIndex = this.currentIndex <= 0? maxIndex : this.currentIndex - 1;
+        this.updateSlider();
+    }
+
+    goToPage(pageIndex) {
+        this.currentIndex = pageIndex * this.cardsPerView;
+        this.updateSlider();
+        this.resetAutoPlay();
+    }
+
+    startAutoPlay() {
+        if (!this.isPlaying) return;
+        this.stopAutoPlay();
+        this.autoPlayInterval = setInterval(() => this.next(), 5000);
+    }
+
+    stopAutoPlay() {
+        clearInterval(this.autoPlayInterval);
+    }
+
+    resetAutoPlay() {
+        this.stopAutoPlay();
+        if (this.isPlaying) this.startAutoPlay();
+    }
+
+    handleKeyboard(e) {
+        if (e.key === 'ArrowLeft') {
+            this.prev();
+            this.resetAutoPlay();
+        }
+        if (e.key === 'ArrowRight') {
+            this.next();
+            this.resetAutoPlay();
+        }
+    }
+
+    handleTouch() {
+        let startX = 0;
+        let currentX = 0;
+
+        this.track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            this.stopAutoPlay();
+            this.isDragging = true;
+        }, { passive: true });
+
+        this.track.addEventListener('touchmove', (e) => {
+            if (!this.isDragging) return;
+            currentX = e.touches[0].clientX;
+        }, { passive: true });
+
+        this.track.addEventListener('touchend', () => {
+            if (!this.isDragging) return;
+            this.isDragging = false;
+            const diff = startX - currentX;
+
+            if (Math.abs(diff) > 50) {
+                diff > 0? this.next() : this.prev();
+            }
+            this.resetAutoPlay();
+        });
+    }
+
+    handleVisibility() {
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                this.stopAutoPlay();
+            } else if (this.isPlaying) {
+                this.startAutoPlay();
+            }
+        });
+    }
+
+    handleResize() {
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                const newCardsPerView = this.getCardsPerView();
+                if (newCardsPerView!== this.cardsPerView) {
+                    this.cardsPerView = newCardsPerView;
+                    this.currentIndex = 0;
+                    this.createPagination();
+                    this.updateSlider(false);
+                }
+            }, 250);
+        });
+    }
+
+    bindEvents() {
+        this.nextBtn.addEventListener('click', () => {
+            this.next();
+            this.resetAutoPlay();
+        });
+
+        this.prevBtn.addEventListener('click', () => {
+            this.prev();
+            this.resetAutoPlay();
+        });
+
+        this.track.addEventListener('mouseenter', () => this.stopAutoPlay());
+        this.track.addEventListener('mouseleave', () => this.startAutoPlay());
+        this.track.addEventListener('focusin', () => this.stopAutoPlay());
+        this.track.addEventListener('focusout', () => this.startAutoPlay());
+
+        document.addEventListener('keydown', (e) => this.handleKeyboard(e));
+
+        this.handleTouch();
+        this.handleVisibility();
+        this.handleResize();
+    }
+
+    init() {
+        this.render();
+        this.bindEvents();
+        this.startAutoPlay();
+    }
+}
+
+// Data
+const testimonialData = [
     {
         name: 'Sarah Johnson',
         role: 'Product Manager',
@@ -60,146 +284,7 @@ const testimonials = [
     }
 ];
 
-let currentIndex = 0;
-let autoPlayInterval;
-let cardsPerView = getCardsPerView();
-
-function getCardsPerView() {
-    if (window.innerWidth <= 768) return 1;
-    if (window.innerWidth <= 1024) return 2;
-    return 3;
-}
-
-function createStarRating(rating) {
-    let stars = '';
-    for (let i = 1; i <= 5; i++) {
-        stars += `
-            <svg class="star ${i <= rating? 'filled' : ''}" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-        `;
-    }
-    return stars;
-}
-
-function createTestimonialCard(testimonial) {
-    return `
-        <div class="testimonial-card">
-            <div class="quote-icon">"</div>
-            <div class="stars">${createStarRating(testimonial.rating)}</div>
-            <p class="testimonial-text">${testimonial.text}</p>
-            <div class="user-info">
-                <img src="${testimonial.avatar}" alt="${testimonial.name}" class="user-avatar">
-                <div class="user-details">
-                    <h4>${testimonial.name}</h4>
-                    <p>${testimonial.role} at ${testimonial.company}</p>
-                    ${testimonial.verified? '<span class="verified-badge">✓ Verified</span>' : ''}
-                </div>
-            </div>
-        </div>
-    `;
-}
-
-function initSlider() {
-    sliderWrapper.innerHTML = testimonials.map(createTestimonialCard).join('');
-    createDots();
-    updateSlider();
-    startAutoPlay();
-}
-
-function createDots() {
-    const dotCount = Math.ceil(testimonials.length / cardsPerView);
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < dotCount; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-    }
-}
-
-function updateSlider() {
-    const offset = -(currentIndex * (100 / cardsPerView));
-    sliderWrapper.style.transform = `translateX(${offset}%)`;
-
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === Math.floor(currentIndex / cardsPerView));
-    });
-}
-
-function nextSlide() {
-    const maxIndex = testimonials.length - cardsPerView;
-    currentIndex = currentIndex >= maxIndex? 0 : currentIndex + 1;
-    updateSlider();
-}
-
-function prevSlide() {
-    const maxIndex = testimonials.length - cardsPerView;
-    currentIndex = currentIndex <= 0? maxIndex : currentIndex - 1;
-    updateSlider();
-}
-
-function goToSlide(index) {
-    currentIndex = index * cardsPerView;
-    updateSlider();
-    resetAutoPlay();
-}
-
-function startAutoPlay() {
-    autoPlayInterval = setInterval(nextSlide, 5000);
-}
-
-function resetAutoPlay() {
-    clearInterval(autoPlayInterval);
-    startAutoPlay();
-}
-
-// Event listeners
-nextBtn.addEventListener('click', () => {
-    nextSlide();
-    resetAutoPlay();
+// Init on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    new TestimonialSlider(testimonialData);
 });
-
-prevBtn.addEventListener('click', () => {
-    prevSlide();
-    resetAutoPlay();
-});
-
-// Pause on hover
-sliderWrapper.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-sliderWrapper.addEventListener('mouseleave', startAutoPlay);
-
-// Touch/swipe support
-let touchStartX = 0;
-let touchEndX = 0;
-
-sliderWrapper.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-sliderWrapper.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
-
-function handleSwipe() {
-    if (touchEndX < touchStartX - 50) nextSlide();
-    if (touchEndX > touchStartX + 50) prevSlide();
-    resetAutoPlay();
-}
-
-// Handle resize
-window.addEventListener('resize', () => {
-    const newCardsPerView = getCardsPerView();
-    if (newCardsPerView!== cardsPerView) {
-        cardsPerView = newCardsPerView;
-        currentIndex = 0;
-        createDots();
-        updateSlider();
-    }
-});
-
-// Init
-initSlider();

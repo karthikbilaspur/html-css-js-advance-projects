@@ -140,7 +140,6 @@ header h1 {
     border-radius: 24px;
     padding: 35px;
     margin-bottom: 25px;
-    backdrop-filter: blur(10px);
 }
 
 .location-info {
@@ -326,8 +325,8 @@ header h1 {
 
 @media (max-width: 768px) {
     header h1 { font-size: 2rem; }
-   .current-temp { font-size: 3.5rem; }
-   .weather-icon { font-size: 4rem; }
-   .temp-section { flex-direction: column; text-align: center; }
-   .weather-stats { grid-template-columns: repeat(2, 1fr); }
+  .current-temp { font-size: 3.5rem; }
+  .weather-icon { font-size: 4rem; }
+  .temp-section { flex-direction: column; text-align: center; }
+  .weather-stats { grid-template-columns: repeat(2, 1fr); }
 }

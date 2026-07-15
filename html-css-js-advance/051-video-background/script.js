@@ -23,7 +23,7 @@ playPauseBtn.addEventListener('click', () => {
 
 // Mute toggle
 muteBtn.addEventListener('click', () => {
-    video.muted =!video.muted;
+    video.muted = !video.muted;
     if (video.muted) {
         volumeIcon.style.display = 'none';
         muteIcon.style.display = 'block';
@@ -62,7 +62,7 @@ video.addEventListener('ended', () => {
 
 // Keyboard controls
 document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space' && e.target.tagName!== 'BUTTON') {
+    if (e.code === 'Space' && e.target.tagName !== 'BUTTON') {
         e.preventDefault();
         playPauseBtn.click();
     }

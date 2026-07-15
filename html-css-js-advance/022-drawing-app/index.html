@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>023-kinetic-loader</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawing App | KarthikCodingSolutions</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="loader-container">
-        <h1>Loading...</h1>
-        <div class="kinetic">
-            <div class="triangle"></div>
-            <div class="triangle"></div>
-        </div>
-        <p>Please wait while we get things ready</p>
+  <header class="kcs-header">
+    <div class="brand">
+      <span class="logo">⚡</span>
+      <span>KarthikCodingSolutions</span>
+    </div>
+    <p>Project 022: Drawing App</p>
+  </header>
+
+  <div class="app-container">
+    <h1>Draw Something</h1>
+
+    <div class="toolbar">
+      <label for="colorPicker">Color:</label>
+      <input type="color" id="colorPicker" value="#000000">
+
+      <label for="brushSize">Size:</label>
+      <input type="range" id="brushSize" min="1" max="50" value="5">
+      <span id="sizeDisplay">5</span>
+
+      <button id="eraserBtn">Eraser</button>
+      <button id="clearBtn">Clear</button>
     </div>
 
-    <script src="script.js"></script>
+    <canvas id="drawingCanvas" width="800" height="500"></canvas>
+  </div>
+
+    <nav class="page-footer-nav" aria-label="Project navigation">
+      <a href="../021-drag-n-drop/index.html">&larr; Previous: Code 021</a>
+      <a href="../../index.html">Home</a>
+      <a href="../023-kinetic-loader/index.html">Next: Code 023 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    <p>&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+  
+  <script src="script.js"></script>
 </body>
 </html>

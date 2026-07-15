@@ -1,1 +1,266 @@
 /* Styles for Code 21 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #26c2ae;
+  --primary-dark: #00474b;
+  --bg: #c5e4e7;
+  --card-bg: #ffffff;
+  --text-dark: #00474b;
+  --text-gray: #7f9d9f;
+  --input-bg: #f3f9fa;
+  --error: #e17457;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  color: var(--primary-dark);
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.tip-container {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 30px rgba(0, 71, 75, 0.15);
+  max-width: 920px;
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .tip-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 2.5rem;
+  }
+}
+
+.input-group {
+  margin-bottom: 2rem;
+}
+
+.input-group:last-of-type {
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  color: var(--text-gray);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+input[type="number"] {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 2px solid transparent;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-align: right;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input[type="number"]:focus {
+  border: 2px solid var(--primary);
+}
+
+input[type="number"]::placeholder {
+  color: #9ebbbd;
+}
+
+.input-error {
+  border: 2px solid var(--error) !important;
+}
+
+/* Rupee icon for bill input */
+#billAmount {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='17'%3E%3Cpath fill='%239EBBBD' d='M6.016 16.328v-1.464c1.232-.08 2.22-.444 2.964-1.092.744-.648 1.116-1.508 1.116-2.58v-.144c0-1.368-.476-2.4-1.428-3.096-.952-.696-2.352-1.044-4.2-1.044H1.392v5.092H.404v-5.092h-.936V6.61h.936v-1.86H.404V3.494h.988V1.934h1.392v1.56h1.968v1.256H2.784v1.86h2.184c1.68 0 2.928.408 3.744 1.224.816.816 1.224 1.948 1.224 3.396v.144c0 2.124-.708 3.724-2.124 4.8-1.416 1.076-3.384 1.612-5.904 1.612v1.464h1.008v-1.464h3.36v1.464H6.016z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+}
+
+/* Person icon for people input */
+#people {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='16'%3E%3Cpath fill='%239EBBBD' d='M9.573 7.729c.406 0 .784.07 1.126.209.342.14.639.33.881.569.232.227.438.503.614.82a5.1 5.1 0 01.407.949c.097.312.178.654.242 1.016.062.359.105.699.126 1.011.02.307.031.624.031.945 0 .836-.259 1.512-.768 2.025-.509.513-1.188.77-2.048.77H1.426c-.86 0-1.538-.257-2.048-.77C-.13 14.78-.384 14.104-.384 13.268c0-.322.01-.64.032-.945.02-.312.063-.652.126-1.01.063-.363.144-.705.242-1.017.1-.323.238-.643.407-.95.176-.318.382-.594.613-.821.243-.238.54-.43.882-.57.342-.138.72-.208 1.125-.208.16 0 .313.067.61.265.183.123.397.264.636.421.204.134.48.259.822.372.333.11.671.167 1.005.167a3.19 3.19 0 001.006-.167c.341-.113.618-.238.822-.372l.636-.42c.296-.2.45-.266.61-.266zM6.598 0C7.63 0 8.522.38 9.252 1.129s1.1 1.666 1.1 2.724c0 1.06-.37 1.976-1.1 2.725-.73.75-1.623 1.13-2.654 1.13-1.03 0-1.924-.38-2.653-1.13-.73-.749-1.1-1.666-1.1-2.725 0-1.058.37-1.975 1.1-2.724C4.675.379 5.567 0 6.598 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+}
+
+.tip-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .tip-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tip-btn {
+  background-color: var(--primary-dark);
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.tip-btn:hover {
+  background-color: #9fe8df;
+  color: var(--primary-dark);
+}
+
+.tip-btn.active {
+  background-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+.result {
+  background-color: var(--primary-dark);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.result-row:last-of-type {
+  margin-bottom: 0;
+}
+
+.result-row p {
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.per-person {
+  color: var(--text-gray);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.amount {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Pagination Footer */
+footer {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 920px;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 71, 75, 0.1);
+}
+
+.page-footer-nav a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  transition: all 0.2s;
+  text-align: center;
+  flex: 1;
+}
+
+.page-footer-nav a:hover {
+  background-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+.page-footer-nav a:nth-child(2) {
+  background-color: var(--input-bg);
+  max-width: 120px;
+}
+
+@media (max-width: 500px) {
+  .page-footer-nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .page-footer-nav a {
+    width: 100%;
+  }
+  
+  .page-footer-nav a:nth-child(2) {
+    max-width: 100%;
+    order: -1; /* Put Home first on mobile */
+  }
+}
+
+#resetBtn {
+  background-color: var(--primary);
+  color: var(--primary-dark);
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2rem;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+}
+
+#resetBtn:hover {
+  background-color: #9fe8df;
+}
+
+#resetBtn:disabled {
+  background-color: #0d686d;
+  cursor: not-allowed;
+  opacity: 0.3;
+}

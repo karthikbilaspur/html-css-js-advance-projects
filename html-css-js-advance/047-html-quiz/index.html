@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>047-html-quiz</title>
+    <title>047 - HTML Quiz Pro</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="quiz-container">
+    <main class="quiz-container">
         <!-- Start Screen -->
-        <div class="screen active" id="startScreen">
-            <h1>HTML Quiz</h1>
+        <section class="screen active" id="startScreen" aria-labelledby="quiz-title">
+            <h1 id="quiz-title">HTML Quiz</h1>
             <p class="subtitle">Test your HTML knowledge</p>
-            <div class="difficulty-select">
+            <div class="difficulty-select" role="group" aria-label="Select difficulty">
                 <h3>Select Difficulty:</h3>
                 <button class="difficulty-btn" data-level="easy">
                     <span class="level">Easy</span>
@@ -27,36 +27,38 @@
                     <span class="count">10 Questions</span>
                 </button>
             </div>
-        </div>
+        </section>
 
         <!-- Quiz Screen -->
-        <div class="screen" id="quizScreen">
-            <div class="quiz-header">
-                <div class="progress-info">
-                    <span id="questionNumber">Question 1/10</span>
-                    <span id="difficultyBadge" class="badge"></span>
+        <section class="screen" id="quizScreen" aria-live="polite">
+            <header class="quiz-header">
+                <div class="quiz-meta">
+                    <span id="difficultyBadge" class="badge" aria-label="Difficulty"></span>
+                    <div class="score" aria-live="polite">Score: <span id="score">0</span></div>
                 </div>
-                <div class="score">Score: <span id="score">0</span></div>
-            </div>
-
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
+                <div class="progress-bar" role="progressbar" aria-label="Quiz progress">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </header>
 
             <div class="question-box">
                 <h2 id="questionText"></h2>
-                <div class="options" id="options"></div>
+                
+                <!-- PAGINATION NOW BETWEEN QUESTION + OPTIONS -->
+                <nav class="pagination" id="pagination" role="navigation" aria-label="Question navigation"></nav>
+                
+                <div class="options" id="options" role="radiogroup" aria-labelledby="questionText"></div>
             </div>
 
-            <div class="explanation" id="explanation"></div>
+            <div class="explanation" id="explanation" role="status" aria-live="polite"></div>
 
-            <button class="btn" id="nextBtn">Next Question</button>
-        </div>
+            <button class="btn" id="nextBtn" disabled>Next Question</button>
+        </section>
 
         <!-- Result Screen -->
-        <div class="screen" id="resultScreen">
-            <h1>Quiz Complete!</h1>
-            <div class="result-circle">
+        <section class="screen" id="resultScreen" aria-labelledby="result-title">
+            <h1 id="result-title">Quiz Complete!</h1>
+            <div class="result-circle" role="img" aria-label="Final score">
                 <svg viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="45" class="result-bg"></circle>
                     <circle cx="50" cy="50" r="45" class="result-fill" id="resultCircle"></circle>
@@ -72,8 +74,19 @@
                 <button class="btn" id="retryBtn">Try Again</button>
                 <button class="btn btn-secondary" id="homeBtn">Change Level</button>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <footer class="footer-wrap">
+        <nav class="page-footer-nav" aria-label="Project navigation">
+            <a href="../046-testimonnial-slider-box/index.html">&larr; Previous: Code 046</a>
+            <a href="../../index.html">Home</a>
+            <a href="../048-image-generator/index.html">Next: Code 048
+                 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+        <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

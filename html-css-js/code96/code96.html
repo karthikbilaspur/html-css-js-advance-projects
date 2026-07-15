@@ -18,7 +18,7 @@
 
         <div class="recorder">
             <div class="preview-wrapper">
-                <video id="preview" autoplay muted playsinline></video>
+                <video id="preview" autoplay muted></video>
                 <div class="recording-indicator" id="recording-indicator">
                     <div class="rec-dot"></div>
                     <span>REC</span>
@@ -33,7 +33,7 @@
             <div class="controls">
                 <div class="control-group">
                     <label>Audio Source</label>
-                    <select id="audio-source">
+                    <select id="audio-source" title="Choose Audio Source">Choose Audio Source
                         <option value="none">No Audio</option>
                         <option value="system">System Audio</option>
                         <option value="mic">Microphone</option>
@@ -43,7 +43,7 @@
 
                 <div class="control-group">
                     <label>Video Quality</label>
-                    <select id="quality">
+                    <select id="quality" title="Choose Video Quality"> Choose Video Quality
                         <option value="1080">1080p - High</option>
                         <option value="720" selected>720p - Standard</option>
                         <option value="480">480p - Low</option>
@@ -52,7 +52,7 @@
 
                 <div class="control-group">
                     <label>Format</label>
-                    <select id="format">
+                    <select id="format" title="Choose Format Type">Choose Format Type
                         <option value="webm">WebM</option>
                         <option value="mp4">MP4</option>
                     </select>
@@ -75,5 +75,14 @@
     </div>
 
     <script src="code96.js"></script>
+
+     <footer>
+        <nav class="page-footer-nav">
+            <a href="../code95/code95.html">&larr; Previous: Code 95</a>
+            <a href="../../index.html">Home</a>
+            <a href="../code97/code97.html">Next: Code 97 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    </footer>
 </body>
 </html>

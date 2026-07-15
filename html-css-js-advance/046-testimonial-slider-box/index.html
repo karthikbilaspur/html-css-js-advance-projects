@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>046-testimonial-slider</title>
+    <title>046 - Testimonial Slider Pro</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="testimonial-section">
-        <div class="header">
+    <main class="testimonial-section">
+        <header class="header">
             <h1>What Our Clients Say</h1>
             <p>Trusted by thousands of customers worldwide</p>
-        </div>
+        </header>
 
-        <div class="slider-container">
-            <div class="slider-wrapper" id="sliderWrapper">
+        <div class="slider-container" aria-roledescription="carousel">
+            <div class="slider-track" id="sliderTrack" aria-live="polite">
                 <!-- Testimonials injected here -->
             </div>
 
-            <button class="nav-btn prev" id="prevBtn">
+            <button class="nav-btn prev" id="prevBtn" aria-label="Previous testimonial" aria-controls="sliderTrack">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
             </button>
-            <button class="nav-btn next" id="nextBtn">
+            <button class="nav-btn next" id="nextBtn" aria-label="Next testimonial" aria-controls="sliderTrack">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             </button>
         </div>
 
-        <div class="dots" id="dots"></div>
-    </section>
+        <div class="pagination" id="pagination" role="tablist" aria-label="Testimonial pages"></div>
+    </main>
+    
+    <footer class="footer-wrap">
+        <nav class="page-footer-nav" aria-label="Project navigation">
+            <a href="../045-animated-countdown/index.html">&larr; Previous: Code 045</a>
+            <a href="../../index.html">Home</a>
+            <a href="../047-html-quiz/index.html">Next: Code 047 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+        <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

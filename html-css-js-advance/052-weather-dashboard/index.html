@@ -13,7 +13,7 @@
             <h1>Weather Dashboard</h1>
             <div class="search-box">
                 <input type="text" id="cityInput" placeholder="Search city...">
-                <button id="searchBtn">
+                <button id="searchBtn" title="search">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="11" cy="11" r="8"></circle>
                         <path d="m21 21-4.35-4.35"></path>
@@ -70,14 +70,14 @@
                         </div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-icon">🌧️</div>
+                        <div class="stat-icon">🌧</div>
                         <div class="stat-info">
                             <span class="stat-value" id="precipitation">-- mm</span>
                             <span class="stat-label">Rain</span>
                         </div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-icon">☀️</div>
+                        <div class="stat-icon">☀</div>
                         <div class="stat-info">
                             <span class="stat-value" id="uvIndex">--</span>
                             <span class="stat-label">UV Index</span>
@@ -98,13 +98,21 @@
         </div>
 
         <div class="error-message" id="errorMessage">
-            <div class="error-icon">⚠️</div>
+            <div class="error-icon">⚠</div>
             <h3>Oops!</h3>
             <p id="errorText">Could not fetch weather data</p>
             <button class="btn" id="retryBtn">Try Again</button>
         </div>
     </div>
-
+                  <footer class="footer-wrap">
+        <nav class="page-footer-nav" aria-label="Project navigation">
+            <a href="../051-video-background/index.html">&larr; Previous: Code 051</a>
+            <a href="../../index.html">Home</a>
+            <a href="../053-drag-and-drop-kanban-board/index.html">Next: Code 053 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+        <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

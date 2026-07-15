@@ -313,3 +313,13 @@ header p {
 .timers-grid { grid-template-columns: 1fr; }
 .time-value { font-size: 2rem; }
 }
+
+.page-footer-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.page-footer-nav a {
+    font-size: 0.8rem;
+}
+

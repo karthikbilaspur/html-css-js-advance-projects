@@ -1,21 +1,56 @@
 const loadText = document.querySelector('.loading-text');
 const bg = document.querySelector('.bg');
 
-let load = 0;
-let int = setInterval(blurring, 30);
+const DURATION = 3000; // Total load time in ms
+const BLUR_START = 30;
+const IMAGE_URL = 'https://images.unsplash.com/photo-1574169208507-84376144848b?w=1600&q=80';
 
-function blurring() {
-  load++;
-  if (load > 99) clearInterval(int);
-
-  loadText.innerText = `${load}%`;
-  loadText.style.opacity = scale(load, 0, 100, 1, 0);
-  bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
+// Preload image before starting animation
+function startLoading() {
+  const img = new Image();
+  img.src = IMAGE_URL;
+  
+  img.onload = () => {
+    bg.style.backgroundImage = `url(${IMAGE_URL})`;
+    runAnimation();
+  };
+  
+  img.onerror = () => {
+    loadText.textContent = 'Error loading image';
+    loadText.style.opacity = '1';
+  };
 }
 
-// Map number from one range to another
-function scale(num, inMin, inMax, outMin, outMax) {
-  return ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+function runAnimation() {
+  let startTime = null;
+
+  function animate(timestamp) {
+    if (!startTime) startTime = timestamp;
+    
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / DURATION, 1);
+    
+    const load = Math.floor(progress * 100);
+    const opacity = 1 - progress;
+    const blur = BLUR_START * (1 - progress);
+    
+    loadText.textContent = `${load}%`;
+    loadText.style.opacity = opacity;
+    bg.style.filter = `blur(${blur}px)`;
+    
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      loadText.style.display = 'none';
+    }
+  }
+  
+  requestAnimationFrame(animate);
 }
 
-console.log('Blurry Loading loaded - KarthikCodingSolutions ⚡');
+// Start when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startLoading);
+} else {
+  startLoading();
+}

@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project 002: Progress Steps by KarthikCodingSolutions">
   <title>Progress Steps | KarthikCodingSolutions</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
 <body>
   <div class="container">
@@ -13,29 +15,35 @@
       <p>Project 002: Progress Steps</p>
     </header>
 
-    <div class="progress-container">
+    <div class="progress-container" role="group" aria-label="Progress steps">
       <div class="progress" id="progress"></div>
-      <div class="circle active">1</div>
-      <div class="circle">2</div>
-      <div class="circle">3</div>
-      <div class="circle">4</div>
+      <button class="circle active" aria-current="step" aria-label="Step 1: Plan Project">1</button>
+      <button class="circle" aria-label="Step 2: Design UI">2</button>
+      <button class="circle" aria-label="Step 3: Code Build">3</button>
+      <button class="circle" aria-label="Step 4: Deploy Live">4</button>
     </div>
 
-    <div class="content">
+    <div class="content" aria-live="polite" aria-atomic="true">
       <h2 id="step-title">Plan Project</h2>
       <p id="step-desc">Define requirements, scope, and tech stack for your build.</p>
     </div>
 
     <div class="btn-container">
-      <button class="btn" id="prev" disabled>Prev</button>
-      <button class="btn" id="next">Next</button>
+      <button class="btn" id="prev" type="button" disabled>Prev</button>
+      <button class="btn" id="next" type="button">Next</button>
     </div>
-
-    <footer>
-      <p>&copy; 2026 KarthikCodingSolutions</p>
-    </footer>
   </div>
 
-  <script src="script.js"></script>
+  <footer>
+    <nav class="page-footer-nav" aria-label="Project navigation">
+      <a href="../001-expanding-cards/index.html">&larr; Previous: Code 001</a>
+      <a href="../../index.html">Home</a>
+      <a href="../003-rotating-navigation/index.html">Next: Code 003 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    <p>&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

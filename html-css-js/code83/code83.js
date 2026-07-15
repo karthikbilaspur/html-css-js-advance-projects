@@ -1,4 +1,4 @@
-// JavaScript for Code 83
+// JavaScript for Code 83 - Cleaned
 const gridEl = document.getElementById('pixel-grid');
 const colorPicker = document.getElementById('color-picker');
 const gridSizeSelect = document.getElementById('grid-size');
@@ -20,14 +20,39 @@ let isDrawing = false;
 let showGrid = true;
 let pixels = [];
 
+// Save to localStorage
+function saveToStorage() {
+    const pixelData = pixels.map(p => rgbToHex(p.style.backgroundColor));
+    localStorage.setItem('pixelArt', JSON.stringify({
+        gridSize,
+        pixels: pixelData
+    }));
+}
+
+// Load from localStorage
+function loadFromStorage() {
+    const saved = localStorage.getItem('pixelArt');
+    if (saved) {
+        const data = JSON.parse(saved);
+        gridSize = data.gridSize;
+        gridSizeSelect.value = gridSize;
+        createGrid(gridSize, false);
+        data.pixels.forEach((color, i) => {
+            if (pixels[i]) pixels[i].style.backgroundColor = color;
+        });
+        return true;
+    }
+    return false;
+}
+
 // Initialize grid
-function createGrid(size) {
+function createGrid(size, shouldSave = true) {
     gridSize = size;
     gridEl.innerHTML = '';
     gridEl.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     gridEl.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-    const pixelSize = Math.min(400 / size, 24);
+    const pixelSize = Math.min(480 / size, 24);
     gridEl.style.width = `${pixelSize * size}px`;
     gridEl.style.height = `${pixelSize * size}px`;
 
@@ -41,9 +66,12 @@ function createGrid(size) {
         pixel.dataset.y = Math.floor(i / size);
         pixel.style.backgroundColor = '#ffffff';
 
-        pixel.addEventListener('mousedown', handlePixelClick);
+        pixel.addEventListener('mousedown', handlePixelDown);
         pixel.addEventListener('mouseenter', handlePixelEnter);
         pixel.addEventListener('mousemove', updateCoords);
+        pixel.addEventListener('touchstart', handleTouchStart, { passive: false });
+        pixel.addEventListener('touchmove', handleTouchMove, { passive: false });
+        pixel.addEventListener('contextmenu', e => e.preventDefault()); // Enable right-click erase
 
         gridEl.appendChild(pixel);
         pixels.push(pixel);
@@ -51,12 +79,24 @@ function createGrid(size) {
 
     canvasInfo.textContent = `${size} × ${size} pixels`;
     if (showGrid) gridEl.classList.add('show-grid');
+    if (shouldSave) saveToStorage();
 }
 
-// Get pixel color
+// Convert RGB to Hex - handles both formats
+function rgbToHex(color) {
+    if (color.startsWith('#')) return color.toLowerCase();
+    const match = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+    if (!match) return '#ffffff';
+    const r = parseInt(match[1]).toString(16).padStart(2, '0');
+    const g = parseInt(match[2]).toString(16).padStart(2, '0');
+    const b = parseInt(match[3]).toString(16).padStart(2, '0');
+    return `#${r}${g}${b}`.toLowerCase();
+}
+
+// Get pixel color as hex
 function getPixelColor(x, y) {
     const index = y * gridSize + x;
-    return pixels[index]?.style.backgroundColor || 'rgb(255, 255, 255)';
+    return rgbToHex(pixels[index]?.style.backgroundColor || '#ffffff');
 }
 
 // Set pixel color
@@ -97,20 +137,18 @@ function floodFill(startX, startY, targetColor, fillColor) {
     }
 }
 
-// Handle pixel click
-function handlePixelClick(e) {
-    const pixel = e.target;
+// Paint pixel based on tool
+function paintPixel(pixel, button = 0) {
     const x = parseInt(pixel.dataset.x);
     const y = parseInt(pixel.dataset.y);
+    const useErase = button === 2 || currentTool === 'erase'; // Right click = erase
 
-    if (currentTool === 'draw') {
-        isDrawing = true;
+    if (currentTool === 'draw' &&!useErase) {
         pixel.style.backgroundColor = currentColor;
-    } else if (currentTool === 'erase') {
-        isDrawing = true;
+    } else if (useErase) {
         pixel.style.backgroundColor = '#ffffff';
     } else if (currentTool === 'fill') {
-        const targetColor = pixel.style.backgroundColor;
+        const targetColor = rgbToHex(pixel.style.backgroundColor);
         floodFill(x, y, targetColor, currentColor);
     } else if (currentTool === 'eyedropper') {
         currentColor = rgbToHex(pixel.style.backgroundColor);
@@ -119,14 +157,37 @@ function handlePixelClick(e) {
     }
 }
 
+// Mouse events
+function handlePixelDown(e) {
+    e.preventDefault();
+    isDrawing = true;
+    paintPixel(e.target, e.button);
+    if (currentTool!== 'eyedropper') saveToStorage();
+}
+
 function handlePixelEnter(e) {
     if (!isDrawing) return;
+    paintPixel(e.target);
+}
 
-    const pixel = e.target;
-    if (currentTool === 'draw') {
-        pixel.style.backgroundColor = currentColor;
-    } else if (currentTool === 'erase') {
-        pixel.style.backgroundColor = '#ffffff';
+// Touch events for mobile
+function handleTouchStart(e) {
+    e.preventDefault();
+    isDrawing = true;
+    const touch = e.touches[0];
+    const pixel = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (pixel && pixel.classList.contains('pixel')) {
+        paintPixel(pixel);
+    }
+}
+
+function handleTouchMove(e) {
+    e.preventDefault();
+    if (!isDrawing) return;
+    const touch = e.touches[0];
+    const pixel = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (pixel && pixel.classList.contains('pixel')) {
+        paintPixel(pixel);
     }
 }
 
@@ -137,26 +198,21 @@ function updateCoords(e) {
     }
 }
 
-// Convert RGB to Hex
-function rgbToHex(rgb) {
-    if (rgb.startsWith('#')) return rgb;
-    const match = rgb.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
-    if (!match) return '#000000';
-    const r = parseInt(match[1]).toString(16).padStart(2, '0');
-    const g = parseInt(match[2]).toString(16).padStart(2, '0');
-    const b = parseInt(match[3]).toString(16).padStart(2, '0');
-    return `#${r}${g}${b}`;
-}
-
 // Update active swatch
 function updateActiveSwatch() {
     swatches.forEach(s => {
-        s.classList.toggle('active', s.dataset.color === currentColor);
+        s.classList.toggle('active', s.dataset.color.toLowerCase() === currentColor.toLowerCase());
     });
 }
 
 // Event listeners
 document.addEventListener('mouseup', () => {
+    if (isDrawing) saveToStorage();
+    isDrawing = false;
+});
+
+document.addEventListener('touchend', () => {
+    if (isDrawing) saveToStorage();
     isDrawing = false;
 });
 
@@ -165,21 +221,26 @@ document.addEventListener('mouseleave', () => {
 });
 
 colorPicker.addEventListener('input', (e) => {
-    currentColor = e.target.value;
+    currentColor = e.target.value.toLowerCase();
     updateActiveSwatch();
 });
 
 swatches.forEach(swatch => {
     swatch.addEventListener('click', () => {
-        currentColor = swatch.dataset.color;
+        currentColor = swatch.dataset.color.toLowerCase();
         colorPicker.value = currentColor;
         updateActiveSwatch();
     });
 });
 
 gridSizeSelect.addEventListener('change', (e) => {
+    const newSize = parseInt(e.target.value);
+    if (newSize === gridSize) return;
+
     if (confirm('Change grid size? This will clear your art.')) {
-        createGrid(parseInt(e.target.value));
+        createGrid(newSize);
+    } else {
+        gridSizeSelect.value = gridSize; // Reset if cancelled
     }
 });
 
@@ -199,6 +260,7 @@ gridToggleBtn.addEventListener('click', () => {
 clearBtn.addEventListener('click', () => {
     if (confirm('Clear all pixels?')) {
         pixels.forEach(p => p.style.backgroundColor = '#ffffff');
+        saveToStorage();
     }
 });
 
@@ -211,7 +273,7 @@ exportBtn.addEventListener('click', () => {
     pixels.forEach((pixel, i) => {
         const x = i % gridSize;
         const y = Math.floor(i / gridSize);
-        ctx.fillStyle = pixel.style.backgroundColor;
+        ctx.fillStyle = rgbToHex(pixel.style.backgroundColor);
         ctx.fillRect(x, y, 1, 1);
     });
 
@@ -223,12 +285,15 @@ exportBtn.addEventListener('click', () => {
 
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'b') drawBtn.click();
-    if (e.key === 'e') eraseBtn.click();
-    if (e.key === 'g') fillBtn.click();
-    if (e.key === 'i') eyedropperBtn.click();
+    if (e.target.tagName === 'INPUT') return; // Don't trigger when typing in color picker
+    if (e.key === 'b' || e.key === 'B') drawBtn.click();
+    if (e.key === 'e' || e.key === 'E') eraseBtn.click();
+    if (e.key === 'g' || e.key === 'G') fillBtn.click();
+    if (e.key === 'i' || e.key === 'I') eyedropperBtn.click();
 });
 
 // Init
-createGrid(16);
+if (!loadFromStorage()) {
+    createGrid(16);
+}
 updateActiveSwatch();

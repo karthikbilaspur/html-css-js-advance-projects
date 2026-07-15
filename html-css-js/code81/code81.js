@@ -19,8 +19,24 @@ const coordsEl = document.getElementById('coords');
 const canvasSizeEl = document.getElementById('canvas-size');
 const presets = document.querySelectorAll('.preset');
 
+// State
+let isDrawing = false;
+let currentTool = 'brush';
+let currentColor = '#e94560';
+let currentSize = 5;
+let startX, startY;
+let lastX, lastY; // for touchend
+let history = [];
+let historyStep = -1;
+
 // Canvas setup
 function resizeCanvas() {
+    // Save current drawing before resize
+    let savedDrawing = null;
+    if (canvas.width > 0 && canvas.height > 0) {
+        savedDrawing = canvas.toDataURL();
+    }
+
     const wrapper = canvas.parentElement;
     const maxWidth = Math.min(800, wrapper.clientWidth - 40);
     const maxHeight = 600;
@@ -35,20 +51,19 @@ function resizeCanvas() {
     // Restore white background
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Restore drawing if there was one
+    if (savedDrawing) {
+        const img = new Image();
+        img.onload = () => {
+            ctx.drawImage(img, 0, 0);
+        };
+        img.src = savedDrawing;
+    }
 }
 
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
-
-// State
-let isDrawing = false;
-let currentTool = 'brush';
-let currentColor = '#e94560';
-let currentSize = 5;
-let startX, startY;
-let history = [];
-let historyStep = -1;
-let snapshot = null;
 
 // Save state for undo/redo
 function saveState() {
@@ -57,6 +72,7 @@ function saveState() {
         history.length = historyStep;
     }
     history.push(canvas.toDataURL());
+    updateUndoRedoButtons();
 }
 
 function undo() {
@@ -79,7 +95,13 @@ function restoreState() {
     img.onload = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0);
+        updateUndoRedoButtons();
     };
+}
+
+function updateUndoRedoButtons() {
+    undoBtn.disabled = historyStep <= 0;
+    redoBtn.disabled = historyStep >= history.length - 1;
 }
 
 // Drawing functions
@@ -88,25 +110,25 @@ function startDrawing(e) {
     const rect = canvas.getBoundingClientRect();
     startX = e.clientX - rect.left;
     startY = e.clientY - rect.top;
+    lastX = startX;
+    lastY = startY;
 
     if (currentTool === 'brush' || currentTool === 'eraser') {
         ctx.beginPath();
         ctx.moveTo(startX, startY);
-        snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
     }
 }
 
 function draw(e) {
-    if (!isDrawing) {
-        updateCoords(e);
-        return;
-    }
-
     const rect = canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    updateCoords(e);
+    lastX = x;
+    lastY = y;
+    updateCoords(x, y);
+
+    if (!isDrawing) return;
 
     ctx.lineWidth = currentSize;
     ctx.lineCap = 'round';
@@ -151,29 +173,29 @@ function stopDrawing(e) {
     if (!isDrawing) return;
     isDrawing = false;
 
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    // Use lastX/lastY for touchend which has no coords
+    const x = lastX;
+    const y = lastY;
 
     ctx.globalCompositeOperation = 'source-over';
+    ctx.lineWidth = currentSize;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
 
     if (currentTool === 'line') {
         ctx.beginPath();
         ctx.moveTo(startX, startY);
         ctx.lineTo(x, y);
         ctx.strokeStyle = currentColor;
-        ctx.lineWidth = currentSize;
         ctx.stroke();
     } else if (currentTool === 'rect') {
         ctx.strokeStyle = currentColor;
-        ctx.lineWidth = currentSize;
         ctx.strokeRect(startX, startY, x - startX, y - startY);
     } else if (currentTool === 'circle') {
         const radius = Math.sqrt(Math.pow(x - startX, 2) + Math.pow(y - startY, 2));
         ctx.beginPath();
         ctx.arc(startX, startY, radius, 0, Math.PI * 2);
         ctx.strokeStyle = currentColor;
-        ctx.lineWidth = currentSize;
         ctx.stroke();
     }
 
@@ -181,11 +203,11 @@ function stopDrawing(e) {
     saveState();
 }
 
-function updateCoords(e) {
-    const rect = canvas.getBoundingClientRect();
-    const x = Math.round(e.clientX - rect.left);
-    const y = Math.round(e.clientY - rect.top);
-    coordsEl.textContent = `X: ${x}, Y: ${y}`;
+function updateCoords(x, y) {
+    // Clamp coords to canvas bounds for display
+    const clampedX = Math.max(0, Math.min(Math.round(x), canvas.width));
+    const clampedY = Math.max(0, Math.min(Math.round(y), canvas.height));
+    coordsEl.textContent = `X: ${clampedX}, Y: ${clampedY}`;
 }
 
 // Touch support

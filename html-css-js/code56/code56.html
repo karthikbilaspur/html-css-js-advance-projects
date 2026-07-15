@@ -17,7 +17,7 @@
             <div class="controls-panel">
                 <div class="input-group">
                     <label>Type</label>
-                    <select id="qr-type">
+                    <select id="qr-type" title="tpye">Text Type 
                         <option value="text">Text / URL</option>
                         <option value="wifi">WiFi</option>
                         <option value="email">Email</option>
@@ -38,7 +38,7 @@
                     <label>Password</label>
                     <input type="password" id="wifi-pass" placeholder="password">
                     <label>Encryption</label>
-                    <select id="wifi-type">
+                    <select id="wifi-type" title="encrpytion type"> Encryption Type 
                         <option value="WPA">WPA/WPA2</option>
                         <option value="WEP">WEP</option>
                         <option value="nopass">None</option>
@@ -62,7 +62,7 @@
                 <div class="options-row">
                     <div class="input-group">
                         <label>Size</label>
-                        <select id="qr-size">
+                        <select id="qr-size" title="select options">Select the options 
                             <option value="256">256x256</option>
                             <option value="384">384x384</option>
                             <option value="512" selected>512x512</option>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="input-group">
                         <label>Color</label>
-                        <input type="color" id="qr-color" value="#000000">
+                        <input type="color" id="qr-color" value="#000000" title="color-type">Color 
                     </div>
                 </div>
 
@@ -88,7 +88,14 @@
             </div>
         </div>
     </div>
-
+             <footer>
+    <nav class="page-footer-nav">
+      <a href="../code55/code55.html">&larr; Previous: Code 55</a>
+      <a href="../../index.html">Home</a>
+      <a href="../code57/code57.html">Next: Code 56&rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+  </footer>
     <!-- qrcode.js library -->
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="code56.js"></script>

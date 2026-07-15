@@ -32,7 +32,6 @@ h1 {
     gap: 20px;
     overflow-x: auto;
     padding: 10px 0 20px;
-    scrollbar-width: none;
 }
 
 .stories-list::-webkit-scrollbar {
@@ -55,10 +54,12 @@ h1 {
     transition: transform 0.2s ease;
 }
 
+/* FIXED: space between selectors */
 .story-circle:hover.story-avatar-wrapper {
     transform: scale(1.05);
 }
 
+/* FIXED: space between selectors */
 .story-circle.viewed.story-avatar-wrapper {
     background: #30363d;
 }
@@ -72,7 +73,7 @@ h1 {
     background-color: #161b22;
 }
 
-.story-username {
+.story-circle.story-username {
     font-size: 12px;
     color: #8b949e;
     max-width: 70px;
@@ -97,6 +98,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fadeIn 0.2s ease;
 }
 
 .story-content {
@@ -143,6 +145,7 @@ h1 {
     transition: width 0.1s linear;
 }
 
+/* FIXED: space between classes */
 .progress-segment.active.progress-fill {
     width: 100%;
 }
@@ -164,7 +167,7 @@ h1 {
     border: 2px solid white;
 }
 
-.story-username {
+.story-header.story-username {
     color: white;
     font-weight: 500;
     font-size: 14px;
@@ -188,6 +191,11 @@ h1 {
     padding: 0;
     width: 32px;
     height: 32px;
+    z-index: 11;
+}
+
+.close-btn:hover {
+    opacity: 0.7;
 }
 
 .story-body {
@@ -207,6 +215,7 @@ h1 {
     background-position: center;
     border-radius: 8px;
     margin-bottom: 20px;
+    background-color: #30363d;
 }
 
 .story-text {
@@ -215,6 +224,7 @@ h1 {
     font-size: 18px;
     line-height: 1.5;
     padding: 0 10px;
+    word-break: break-word;
 }
 
 /* Tap areas */
@@ -225,12 +235,36 @@ h1 {
     height: 100%;
     z-index: 5;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.tap-area.left {
-    left: 0;
+.tap-area.left { left: 0; }
+.tap-area.right { right: 0; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.tap-area.right {
-    right: 0;
+@media screen and (max-width: 480px) {
+   .story-content {
+        max-width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+}
+
+.page-footer-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+.page-footer-nav a {
+    font-size: 0.8rem;
+  }
+
+  footer {
+    padding: 1rem 0.5rem;
+  }
 }

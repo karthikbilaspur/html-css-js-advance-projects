@@ -51,7 +51,7 @@
                         <select id="category" required>
                             <option value="food">🍔 Food</option>
                             <option value="transport">🚗 Transport</option>
-                            <option value="shopping">🛍️ Shopping</option>
+                            <option value="shopping">🛍 Shopping</option>
                             <option value="bills">📄 Bills</option>
                             <option value="entertainment">🎬 Entertainment</option>
                             <option value="health">🏥 Health</option>
@@ -76,7 +76,7 @@
 
                 <div class="actions">
                     <button class="btn-action" id="exportBtn">📥 Export CSV</button>
-                    <button class="btn-action danger" id="clearBtn">🗑️ Clear All</button>
+                    <button class="btn-action danger" id="clearBtn">🗑 Clear All</button>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
                 <div class="chart-card">
                     <div class="chart-header">
                         <h3>Expenses by Category</h3>
-                        <select id="monthFilter" class="filter-select"></select>
+                        <select id="monthFilter" class="filter-select" title="Category Expense"></select>
                     </div>
                     <canvas id="pieChart"></canvas>
                 </div>
@@ -113,6 +113,16 @@
             </div>
         </div>
     </div>
+
+    <footer class="footer-wrap">
+        <nav class="page-footer-nav" aria-label="Project navigation">
+            <a href="../054-visualizeer/index.html">&larr; Previous: Code 054</a>
+            <a href="../../index.html">Home</a>
+            <a href="../056-password-generator/index.html">Next: Code 056 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+        <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

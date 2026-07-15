@@ -15,23 +15,23 @@
 
         <div class="toolbar">
             <div class="tool-section">
-                <label>Color</label>
-                <input type="color" id="color-picker" value="#e94560">
+                <label for="color-picker">Color</label>
+                <input type="color" id="color-picker" value="#e94560" title="Pick a color">
                 <div class="palette" id="palette">
-                    <div class="color-swatch" data-color="#000000" style="background: #000000"></div>
-                    <div class="color-swatch" data-color="#ffffff" style="background: #ffffff; border: 1px solid #ddd"></div>
-                    <div class="color-swatch" data-color="#e94560" style="background: #e94560"></div>
-                    <div class="color-swatch" data-color="#667eea" style="background: #667eea"></div>
-                    <div class="color-swatch" data-color="#43e97b" style="background: #43e97b"></div>
-                    <div class="color-swatch" data-color="#f9ca24" style="background: #f9ca24"></div>
-                    <div class="color-swatch" data-color="#f093fb" style="background: #f093fb"></div>
-                    <div class="color-swatch" data-color="#4facfe" style="background: #4facfe"></div>
+                    <div class="color-swatch active" data-color="#000000"></div>
+                    <div class="color-swatch" data-color="#ffffff"></div>
+                    <div class="color-swatch" data-color="#e94560"></div>
+                    <div class="color-swatch" data-color="#667eea"></div>
+                    <div class="color-swatch" data-color="#43e97b"></div>
+                    <div class="color-swatch" data-color="#f9ca24"></div>
+                    <div class="color-swatch" data-color="#f093fb"></div>
+                    <div class="color-swatch" data-color="#4facfe"></div>
                 </div>
             </div>
 
             <div class="tool-section">
-                <label>Grid Size</label>
-                <select id="grid-size">
+                <label for="grid-size">Grid Size</label>
+                <select id="grid-size" title="Choose the grid size">
                     <option value="8">8 × 8</option>
                     <option value="16" selected>16 × 16</option>
                     <option value="32">32 × 32</option>
@@ -40,16 +40,16 @@
             </div>
 
             <div class="tool-section">
-                <button id="draw-btn" class="tool-btn active" title="Draw">
+                <button id="draw-btn" class="tool-btn active" title="Draw - B">
                     <i class="fas fa-pencil"></i>
                 </button>
-                <button id="erase-btn" class="tool-btn" title="Eraser">
+                <button id="erase-btn" class="tool-btn" title="Eraser - E">
                     <i class="fas fa-eraser"></i>
                 </button>
-                <button id="fill-btn" class="tool-btn" title="Fill">
+                <button id="fill-btn" class="tool-btn" title="Fill - G">
                     <i class="fas fa-fill-drip"></i>
                 </button>
-                <button id="eyedropper-btn" class="tool-btn" title="Eyedropper">
+                <button id="eyedropper-btn" class="tool-btn" title="Eyedropper - I">
                     <i class="fas fa-eye-dropper"></i>
                 </button>
             </div>
@@ -68,7 +68,7 @@
         </div>
 
         <div class="canvas-wrapper">
-            <div id="pixel-grid" class="pixel-grid"></div>
+            <div id="pixel-grid" class="pixel-grid show-grid"></div>
         </div>
 
         <div class="info">
@@ -78,5 +78,15 @@
     </div>
 
     <script src="code83.js"></script>
+        <footer>
+        <nav class="page-footer-nav">
+            <a href="../code82/code82.html">&larr; Previous: Code 82</a>
+            <a href="../../index.html">Home</a>
+            <a href="../code84/code84.html">Next: Code 84 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    </footer>
+
+
 </body>
 </html>

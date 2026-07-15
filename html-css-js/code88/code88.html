@@ -1,56 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code88 Chess vs Random AI</title>
-    <link rel="stylesheet" href="code88.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>code88 - Chess Engine</title>
+<link rel="stylesheet" href="code88.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Code88 Chess vs AI</h1>
+<div class="game-container">
+  <div class="header">
+    <h1>♔ code88 ♚</h1>
+    <div class="subtitle">Advanced Chess Engine</div>
+  </div>
 
-        <div class="game-info">
-            <div class="player-info">
-                <div class="player you">
-                    <span class="dot white"></span> You
-                </div>
-                <div class="vs">vs</div>
-                <div class="player ai">
-                    <span class="dot black"></span> Random AI
-                </div>
-            </div>
-            <div class="turn-indicator">
-                Turn: <span id="current-turn">White</span>
-            </div>
-            <div class="status" id="game-status">Your move</div>
-        </div>
+  <div class="status-bar">
+    <div class="status-item">
+      <div class="turn-indicator white" id="turnIndicator"></div>
+      <span id="statusText">White to move</span>
+    </div>
+    <div class="status-item" id="gameStateText"></div>
+    <div class="status-item" id="aiThinking"></div>
+  </div>
 
-        <div class="board-wrapper">
-            <div class="ranks">
-                <div>8</div><div>7</div><div>6</div><div>5</div>
-                <div>4</div><div>3</div><div>2</div><div>1</div>
-            </div>
-            <div id="chess-board"></div>
-        </div>
-
-        <div class="files">
-            <div>a</div><div>b</div><div>c</div><div>d</div>
-            <div>e</div><div>f</div><div>g</div><div>h</div>
-        </div>
-
-        <div class="controls">
-            <button id="reset-btn">New Game</button>
-            <button id="undo-btn">Undo Move</button>
-            <button id="hint-btn">Show Legal Moves</button>
-        </div>
-
-        <div class="game-stats">
-            <div>Moves: <span id="move-count">0</span></div>
-            <div>Captured: <span id="captured-count">0</span></div>
-        </div>
+  <div class="main-game">
+    <div class="board-wrapper">
+      <div class="board" id="board"></div>
     </div>
 
-    <script src="code88.js"></script>
+    <div class="sidebar">
+      <div class="panel">
+        <h3>Game Controls</h3>
+        <div class="controls">
+          <button class="btn success" id="aiToggleBtn">AI: OFF</button>
+          <button class="btn" id="newGameBtn">New Game</button>
+          <button class="btn secondary" id="undoBtn" disabled>Undo</button>
+          <button class="btn secondary" id="flipBoardBtn">Flip Board</button>
+          <button class="btn secondary" id="soundToggleBtn">Sound: ON</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Captured Pieces</h3>
+        <div>White captured:</div>
+        <div class="captured-pieces" id="capturedByWhite"></div>
+        <div>Black captured:</div>
+        <div class="captured-pieces" id="capturedByBlack"></div>
+      </div>
+
+      <div class="panel">
+        <h3>Move History</h3>
+        <div class="move-history" id="moveHistory"></div>
+      </div>
+
+      <div class="panel">
+        <h3>AI Engine</h3>
+        <div class="ai-info">
+          <strong>Algorithm:</strong> Minimax w/ Alpha-Beta<br>
+          <strong>Search Depth:</strong> 3 ply<br>
+          <strong>Evaluation:</strong> Piece values + Position<br>
+          <strong>Features:</strong> No recursion overflow ✓<br>
+          Play against code88's optimized engine!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="promotionModal">
+  <div class="modal-content">
+    <h2>Promote Pawn</h2>
+    <p>Choose a piece to promote to:</p>
+    <div class="promotion-pieces" id="promotionChoices"></div>
+  </div>
+</div>
+
+<div class="modal" id="gameOverModal">
+  <div class="modal-content">
+    <h2 id="gameOverTitle">Game Over</h2>
+    <p id="gameOverMessage"></p>
+    <button class="btn" id="gameOverNewGameBtn">New Game</button>
+  </div>
+</div>
+
+<script src="code88.js"></script>
+    <footer>
+        <nav class="page-footer-nav">
+            <a href="../code87/code87.html">&larr; Previous: Code 87</a>
+            <a href="../../index.html">Home</a>
+            <a href="../code89/code89.html">Next: Code 89 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    </footer>
 </body>
 </html>

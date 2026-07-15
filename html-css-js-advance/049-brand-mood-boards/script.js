@@ -1,4 +1,346 @@
-// All 10 questions split into 5 for medium level
+class BrandMoodBoard {
+    constructor(quizData) {
+        this.quizData = quizData;
+        this.state = {
+            currentQuestion: 0,
+            answers: [],
+            images: [],
+            rating: 0,
+            currentSlide: 0,
+            testimonials: this.loadTestimonials()
+        };
+
+        this.screens = {
+            quiz: document.getElementById('quizScreen'),
+            loading: document.getElementById('loadingScreen'),
+            result: document.getElementById('resultScreen'),
+            slider: document.getElementById('sliderScreen')
+        };
+
+        this.elements = this.cacheElements();
+        this.init();
+    }
+
+    cacheElements() {
+        return {
+            progressFill: document.getElementById('progressFill'),
+            stepCount: document.getElementById('stepCount'),
+            quizQuestion: document.getElementById('quizQuestion'),
+            quizOptions: document.getElementById('quizOptions'),
+            questionPagination: document.getElementById('questionPagination'),
+            backBtn: document.getElementById('backBtn'),
+            loadingText: document.getElementById('loadingText'),
+            moodBoard: document.getElementById('moodBoard'),
+            brandSummary: document.getElementById('brandSummary'),
+            starRating: document.getElementById('starRating'),
+            reviewText: document.getElementById('reviewText'),
+            addToSliderBtn: document.getElementById('addToSliderBtn'),
+            shareBtn: document.getElementById('shareBtn'),
+            restartBtn: document.getElementById('restartBtn'),
+            sliderWrapper: document.getElementById('sliderWrapper'),
+            prevBtn: document.getElementById('prevBtn'),
+            nextBtn: document.getElementById('nextBtn'),
+            dots: document.getElementById('dots'),
+            createNewBtn: document.getElementById('createNewBtn'),
+            toast: document.getElementById('toast')
+        };
+    }
+
+    init() {
+        this.bindEvents();
+        this.loadQuestion();
+        this.renderQuestionPagination();
+    }
+
+    bindEvents() {
+        this.elements.backBtn.addEventListener('click', () => this.goBack());
+        this.elements.addToSliderBtn.addEventListener('click', () => this.addToTestimonials());
+        this.elements.shareBtn.addEventListener('click', () => this.shareBoard());
+        this.elements.restartBtn.addEventListener('click', () => this.restart());
+        this.elements.createNewBtn.addEventListener('click', () => this.restart());
+        this.elements.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.elements.nextBtn.addEventListener('click', () => this.nextSlide());
+
+        // Star rating
+        this.elements.starRating.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', () => this.setRating(parseInt(star.dataset.value)));
+            star.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.setRating(parseInt(star.dataset.value));
+                }
+            });
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => this.handleKeyboard(e));
+    }
+
+    handleKeyboard(e) {
+        if (!this.screens.quiz.classList.contains('active')) return;
+
+        const num = parseInt(e.key);
+        if (num >= 1 && num <= 4) {
+            const option = this.elements.quizOptions.children[num - 1];
+            if (option) option.click();
+        }
+        if (e.key === 'Enter' && this.state.answers[this.state.currentQuestion]) {
+            this.nextQuestion();
+        }
+    }
+
+    renderQuestionPagination() {
+        this.elements.questionPagination.innerHTML = '';
+        this.quizData.forEach((_, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'q-page';
+            btn.textContent = index + 1;
+            btn.setAttribute('role', 'tab');
+            btn.setAttribute('aria-label', `Question ${index + 1}`);
+            btn.setAttribute('aria-selected', index === this.state.currentQuestion);
+            btn.setAttribute('tabindex', index === this.state.currentQuestion? '0' : '-1');
+
+            if (index === this.state.currentQuestion) btn.classList.add('current');
+            if (this.state.answers[index]) btn.classList.add('answered');
+
+            btn.addEventListener('click', () => this.jumpToQuestion(index));
+            this.elements.questionPagination.appendChild(btn);
+        });
+    }
+
+    jumpToQuestion(index) {
+        this.state.currentQuestion = index;
+        this.loadQuestion();
+        this.renderQuestionPagination();
+    }
+
+    loadQuestion() {
+        const question = this.quizData[this.state.currentQuestion];
+        this.elements.quizQuestion.textContent = question.question;
+        this.elements.quizOptions.innerHTML = '';
+
+        question.options.forEach((option, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.textContent = option.text;
+            btn.setAttribute('role', 'radio');
+            btn.setAttribute('aria-checked', 'false');
+            btn.addEventListener('click', () => this.selectAnswer(index, btn));
+            this.elements.quizOptions.appendChild(btn);
+        });
+
+        this.updateProgress();
+        this.elements.backBtn.disabled = this.state.currentQuestion === 0;
+
+        // Restore selection if exists
+        if (this.state.answers[this.state.currentQuestion]) {
+            const idx = this.state.answers[this.state.currentQuestion].index;
+            this.elements.quizOptions.children[idx]?.classList.add('selected');
+        }
+    }
+
+    selectAnswer(index, btn) {
+        this.state.answers[this.state.currentQuestion] = {
+           ...this.quizData[this.state.currentQuestion].options[index],
+            index
+        };
+
+        this.elements.quizOptions.querySelectorAll('.quiz-option').forEach(o => {
+            o.classList.remove('selected');
+            o.setAttribute('aria-checked', 'false');
+        });
+        btn.classList.add('selected');
+        btn.setAttribute('aria-checked', 'true');
+
+        this.renderQuestionPagination();
+
+        // Auto-advance after short delay
+        setTimeout(() => this.nextQuestion(), 300);
+    }
+
+    nextQuestion() {
+        if (this.state.currentQuestion < this.quizData.length - 1) {
+            this.state.currentQuestion++;
+            this.loadQuestion();
+            this.renderQuestionPagination();
+        } else {
+            this.generateMoodBoard();
+        }
+    }
+
+    goBack() {
+        if (this.state.currentQuestion > 0) {
+            this.state.currentQuestion--;
+            this.loadQuestion();
+            this.renderQuestionPagination();
+        }
+    }
+
+    updateProgress() {
+        const percent = ((this.state.currentQuestion + 1) / this.quizData.length) * 100;
+        this.elements.progressFill.style.width = `${percent}%`;
+        this.elements.stepCount.textContent = `Question ${this.state.currentQuestion + 1}/${this.quizData.length}`;
+        document.querySelector('.progress').setAttribute('aria-valuenow', percent);
+    }
+
+    async generateMoodBoard() {
+        this.showScreen('loading');
+        this.state.images = [];
+
+        for (let i = 0; i < this.state.answers.length; i++) {
+            this.elements.loadingText.textContent = `Creating image ${i + 1} of ${this.state.answers.length}`;
+            const keywords = this.state.answers[i].keywords;
+            const url = `https://source.unsplash.com/600x400/?${keywords}&sig=${Date.now() + i}`;
+
+            await new Promise(resolve => setTimeout(resolve, 800));
+            this.state.images.push({ url, label: this.state.answers[i].text });
+        }
+
+        this.showResults();
+    }
+
+    showResults() {
+        this.showScreen('result');
+        const summary = this.state.answers.map(a => a.text.split('&')[0].trim()).join(' + ');
+        this.elements.brandSummary.textContent = `Your brand: ${summary}`;
+
+        this.elements.moodBoard.innerHTML = this.state.images.map(img => `
+            <div class="mood-card">
+                <img src="${img.url}" alt="${img.label}" loading="lazy">
+                <div class="mood-card-info">
+                    <div class="mood-card-label">${img.label}</div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    setRating(value) {
+        this.state.rating = value;
+        this.elements.starRating.querySelectorAll('.star').forEach((star, index) => {
+            star.classList.toggle('active', index < value);
+            star.setAttribute('aria-checked', index + 1 === value? 'true' : 'false');
+        });
+        this.elements.addToSliderBtn.disabled = false;
+    }
+
+    addToTestimonials() {
+        const testimonial = {
+            images: this.state.images.map(img => img.url),
+            rating: this.state.rating,
+            text: this.elements.reviewText.value || "Love my brand vibe!",
+            summary: this.state.answers.map(a => a.text.split('&')[0].trim()).join(' + '),
+            timestamp: Date.now()
+        };
+
+        this.state.testimonials.unshift(testimonial);
+        if (this.state.testimonials.length > 10) this.state.testimonials.pop();
+        localStorage.setItem('brandTestimonials', JSON.stringify(this.state.testimonials));
+
+        this.showToast('Added to community board!');
+        this.showSlider();
+    }
+
+    shareBoard() {
+        const data = {
+            answers: this.state.answers,
+            images: this.state.images
+        };
+        const url = `${window.location.origin}${window.location.pathname}?board=${btoa(JSON.stringify(data))}`;
+        navigator.clipboard.writeText(url).then(() => {
+            this.showToast('Link copied to clipboard!');
+        });
+    }
+
+    showSlider() {
+        this.showScreen('slider');
+        this.renderSlider();
+    }
+
+    renderSlider() {
+        if (this.state.testimonials.length === 0) {
+            this.elements.sliderWrapper.innerHTML = '<div class="testimonial-slide"><p style="text-align:center;color:var(--text-dim);">No testimonials yet. Create one!</p></div>';
+            return;
+        }
+
+        this.elements.sliderWrapper.innerHTML = this.state.testimonials.map(t => `
+            <div class="testimonial-slide">
+                <div class="slide-images">
+                    ${t.images.map(url => `<img src="${url}" alt="Mood" loading="lazy">`).join('')}
+                </div>
+                <div class="slide-rating">${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}</div>
+                <p class="slide-text">${t.text}</p>
+                <div class="slide-user">${t.summary}</div>
+            </div>
+        `).join('');
+
+        this.createDots();
+        this.updateSliderPosition();
+    }
+
+    createDots() {
+        this.elements.dots.innerHTML = '';
+        this.state.testimonials.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = 'dot';
+            dot.setAttribute('role', 'tab');
+            dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => this.goToSlide(index));
+            this.elements.dots.appendChild(dot);
+        });
+    }
+
+    updateSliderPosition() {
+        const offset = -(this.state.currentSlide * 100);
+        this.elements.sliderWrapper.style.transform = `translateX(${offset}%)`;
+        this.elements.dots.querySelectorAll('.dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === this.state.currentSlide);
+        });
+    }
+
+    nextSlide() {
+        this.state.currentSlide = (this.state.currentSlide + 1) % this.state.testimonials.length;
+        this.updateSliderPosition();
+    }
+
+    prevSlide() {
+        this.state.currentSlide = (this.state.currentSlide - 1 + this.state.testimonials.length) % this.state.testimonials.length;
+        this.updateSliderPosition();
+    }
+
+    goToSlide(index) {
+        this.state.currentSlide = index;
+        this.updateSliderPosition();
+    }
+
+    restart() {
+        this.state.currentQuestion = 0;
+        this.state.answers = [];
+        this.state.images = [];
+        this.state.rating = 0;
+        this.elements.reviewText.value = '';
+        this.showScreen('quiz');
+        this.loadQuestion();
+        this.renderQuestionPagination();
+    }
+
+    showScreen(screen) {
+        Object.values(this.screens).forEach(s => s.classList.remove('active'));
+        this.screens[screen].classList.add('active');
+    }
+
+    showToast(message) {
+        this.elements.toast.textContent = message;
+        this.elements.toast.classList.add('show');
+        setTimeout(() => this.elements.toast.classList.remove('show'), 3000);
+    }
+
+    loadTestimonials() {
+        return JSON.parse(localStorage.getItem('brandTestimonials')) || [];
+    }
+}
+
+// Quiz Data
 const quizData = [
     {
         question: "Pick a color palette that speaks to you:",
@@ -47,260 +389,7 @@ const quizData = [
     }
 ];
 
-// State
-let currentQuestion = 0;
-let userAnswers = [];
-let generatedImages = [];
-let currentRating = 0;
-let testimonials = JSON.parse(localStorage.getItem('brandTestimonials')) || [];
-
-// DOM Elements
-const quizScreen = document.getElementById('quizScreen');
-const loadingScreen = document.getElementById('loadingScreen');
-const resultScreen = document.getElementById('resultScreen');
-const sliderScreen = document.getElementById('sliderScreen');
-const progressFill = document.getElementById('progressFill');
-const stepCount = document.getElementById('stepCount');
-const quizQuestion = document.getElementById('quizQuestion');
-const quizOptions = document.getElementById('quizOptions');
-const loadingText = document.getElementById('loadingText');
-const moodBoard = document.getElementById('moodBoard');
-const brandSummary = document.getElementById('brandSummary');
-const starRating = document.getElementById('starRating');
-const reviewText = document.getElementById('reviewText');
-const addToSliderBtn = document.getElementById('addToSliderBtn');
-const restartBtn = document.getElementById('restartBtn');
-const sliderWrapper = document.getElementById('sliderWrapper');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const dots = document.getElementById('dots');
-const createNewBtn = document.getElementById('createNewBtn');
-
-let currentSlide = 0;
-
 // Init
-loadQuestion();
-
-// Quiz Logic
-function loadQuestion() {
-    const question = quizData[currentQuestion];
-    quizQuestion.textContent = question.question;
-    quizOptions.innerHTML = '';
-
-    question.options.forEach((option, index) => {
-        const btn = document.createElement('button');
-        btn.classList.add('quiz-option');
-        btn.textContent = option.text;
-        btn.addEventListener('click', () => selectAnswer(index));
-        quizOptions.appendChild(btn);
-    });
-
-    updateProgress();
-}
-
-function selectAnswer(index) {
-    userAnswers.push(quizData[currentQuestion].options[index]);
-    currentQuestion++;
-
-    if (currentQuestion < quizData.length) {
-        loadQuestion();
-    } else {
-        generateMoodBoard();
-    }
-}
-
-function updateProgress() {
-    const percent = ((currentQuestion + 1) / quizData.length) * 100;
-    progressFill.style.width = `${percent}%`;
-    stepCount.textContent = `Question ${currentQuestion + 1}/${quizData.length}`;
-}
-
-// Image Generation
-async function generateMoodBoard() {
-    quizScreen.classList.remove('active');
-    loadingScreen.classList.add('active');
-
-    generatedImages = [];
-
-    for (let i = 0; i < userAnswers.length; i++) {
-        loadingText.textContent = `Creating image ${i + 1} of ${userAnswers.length}`;
-
-        const keywords = userAnswers[i].keywords;
-        const url = `https://source.unsplash.com/600x400/?${keywords}&sig=${Date.now() + i}`;
-
-        // Simulate loading delay for UX
-        await new Promise(resolve => setTimeout(resolve, 800));
-
-        generatedImages.push({
-            url: url,
-            label: userAnswers[i].text
-        });
-    }
-
-    showResults();
-}
-
-function showResults() {
-    loadingScreen.classList.remove('active');
-    resultScreen.classList.add('active');
-
-    // Generate brand summary from answers
-    const summary = userAnswers.map(a => a.text.split('&')[0].trim()).join(' + ');
-    brandSummary.textContent = `Your brand: ${summary}`;
-
-    // Render mood board
-    moodBoard.innerHTML = generatedImages.map(img => `
-        <div class="mood-card">
-            <img src="${img.url}" alt="${img.label}" loading="lazy">
-            <div class="mood-card-info">
-                <div class="mood-card-label">${img.label}</div>
-            </div>
-        </div>
-    `).join('');
-}
-
-// Star Rating
-starRating.querySelectorAll('.star').forEach(star => {
-    star.addEventListener('click', () => {
-        currentRating = parseInt(star.dataset.value);
-        updateStars();
-        addToSliderBtn.disabled = false;
-    });
-
-    star.addEventListener('mouseover', () => {
-        const value = parseInt(star.dataset.value);
-        highlightStars(value);
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    new BrandMoodBoard(quizData);
 });
-
-starRating.addEventListener('mouseleave', () => {
-    updateStars();
-});
-
-function updateStars() {
-    starRating.querySelectorAll('.star').forEach((star, index) => {
-        star.classList.toggle('active', index < currentRating);
-    });
-}
-
-function highlightStars(value) {
-    starRating.querySelectorAll('.star').forEach((star, index) => {
-        star.classList.toggle('active', index < value);
-    });
-}
-
-// Add to Testimonial Slider
-addToSliderBtn.addEventListener('click', () => {
-    const testimonial = {
-        images: generatedImages.map(img => img.url),
-        rating: currentRating,
-        text: reviewText.value || "Love my brand vibe!",
-        summary: userAnswers.map(a => a.text.split('&')[0].trim()).join(' + '),
-        timestamp: Date.now()
-    };
-
-    testimonials.unshift(testimonial);
-    if (testimonials.length > 10) testimonials.pop();
-
-    localStorage.setItem('brandTestimonials', JSON.stringify(testimonials));
-
-    showSlider();
-});
-
-// Testimonial Slider
-function showSlider() {
-    resultScreen.classList.remove('active');
-    sliderScreen.classList.add('active');
-    renderSlider();
-}
-
-function renderSlider() {
-    if (testimonials.length === 0) {
-        sliderWrapper.innerHTML = '<div class="testimonial-slide"><p style="text-align:center;color:#94a3b8;">No testimonials yet. Create one!</p></div>';
-        return;
-    }
-
-    sliderWrapper.innerHTML = testimonials.map(t => `
-        <div class="testimonial-slide">
-            <div class="slide-images">
-                ${t.images.map(url => `<img src="${url}" alt="Mood">`).join('')}
-            </div>
-            <div class="slide-rating">
-                ${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}
-            </div>
-            <p class="slide-text">${t.text}</p>
-            <div class="slide-user">${t.summary}</div>
-        </div>
-    `).join('');
-
-    createDots();
-    updateSliderPosition();
-}
-
-function createDots() {
-    dots.innerHTML = '';
-    testimonials.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index));
-        dots.appendChild(dot);
-    });
-}
-
-function updateSliderPosition() {
-    const offset = -(currentSlide * 100);
-    sliderWrapper.style.transform = `translateX(${offset}%)`;
-
-    dots.querySelectorAll('.dot').forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-    });
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % testimonials.length;
-    updateSliderPosition();
-}
-
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + testimonials.length) % testimonials.length;
-    updateSliderPosition();
-}
-
-function goToSlide(index) {
-    currentSlide = index;
-    updateSliderPosition();
-}
-
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
-
-// Restart
-restartBtn.addEventListener('click', () => {
-    currentQuestion = 0;
-    userAnswers = [];
-    generatedImages = [];
-    currentRating = 0;
-    reviewText.value = '';
-
-    resultScreen.classList.remove('active');
-    sliderScreen.classList.remove('active');
-    quizScreen.classList.add('active');
-
-    loadQuestion();
-});
-
-createNewBtn.addEventListener('click', () => {
-    sliderScreen.classList.remove('active');
-    quizScreen.classList.add('active');
-    currentQuestion = 0;
-    userAnswers = [];
-    loadQuestion();
-});
-
-// Auto-show slider if testimonials exist
-if (testimonials.length > 0) {
-    // Uncomment to start on slider instead of quiz
-    // quizScreen.classList.remove('active');
-    // showSlider();
-}

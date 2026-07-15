@@ -31,7 +31,6 @@ header h1 {
     font-size: 2.5rem;
     margin-bottom: 8px;
     background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -202,7 +201,6 @@ header p {
     align-items: center;
     gap: 12px;
     cursor: pointer;
-    user-select: none;
 }
 
 .checkbox-item input {
@@ -379,6 +377,31 @@ header p {
 
 @media (max-width: 768px) {
     header h1 { font-size: 2rem; }
-   .generator-card,.history-card { padding: 20px; }
+.generator-card,.history-card { padding: 20px; }
     #passwordOutput { font-size: 16px; padding-right: 100px; }
 }
+
+.page-footer-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.page-footer-nav a {
+    font-size: 0.8rem;
+}
+
+footer {
+    padding: 1rem 0.5rem;
+}
+ .page-footer-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .page-footer-nav a {
+    font-size: 0.8rem;
+  }
+  
+  footer {
+    padding: 1rem 0.5rem;
+  }

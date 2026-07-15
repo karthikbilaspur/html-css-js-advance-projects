@@ -37,40 +37,66 @@ generateBtn.addEventListener('click', () => {
     const hasNumber = numbersEl.checked;
     const hasSymbol = symbolsEl.checked;
 
-    resultEl.value = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+    const password = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+
+    if (!password) {
+        showToast('Select at least one option!', true);
+        return;
+    }
+
+    resultEl.value = password;
     updateStrength();
 });
 
 // Copy to clipboard
 clipboardBtn.addEventListener('click', () => {
     const password = resultEl.value;
-
-    if (!password) return;
+    if (!password) {
+        showToast('Generate a password first', true);
+        return;
+    }
 
     navigator.clipboard.writeText(password).then(() => {
-        showToast();
+        showToast('Copied to clipboard!');
+    }).catch(() => {
+        showToast('Failed to copy', true);
     });
 });
 
 function generatePassword(lower, upper, number, symbol, length) {
-    let generatedPassword = '';
     const typesCount = lower + upper + number + symbol;
-    const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0]);
+    if (typesCount === 0) return '';
 
-    if (typesCount === 0) {
-        return '';
+    const typesArr = [];
+    if (lower) typesArr.push('lower');
+    if (upper) typesArr.push('upper');
+    if (number) typesArr.push('number');
+    if (symbol) typesArr.push('symbol');
+
+    let generatedPassword = '';
+
+    // Ensure at least one of each selected type
+    typesArr.forEach(type => {
+        generatedPassword += randomFunc[type]();
+    });
+
+    // Fill rest randomly
+    for (let i = generatedPassword.length; i < length; i++) {
+        const randomType = typesArr[Math.floor(Math.random() * typesArr.length)];
+        generatedPassword += randomFunc[randomType]();
     }
 
-    // Create password
-    for (let i = 0; i < length; i += typesCount) {
-        typesArr.forEach(type => {
-            const funcName = Object.keys(type)[0];
-            generatedPassword += randomFunc[funcName]();
-        });
-    }
+    // Shuffle the password so guaranteed chars aren't always at start
+    return shuffleString(generatedPassword);
+}
 
-    const finalPassword = generatedPassword.slice(0, length);
-    return finalPassword;
+function shuffleString(str) {
+    const arr = str.split('');
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr.join('');
 }
 
 function getRandomLower() {
@@ -99,11 +125,13 @@ function updateStrength() {
     if (length >= 12) strength++;
     if (typesCount >= 2) strength++;
     if (typesCount >= 3) strength++;
-    if (typesCount === 4 && length >= 12) strength++;
+    if (typesCount === 4 && length >= 16) strength++;
 
     strengthBar.className = 'strength-bar';
 
-    if (strength <= 2) {
+    if (typesCount === 0) {
+        strengthText.textContent = 'Strength: None';
+    } else if (strength <= 2) {
         strengthBar.classList.add('weak');
         strengthText.textContent = 'Strength: Weak';
     } else if (strength <= 4) {
@@ -115,12 +143,15 @@ function updateStrength() {
     }
 }
 
-function showToast() {
+function showToast(message = 'Copied to clipboard!', isError = false) {
+    toast.textContent = message;
+    toast.style.backgroundColor = isError? '#e53e3e' : '#48bb78';
     toast.classList.add('show');
     setTimeout(() => {
         toast.classList.remove('show');
     }, 2000);
 }
 
-// Generate initial password
-generateBtn.click();
+// Generate initial password and set strength
+resultEl.value = generatePassword(true, true, true, true, +lengthEl.value);
+updateStrength();

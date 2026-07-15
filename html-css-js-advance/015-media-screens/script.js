@@ -5,7 +5,7 @@ const animateCounters = () => {
   counters.forEach(counter => {
     const updateCount = () => {
       const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText;
+      const count = +counter.innerText.replace(/,/g, '');
 
       // Calculate increment based on target
       const increment = target / speed;
@@ -43,4 +43,4 @@ window.addEventListener('load', () => {
   }
 });
 
-console.log('Incrementing Counter loaded - KarthikCodingSolutions ⚡ Bundle 3 Complete');
+console.log('Incrementing Counter loaded - KarthikCodingSolutions ⚡ Bundle 2 Complete');

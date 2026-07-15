@@ -6,15 +6,22 @@ const dotsContainer = document.getElementById('dots');
 const playPauseBtn = document.getElementById('playPauseBtn');
 
 let currentIndex = 0;
-let isPlaying = true;
+let isPlaying = false;
 let autoplayInterval;
 const AUTOPLAY_DELAY = 4000;
 
-// Create dots
-slides.forEach((_, index) => {
-    const dot = document.createElement('div');
+// Create dots with proper accessibility
+slides.forEach((slide, index) => {
+    const dot = document.createElement('button');
     dot.classList.add('dot');
-    if (index === 0) dot.classList.add('active');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', `Go to slide ${index + 1}: ${slide.querySelector('h3').textContent}`);
+    if (index === 0) {
+        dot.classList.add('active');
+        dot.setAttribute('aria-selected', 'true');
+    } else {
+        dot.setAttribute('aria-selected', 'false');
+    }
     dot.addEventListener('click', () => goToSlide(index));
     dotsContainer.appendChild(dot);
 });
@@ -22,28 +29,27 @@ slides.forEach((_, index) => {
 const dots = Array.from(dotsContainer.children);
 
 function updateCarousel() {
-    // Move track
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    // Update dots
     dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
+        const isActive = index === currentIndex;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-selected', isActive);
+    });
+
+    // Update slide aria
+    slides.forEach((slide, index) => {
+        slide.setAttribute('aria-hidden', index!== currentIndex);
     });
 }
 
 function nextSlide() {
-    currentIndex++;
-    if (currentIndex >= slides.length) {
-        currentIndex = 0;
-    }
+    currentIndex = (currentIndex + 1) % slides.length;
     updateCarousel();
 }
 
 function prevSlide() {
-    currentIndex--;
-    if (currentIndex < 0) {
-        currentIndex = slides.length - 1;
-    }
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     updateCarousel();
 }
 
@@ -54,15 +60,18 @@ function goToSlide(index) {
 }
 
 function startAutoplay() {
+    if (autoplayInterval) clearInterval(autoplayInterval);
     autoplayInterval = setInterval(nextSlide, AUTOPLAY_DELAY);
     isPlaying = true;
     playPauseBtn.textContent = 'Pause';
+    playPauseBtn.setAttribute('aria-label', 'Pause autoplay');
 }
 
 function stopAutoplay() {
     clearInterval(autoplayInterval);
     isPlaying = false;
     playPauseBtn.textContent = 'Play';
+    playPauseBtn.setAttribute('aria-label', 'Start autoplay');
 }
 
 function resetAutoplay() {
@@ -103,35 +112,65 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Pause on hover
-track.addEventListener('mouseenter', stopAutoplay);
-track.addEventListener('mouseleave', () => {
+// Pause on hover/focus
+const carousel = document.querySelector('.carousel');
+carousel.addEventListener('mouseenter', () => {
+    if (isPlaying) clearInterval(autoplayInterval);
+});
+carousel.addEventListener('mouseleave', () => {
+    if (isPlaying) startAutoplay();
+});
+carousel.addEventListener('focusin', () => {
+    if (isPlaying) clearInterval(autoplayInterval);
+});
+carousel.addEventListener('focusout', () => {
     if (isPlaying) startAutoplay();
 });
 
 // Touch/swipe support
 let touchStartX = 0;
 let touchEndX = 0;
+let isSwiping = false;
 
 track.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
-});
+    isSwiping = true;
+}, { passive: true });
+
+track.addEventListener('touchmove', (e) => {
+    if (!isSwiping) return;
+    const currentX = e.changedTouches[0].screenX;
+    const diff = currentX - touchStartX;
+    // Prevent vertical scroll if horizontal swipe
+    if (Math.abs(diff) > 10) {
+        e.preventDefault();
+    }
+}, { passive: false });
 
 track.addEventListener('touchend', (e) => {
+    if (!isSwiping) return;
     touchEndX = e.changedTouches[0].screenX;
     handleSwipe();
+    isSwiping = false;
 });
 
 function handleSwipe() {
-    if (touchEndX < touchStartX - 50) {
+    const swipeThreshold = 50;
+    const diff = touchEndX - touchStartX;
+
+    if (diff < -swipeThreshold) {
         nextSlide();
         resetAutoplay();
     }
-    if (touchEndX > touchStartX + 50) {
+    if (diff > swipeThreshold) {
         prevSlide();
         resetAutoplay();
     }
 }
 
-// Start autoplay
+// Init
+slides.forEach((slide, index) => {
+    slide.setAttribute('aria-hidden', index!== 0);
+});
+updateCarousel();
 startAutoplay();

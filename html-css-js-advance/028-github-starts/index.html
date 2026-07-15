@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>028-github-stories</title>
+    <title>028 - GitHub Stories</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
         </div>
 
         <!-- Story viewer modal -->
-        <div class="story-modal" id="storyModal">
+        <div class="story-modal" id="storyModal" role="dialog" aria-modal="true" aria-label="Story viewer">
             <div class="story-content">
                 <div class="story-header">
                     <div class="progress-bar" id="progressBar">
@@ -27,7 +27,7 @@
                         <span class="story-username" id="storyUsername"></span>
                         <span class="story-time" id="storyTime"></span>
                     </div>
-                    <button class="close-btn" id="closeBtn">&times;</button>
+                    <button class="close-btn" id="closeBtn" aria-label="Close story">&times;</button>
                 </div>
 
                 <div class="story-body" id="storyBody">
@@ -36,12 +36,21 @@
                 </div>
 
                 <!-- Tap areas for navigation -->
-                <div class="tap-area left" id="tapLeft"></div>
-                <div class="tap-area right" id="tapRight"></div>
+                <div class="tap-area left" id="tapLeft" aria-label="Previous story"></div>
+                <div class="tap-area right" id="tapRight" aria-label="Next story"></div>
             </div>
         </div>
     </div>
+     
+                    <nav class="page-footer-nav" aria-label="Project navigation">
+            <a href="..027-toast-notification/index.html">&larr; Previous: Code 027</a>
+            <a href="../../index.html">Home</a>
+            <a href="../029-double-click-heart/index.html">Next: Code 029 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+        <p>&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
 
     <script src="script.js"></script>
+    
 </body>
 </html>

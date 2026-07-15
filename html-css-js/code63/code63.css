@@ -10,8 +10,8 @@ body {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;   /* Stack container + footer vertically */
+    align-items: center;      /* Center both horizontally */
     padding: 20px;
     color: #fff;
 }
@@ -19,6 +19,10 @@ body {
 .container {
     max-width: 700px;
     width: 100%;
+    flex: 1;                  /* Takes remaining space, pushes footer down */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers your clock-card vertically */
 }
 
 header {
@@ -39,7 +43,6 @@ header p {
 
 .clock-card {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
     border-radius: 24px;
     padding: 40px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
@@ -142,4 +145,39 @@ header p {
     h1 {
         font-size: 2rem;
     }
+}
+
+footer {
+    margin-top: 60px;
+    padding: 32px 0;
+    text-align: center;
+    border-top: 1px solid #e5e5e7;
+}
+
+.page-footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.page-footer-nav a {
+    color: #004e89;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.page-footer-nav a:hover {
+    background: #fff0e6;
+    color: #ff6b35;
+}
+
+.credit {
+    font-size: 0.9rem;
+    color: #6e6e73;
 }

@@ -2,10 +2,29 @@ const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 const container = document.querySelector('.container');
 
-left.addEventListener('mouseenter', () => container.classList.add('hover-left'));
-left.addEventListener('mouseleave', () => container.classList.remove('hover-left'));
+// Mouse events
+left.addEventListener('mouseenter', () => addHover('left'));
+left.addEventListener('mouseleave', () => removeHover('left'));
 
-right.addEventListener('mouseenter', () => container.classList.add('hover-right'));
-right.addEventListener('mouseleave', () => container.classList.remove('hover-right'));
+right.addEventListener('mouseenter', () => addHover('right'));
+right.addEventListener('mouseleave', () => removeHover('right'));
 
-console.log('Split Landing loaded - KarthikCodingSolutions ⚡');
+// Keyboard accessibility
+left.addEventListener('focus', () => addHover('left'));
+left.addEventListener('blur', () => removeHover('left'));
+
+right.addEventListener('focus', () => addHover('right'));
+right.addEventListener('blur', () => removeHover('right'));
+
+// Touch support for mobile
+left.addEventListener('touchstart', () => addHover('left'), { passive: true });
+right.addEventListener('touchstart', () => addHover('right'), { passive: true });
+
+function addHover(side) {
+  container.classList.remove('hover-left', 'hover-right');
+  container.classList.add(`hover-${side}`);
+}
+
+function removeHover(side) {
+  container.classList.remove(`hover-${side}`);
+}

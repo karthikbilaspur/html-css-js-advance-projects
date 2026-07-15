@@ -11,6 +11,7 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -239,16 +240,45 @@ h2 {
     margin-bottom: 30px;
 }
 
+.page-footer-nav {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.page-footer-nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.credit,.copyright {
+    color: white;
+    font-size: 13px;
+    margin-top: 12px;
+    opacity: 0.8;
+    text-align: center;
+}
+
 @media (max-width: 480px) {
-   .verify-card {
+  .verify-card {
         padding: 40px 25px;
     }
 
- .code-container {
+  .code-container {
         gap: 8px;
     }
 
- .code-input {
+  .code-input {
         width: 45px;
         height: 55px;
         font-size: 20px;

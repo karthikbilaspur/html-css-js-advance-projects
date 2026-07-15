@@ -13,20 +13,27 @@
 
         <div class="password-box">
             <div class="input-group">
-                <input type="password" id="passwordInput" placeholder="Enter your password">
-                <button class="toggle-btn" id="toggleBtn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <label for="passwordInput" class="sr-only">Enter password to analyze</label>
+                <input type="password" id="passwordInput" placeholder="Enter your password" autocomplete="new-password">
+                <button class="toggle-btn" id="toggleBtn" aria-label="Toggle password visibility" type="button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                         <circle cx="12" cy="12" r="3"></circle>
                     </svg>
                 </button>
+                <button class="copy-btn" id="copyBtn" aria-label="Copy password" type="button">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                </button>
             </div>
 
-            <div class="strength-meter">
+            <div class="strength-meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Password strength">
                 <div class="strength-bar" id="strengthBar"></div>
             </div>
             <div class="strength-label">
-                <span id="strengthText">Enter a password</span>
+                <span id="strengthText" aria-live="polite">Enter a password</span>
                 <span id="strengthScore">0/100</span>
             </div>
         </div>
@@ -35,54 +42,55 @@
             <div class="card">
                 <h3>Time to Crack</h3>
                 <div class="crack-time" id="crackTime">
-                    <span class="time-value">Instantly</span>
+                    <span class="time-value" aria-live="polite">Instantly</span>
                     <span class="time-desc">by brute force</span>
                 </div>
                 <div class="crack-details">
                     <div class="detail-row">
-                        <span>Online attack:</span>
+                        <span>Online attack <small>(1000/sec)</small>:</span>
                         <strong id="onlineTime">Instant</strong>
                     </div>
                     <div class="detail-row">
-                        <span>Offline fast:</span>
+                        <span>Offline fast <small>(10B/sec)</small>:</span>
                         <strong id="offlineTime">Instant</strong>
                     </div>
                 </div>
+                <p class="crack-note">Estimates assume MD5/SHA1. Modern hashes like bcrypt are 1000x+ slower.</p>
             </div>
 
             <div class="card">
                 <h3>Character Analysis</h3>
-                <div class="checks" id="checks">
-                    <div class="check-item" data-check="length">
-                        <span class="check-icon">✗</span>
+                <div class="checks" id="checks" role="list">
+                    <div class="check-item" data-check="length" role="listitem">
+                        <span class="check-icon" aria-hidden="true">✗</span>
                         <span>At least 12 characters</span>
                     </div>
-                    <div class="check-item" data-check="uppercase">
-                        <span class="check-icon">✗</span>
+                    <div class="check-item" data-check="uppercase" role="listitem">
+                        <span class="check-icon" aria-hidden="true">✗</span>
                         <span>Uppercase letters</span>
                     </div>
-                    <div class="check-item" data-check="lowercase">
-                        <span class="check-icon">✗</span>
+                    <div class="check-item" data-check="lowercase" role="listitem">
+                        <span class="check-icon" aria-hidden="true">✗</span>
                         <span>Lowercase letters</span>
                     </div>
-                    <div class="check-item" data-check="numbers">
-                        <span class="check-icon">✗</span>
+                    <div class="check-item" data-check="numbers" role="listitem">
+                        <span class="check-icon" aria-hidden="true">✗</span>
                         <span>Numbers</span>
                     </div>
-                    <div class="check-item" data-check="symbols">
-                        <span class="check-icon">✗</span>
+                    <div class="check-item" data-check="symbols" role="listitem">
+                        <span class="check-icon" aria-hidden="true">✗</span>
                         <span>Special symbols</span>
                     </div>
-                    <div class="check-item" data-check="unique">
-                        <span class="check-icon">✗</span>
+                    <div class="check-item" data-check="unique" role="listitem">
+                        <span class="check-icon" aria-hidden="true">✗</span>
                         <span>No repeating patterns</span>
                     </div>
                 </div>
             </div>
 
             <div class="card warning-card" id="warningCard">
-                <h3>⚠️ Warnings</h3>
-                <ul id="warningsList">
+                <h3>⚠ Warnings</h3>
+                <ul id="warningsList" aria-live="polite">
                     <li>Type a password to see analysis</li>
                 </ul>
             </div>
@@ -91,7 +99,7 @@
                 <h3>Entropy</h3>
                 <div class="entropy-display">
                     <div class="entropy-circle">
-                        <svg viewBox="0 0 100 100">
+                        <svg viewBox="0 0 100 100" aria-hidden="true">
                             <circle cx="50" cy="50" r="45" class="entropy-bg"></circle>
                             <circle cx="50" cy="50" r="45" class="entropy-fill" id="entropyCircle"></circle>
                         </svg>
@@ -105,8 +113,16 @@
             </div>
         </div>
 
-        <div class="suggestions" id="suggestions"></div>
+        <div class="suggestions" id="suggestions" role="status" aria-live="polite"></div>
     </div>
+
+    <nav class="page-footer-nav" aria-label="Project navigation">
+        <a href="../038-mobile-tab-navigation/index.html">&larr; Previous: Code 038</a>
+        <a href="../../index.html">Home</a>
+        <a href="../040-5d-boxes-background/index.html">Next: Code 040 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
 
     <script src="script.js"></script>
 </body>

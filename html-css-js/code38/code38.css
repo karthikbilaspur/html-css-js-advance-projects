@@ -247,3 +247,72 @@ header h1 {
     grid-template-columns: 1fr;
   }
 }
+
+footer {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 550px;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.page-footer-nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  transition: all 0.2s;
+  text-align: center;
+  flex: 1;
+}
+
+.page-footer-nav a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.page-footer-nav a:nth-child(2) {
+  background-color: var(--input-bg);
+  max-width: 120px;
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    padding: 1.5rem;
+  }
+  
+  .difficulty-buttons, .game-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .input-section {
+    flex-direction: column;
+  }
+  
+  .page-footer-nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .page-footer-nav a {
+    width: 100%;
+  }
+  
+  .page-footer-nav a:nth-child(2) {
+    max-width: 100%;
+    order: -1;
+  }
+}
+
+footer { margin: 0 auto; }

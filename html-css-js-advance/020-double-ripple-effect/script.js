@@ -32,4 +32,4 @@ buttons.forEach(button => {
   });
 });
 
-console.log('Double Ripple Effect loaded - KarthikCodingSolutions ⚡ Bundle 4 Complete');
+console.log('Double Ripple Effect loaded - KarthikCodingSolutions ⚡ Bundle 2 Complete');

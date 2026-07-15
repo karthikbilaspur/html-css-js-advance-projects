@@ -1,3 +1,8 @@
 echo "node_modules/" >> .gitignore
 echo ".vscode/" >> .gitignore
 echo ".DS_Store" >> .gitignore
+
+html/
+html-css/
+html-css-js/
+html-css-js-advance/

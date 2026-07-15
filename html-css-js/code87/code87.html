@@ -1,52 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code87 Chess Board</title>
-    <link rel="stylesheet" href="code87.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chess - Vanilla JS</title>
+<link rel="stylesheet" href="code87.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Code87 Chess</h1>
-        
-        <div class="game-info">
-            <div class="turn-indicator">
-                Turn: <span id="current-turn">White</span>
-            </div>
-            <div class="status" id="game-status">Select a piece to move</div>
-        </div>
+<div class="game-container">
+  <div class="header">
+    <h1>♔ Chess Master ♚</h1>
+  </div>
 
-        <div class="board-wrapper">
-            <div class="ranks">
-                <div>8</div><div>7</div><div>6</div><div>5</div>
-                <div>4</div><div>3</div><div>2</div><div>1</div>
-            </div>
-            <div id="chess-board"></div>
-        </div>
-        
-        <div class="files">
-            <div>a</div><div>b</div><div>c</div><div>d</div>
-            <div>e</div><div>f</div><div>g</div><div>h</div>
-        </div>
-
-        <div class="controls">
-            <button id="reset-btn">New Game</button>
-            <button id="undo-btn">Undo</button>
-            <button id="flip-btn">Flip Board</button>
-        </div>
-
-        <div class="captured">
-            <div class="captured-white">
-                <span>Captured:</span>
-                <div id="captured-white"></div>
-            </div>
-            <div class="captured-black">
-                <span>Captured:</span>
-                <div id="captured-black"></div>
-            </div>
-        </div>
+  <div class="status-bar">
+    <div class="status-item">
+      <div class="turn-indicator white" id="turnIndicator"></div>
+      <span id="statusText">White to move</span>
     </div>
+    <div class="status-item" id="gameStateText"></div>
+  </div>
+
+  <div class="main-game">
+    <div class="board-wrapper">
+      <div class="board" id="board"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="panel">
+        <h3>Controls</h3>
+        <div class="controls">
+          <button class="btn" id="newGameBtn">New Game</button>
+          <button class="btn secondary" id="undoBtn" disabled>Undo Move</button>
+          <button class="btn secondary" id="flipBoardBtn">Flip Board</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Captured Pieces</h3>
+        <div class="captured-pieces" id="capturedWhite"></div>
+        <div class="captured-pieces" id="capturedBlack"></div>
+      </div>
+
+      <div class="panel">
+        <h3>Move History</h3>
+        <div class="move-history" id="moveHistory"></div>
+      </div>
+
+      <div class="panel">
+        <h3>AI Suggestions</h3>
+        <div class="ai-suggestion">
+          <strong>Improve the AI:</strong><br>
+          1. Minimax with alpha-beta pruning<br>
+          2. Position evaluation tables<br>
+          3. Opening book database<br>
+          4. Transposition tables<br>
+          5. Iterative deepening<br>
+          6. Quiescence search
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="promotionModal">
+  <div class="modal-content">
+    <h2>Promote Pawn</h2>
+    <p>Choose a piece to promote to:</p>
+    <div class="promotion-pieces" id="promotionChoices"></div>
+  </div>
+</div>
+
+<div class="modal" id="gameOverModal">
+  <div class="modal-content">
+    <h2 id="gameOverTitle">Game Over</h2>
+    <p id="gameOverMessage"></p>
+    <button class="btn" id="gameOverNewGameBtn">New Game</button>
+  </div>
+</div>
+
+    <footer>
+        <nav class="page-footer-nav">
+            <a href="../code86/code86.html">&larr; Previous: Code 86</a>
+            <a href="../../index.html">Home</a>
+            <a href="../code88/code88.html">Next: Code 88 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    </footer>
 
     <script src="code87.js"></script>
 </body>

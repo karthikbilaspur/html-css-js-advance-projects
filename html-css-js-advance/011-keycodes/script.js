@@ -28,4 +28,4 @@ if (insert.children.length === 0) {
   insert.innerHTML = `<div class="initial">Press any key to get the keyCode</div>`;
 }
 
-console.log('Event KeyCodes loaded - KarthikCodingSolutions ⚡ Bundle 3 Started');
+console.log('Event KeyCodes loaded - KarthikCodingSolutions ⚡ Bundle 2 Started');

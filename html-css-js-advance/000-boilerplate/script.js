@@ -1,36 +1,34 @@
-// Theme Toggle
 const themeToggle = document.getElementById('theme-toggle');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const ctaBtn = document.getElementById('cta-btn');
+const projectGrid = document.getElementById('project-grid');
 
-let currentTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+// Theme toggle with localStorage
+const currentTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', currentTheme);
 themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
 
 themeToggle.addEventListener('click', () => {
-  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  localStorage.setItem('theme', currentTheme);
-  themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+  const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
 });
 
-// CTA Button
-document.getElementById('cta-btn').addEventListener('click', () => {
-  document.getElementById('projects').scrollIntoView();
+// CTA scroll
+ctaBtn.addEventListener('click', () => {
+  document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
 });
 
-// Dynamic Projects
+// Inject sample projects
 const projects = [
-  { title: 'Portfolio Site', desc: 'Responsive personal site with dark mode' },
-  { title: 'Weather App', desc: 'Vanilla JS + OpenWeather API' },
-  { title: 'Task Manager', desc: 'LocalStorage CRUD app' }
+  { title: 'Expanding Cards', link: '../001-expanding-cards/index.html' },
+  { title: 'Progress Steps', link: '../002-progress-steps/index.html' },
+  { title: 'Rotating Nav', link: '../003-rotating-navigation/index.html' }
 ];
 
-const projectGrid = document.getElementById('project-grid');
-projects.forEach(project => {
-  const card = document.createElement('div');
-  card.className = 'card';
-  card.innerHTML = `<h3>${project.title}</h3><p>${project.desc}</p>`;
-  projectGrid.appendChild(card);
-});
-
-console.log('KarthikCodingSolutions boilerplate loaded ⚡');
+projectGrid.innerHTML = projects.map(p => `
+  <div class="project-card">
+    <h3>${p.title}</h3>
+    <a href="${p.link}" class="btn-primary">View</a>
+  </div>
+`).join('');

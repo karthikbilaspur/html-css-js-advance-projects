@@ -8,98 +8,131 @@ const eraserBtn = document.getElementById('eraserBtn');
 
 let isDrawing = false;
 let isErasing = false;
-let lastColor = '#000000';
 
-// Set initial canvas background to white
-ctx.fillStyle = 'white';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+// Set canvas size + white background
+function initCanvas() {
+  if (window.innerWidth < 850) {
+    canvas.width = window.innerWidth * 0.9;
+    canvas.height = window.innerHeight * 0.6;
+  } else {
+    canvas.width = 800;
+    canvas.height = 500;
+  }
+
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+initCanvas();
+window.addEventListener('resize', () => {
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  initCanvas();
+  ctx.putImageData(imageData, 0, 0);
+});
 
 // Update brush size display
 brushSize.addEventListener('input', () => {
-    sizeDisplay.textContent = brushSize.value;
+  sizeDisplay.textContent = brushSize.value;
 });
 
-// Start drawing
+// Get correct mouse/touch position
+function getPosition(e) {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+
+  let clientX, clientY;
+  if (e.touches && e.touches.length > 0) {
+    clientX = e.touches[0].clientX;
+    clientY = e.touches[0].clientY;
+  } else {
+    clientX = e.clientX;
+    clientY = e.clientY;
+  }
+
+  return {
+    x: (clientX - rect.left) * scaleX,
+    y: (clientY - rect.top) * scaleY
+  };
+}
+
+// Mouse events
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', stopDrawing);
 canvas.addEventListener('mouseout', stopDrawing);
 
-// Touch support for mobile
-canvas.addEventListener('touchstart', handleTouch);
-canvas.addEventListener('touchmove', handleTouch);
+// Touch events
+canvas.addEventListener('touchstart', handleTouch, { passive: false });
+canvas.addEventListener('touchmove', handleTouch, { passive: false });
 canvas.addEventListener('touchend', stopDrawing);
 
 function startDrawing(e) {
-    isDrawing = true;
-    draw(e);
+  isDrawing = true;
+  const pos = getPosition(e);
+  ctx.beginPath();
+  ctx.moveTo(pos.x, pos.y);
 }
 
 function draw(e) {
-    if (!isDrawing) return;
+  if (!isDrawing) return;
+  e.preventDefault();
 
-    const rect = canvas.getBoundingClientRect();
-    const x = (e.clientX || e.touches[0].clientX) - rect.left;
-    const y = (e.clientY || e.touches[0].clientY) - rect.top;
+  const pos = getPosition(e);
 
-    ctx.lineWidth = brushSize.value;
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
+  ctx.lineWidth = brushSize.value;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.strokeStyle = isErasing? 'white' : colorPicker.value;
 
-    if (isErasing) {
-        ctx.strokeStyle = 'white';
-    } else {
-        ctx.strokeStyle = colorPicker.value;
-    }
-
-    ctx.lineTo(x, y);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(x, y);
+  ctx.lineTo(pos.x, pos.y);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(pos.x, pos.y);
 }
 
 function stopDrawing() {
-    isDrawing = false;
-    ctx.beginPath();
+  isDrawing = false;
+  ctx.beginPath();
 }
 
 function handleTouch(e) {
-    e.preventDefault();
-    const touch = e.touches[0];
-    const mouseEvent = new MouseEvent(e.type === 'touchstart'? 'mousedown' : 'mousemove', {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-    });
-    canvas.dispatchEvent(mouseEvent);
+  e.preventDefault();
+  if (e.type === 'touchstart') {
+    startDrawing(e);
+  } else if (e.type === 'touchmove') {
+    draw(e);
+  }
 }
 
 // Clear canvas
 clearBtn.addEventListener('click', () => {
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 });
 
 // Toggle eraser
 eraserBtn.addEventListener('click', () => {
-    isErasing =!isErasing;
-    if (isErasing) {
-        lastColor = colorPicker.value;
-        eraserBtn.classList.add('active');
-        eraserBtn.textContent = 'Brush';
-        canvas.style.cursor = 'cell';
-    } else {
-        eraserBtn.classList.remove('active');
-        eraserBtn.textContent = 'Eraser';
-        canvas.style.cursor = 'crosshair';
-    }
+  isErasing =!isErasing;
+  if (isErasing) {
+    eraserBtn.classList.add('active');
+    eraserBtn.textContent = 'Brush';
+    canvas.style.cursor = 'cell';
+  } else {
+    eraserBtn.classList.remove('active');
+    eraserBtn.textContent = 'Eraser';
+    canvas.style.cursor = 'crosshair';
+  }
 });
 
-// Switch back to brush when color changes
+// Switch to brush when color changes
 colorPicker.addEventListener('input', () => {
-    if (isErasing) {
-        isErasing = false;
-        eraserBtn.classList.remove('active');
-        eraserBtn.textContent = 'Eraser';
-        canvas.style.cursor = 'crosshair';
-    }
+  if (isErasing) {
+    isErasing = false;
+    eraserBtn.classList.remove('active');
+    eraserBtn.textContent = 'Eraser';
+    canvas.style.cursor = 'crosshair';
+  }
 });
+
+console.log('Drawing App loaded - KarthikCodingSolutions ⚡ Canvas API + Touch');

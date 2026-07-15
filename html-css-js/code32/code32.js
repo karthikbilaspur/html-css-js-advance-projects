@@ -1,4 +1,3 @@
-// JavaScript for Code 32
 // Array of questions with radio button options
 const questionBank = [
   {

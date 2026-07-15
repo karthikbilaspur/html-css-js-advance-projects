@@ -20,7 +20,7 @@ let pieChart, barChart;
 
 // Category icons
 const categoryIcons = {
-    food: '🍔', transport: '🚗', shopping: '🛍️', bills: '📄',
+    food: '🍔', transport: '🚗', shopping: '🛍', bills: '📄',
     entertainment: '🎬', health: '🏥', salary: '💼', freelance: '💻', other: '📦'
 };
 

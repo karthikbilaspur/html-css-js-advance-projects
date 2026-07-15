@@ -7,20 +7,24 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;   /* Stack container + footer vertically */
+    align-items: center;      /* Center both horizontally */
     padding: 20px;
-    color: white;
+    color: #fff;
 }
 
 .container {
-    text-align: center;
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
+    flex: 1;                  /* Takes remaining space, pushes footer down */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers your clock-card vertically */
 }
+
 
 h1 {
     font-size: 3rem;
@@ -38,7 +42,6 @@ h1 {
 
 .player-score {
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
     padding: 12px 24px;
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.2);
@@ -60,7 +63,6 @@ h1 {
 
 .game-status {
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
     padding: 16px;
     border-radius: 12px;
     margin-bottom: 24px;
@@ -94,7 +96,6 @@ h1 {
     font-weight: 800;
     cursor: pointer;
     transition: all 0.2s ease;
-    user-select: none;
 }
 
 .cell:hover:not(.x):not(.o) {
@@ -140,7 +141,6 @@ h1 {
 .controls button {
     padding: 14px 28px;
     background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.3);
     color: white;
     border-radius: 10px;
@@ -169,7 +169,6 @@ h1 {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(8px);
     align-items: center;
     justify-content: center;
 }
@@ -230,4 +229,39 @@ h1 {
    .score-board {
         gap: 12px;
     }
+}
+
+footer {
+    margin-top: 60px;
+    padding: 32px 0;
+    text-align: center;
+    border-top: 1px solid #e5e5e7;
+}
+
+.page-footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.page-footer-nav a {
+    color: #004e89;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.page-footer-nav a:hover {
+    background: #fff0e6;
+    color: #ff6b35;
+}
+
+.credit {
+    font-size: 0.9rem;
+    color: #6e6e73;
 }

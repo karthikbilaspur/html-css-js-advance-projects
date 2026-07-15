@@ -15,23 +15,23 @@
 
         <div class="toolbar">
             <div class="tool-group">
-                <label>Color</label>
-                <input type="color" id="color-picker" value="#e94560">
+                <label for="color-picker">Color - pick any color</label>
+                <input type="color" id="color-picker" value="#e94560" title="Color picker">
                 <div class="color-presets">
-                    <button class="preset" data-color="#000000" style="background: #000000"></button>
-                    <button class="preset" data-color="#e94560" style="background: #e94560"></button>
-                    <button class="preset" data-color="#667eea" style="background: #667eea"></button>
-                    <button class="preset" data-color="#f093fb" style="background: #f093fb"></button>
-                    <button class="preset" data-color="#4facfe" style="background: #4facfe"></button>
-                    <button class="preset" data-color="#43e97b" style="background: #43e97b"></button>
-                    <button class="preset" data-color="#f9ca24" style="background: #f9ca24"></button>
-                    <button class="preset" data-color="#ffffff" style="background: #ffffff; border: 1px solid #ccc"></button>
+                    <button class="preset" data-color="#000000" aria-label="Black"></button>
+                    <button class="preset" data-color="#e94560" aria-label="Pink"></button>
+                    <button class="preset" data-color="#667eea" aria-label="Blue"></button>
+                    <button class="preset" data-color="#f093fb" aria-label="Purple"></button>
+                    <button class="preset" data-color="#4facfe" aria-label="Light Blue"></button>
+                    <button class="preset" data-color="#43e97b" aria-label="Green"></button>
+                    <button class="preset" data-color="#f9ca24" aria-label="Yellow"></button>
+                    <button class="preset" data-color="#ffffff" aria-label="White"></button>
                 </div>
             </div>
 
             <div class="tool-group">
                 <label>Brush Size: <span id="size-display">5</span>px</label>
-                <input type="range" id="brush-size" min="1" max="50" value="5">
+                <input type="range" id="brush-size" min="1" max="50" value="5" title="brush size">
             </div>
 
             <div class="tool-group">
@@ -78,6 +78,15 @@
             <span id="canvas-size">800 × 600</span>
         </div>
     </div>
+
+    <footer>
+        <nav class="page-footer-nav">
+            <a href="../code80/code80.html">&larr; Previous: Code 80</a>
+            <a href="../../index.html">Home</a>
+            <a href="../code82/code82.html">Next: Code 82 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    </footer>
 
     <script src="code81.js"></script>
 </body>

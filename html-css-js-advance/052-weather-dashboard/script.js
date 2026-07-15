@@ -10,30 +10,30 @@ let tempChart;
 
 // Weather code to icon + description mapping
 const weatherCodes = {
-    0: { icon: '☀️', desc: 'Clear sky' },
-    1: { icon: '🌤️', desc: 'Mainly clear' },
+    0: { icon: '☀', desc: 'Clear sky' },
+    1: { icon: '🌤', desc: 'Mainly clear' },
     2: { icon: '⛅', desc: 'Partly cloudy' },
-    3: { icon: '☁️', desc: 'Overcast' },
-    45: { icon: '🌫️', desc: 'Foggy' },
-    48: { icon: '🌫️', desc: 'Depositing rime fog' },
-    51: { icon: '🌦️', desc: 'Light drizzle' },
-    53: { icon: '🌦️', desc: 'Moderate drizzle' },
-    55: { icon: '🌧️', desc: 'Dense drizzle' },
-    61: { icon: '🌧️', desc: 'Slight rain' },
-    63: { icon: '🌧️', desc: 'Moderate rain' },
-    65: { icon: '🌧️', desc: 'Heavy rain' },
-    71: { icon: '🌨️', desc: 'Slight snow' },
-    73: { icon: '🌨️', desc: 'Moderate snow' },
-    75: { icon: '❄️', desc: 'Heavy snow' },
-    77: { icon: '🌨️', desc: 'Snow grains' },
-    80: { icon: '🌦️', desc: 'Slight rain showers' },
-    81: { icon: '🌧️', desc: 'Moderate rain showers' },
-    82: { icon: '⛈️', desc: 'Violent rain showers' },
-    85: { icon: '🌨️', desc: 'Slight snow showers' },
-    86: { icon: '❄️', desc: 'Heavy snow showers' },
-    95: { icon: '⛈️', desc: 'Thunderstorm' },
-    96: { icon: '⛈️', desc: 'Thunderstorm with hail' },
-    99: { icon: '⛈️', desc: 'Thunderstorm with heavy hail' }
+    3: { icon: '☁', desc: 'Overcast' },
+    45: { icon: '🌫', desc: 'Foggy' },
+    48: { icon: '🌫', desc: 'Depositing rime fog' },
+    51: { icon: '🌦', desc: 'Light drizzle' },
+    53: { icon: '🌦', desc: 'Moderate drizzle' },
+    55: { icon: '🌧', desc: 'Dense drizzle' },
+    61: { icon: '🌧', desc: 'Slight rain' },
+    63: { icon: '🌧', desc: 'Moderate rain' },
+    65: { icon: '🌧', desc: 'Heavy rain' },
+    71: { icon: '🌨', desc: 'Slight snow' },
+    73: { icon: '🌨', desc: 'Moderate snow' },
+    75: { icon: '❄', desc: 'Heavy snow' },
+    77: { icon: '🌨', desc: 'Snow grains' },
+    80: { icon: '🌦', desc: 'Slight rain showers' },
+    81: { icon: '🌧', desc: 'Moderate rain showers' },
+    82: { icon: '⛈', desc: 'Violent rain showers' },
+    85: { icon: '🌨', desc: 'Slight snow showers' },
+    86: { icon: '❄', desc: 'Heavy snow showers' },
+    95: { icon: '⛈', desc: 'Thunderstorm' },
+    96: { icon: '⛈', desc: 'Thunderstorm with hail' },
+    99: { icon: '⛈', desc: 'Thunderstorm with heavy hail' }
 };
 
 // Init with default city
@@ -129,7 +129,7 @@ function displayWeather(data, locationName) {
     });
 
     // Weather info
-    const weatherInfo = weatherCodes[current.weather_code] || { icon: '🌡️', desc: 'Unknown' };
+    const weatherInfo = weatherCodes[current.weather_code] || { icon: '🌡', desc: 'Unknown' };
     document.getElementById('description').textContent = weatherInfo.desc;
     document.getElementById('weatherIcon').textContent = weatherInfo.icon;
 
@@ -217,7 +217,7 @@ function renderForecast(daily) {
     for (let i = 1; i <= 5; i++) {
         const date = new Date(daily.time[i]);
         const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
-        const weatherInfo = weatherCodes[daily.weather_code[i]] || { icon: '🌡️' };
+        const weatherInfo = weatherCodes[daily.weather_code[i]] || { icon: '🌡' };
 
         const card = document.createElement('div');
         card.className = 'forecast-card';

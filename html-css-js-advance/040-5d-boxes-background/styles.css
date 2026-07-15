@@ -13,6 +13,7 @@ body {
     height: 100vh;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -25,6 +26,7 @@ body {
     height: 100%;
     perspective: 1000px;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .box {
@@ -34,8 +36,13 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: 2px solid rgba(255,255,255,0.1);
     transform-style: preserve-3d;
+    will-change: transform;
+    backface-visibility: hidden;
+    /* Parallax offset - doesn't kill animation */
+    --x: 0px;
+    --y: 0px;
+    --z: 0px;
     animation: float 20s infinite ease-in-out;
-    opacity: 0.6;
 }
 
 .box::before,
@@ -58,16 +65,20 @@ body {
 
 @keyframes float {
     0%, 100% {
-        transform: translateY(0) translateX(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0);
+        transform: translate3d(var(--x), var(--y), var(--z))
+                   rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
     25% {
-        transform: translateY(-100px) translateX(50px) rotateX(90deg) rotateY(90deg) rotateZ(45deg) translateZ(100px);
+        transform: translate3d(calc(var(--x) + 50px), calc(var(--y) - 100px), calc(var(--z) + 100px))
+                   rotateX(90deg) rotateY(90deg) rotateZ(45deg);
     }
     50% {
-        transform: translateY(-200px) translateX(-50px) rotateX(180deg) rotateY(180deg) rotateZ(90deg) translateZ(200px);
+        transform: translate3d(calc(var(--x) - 50px), calc(var(--y) - 200px), calc(var(--z) + 200px))
+                   rotateX(180deg) rotateY(180deg) rotateZ(90deg);
     }
     75% {
-        transform: translateY(-100px) translateX(100px) rotateX(270deg) rotateY(270deg) rotateZ(135deg) translateZ(100px);
+        transform: translate3d(calc(var(--x) + 100px), calc(var(--y) - 100px), calc(var(--z) + 100px))
+                   rotateX(270deg) rotateY(270deg) rotateZ(135deg);
     }
 }
 
@@ -76,8 +87,7 @@ body {
     z-index: 100;
     text-align: center;
     padding: 40px;
-    background: rgba(10,10,10,0.7);
-    backdrop-filter: blur(10px);
+    background: rgba(10,10,0.7);
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.1);
 }
@@ -120,8 +130,51 @@ p {
     transform: translateY(0);
 }
 
-.paused .box {
+.btn:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+.paused.box {
     animation-play-state: paused;
+}
+
+.page-footer-nav {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 101;
+}
+
+.page-footer-nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.page-footer-nav a:hover {
+    color: white;
+}
+
+.credit,.copyright {
+    position: fixed;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    z-index: 101;
+}
+
+.copyright {
+    bottom: 15px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
 }
 
 @media (max-width: 768px) {
@@ -133,8 +186,32 @@ p {
         font-size: 1rem;
     }
 
-  .box {
+   .box {
         width: 40px;
         height: 40px;
+    }
+
+  .box::before {
+        transform: rotateY(90deg) translateZ(20px);
+    }
+
+  .box::after {
+        transform: rotateX(90deg) translateZ(20px);
+    }
+
+  .content {
+        padding: 30px 20px;
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .box {
+        animation: none;
+        opacity: 0.3;
+    }
+
+  .btn {
+        transition: none;
     }
 }

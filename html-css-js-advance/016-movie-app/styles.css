@@ -15,6 +15,9 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -70,6 +73,8 @@ main {
   padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  flex: 1;
+  width: 100%;
 }
 
 .movie {
@@ -187,6 +192,43 @@ main {
   font-weight: 600;
 }
 
+footer {
+  width: 100%;
+  background: var(--secondary-color);
+  border-top: 1px solid #334155;
+  padding: 1.25rem 1rem;
+  color: #64748b;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-footer-nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.page-footer-nav a:hover {
+  color: var(--accent-color);
+}
+
+footer .credit {
+  margin: 0.25rem 0 0;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
 @media (max-width: 600px) {
   header {
     justify-content: center;
@@ -196,5 +238,18 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
     padding: 1rem;
+  }
+
+  .page-footer-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .page-footer-nav a {
+    font-size: 0.8rem;
+  }
+  
+  footer {
+    padding: 1rem 0.5rem;
   }
 }

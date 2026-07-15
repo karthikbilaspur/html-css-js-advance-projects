@@ -12,8 +12,9 @@ body {
     min-height: 100vh;
     padding: 20px;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .container {
@@ -168,12 +169,41 @@ h1 {
     to { transform: rotate(360deg); }
 }
 
+.page-footer-nav {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.page-footer-nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.credit,.copyright {
+    color: white;
+    font-size: 13px;
+    margin-top: 12px;
+    opacity: 0.8;
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     h1 {
         font-size: 1.5rem;
     }
 
- .container {
+  .container {
         margin-top: 20px;
     }
 }

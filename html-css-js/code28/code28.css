@@ -155,7 +155,6 @@ input[type="range"] {
   border-radius: 5px;
   background: #e0e0e0;
   outline: none;
-  -webkit-appearance: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -190,7 +189,6 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
   font-size: 15px;
   color: #333;
-  user-select: none;
 }
 
 .checkbox-label input {

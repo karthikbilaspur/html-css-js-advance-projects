@@ -9,6 +9,9 @@ body {
   background: #0f172a;
   color: #f1f5f9;
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .kcs-header {
@@ -44,6 +47,7 @@ h1 {
   max-width: 600px;
   margin: 0 auto 50px;
   padding: 0 1rem;
+  flex: 1;
 }
 
 .faq {
@@ -147,6 +151,44 @@ h1 {
   background: #38bdf8;
 }
 
+footer {
+  width: 100%;
+  background: #1e293b;
+  border-top: 1px solid #334155;
+  padding: 1.25rem 1rem;
+  color: #64748b;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-footer-nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.page-footer-nav a:hover {
+  color: #38bdf8;
+}
+
+footer .credit {
+  margin: 0.25rem 0 0;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
 @media (max-width: 600px) {
   .faq {
     padding: 20px;
@@ -155,5 +197,18 @@ h1 {
   .faq-toggle {
     top: 20px;
     right: 20px;
+  }
+
+  .page-footer-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .page-footer-nav a {
+    font-size: 0.8rem;
+  }
+  
+  footer {
+    padding: 1rem 0.5rem;
   }
 }

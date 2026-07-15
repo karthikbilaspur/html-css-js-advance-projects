@@ -7,22 +7,34 @@
     <link rel="stylesheet" href="code49.css">
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <header>
             <h1>GitHub User Finder</h1>
             <p>Search any GitHub username to see profile + repos</p>
         </header>
 
-        <div class="search-box">
-            <input type="text" id="username-input" placeholder="Enter GitHub username..." />
-            <button id="search-btn">Search</button>
-        </div>
+        <section class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="username-input" 
+                    placeholder="Enter GitHub username..." 
+                    aria-label="GitHub username"
+                    autocomplete="off"
+                />
+                <button id="search-btn" type="button">Search</button>
+            </div>
+            <div id="error-msg" class="error hidden" role="alert"></div>
+        </section>
 
-        <div id="error-msg" class="error hidden"></div>
+        <section id="loading" class="loading hidden" aria-live="polite">
+            <div class="spinner"></div>
+            <p>Fetching from GitHub API...</p>
+        </section>
 
-        <div id="user-profile" class="profile-card hidden">
+        <section id="user-profile" class="profile-card hidden">
             <div class="profile-header">
-                <img id="avatar" src="" alt="Avatar">
+                <img id="avatar" src="" alt="User avatar" loading="lazy">
                 <div class="profile-info">
                     <h2 id="name"></h2>
                     <p id="username" class="username"></p>
@@ -32,28 +44,32 @@
                         <span><strong id="followers">0</strong> Followers</span>
                         <span><strong id="following">0</strong> Following</span>
                     </div>
-                    <a id="profile-link" target="_blank" class="profile-btn">View on GitHub</a>
+                    <a id="profile-link" target="_blank" rel="noopener noreferrer" class="profile-btn">View on GitHub</a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div id="repos-section" class="hidden">
+        <section id="repos-section" class="hidden">
             <div class="repos-header">
                 <h3>Public Repositories</h3>
-                <select id="sort-select">
+                <select id="sort-select" aria-label="Sort repositories">
                     <option value="updated">Recently Updated</option>
                     <option value="stars">Most Stars</option>
                     <option value="name">Name A-Z</option>
                 </select>
             </div>
             <div id="repos-list" class="repos-grid"></div>
-        </div>
+        </section>
+    </main>
 
-        <div id="loading" class="loading hidden">
-            <div class="spinner"></div>
-            <p>Fetching from GitHub API...</p>
-        </div>
-    </div>
+    <footer>
+        <nav class="page-footer-nav">
+            <a href="../code48/code48.html">&larr; Previous: Code 48</a>
+            <a href="../../index.html">Home</a>
+            <a href="../code50/code50.html">Next: Code 50 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    </footer>
 
     <script src="code49.js"></script>
 </body>

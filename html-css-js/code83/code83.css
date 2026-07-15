@@ -9,14 +9,22 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;   /* Stack container + footer vertically */
+    align-items: center;      /* Center both horizontally */
     padding: 20px;
-    color: white;
+    color: #fff;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    flex: 1;                  /* Takes remaining space, pushes footer down */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers your clock-card vertically */
 }
+
 
 header {
     text-align: center;
@@ -31,7 +39,6 @@ h1 {
 
 .toolbar {
     background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 16px;
     padding: 20px;
@@ -88,6 +95,16 @@ h1 {
     box-shadow: 0 0 0 2px #e94560;
 }
 
+/* Set swatch backgrounds */
+.color-swatch[data-color="#000000"] { background: #000000; }
+.color-swatch[data-color="#ffffff"] { background: #ffffff; }
+.color-swatch[data-color="#e94560"] { background: #e94560; }
+.color-swatch[data-color="#667eea"] { background: #667eea; }
+.color-swatch[data-color="#43e97b"] { background: #43e97b; }
+.color-swatch[data-color="#f9ca24"] { background: #f9ca24; }
+.color-swatch[data-color="#f093fb"] { background: #f093fb; }
+.color-swatch[data-color="#4facfe"] { background: #4facfe; }
+
 #grid-size {
     padding: 10px 16px;
     background: rgba(255,255,255,0.15);
@@ -98,6 +115,11 @@ h1 {
     font-weight: 600;
     cursor: pointer;
     outline: none;
+}
+
+#grid-size option {
+    background: #1e3c72;
+    color: white;
 }
 
 .tool-btn {
@@ -175,7 +197,7 @@ h1 {
     gap: 1px;
     background: #333;
     border: 2px solid #444;
-    user-select: none;
+    touch-action: none; /* Prevent scrolling on touch */
 }
 
 .pixel {
@@ -197,7 +219,6 @@ h1 {
     justify-content: space-between;
     padding: 12px 20px;
     background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(20px);
     border-radius: 12px;
     font-size: 0.9rem;
     opacity: 0.8;
@@ -208,11 +229,46 @@ h1 {
     h1 {
         font-size: 1.8rem;
     }
-.toolbar {
+   .toolbar {
         flex-direction: column;
         align-items: stretch;
     }
-.tool-section {
+   .tool-section {
         justify-content: space-between;
     }
+}
+
+footer {
+    margin-top: 60px;
+    padding: 32px 0;
+    text-align: center;
+    border-top: 1px solid #e5e5e7;
+}
+
+.page-footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.page-footer-nav a {
+    color: #004e89;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.page-footer-nav a:hover {
+    background: #fff0e6;
+    color: #ff6b35;
+}
+
+.credit {
+    font-size: 0.9rem;
+    color: #6e6e73;
 }

@@ -3,31 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project 009: Sound Board by KarthikCodingSolutions">
   <title>Sound Board | KarthikCodingSolutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
 <body>
-  <div class="header">
+  <header class="header">
     <div class="brand">
-      <span class="logo">⚡</span>
+      <span class="logo" aria-hidden="true">⚡</span>
       <span>KarthikCodingSolutions</span>
     </div>
     <p>Project 009: Sound Board</p>
-  </div>
+  </header>
 
-  <audio id="success" src="https://cdn.pixabay.com/audio/2022/03/15/audio_2b28f1e6e8.mp3"></audio>
-  <audio id="click" src="https://cdn.pixabay.com/audio/2022/03/24/audio_c8c8a73467.mp3"></audio>
-  <audio id="error" src="https://cdn.pixabay.com/audio/2022/03/10/audio_5e69c4d9b5.mp3"></audio>
-  <audio id="notify" src="https://cdn.pixabay.com/audio/2022/03/10/audio_9b4f3c4d5a.mp3"></audio>
-  <audio id="deploy" src="https://cdn.pixabay.com/audio/2021/08/04/audio_12b0c7443c.mp3"></audio>
-  <audio id="stop" src=""></audio>
-
-  <div id="buttons"></div>
+  <main>
+    <div id="buttons" role="group" aria-label="Sound board controls"></div>
+  </main>
 
   <footer>
-    <p>Click any sound • Press Stop to end all</p>
+    <p>Click any sound or press 1-5 • Press 0 or Stop to end all</p>
+    <nav class="page-footer-nav" aria-label="Project navigation">
+      <a href="../008-form-wave-animation/index.html">&larr; Previous: Code 008</a>
+      <a href="../../index.html">Home</a>
+      <a href="../010-tribute-page/index.html">Next: Code 010 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    <p>&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

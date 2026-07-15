@@ -42,11 +42,13 @@ function getTime() {
         return now;
     }
 
-    // Convert to timezone
-    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-    const options = { timeZone: timezone === 'UTC' ? 'UTC' : timezone };
-    return new Date(utc + (new Date().toLocaleString('en-US', options).getTime() || 0));
+    const tz = timezone === 'UTC' ? 'UTC' : timezone;
+    
+    // Get a date string in the target timezone, then parse it back
+    const dateStr = now.toLocaleString('en-US', { timeZone: tz });
+    return new Date(dateStr);
 }
+
 
 function updateClocks() {
     const now = getTime();

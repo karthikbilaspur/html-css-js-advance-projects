@@ -38,7 +38,7 @@ function updateDeviceIndicator() {
         activeBreakpoint = 'tablet';
     } else if (width < 1440) {
         device = 'Desktop';
-        icon = '🖥️';
+        icon = '🖥';
         size = '1024px - 1439px';
         activeBreakpoint = 'desktop';
     } else {

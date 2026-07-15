@@ -1,4 +1,20 @@
-/* Styles for Code 24 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #e94560;
+  --primary-dark: #c73e54;
+  --bg-start: #1a1a2e;
+  --bg-end: #16213e;
+  --card-bg: #0f3460;
+  --input-bg: #1a1a2e;
+  --text-light: #eee;
+  --text-gray: #a8b2d1;
+  --border: #1a1a2e;
+  --success: #27ae60;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +22,10 @@
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  color: #eee;
-  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  color: var(--text-light);
+  padding: 2rem 1rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,59 +34,69 @@ body {
 
 header h1 {
   text-align: center;
-  margin-bottom: 30px;
-  color: #e94560;
-  font-size: 28px;
+  margin-bottom: 2.5rem;
+  color: var(--primary);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
 }
 
 .timer-container {
-  background: #0f3460;
-  padding: 35px;
-  border-radius: 24px;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   max-width: 450px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 #timerTitle {
   width: 100%;
-  padding: 12px;
-  font-size: 16px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
   text-align: center;
-  border: 2px solid #1a1a2e;
-  border-radius: 10px;
-  background: #1a1a2e;
-  color: #eee;
-  margin-bottom: 20px;
-  font-family: inherit;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  background: var(--input-bg);
+  color: var(--text-light);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  outline: none;
+  transition: border 0.2s;
 }
 
 #timerTitle:focus {
-  outline: none;
-  border-color: #e94560;
+  border-color: var(--primary);
+}
+
+#timerTitle::placeholder {
+  color: var(--text-gray);
+  opacity: 0.6;
 }
 
 .presets {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-bottom: 25px;
+  gap: 0.5rem;
 }
 
 .preset-btn {
-  padding: 10px;
-  background: #1a1a2e;
-  color: #e94560;
-  border: 2px solid #e94560;
-  border-radius: 8px;
+  padding: 0.75rem 0.5rem;
+  background: var(--input-bg);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 0.5rem;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 13px;
+  font-weight: 700;
+  font-size: 0.85rem;
   transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
 }
 
 .preset-btn:hover {
-  background: #e94560;
+  background: var(--primary);
   color: white;
   transform: translateY(-2px);
 }
@@ -78,8 +104,7 @@ header h1 {
 .input-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin-bottom: 25px;
+  gap: 1rem;
 }
 
 .time-input {
@@ -88,36 +113,38 @@ header h1 {
 
 .time-input label {
   display: block;
-  margin-bottom: 6px;
-  font-size: 12px;
-  color: #e94560;
-  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .time-input input {
   width: 100%;
-  padding: 12px;
-  font-size: 20px;
+  padding: 0.75rem;
+  font-size: 1.25rem;
   text-align: center;
-  border: 2px solid #1a1a2e;
-  border-radius: 10px;
-  background: #1a1a2e;
-  color: #eee;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  background: var(--input-bg);
+  color: var(--text-light);
   font-family: 'Courier New', monospace;
-  font-weight: bold;
+  font-weight: 700;
+  outline: none;
+  transition: border 0.2s;
 }
 
 .time-input input:focus {
-  outline: none;
-  border-color: #e94560;
+  border-color: var(--primary);
 }
 
 .progress-ring {
   position: relative;
   width: 280px;
   height: 280px;
-  margin: 0 auto 30px;
+  margin: 0 auto;
 }
 
 .progress-ring svg {
@@ -126,13 +153,13 @@ header h1 {
 
 .progress-bg {
   fill: none;
-  stroke: #1a1a2e;
+  stroke: var(--input-bg);
   stroke-width: 12;
 }
 
 .progress-bar {
   fill: none;
-  stroke: #e94560;
+  stroke: var(--primary);
   stroke-width: 12;
   stroke-linecap: round;
   stroke-dasharray: 754;
@@ -145,21 +172,21 @@ header h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 52px;
-  font-weight: bold;
-  color: #eee;
+  font-size: 3.25rem;
+  font-weight: 700;
+  color: var(--text-light);
   font-family: 'Courier New', monospace;
   letter-spacing: 2px;
   text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
 }
 
 .display.warning {
-  color: #f39c12;
+  color: var(--warning);
   animation: pulse 1s infinite;
 }
 
 .display.danger {
-  color: #e74c3c;
+  color: var(--danger);
   animation: pulse 0.5s infinite;
 }
 
@@ -171,23 +198,23 @@ header h1 {
 .controls {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 0.75rem;
 }
 
-button {
-  padding: 14px;
-  font-size: 15px;
-  font-weight: bold;
+.controls button {
+  padding: 0.875rem;
+  font-size: 0.95rem;
+  font-weight: 700;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.2s;
-  font-family: inherit;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
 }
 
 #startBtn {
-  background: #27ae60;
+  background: var(--success);
   color: white;
 }
 
@@ -197,7 +224,7 @@ button {
 }
 
 #pauseBtn {
-  background: #f39c12;
+  background: var(--warning);
   color: white;
 }
 
@@ -207,7 +234,7 @@ button {
 }
 
 #resetBtn {
-  background: #e74c3c;
+  background: var(--danger);
   color: white;
 }
 
@@ -216,7 +243,7 @@ button {
   transform: translateY(-2px);
 }
 
-button:disabled {
+.controls button:disabled {
   background: #555;
   cursor: not-allowed;
   opacity: 0.4;
@@ -225,8 +252,86 @@ button:disabled {
 
 .status {
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  color: #e94560;
+  color: var(--primary);
   min-height: 24px;
+}
+
+/* Pagination Footer - Same as Code 21/22/23 */
+footer {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.page-footer-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  transition: all 0.2s;
+  text-align: center;
+  flex: 1;
+}
+
+.page-footer-nav a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.page-footer-nav a:nth-child(2) {
+  background-color: var(--input-bg);
+  max-width: 120px;
+}
+
+@media (max-width: 500px) {
+  .timer-container {
+    padding: 1.5rem;
+  }
+  
+  .progress-ring {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .progress-ring svg {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .display {
+    font-size: 2.5rem;
+  }
+  
+  .presets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .page-footer-nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .page-footer-nav a {
+    width: 100%;
+  }
+  
+  .page-footer-nav a:nth-child(2) {
+    max-width: 100%;
+    order: -1;
+  }
 }

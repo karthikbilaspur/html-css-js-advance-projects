@@ -3,66 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tribute Page | KarthikCodingSolutions</title>
+  <meta name="description" content="Project 010: Tribute Page to Brendan Eich by KarthikCodingSolutions">
+  <title>Brendan Eich Tribute | KarthikCodingSolutions</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
 <body>
   <header class="kcs-header">
     <div class="brand">
-      <span class="logo">⚡</span>
+      <span class="logo" aria-hidden="true">⚡</span>
       <span>KarthikCodingSolutions</span>
     </div>
     <p>Project 010: Tribute Page</p>
   </header>
 
   <main id="main">
-    <h1 id="title">Brendan Eich</h1>
-    <p class="subtitle">Creator of JavaScript</p>
+    <header class="tribute-header">
+      <h1 id="title">Brendan Eich</h1>
+      <p class="subtitle">Creator of JavaScript</p>
+    </header>
     
     <figure id="img-div">
       <img 
         id="image"
         src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Brendan_Eich_Mozilla_Foundation_official_photo.jpg" 
-        alt="Brendan Eich, creator of JavaScript"
-      />
+        alt="Brendan Eich, creator of JavaScript, at Mozilla Foundation"
+        width="400"
+        height="400"
+        loading="lazy"
+      >
       <figcaption id="img-caption">
-        Brendan Eich at Mozilla Foundation. He created JavaScript in 10 days in 1995.
+        Brendan Eich at Mozilla Foundation. He created JavaScript in 10 days in May 1995.
       </figcaption>
     </figure>
 
-    <section id="tribute-info">
-      <h3>Timeline of JavaScript Creation:</h3>
-      <ul>
-        <li><strong>1995</strong> - Joined Netscape with the goal to add Scheme to the browser</li>
-        <li><strong>May 1995</strong> - Created JavaScript in 10 days under pressure from Netscape + Sun</li>
-        <li><strong>1995</strong> - JavaScript first shipped in Netscape Navigator 2.0</li>
-        <li><strong>1996</strong> - Submitted to ECMA for standardization, became ECMAScript</li>
-        <li><strong>2005</strong> - AJAX + JS made web apps possible, sparking Web 2.0</li>
-        <li><strong>2009</strong> - Node.js released, JavaScript goes to the server</li>
-        <li><strong>2015</strong> - ES6 released, modern JS era begins</li>
-        <li><strong>Present</strong> - Powers 98% of websites, React, Vue, Angular, and the modern web</li>
+    <section id="tribute-info" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading">Timeline of JavaScript</h2>
+      <ul class="timeline">
+        <li>
+          <time datetime="1995-04">April 1995</time>
+          <div>
+            <strong>Joined Netscape</strong>
+            <p>Hired to embed Scheme in the browser. Plans changed quickly.</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="1995-05">May 1995</time>
+          <div>
+            <strong>Created JavaScript in 10 days</strong>
+            <p>Built under pressure from Netscape + Sun to ship with Navigator 2.0</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="1995-12">December 1995</time>
+          <div>
+            <strong>JavaScript ships in Netscape 2.0</strong>
+            <p>Initially called Mocha, then LiveScript, finally JavaScript</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="1996-11">November 1996</time>
+          <div>
+            <strong>Submitted to ECMA</strong>
+            <p>Standardized as ECMAScript to avoid trademark issues</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2005">2005</time>
+          <div>
+            <strong>AJAX & Web 2.0</strong>
+            <p>JS + XMLHttpRequest enabled Gmail, Google Maps, and modern web apps</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2009-05">May 2009</time>
+          <div>
+            <strong>Node.js released</strong>
+            <p>Ryan Dahl brings JavaScript to the server using Chrome's V8</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2015-06">June 2015</time>
+          <div>
+            <strong>ES6 / ES2015</strong>
+            <p>Classes, modules, arrow functions. Modern JS era begins</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026">Present</time>
+          <div>
+            <strong>Powers 98% of websites</strong>
+            <p>React, Vue, Angular, Svelte. Deno, Bun. Still evolving</p>
+          </div>
+        </li>
       </ul>
 
-      <blockquote>
+      <blockquote cite="https://brendaneich.com/">
         <p>"Always bet on JavaScript."</p>
-        <cite>-- Brendan Eich</cite>
+        <cite>Brendan Eich</cite>
       </blockquote>
 
-      <h3>
+      <p class="cta">
         Learn more about this legendary developer on his
         <a 
           id="tribute-link" 
           href="https://en.wikipedia.org/wiki/Brendan_Eich" 
-          target="_blank"
+          target="_blank" 
+          rel="noopener noreferrer"
         >Wikipedia entry</a>.
-      </h3>
+      </p>
     </section>
   </main>
 
   <footer>
-    <p>Coded by Karthik Cwrp | Bundle 2 Complete ✅</p>
+    <nav class="page-footer-nav" aria-label="Project navigation">
+      <a href="../009-sound-board/index.html">&larr; Previous: Code 009</a>
+      <a href="../../index.html">Home</a>
+      <a href="../011-keycodes/index.html">Next: Code 011 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    <p>&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

@@ -4,7 +4,7 @@ const nav = document.getElementById('nav');
 toggle.addEventListener('click', () => nav.classList.toggle('active'));
 
 // Close nav when clicking a link
-document.querySelectorAll('nav ul a').forEach(link => {
+document.querySelectorAll('nav#nav ul a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('active');
   });

@@ -25,12 +25,12 @@
 
       <div class="quick-add">
         <input type="text" id="todoInput" placeholder="Add task... Press Enter">
-        <select id="priorityInput">
+        <select id="priorityInput" title="addition">
           <option value="low">Low</option>
           <option value="medium" selected>Medium</option>
           <option value="high">High</option>
         </select>
-        <input type="date" id="dateInput">
+        <input type="date" id="dateInput" title="date">
         <input type="text" id="tagsInput" placeholder="tags: work, urgent">
       </div>
 
@@ -41,7 +41,7 @@
           <button class="chip" data-filter="upcoming">Upcoming</button>
           <button class="chip" data-filter="completed">Done</button>
         </div>
-        <select id="sortBy">
+        <select id="sortBy" title="selection">
           <option value="created">Date Created</option>
           <option value="due">Due Date</option>
           <option value="priority">Priority</option>
@@ -62,7 +62,14 @@
       </div>
     </main>
   </div>
-
+      <footer>
+    <nav class="page-footer-nav">
+      <a href="../code42/code42.html">&larr; Previous: Code 42</a>
+      <a href="../../index.html">Home</a>
+      <a href="../code44/code44.html">Next: Code 44 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+  </footer>
   <script src="code43.js"></script>
 </body>
 </html>

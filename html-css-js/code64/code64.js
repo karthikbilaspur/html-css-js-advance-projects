@@ -13,7 +13,7 @@ const THEMES = {
     emoji: ['🎮', '🎯', '🎨', '🎭', '🎪', '🎲', '🎸', '🎺', '🎻', '🎹', '🎤', '🎧'],
     animals: ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼', '🐨', '🐯', '🦁', '🐸'],
     food: ['🍕', '🍔', '🍟', '🌭', '🍿', '🧂', '🥓', '🥚', '🧇', '🥞', '🧈', '🥐'],
-    shapes: ['⭐', '💎', '🔶', '🔷', '🔺', '🔻', '⚡', '💫', '✨', '🔥', '❄️', '☀️']
+    shapes: ['⭐', '💎', '🔶', '🔷', '🔺', '🔻', '⚡', '💫', '✨', '🔥', '❄', '☀']
 };
 
 const DIFFICULTY = {
@@ -62,6 +62,7 @@ function initGame() {
     // Update UI
     movesEl.textContent = '0';
     timerEl.textContent = '00:00';
+    loadBestScore(); // Added: update best score on difficulty/theme change
 
     // Get settings
     const diff = DIFFICULTY[difficultySelect.value];
@@ -136,14 +137,14 @@ function flipCard(id) {
 
 function checkMatch() {
     const [id1, id2] = flippedCards;
-    const card1 = cards;
-    const card2 = cards;
+    const card1 = cards[id1]; // Fixed: was cards
+    const card2 = cards[id2]; // Fixed: was cards
 
     if (card1.icon === card2.icon) {
         // Match found
         setTimeout(() => {
-            cards.matched = true;
-            cards.matched = true;
+            cards[id1].matched = true; // Fixed: was cards.matched
+            cards[id2].matched = true; // Fixed: was cards.matched
             matchedPairs++;
 
             flippedCards = [];
@@ -155,8 +156,8 @@ function checkMatch() {
     } else {
         // No match - flip back
         setTimeout(() => {
-            cards.flipped = false;
-            cards.flipped = false;
+            cards[id1].flipped = false; // Fixed: was cards.flipped
+            cards[id2].flipped = false; // Fixed: was cards.flipped
             flippedCards = [];
             canFlip = true;
             renderBoard();

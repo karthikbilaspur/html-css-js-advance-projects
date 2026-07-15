@@ -459,4 +459,4 @@ function autoSave() {
         const file = this.files.get(this.activeFile);
         let formatted = editor.value;
     }
-    
+}

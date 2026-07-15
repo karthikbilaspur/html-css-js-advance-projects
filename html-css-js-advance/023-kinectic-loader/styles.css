@@ -1,84 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 140px;
+  overflow: hidden;
+}
+
+.kcs-header {
+  position: absolute;
+  top: 30px;
+  text-align: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 0.25rem;
+}
+
+.kcs-header p {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin: 0;
 }
 
 .loader-container {
-    text-align: center;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-h1 {
-    margin-bottom: 30px;
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 2px;
+.loader-container h1 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #f1f5f9;
+  transition: opacity 0.3s ease;
 }
 
-p {
-    margin-top: 30px;
-    opacity: 0.7;
-    font-size: 14px;
+.loader-container p {
+  margin-top: 30px;
+  opacity: 0.7;
+  font-size: 0.9rem;
+  color: #94a3b8;
 }
 
 .kinetic {
-    position: relative;
-    height: 80px;
-    width: 80px;
-    margin: 0 auto;
+  position: relative;
+  height: 80px;
+  width: 80px;
+  margin: 0 auto;
 }
 
-.triangle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border: 40px solid transparent;
-    border-bottom-color: #3498db;
-    animation: rotateA 2s linear infinite 0.5s;
+.kinetic::after,
+.kinetic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  border-bottom-color: #38bdf8;
+  animation: rotateA 2s linear infinite 0.5s;
 }
 
-.triangle:nth-child(2) {
-    border-bottom-color: #e74c3c;
-    animation: rotateB 2s linear infinite;
+.kinetic::before {
+  border-bottom-color: #f87171;
+  transform: rotate(90deg);
+  animation: rotateB 2s linear infinite;
 }
 
 @keyframes rotateA {
-    0%, 25% {
-        transform: rotate(0deg);
-    }
-
-    50%, 75% {
-        transform: rotate(180deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+  0%, 25% {
+    transform: rotate(0deg);
+  }
+  50%, 75% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes rotateB {
-    0%, 25% {
-        transform: rotate(90deg);
-    }
+  0%, 25% {
+    transform: rotate(90deg);
+  }
+  50%, 75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(450deg);
+  }
+}
 
-    50%, 75% {
-        transform: rotate(270deg);
-    }
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #1e293b;
+  border-top: 1px solid #334155;
+  padding: 1.25rem 1rem;
+  color: #64748b;
+  font-size: 0.8rem;
+  text-align: center;
+}
 
-    100% {
-        transform: rotate(450deg);
-    }
+.page-footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-footer-nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.page-footer-nav a:hover {
+  color: #38bdf8;
+}
+
+footer.credit {
+  margin: 0.25rem 0 0;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding-bottom: 180px;
+  }
+
+ .loader-container h1 {
+    font-size: 1.5rem;
+  }
+
+ .page-footer-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+ .page-footer-nav a {
+    font-size: 0.8rem;
+  }
+
+  footer {
+    padding: 1rem 0.5rem;
+  }
 }

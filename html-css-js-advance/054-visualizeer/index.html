@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>053-music-player-with-visualizer</title>
+    <title>054-visualizer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -55,7 +55,7 @@
                         <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor">
                             <polygon points="5 3 19 12 5 21 5 3"></polygon>
                         </svg>
-                        <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                        <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor">
                             <rect x="6" y="4" width="4" height="16"></rect>
                             <rect x="14" y="4" width="4" height="16"></rect>
                         </svg>
@@ -83,7 +83,7 @@
                         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                         <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
                     </svg>
-                    <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                    <input type="range" id="volumeSlider" min="0" max="100" value="70" title="Volume">Volume Slider
                     <span id="volumeValue">70%</span>
                 </div>
             </div>
@@ -99,6 +99,16 @@
     </div>
 
     <audio id="audioPlayer" crossorigin="anonymous"></audio>
+              <footer class="footer-wrap">
+        <nav class="page-footer-nav" aria-label="Project navigation">
+            <a href="../053-drag-and-drop-kanban-board/index.html">&larr; Previous: Code 053</a>
+            <a href="../../index.html">Home</a>
+            <a href="../055-expense-tracker/index.html">Next: Code 055 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+        <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+    </footer>
     <script src="script.js"></script>
+    
 </body>
 </html>

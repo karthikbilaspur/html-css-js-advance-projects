@@ -1,20 +1,19 @@
 const boxes = document.querySelectorAll('.box');
 
-window.addEventListener('scroll', checkBoxes);
-checkBoxes(); // Show initial boxes
+const options = {
+  root: null, // viewport
+  threshold: 0.2, // 20% of element must be visible
+  rootMargin: '0px 0px -50px 0px' // trigger a bit before it fully enters
+};
 
-function checkBoxes() {
-  const triggerBottom = window.innerHeight / 5 * 4;
-
-  boxes.forEach(box => {
-    const boxTop = box.getBoundingClientRect().top;
-
-    if (boxTop < triggerBottom) {
-      box.classList.add('show');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
     } else {
-      box.classList.remove('show');
+      entry.target.classList.remove('show'); // remove this line if you want one-time animation
     }
   });
-}
+}, options);
 
-console.log('Scroll Animation loaded - KarthikCodingSolutions ⚡');
+boxes.forEach(box => observer.observe(box));

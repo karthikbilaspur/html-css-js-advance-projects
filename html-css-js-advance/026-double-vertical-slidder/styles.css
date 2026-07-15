@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -9,6 +9,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     height: 100vh;
+    overflow: hidden;
 }
 
 .slider-container {
@@ -25,6 +26,8 @@ body {
     top: 0;
     left: 0;
     transition: transform 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .left-slide > div {
@@ -35,12 +38,19 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+    text-align: center;
+    padding: 20px;
 }
 
 .left-slide h1 {
     font-size: 40px;
     margin-bottom: 10px;
     margin-top: -30px;
+}
+
+.left-slide p {
+    font-size: 18px;
+    opacity: 0.8;
 }
 
 .right-slide {
@@ -52,12 +62,33 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
-.right-slide > div {
+.slide-img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     height: 100%;
     width: 100%;
+}
+
+/* Fixed background-image syntax - no typos */
+.slide-1 {
+    background-image: url('https://images.unsplash.com/photo-1518710843675-2540dd79065c?w=800');
+    background-color: #FD3555; /* fallback */
+}
+
+.slide-2 {
+    background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?w=800');
+    background-color: #2A86BA; /* fallback */
+}
+
+.slide-3 {
+    background-image: url('https://images.unsplash.com/photo-1519985176271-adb1088fa94c?w=800');
+    background-color: #252E33; /* fallback */
+}
+
+.slide-4 {
+    background-image: url('https://images.unsplash.com/photo-1508768787810-6adc1f613514?w=800');
+    background-color: #FFB866; /* fallback */
 }
 
 button {
@@ -67,6 +98,7 @@ button {
     cursor: pointer;
     font-size: 16px;
     padding: 15px;
+    transition: color 0.3s ease;
 }
 
 button:hover {
@@ -74,30 +106,33 @@ button:hover {
 }
 
 button:focus {
-    outline: none;
+    outline: 2px solid #2A86BA;
+    outline-offset: 2px;
 }
 
-.slider-container .action-buttons button {
+.action-buttons button {
     position: absolute;
     left: 35%;
     top: 50%;
     z-index: 100;
 }
 
-.slider-container .action-buttons .down-button {
+.action-buttons.down-button {
     transform: translateX(-100%);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
-.slider-container .action-buttons .up-button {
+.action-buttons.up-button {
     transform: translateY(-100%);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
-/* Reverse the left slide order so bottom slide shows first */
-.left-slide {
-    display: flex;
-    flex-direction: column-reverse;
+@media screen and (max-width: 768px) {
+  .left-slide { width: 50%; }
+  .right-slide { left: 50%; width: 50%; }
+  .action-buttons button { left: 50%; }
+  .left-slide h1 { font-size: 24px; }
+  .left-slide p { font-size: 14px; }
 }

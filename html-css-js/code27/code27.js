@@ -1,5 +1,4 @@
 // JavaScript for Code 27
-/ Array of objects - each quote has text, author, category
 const quotes = [
   { text: "The only way to do great work is to love what you do.", author: "Steve Jobs", category: "motivation" },
   { text: "Life is what happens when you're busy making other plans.", author: "John Lennon", category: "life" },

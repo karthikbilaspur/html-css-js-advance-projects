@@ -26,7 +26,9 @@ leftBtn.addEventListener('click', () => {
 });
 
 function setBgToBody() {
-  body.style.backgroundImage = slides[activeSlide].style.backgroundImage;
+  const activeSlideEl = slides[activeSlide];
+  const bgImage = window.getComputedStyle(activeSlideEl).backgroundImage;
+  body.style.backgroundImage = bgImage;
 }
 
 function setActiveSlide() {

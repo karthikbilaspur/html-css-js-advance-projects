@@ -1,4 +1,20 @@
-/* Styles for Code 26 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #00d9ff;
+  --primary-dark: #0099cc;
+  --bg-start: #0f2027;
+  --bg-mid: #203a43;
+  --bg-end: #2c5364;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --text-light: #eee;
+  --text-gray: #aaa;
+  --input-bg: rgba(0, 0, 0, 0.3);
+  --border: rgba(255, 255, 255, 0.1);
+  --error: #e74c3c;
+  --warning: #f39c12;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,122 +22,123 @@
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-  color: #eee;
-  padding: 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
+  color: var(--text-light);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
 header h1 {
   text-align: center;
-  margin-bottom: 30px;
-  color: #00d9ff;
-  font-size: 32px;
+  margin-bottom: 2.5rem;
+  color: var(--primary);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
   text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
 }
 
 .clock-container {
   max-width: 500px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 35px;
-  border-radius: 24px;
+  width: 100%;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .current-time {
   text-align: center;
-  margin-bottom: 35px;
-  padding: 25px;
+  padding: 1.5rem;
   background: rgba(0, 217, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 1rem;
   border: 2px solid rgba(0, 217, 255, 0.3);
 }
 
 .time-display {
-  font-size: 56px;
-  font-weight: bold;
+  font-size: 3.5rem;
+  font-weight: 700;
   font-family: 'Courier New', monospace;
-  color: #00d9ff;
+  color: var(--primary);
   letter-spacing: 3px;
   text-shadow: 0 0 30px rgba(0, 217, 255, 0.6);
+  line-height: 1;
 }
 
 .date-display {
-  font-size: 18px;
-  color: #aaa;
-  margin-top: 8px;
+  font-size: 1.125rem;
+  color: var(--text-gray);
+  margin-top: 0.5rem;
 }
 
 .alarm-section h3, .active-alarms h3 {
-  color: #00d9ff;
-  margin-bottom: 15px;
-  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
 }
 
 .alarm-inputs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
-.time-input label {
+.time-input label, .sound-select label {
   display: block;
-  margin-bottom: 6px;
-  font-size: 13px;
-  color: #aaa;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-gray);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-weight: 600;
 }
 
 .time-input input, .time-input select, .sound-select select {
   width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.3);
-  color: #eee;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--input-bg);
+  color: var(--text-light);
   font-family: inherit;
   text-align: center;
+  font-weight: 600;
+  transition: border 0.2s;
 }
 
 .time-input input:focus, .sound-select select:focus {
   outline: none;
-  border-color: #00d9ff;
+  border-color: var(--primary);
 }
 
 .sound-select {
-  margin-bottom: 20px;
-}
-
-.sound-select label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 13px;
-  color: #aaa;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  margin-bottom: 1.25rem;
 }
 
 button {
   width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 0.875rem;
+  font-size: 1rem;
+  font-weight: 700;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s;
   font-family: inherit;
+  text-transform: uppercase;
 }
 
 #setAlarmBtn {
-  background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
 }
 
@@ -131,46 +148,49 @@ button {
 }
 
 .active-alarms {
-  margin-top: 30px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
 }
 
 #alarmList {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.75rem;
 }
 
 .alarm-item {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 15px;
-  border-radius: 10px;
+  background: var(--input-bg);
+  padding: 1rem;
+  border-radius: 0.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
+  transition: all 0.2s;
 }
 
 .alarm-item.active {
-  border-color: #00d9ff;
+  border-color: var(--primary);
   box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
 }
 
 .alarm-time {
-  font-size: 20px;
-  font-weight: bold;
-  color: #00d9ff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
 }
 
 .delete-btn {
-  background: #e74c3c;
+  background: var(--error);
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  width: auto;
+  text-transform: none;
 }
 
 .delete-btn:hover {
@@ -207,17 +227,18 @@ button {
 }
 
 .alert-content {
-  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-  padding: 50px;
-  border-radius: 24px;
+  background: linear-gradient(135deg, var(--error) 0%, #c0392b 100%);
+  padding: 3rem;
+  border-radius: 1.5rem;
   text-align: center;
   animation: shake 0.5s infinite;
   box-shadow: 0 20px 60px rgba(231, 76, 60, 0.5);
+  max-width: 90%;
 }
 
 .alert-icon {
-  font-size: 80px;
-  margin-bottom: 20px;
+  font-size: 5rem;
+  margin-bottom: 1.25rem;
   animation: pulse 1s infinite;
 }
 
@@ -227,37 +248,105 @@ button {
 }
 
 .alert-content h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .alert-content p {
-  font-size: 28px;
-  margin-bottom: 30px;
-  font-weight: bold;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.alert-buttons {
+  display: flex;
+  gap: 1rem;
 }
 
 .alert-content button {
-  margin: 5px;
-  padding: 15px 30px;
-  font-size: 16px;
+  margin: 0;
+  padding: 1rem 2rem;
 }
 
 #snoozeBtn {
-  background: #f39c12;
+  background: var(--warning);
   color: white;
 }
 
 #stopBtn {
   background: white;
-  color: #e74c3c;
+  color: var(--error);
+}
+
+/* Pagination Footer - Same as Code 21/22/23 */
+footer {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.page-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+}
+
+.page-footer-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  transition: all 0.2s;
+  text-align: center;
+  flex: 1;
+}
+
+.page-footer-nav a:hover {
+  background-color: var(--primary);
+  color: var(--bg-start);
+}
+
+.page-footer-nav a:nth-child(2) {
+  background-color: var(--input-bg);
+  max-width: 120px;
 }
 
 @media (max-width: 480px) {
-  .time-display {
-    font-size: 42px;
+  .clock-container {
+    padding: 1.5rem;
   }
+  
+  .time-display {
+    font-size: 2.5rem;
+  }
+  
   .alarm-inputs {
     grid-template-columns: 1fr;
+  }
+  
+  .alert-buttons {
+    flex-direction: column;
+  }
+  
+  .page-footer-nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .page-footer-nav a {
+    width: 100%;
+  }
+  
+  .page-footer-nav a:nth-child(2) {
+    max-width: 100%;
+    order: -1;
   }
 }

@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project 001: Expanding Cards by KarthikCodingSolutions">
   <title>Expanding Cards | KarthikCodingSolutions</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
 <body>
   <div class="container">
@@ -14,28 +16,34 @@
     </header>
 
     <div class="cards-container">
-      <div class="card active" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800')">
+      <div class="card active" tabindex="0" role="button" aria-pressed="true" aria-label="Code card">
         <h3>Code</h3>
       </div>
-      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800')">
+      <div class="card" tabindex="0" role="button" aria-pressed="false" aria-label="Develop card">
         <h3>Develop</h3>
       </div>
-      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800')">
+      <div class="card" tabindex="0" role="button" aria-pressed="false" aria-label="Debug card">
         <h3>Debug</h3>
       </div>
-      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?w=800')">
+      <div class="card" tabindex="0" role="button" aria-pressed="false" aria-label="Deploy card">
         <h3>Deploy</h3>
       </div>
-      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800')">
+      <div class="card" tabindex="0" role="button" aria-pressed="false" aria-label="Scale card">
         <h3>Scale</h3>
       </div>
     </div>
-
-    <footer>
-      <p>&copy; 2026 KarthikCodingSolutions</p>
-    </footer>
   </div>
 
-  <script src="script.js"></script>
+  <footer>
+    <nav class="page-footer-nav" aria-label="Project navigation">
+      <a href="../../../html-css-js/code104/code104.html">&larr; Previous: Code 104</a>
+      <a href="../../index.html">Home</a>
+      <a href="../002-progress-steps/index.html">Next: Code 002 &rarr;</a>
+    </nav>
+    <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+    <p>&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

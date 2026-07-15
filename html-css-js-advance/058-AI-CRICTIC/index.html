@@ -1,127 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Art Critic Quiz</title>
-<p>Project 058: AI Arc Critic</p>
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>058-password-generator-strength-meter</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <div class="header glass">
-        <div class="logo">
-            <div class="logo-icon">🎨</div>
-            <div>
-                <h1>AI Art Critic Quiz</h1>
-                <p>Can you tell human from machine?</p>
+    <div class="container">
+        <header>
+            <h1>🔐 Password Generator</h1>
+            <p>Create strong passwords instantly</p>
+        </header>
+
+        <div class="generator-card">
+            <div class="output-section">
+                <div class="password-display">
+                    <input type="text" id="passwordOutput" readonly placeholder="P4$5w0rD!">
+                    <div class="output-actions">
+                        <button class="icon-btn" id="refreshBtn" title="Generate New">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                            </svg>
+                        </button>
+                        <button class="icon-btn" id="copyBtn" title="Copy">
+                            <svg id="copyIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <svg id="checkIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="strength-meter">
+                    <div class="strength-bar">
+                        <div class="strength-fill" id="strengthFill"></div>
+                    </div>
+                    <div class="strength-info">
+                        <span id="strengthText">Very Weak</span>
+                        <span id="strengthScore">0/5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="control-group">
+                    <div class="control-header">
+                        <label>Password Length</label>
+                        <span class="length-value" id="lengthValue">12</span>
+                    </div>
+                    <input type="range" id="lengthSlider" min="4" max="32" value="12" title="password-length">Password-Length
+                </div>
+
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="uppercase" checked>
+                        <span class="checkmark"></span>
+                        <span>Uppercase Letters (A-Z)</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="lowercase" checked>
+                        <span class="checkmark"></span>
+                        <span>Lowercase Letters (a-z)</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="numbers" checked>
+                        <span class="checkmark"></span>
+                        <span>Numbers (0-9)</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="symbols">
+                        <span class="checkmark"></span>
+                        <span>Symbols (!@#$%)</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="excludeSimilar">
+                        <span class="checkmark"></span>
+                        <span>Exclude Similar (0,O,l,1)</span>
+                    </label>
+                </div>
+
+                <button class="btn-generate" id="generateBtn">Generate Password</button>
             </div>
         </div>
-        <div class="stats" id="liveStats">
-            <div class="stat-item">
-                <span class="stat-value" id="roundStat">1/10</span>
-                <span class="stat-label">Round</span>
+
+        <div class="history-card">
+            <div class="history-header">
+                <h3>Password History</h3>
+                <button class="btn-clear" id="clearHistoryBtn">Clear All</button>
             </div>
-            <div class="stat-item">
-                <span class="stat-value" id="scoreStat">0</span>
-                <span class="stat-label">Score</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-value" id="accuracyStat">—</span>
-                <span class="stat-label">Accuracy</span>
+            <div class="history-list" id="historyList">
+                <div class="empty-state">
+                    <p>No passwords generated yet</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="gameScreen">
-        <div class="progress-bar glass">
-            <div class="progress-fill" id="progressFill" style="width: 10%"></div>
-        </div>
-
-        <div class="main-grid">
-            <div class="artwork-panel glass">
-                <div class="artwork-wrapper">
-                    <img id="artworkImg" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80" alt="Artwork">
-                    <div class="artwork-overlay">
-                        <div class="artwork-title" id="artworkTitle">Loading...</div>
-                        <div class="artwork-meta">What's your take on this piece?</div>
-                    </div>
-                <div class="feedback" id="feedback"></div>
-            </div>
-
-            <div class="control-panel glass">
-                <div>
-                    <div class="section-title">
-                        <span>🤖</span>
-                        <span>Step 1: Make Your Guess</span>
-                    </div>
-                    <div class="guess-buttons">
-                        <button class="btn btn-ai" id="btnAI">AI Generated</button>
-                        <button class="btn btn-human" id="btnHuman">Human Made</button>
-                    </div>
-                </div>
-
-                <div class="rating-section" id="ratingSection">
-                    <div class="section-title">
-                        <span>⭐</span>
-                        <span>Step 2: Rate This Artwork</span>
-                    </div>
-                    <div class="stars" id="stars">
-                        <span class="star" data-rating="1">⭐</span>
-                        <span class="star" data-rating="2">⭐</span>
-                        <span class="star" data-rating="3">⭐</span>
-                        <span class="star" data-rating="4">⭐</span>
-                        <span class="star" data-rating="5">⭐</span>
-                    </div>
-                </div>
-
-                <button class="btn btn-next" id="btnNext" style="display: none;">Next Artwork →</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="results-screen" id="resultsScreen">
-        <div class="score-display glass">
-            <div class="score-circle" id="scoreCircle">
-                <div class="score-text">
-                    <div class="score-value" id="finalScore">0</div>
-                    <div class="score-label">Art Critic Score</div>
-                </div>
-            <h2 id="rankTitle">Novice Observer</h2>
-            <p id="rankDesc">Keep practicing to hone your eye!</p>
-        </div>
-
-        <div class="results-grid">
-            <div class="result-stat glass">
-                <div class="result-stat-value" id="correctCount">0/10</div>
-                <div class="result-stat-label">Correct Guesses</div>
-            </div>
-            <div class="result-stat glass">
-                <div class="result-stat-value" id="accuracyPercent">0%</div>
-                <div class="result-stat-label">Accuracy Rate</div>
-            </div>
-            <div class="result-stat glass">
-                <div class="result-stat-value" id="avgRating">0.0</div>
-                <div class="result-stat-label">Avg Rating Given</div>
-            </div>
-        </div>
-
-        <div class="top-picks glass">
-            <h3>Karthik's Top Picks</h3>
-            <p>Your highest-rated masterpieces</p>
-            <div class="slider-container">
-                <div class="slider" id="slider"></div>
-                <div class="slider-nav" id="sliderNav"></div>
-            </div>
-        </div>
-
-        <div class="action-buttons">
-            <button class="btn btn-restart" id="btnRestart">🔄 Play Again</button>
-            <button class="btn btn-share" id="btnShare">📤 Share Results</button>
-        </div>
-    </div>
-</div>
-
+    <script src="script.js"></script>
+           <footer class="footer-wrap">
+        <nav class="page-footer-nav" aria-label="Project navigation">
+            <a href="../057-coutndown-time-confetti/index.html">&larr; Previous: Code 057</a>
+            <a href="../../index.html">Home</a>
+            <a href="../059-Brand-Mood-Board-Challenge/index.html">Next: Code 059 &rarr;</a>
+        </nav>
+        <p class="credit">Built as part of HTML 100 Codes • Bangalore, India</p>
+        <p class="copyright">&copy; 2026 KarthikCodingSolutions. Built with vanilla JS.</p>
+    </footer>
 
   <script src="script.js"></script>
 </body>
